@@ -1,0 +1,8 @@
+#_**MuZooPan**_
+
+###O que é?
+O aplicativo MuZooPan é uma parceria do **_Laboratório de Zoologia_** do curso de [Ciências Biológicas](https://cpan.ufms.br/ciencias-biologicas/) e do **_Laboratório de Estudos de Computação_ (LECO)** do curso de [Sistemas de Informação](https://cpan.ufms.br/sistemas-de-informacao/) da UFMS-CPAN e tem como finalidade auxiliar os interessados em conhecer os animais do Laboratório de Zoologia a obterem informações destes animais em seus dispositivos móveis através de elementos da **_Internet das Coisas_** (_IoT_ - da sigla em inglês).
+###Internet das Coisas?
+A _Internet das Coisas (IoT)_ é um novo paradigma na área de Tecnologia de Informação e Comunicação, cuja ideia é que cada objeto rastreável (dispositivos móveis, sensores, tags RFID...) possa ser conectado numa ampla rede em que estes objetos estejam aptos a interagir uns com os outros e cooperar com seus objetos vizinhos para tornar mais ágeis e inteligentes a execução de atividades cotidianas. [L. Atzori et al., The Internet of Things: A survey, Comput. Netw. (2010)] disponível em: [https://www.cs.mun.ca/courses/cs6910/IoT-Survey-Atzori-2010.pdf](https://www.cs.mun.ca/courses/cs6910/IoT-Survey-Atzori-2010.pdf)
+###Desenvolvimento
+O MuZooPan é desenvolvido na linguagem Python, com o uso do Framework [_Kivy_](https://kivy.org/#home). Neste repositório, estão contidos os arquivos referentes ao funcionamento aplicativo. As pastas contidas aqui tem a seguinte finalidade: "src", onde estão os módulos que o aplicativo usa e os arquivos ".kv" para definição do comportamento das telas; "files", onde estão os arquivos audiovisuais utilizados; e "test", onde estão alguns testes de funções específicas da aplicação.
