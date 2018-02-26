@@ -1,13 +1,16 @@
 def isTag(text):
-    return True if (('[' in text) and (']' in text)) else False 
+    return True if (('[' in text) and (']' in text)) else False
+
 
 def isCloseTag(text):
     return True if ((isTag(text) and '/' in text)) else False
+
 
 def stripTag(text):
     t = text.strip(']')
     t = t.strip('[')
     return t
+
 
 def readDocument(name):
     from docx import Document

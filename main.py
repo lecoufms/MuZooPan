@@ -1,57 +1,94 @@
+import os
+
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.image import Image
+from kivy.uix.label import Label
 from kivy.core.window import Window
-from kivy.uix.widget import Widget
-from kivy.properties import StringProperty
-from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 
-Builder.load_file('main.kv')
-
+Builder.load_file("src/kv_files/main.kv")
+Builder.load_file("src/kv_files/scrollv.kv")
+Builder.load_file("src/kv_files/animalscreen.kv")
 
 class ScrollableScreen(Screen, ScrollView):
-    pass
+    """Responsible class to make all the other screens classes scrollable."""
 
+    def __init__(self, **kwargs):
+        """The method below just ensures the inheritance.
+        :param kwargs: instance(required param)
+        """
+        super(ScrollableScreen, self).__init__(**kwargs)
 
-class VideoScreen(ScrollableScreen):
-    pass
+    def _add_widget(self, widget):
+        """
+        Method to add a widget to the box layout inside the ScrollableView inheritance.
+        :param widget: Widget to be included in the scrollable layout.
+        :return: None
+        """
+        self.ids.box.add_widget(widget)
 
 
 class QuizScreen(ScrollableScreen):
+    """Classe que representa a tela de quiz. Ainda não está implementada, pois aguarda a conclusão da modelagem deste
+    quiz. """
+
+    def __init__(self, **kwargs):
+        """
+        Método responsável por inicializar a tela de quiz.
+        :param kwargs: Parâmetros obrigatórios que indicam a instância da aplicação.
+        """
+        super(QuizScreen, self).__init__(**kwargs)
+        self.build()  # Constroe a interface
+
+    def build(self):
+        """
+        Teste de inserção de widgets na tela rolável a qual esta classe herda as características.
+        :return: None
+        """
+        for x in range(10): self._add_widget(Label(text="Teste", font_size=30, size_hint_y=None, height=200))
+
+class ErrorLabel(Label):
     pass
 
 
-class AnimalScreen(ScrollableScreen, Widget, animal=''):
-    r = StringProperty()
-
-    def __init__(self, **kwargs):
+class AnimalScreen(Screen):
+    """Classe que representa a tela que contém as informações de um animal."""
+    def __init__(self, name, **kwargs):
+        """
+        :param name: Animal a ser exibido, que vêm do QrCode;
+        :param kwargs: Parâmetro obrigatório referente à instância da aplicação.
+        """
         super(AnimalScreen, self).__init__(**kwargs)
-        self.name = 'animal'
-        _animal = animal
-        layout = GridLayout(cols=1, spacing=10, size_hint_y=None)
-        layout.bind(minimum_height=layout.setter('height'))
-        self.size_hint=(1, None)
-        self.size=(Window.width, Window.height)
-        self.add_widget(layout)
+        self.name = name
+        self.build()
+    def build(self):
+        try:
+            if os.path.exists('files/animals/'+self.name+'/icons/'):
+                self.ids.sv.box.Label.text = name
+            else:
+                pass
 
-    def build(self, json_object):
-        #PlaceHolder
-        x = json_object
-        return x
-        #/PlaceHolder
+        except:
+            self.ids._text = "Não deu"
+
 
 class MainScreen(Screen):
+    """
+    Classe que indica a tela principal. Como não há movimento (a priori) foi inteiramente definida no arquivo 'main.kv'.
+    """
     pass
+
 
 class MyButton(ButtonBehavior, Image):
+    """
+    Classe que garante as características de um botão para uma imagem.
+    """
+
     def __init__(self, **kwargs):
         super(MyButton, self).__init__(**kwargs)
-
-class ScreenManagement(ScreenManager):
-    pass
 
 
 class MainApp(App):
@@ -59,7 +96,7 @@ class MainApp(App):
     nextScreen = 1
     screens = ['main', 'animal', 'quiz']
 
-    sm = ScreenManagement()
+    sm = ScreenManager()
     sm.transition = FadeTransition()
     sm.add_widget(MainScreen(name=screens[0]))
     sm.add_widget(AnimalScreen(name=screens[1]))

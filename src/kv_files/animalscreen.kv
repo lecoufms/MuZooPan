@@ -1,0 +1,28 @@
+<AnimalScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'files/app/images/bg.jpg'
+    ScrollView:
+        id: sv
+        BoxLayout:
+            id: box
+            orientation: 'vertical'
+            height: self.minimum_height
+            Label:
+                id: name
+                text: 'Jaguatiricas são fofíneas (de longe)'
+            Carousel:
+                id: carousel
+                size: (.38,.2)
+            Slider:
+                id: audio
+                size_hint: (.3, None)
+            Label:
+                id: characteristics
+                text: ''
+            Label:
+                id: _text
+                text: ''
+                size_hint: (.9, None)
