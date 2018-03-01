@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3af52cf7-b24a-42f0-9d78-e0a5ab92d354" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/Aplicativo.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/files/animals/jaguatirica/images/4481015dc67c10020a3a4cc678331fa4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/animals/jaguatirica/images/744b8c5501430d1a6a42f251cfcd5b20.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/animals/jaguatirica/images/825b6fa75bf9ea38e06909d15aebfb27.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/animals/jaguatirica/sounds/3adab6f8698e7a2d4154a6e4bcd64850.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/animals/jaguatirica/sounds/d1e34dcdc08c2b448cc201a47f69355a.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/app/icons/250a4ec4a09517a8fdb52e3b45918e1a.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/app/icons/318974e30a64fa4b970bdc0c45afb5e4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/app/icons/58a213d57c9b9dc16cc44ca81fed184d.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/app/icons/971ea717d0ae42448b90ba8de2809c74.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/app/icons/aed547b5b5164a2d1520374b9c879741.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/files/app/images/515fdbe62a59255c44d5932cb13c4cdb.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/main.kv" afterPath="$PROJECT_DIR$/src/kv_files/main.kv" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/files/animals/jaguatirica/info/jaguatiricaInfo.json" afterPath="" />
       <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="$PROJECT_DIR$/src/csvjson.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/modules/doc_open.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/modules/read.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tests/Carousel/main.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tests/main.kv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tests/main.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/kv_files/animalscreen.kv" afterPath="$PROJECT_DIR$/src/kv_files/animalscreen.kv" />
+      <change beforePath="$PROJECT_DIR$/src/kv_files/main.kv" afterPath="$PROJECT_DIR$/src/kv_files/main.kv" />
+      <change beforePath="$PROJECT_DIR$/src/modules/read_json.py" afterPath="$PROJECT_DIR$/src/modules/read_json.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,23 +18,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Aplicativo$main.coverage" NAME="main Coverage Results" MODIFIED="1519335180511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Aplicativo$main.coverage" NAME="main Coverage Results" MODIFIED="1519925735745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="105" column="23" lean-forward="false" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+            <state relative-caret-position="17">
+              <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#517#1081#0" expanded="false" />
-                <element signature="e#1124#1826#0" expanded="false" />
-                <element signature="e#1857#1861#0" expanded="false" />
-                <element signature="e#2557#2698#0" expanded="false" />
-                <element signature="e#2744#2910#0" expanded="false" />
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#1548#1643#0" expanded="false" />
+                <element signature="e#2864#2945#0" expanded="false" />
+                <element signature="e#2991#3147#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jaguatirica.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files/animals/jaguatirica/info/jaguatirica.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="read_json.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/modules/read_json.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="101" lean-forward="true" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,8 +70,8 @@
       <file leaf-file-name="animalscreen.kv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kv_files/animalscreen.kv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state relative-caret-position="85">
+              <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -77,8 +80,8 @@
       <file leaf-file-name="main.kv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kv_files/main.kv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+            <state relative-caret-position="266">
+              <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -102,16 +105,20 @@
         <option value="$PROJECT_DIR$/src/kv_lang/scrollv.kv" />
         <option value="$PROJECT_DIR$/main.kv" />
         <option value="$PROJECT_DIR$/src/modules/customclasses.py" />
-        <option value="$PROJECT_DIR$/src/__init__.py" />
-        <option value="$PROJECT_DIR$/src/modules/__init__.py" />
-        <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/src/modules/doc_open.py" />
         <option value="$PROJECT_DIR$/src/modules/read.py" />
         <option value="$USER_HOME$/Downloads/examples/tutorials/pong/main.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/kv_files/scrollv.kv" />
-        <option value="$PROJECT_DIR$/src/kv_files/animalscreen.kv" />
+        <option value="$PROJECT_DIR$/files/animals/jaguatirica/info/jaguatiricaInfo.json" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/src/__init__.py" />
+        <option value="$PROJECT_DIR$/src/modules/__init__.py" />
         <option value="$PROJECT_DIR$/src/kv_files/main.kv" />
+        <option value="$USER_HOME$/Documents/android-zbar-qrcode-master/main.py" />
+        <option value="$PROJECT_DIR$/files/animals/jaguatirica/info/quiz.json" />
+        <option value="$PROJECT_DIR$/src/kv_files/animalscreen.kv" />
+        <option value="$PROJECT_DIR$/src/modules/read_json.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -143,6 +150,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -162,22 +170,10 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kv_files" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Aplicativo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aplicativo" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aplicativo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aplicativo" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="Carousel" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -185,11 +181,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Usuarios\wesley.barbosa\Dropbox\LECO\IoT\MuZooPan\Aplicativo\src\kv_files" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Usuarios\wesley.barbosa\Dropbox\LECO\IoT\MuZooPan\Aplicativo\src\modules" />
+      <recent name="D:\Usuarios\wesley.barbosa\Dropbox\LECO\IoT\MuZooPan\Aplicativo\src\kv_files" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Usuarios\wesley.barbosa\Dropbox\LECO\IoT\MuZooPan\Aplicativo\src\kv_files" />
     </key>
   </component>
@@ -252,10 +248,10 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294271" sideWeight="0.5075" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294271" sideWeight="0.4925" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -263,7 +259,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997396" sideWeight="0.4975" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -281,22 +277,147 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1548#1643#0" expanded="false" />
+            <element signature="e#2864#2945#0" expanded="false" />
+            <element signature="e#2991#3147#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/animals/jaguatirica/info/jaguatirica.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/read_json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kv_files/main.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kv_files/animalscreen.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="45" lean-forward="true" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1548#1643#0" expanded="false" />
+            <element signature="e#2864#2945#0" expanded="false" />
+            <element signature="e#2991#3147#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kv_files/animalscreen.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kv_files/main.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1548#1643#0" expanded="false" />
+            <element signature="e#2864#2945#0" expanded="false" />
+            <element signature="e#2991#3147#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kv_files/animalscreen.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kv_files/main.kv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="127" column="45" lean-forward="false" selection-start-line="127" selection-start-column="45" selection-end-line="127" selection-end-column="45" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#517#1081#0" expanded="false" />
-            <element signature="e#1124#1826#0" expanded="false" />
-            <element signature="e#1857#1861#0" expanded="false" />
-            <element signature="e#2557#2698#0" expanded="false" />
-            <element signature="e#2744#2910#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1548#1643#0" expanded="false" />
+            <element signature="e#2864#2945#0" expanded="false" />
+            <element signature="e#2991#3147#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -330,12 +451,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#517#1081#0" expanded="false" />
-            <element signature="e#1124#1826#0" expanded="false" />
-            <element signature="e#1857#1861#0" expanded="false" />
-            <element signature="e#2557#2698#0" expanded="false" />
-            <element signature="e#2744#2910#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1548#1643#0" expanded="false" />
+            <element signature="e#2864#2945#0" expanded="false" />
+            <element signature="e#2991#3147#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -345,12 +464,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#517#1081#0" expanded="false" />
-            <element signature="e#1124#1826#0" expanded="false" />
-            <element signature="e#1857#1861#0" expanded="false" />
-            <element signature="e#2557#2698#0" expanded="false" />
-            <element signature="e#2744#2910#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1548#1643#0" expanded="false" />
+            <element signature="e#2864#2945#0" expanded="false" />
+            <element signature="e#2991#3147#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -386,9 +503,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kv_lang/scrollv.kv" />
-    <entry file="file://$PROJECT_DIR$/src/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/src/modules/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/__init__.py" />
     <entry file="file://$PROJECT_DIR$/src/modules/customclasses.py" />
     <entry file="file://$PROJECT_DIR$/tests/main.py" />
     <entry file="file://$PROJECT_DIR$/src/modules/read.py" />
@@ -421,6 +535,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.410/setup.py" />
+    <entry file="file://$PROJECT_DIR$/src/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/animals/jaguatirica/info/jaguatiricaInfo.json" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -429,50 +567,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Documents/android-zbar-qrcode-master/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="336" column="0" lean-forward="true" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/animals/jaguatirica/info/quiz.json" />
+    <entry file="file://$PROJECT_DIR$/files/animals/jaguatirica/info/jaguatirica.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/kv_files/scrollv.kv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kv_files/main.kv">
+    <entry file="file://$PROJECT_DIR$/src/modules/read_json.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+        <state relative-caret-position="136">
+          <caret line="8" column="101" lean-forward="true" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kv_files/animalscreen.kv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="85">
+          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.410/setup.py">
+    <entry file="file://$PROJECT_DIR$/src/kv_files/main.kv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="105" column="23" lean-forward="false" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+        <state relative-caret-position="17">
+          <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#517#1081#0" expanded="false" />
-            <element signature="e#1124#1826#0" expanded="false" />
-            <element signature="e#1857#1861#0" expanded="false" />
-            <element signature="e#2557#2698#0" expanded="false" />
-            <element signature="e#2744#2910#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1548#1643#0" expanded="false" />
+            <element signature="e#2864#2945#0" expanded="false" />
+            <element signature="e#2991#3147#0" expanded="false" />
           </folding>
         </state>
       </provider>

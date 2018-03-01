@@ -1,5 +1,9 @@
 import json
 
-with open('csvjson.json') as json_data:
-    d = json.load(json_data)
-    print(d)
+def parseJson(name,dir=''):
+    try:
+        with open(str(dir+name+'.json')) as json_data:
+            d = json.load(json_data)
+            return d[0]
+    except:
+        return {'alternativa e': '', 'Qual o nome do animal?': '', 'Insira o texto para pergunta':''}
