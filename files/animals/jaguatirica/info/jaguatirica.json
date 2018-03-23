@@ -1,9 +1,27 @@
-[{"Carimbo de data/hora": "2018/02/14 5:35:16 PM GMT-3",
-"Qual o nome do animal?": "cascavel",
-"Insira o texto para pergunta": "o que é uma cascavel?",
-"alternativa a": "uma ave",
-"alternativa b": "um peixe",
-"alternativa c": "um molusco",
-"alternativa d": "uma cobra",
-"alternativa e": "uma batata", "insira a resposta correta": "d ",
-"insira a justificativa da resposta": "é porque é mesmo"}]
+[{
+    "Carimbo de data/hora": "2018/02/14 6:41:29 PM GMT-4",
+    "nome do animal": "Jaguatirica",
+    "Reino": "Animalia",
+    "Filo": "Chordata",
+    "Classe": "Mammalia",
+    "Ordem": "Carnivora",
+    "Familia": "Felidae",
+    "Subfamilia": "Felinae",
+    "Genero": "Leopardus",
+    "Especie": "L. Pardalis",
+    "texto": "A Jaguatirica � um mam�fero carn�voro da fam�lia dos felinos. Ela dorme de dia e a noite sai para ca�ar. Conseguem facilmente escalar �rvores. A jaguatirica � considerada o terceiro maior felino do continente. Seu tamanho corporal varia de 70 a 100 cm de comprimento e pesa entre 7 e 15,5 kg. Possuem uma cauda mais curta do que outros felinos, com aproximadamente entre 25 a 40 cm de comprimento. Tendo um tamanho total (da cabe�a a cauda) de 1,40 metros. As f�meas costumam ser menores e mais leves que os machos.\nNativo da Am�rica, podem ser encontrados desde o norte da Argentina at� o sul dos Estados Unidos, habitando ao longo de sua distribui��o geogr�fica em diversos habitats como nas florestas tropicais, subtropicais, savanas e mangues.\nA jaguatirica est� no topo da cadeia alimentar, se alimentando da carne de outros animais menores, como roedores, mam�feros, aves, r�pteis, peixes, dentre outros. A jaguatirica come entre 600 e 900 gramas de carne por dia, sendo a carca�a enterrada quando n�o digerida toda de uma vez.� o mais abundante dentre os fel�deos sul-americanos, sendo listada como estado de conserva��o \"pouco preocupante\", j� foi muito ca�ada, para o comercio de sua pele, al�m de ser desejada como animal de estima��o por seu tamanho mediano e sua beleza.\nA maturidade sexual dos machos ocorre por volta dos 2 anos de idade e das f�meas entre 16 e 18 meses, depois disso as f�meas entram no cio a cada 5 meses em m�dia, durando aproximadamente 8 dias. O per�odo de gesta��o dura entre 70 e 84 dias e nascem um ou dois filhotes, raramente nascem 3 ou 4. O filhote pesa 90g ao nascer e s�o amamentados at� os nove meses at� que aprendam a ca�ar."
+  },
+  {
+    "Carimbo de data/hora": "2018/03/01 4:48:39 PM GMT-4",
+    "nome do animal": "jaguatirica",
+    "Reino": "animalia",
+    "Filo": "chordata",
+    "Classe": "mammalia",
+    "Ordem": "carnivora",
+    "Familia": "felidae",
+    "Subfamilia": "felinae",
+    "Genero": "leopardus",
+    "Especie": "l. pardalis",
+    "texto": "A Jaguatirica � um mam�fero carn�voro da fam�lia dos felinos. Ela dorme de dia e a noite sai para ca�ar. Conseguem facilmente escalar �rvores. A jaguatirica � considerada o terceiro maior felino do continente. Seu tamanho corporal varia de 70 a 100 cm de comprimento e pesa entre 7 e 15,5 kg. Possuem uma cauda mais curta do que outros felinos, com aproximadamente entre 25 a 40 cm de comprimento. Tendo um tamanho total (da cabe�a a cauda) de 1,40 metros. As f�meas costumam ser menores e mais leves que os machos.\nNativo da Am�rica, podem ser encontrados desde o norte da Argentina at� o sul dos Estados Unidos, habitando ao longo de sua distribui��o geogr�fica em diversos habitats como nas florestas tropicais, subtropicais, savanas e mangues.\nA jaguatirica est� no topo da cadeia alimentar, se alimentando da carne de outros animais menores, como roedores, mam�feros, aves, r�pteis, peixes, dentre outros. A jaguatirica come entre 600 e 900 gramas de carne por dia, sendo a carca�a enterrada quando n�o digerida toda de uma vez.� o mais abundante dentre os fel�deos sul-americanos, sendo listada como estado de conserva��o \"pouco preocupante\", j� foi muito ca�ada, para o comercio de sua pele, al�m de ser desejada como animal de estima��o por seu tamanho mediano e sua beleza.\nA maturidade sexual dos machos ocorre por volta dos 2 anos de idade e das f�meas entre 16 e 18 meses, depois disso as f�meas entram no cio a cada 5 meses em m�dia, durando aproximadamente 8 dias. O per�odo de gesta��o dura entre 70 e 84 dias e nascem um ou dois filhotes, raramente nascem 3 ou 4. O filhote pesa 90g ao nascer e s�o amamentados at� os nove meses at� que aprendam a ca�ar."
+  }
+]

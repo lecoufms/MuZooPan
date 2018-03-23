@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os, glob
 from kivy.app import App
 from kivy.lang import Builder
@@ -6,25 +8,24 @@ from kivy.uix.label import Label
 from kivy.factory import Factory
 from kivy.uix.image import Image
 from kivy.core.window import Window
-
+from kivy.uix.scrollview import ScrollView
 from kivy.uix.behaviors import ButtonBehavior
+from src.modules import read_json, text_functions
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 
 
-Builder.load_file("src/kv_files/main.kv")
-Builder.load_file("src/kv_files/scrollv.kv")
+Builder.load_file("main.kv")
 
 def initClasses():
     classes = dict([(name, cls) for name, cls in Screens.__dict__.items() if isinstance(cls, type)])
     for name, cls in classes.items():
         Factory.register(name,cls=cls)
-        _class = str('Factory.'+name)
-        eval(_class)()
-
+       
 
 # TODO
 class QuizScreen(Screen):
     """Janela onde o Quiz é executado."""
+
     def __init__(self, **kwargs):
         super(QuizScreen, self).__init__(**kwargs)
         self.__build()
@@ -85,10 +86,12 @@ class MainApp(App):
                 self.stop()
         return False
 
-    #TODO?
+    #TODO
     def _ScreenFactory(self, name):
-        _class = str('Factory.'+name)
-        self.sm.add_widget(eval(_class)())
+        _class = str('Factory.'+name+"(name="+name+")")
+        print(_class)
+        self.sm.add_widget(eval(_class))
+        print(name)
         self._nextScreen(name)
 
     def _nextScreen(self, name=''):
