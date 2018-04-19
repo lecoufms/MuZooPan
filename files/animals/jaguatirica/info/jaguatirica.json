@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [{
     "Carimbo de data/hora": "2018/02/14 6:41:29 PM GMT-4",
     "nome do animal": "Jaguatirica",
@@ -23,5 +24,14 @@
     "Genero": "leopardus",
     "Especie": "l. pardalis",
     "texto": "A Jaguatirica ï¿½ um mamï¿½fero carnï¿½voro da famï¿½lia dos felinos. Ela dorme de dia e a noite sai para caï¿½ar. Conseguem facilmente escalar ï¿½rvores. A jaguatirica ï¿½ considerada o terceiro maior felino do continente. Seu tamanho corporal varia de 70 a 100 cm de comprimento e pesa entre 7 e 15,5 kg. Possuem uma cauda mais curta do que outros felinos, com aproximadamente entre 25 a 40 cm de comprimento. Tendo um tamanho total (da cabeï¿½a a cauda) de 1,40 metros. As fï¿½meas costumam ser menores e mais leves que os machos.\nNativo da Amï¿½rica, podem ser encontrados desde o norte da Argentina atï¿½ o sul dos Estados Unidos, habitando ao longo de sua distribuiï¿½ï¿½o geogrï¿½fica em diversos habitats como nas florestas tropicais, subtropicais, savanas e mangues.\nA jaguatirica estï¿½ no topo da cadeia alimentar, se alimentando da carne de outros animais menores, como roedores, mamï¿½feros, aves, rï¿½pteis, peixes, dentre outros. A jaguatirica come entre 600 e 900 gramas de carne por dia, sendo a carcaï¿½a enterrada quando nï¿½o digerida toda de uma vez.ï¿½ o mais abundante dentre os felï¿½deos sul-americanos, sendo listada como estado de conservaï¿½ï¿½o \"pouco preocupante\", jï¿½ foi muito caï¿½ada, para o comercio de sua pele, alï¿½m de ser desejada como animal de estimaï¿½ï¿½o por seu tamanho mediano e sua beleza.\nA maturidade sexual dos machos ocorre por volta dos 2 anos de idade e das fï¿½meas entre 16 e 18 meses, depois disso as fï¿½meas entram no cio a cada 5 meses em mï¿½dia, durando aproximadamente 8 dias. O perï¿½odo de gestaï¿½ï¿½o dura entre 70 e 84 dias e nascem um ou dois filhotes, raramente nascem 3 ou 4. O filhote pesa 90g ao nascer e sï¿½o amamentados atï¿½ os nove meses atï¿½ que aprendam a caï¿½ar."
+=======
+[
+  {
+    "nome do animal": "Jaguatirica",
+    "habitat": "Nativo da América, podem ser encontrados desde o norte da Argentina até o sul dos Estados Unidos, habitando ao longo de sua distribuição geográfica em diversos habitats como nas florestas tropicais, subtropicais, savanas e mangues.",
+    "reproducao": "A maturidade sexual dos machos ocorre por volta dos 2 anos de idade e das fêmeas entre 16 e 18 meses, depois disso as fêmeas entram no cio a cada 5 meses em média, durando aproximadamente 8 dias. O período de gestação dura entre 70 e 84 dias e nascem um ou dois filhotes, raramente nascem 3 ou 4. O filhote pesa 90 gramas ao nascer e são amamentados até os nove meses até que aprendam a caçar.",
+    "caracteristicas": "Reino:Animalia; Filo:Chordata; Classe:Mammalia; Ordem:Carnivora; Família:Felidae; Subfamília:Felinae; Género:Leopardus; Espécie:L. pardalis; A Jaguatirica é um mamífero carnívoro da família dos felinos. Ela dorme de dia e a noite sai para caçar. Conseguem facilmente escalar árvores. A jaguatirica é considerada o terceiro maior felino do continente. Seu tamanho corporal varia de 70 a 100 cm de comprimento e pesa entre 7 e 15,5 kg. Possuem uma cauda mais curta do que outros felinos, com aproximadamente entre 25 a 40 cm de comprimento. Tendo um tamanho total (da cabeça a cauda) de 1,40 metros. As fêmeas costumam ser menores e mais leves que os machos.",
+    "curiosidades": "A jaguatirica está no topo da cadeia alimentar, se alimentando da carne de outros animais menores, como roedores, mamíferos, aves, répteis, peixes, dentre outros. A jaguatirica come entre 600 e 900 gramas de carne por dia, sendo a carcaça enterrada quando não digerida toda de uma vez.É o mais abundante dentre os felídeos sul-americanos, sendo listada como estado de conservação \"pouco preocupante\", já foi muito caçada, para o comercio de sua pele, além de ser desejada como animal de estimação por seu tamanho mediano e sua beleza."
+>>>>>>> origin/development
   }
 ]
