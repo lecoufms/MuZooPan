@@ -1,6 +1,65 @@
+<<<<<<< HEAD
 <AnimalScreen>:
     canvas.before:
         Rectangle:
             pos: self.pos
             size: self.size
             source: '../files/app/images/bg.jpg'
+=======
+#-*- coding: utf-8 -*-
+
+<Animal>:
+    canvas.before:
+        Color:
+            rgba: 0, 136, 183, .4
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    TabbedPanel:
+        size_hint: .955, .5
+        pos_hint: {'center_x': .5, 'center_y': .3}
+        tab_width: self.parent.width / 4
+        do_default_tab: False
+
+        TabbedPanelItem:
+            text: 'HABITAT'
+            Label:
+                text: root.habitat
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+        TabbedPanelItem:
+            text: 'REPRODUCAO'
+            text_size: self.width, None
+            Label:
+                text: root.reproducao
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+        TabbedPanelItem:
+            text: 'CARACTERISTICA'
+            text_size: self.width, None
+            Label:
+                text: root.caracteristicas
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+        TabbedPanelItem:
+            text: 'CURIOSIDADES'
+            text_size: self.width, None
+            Label:
+                text: root.curiosidades
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+
+<ErrorLabel>:
+    canvas.before:
+        Color:
+            rgba: 0, 136, 183, .4
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text: "Este animal não está em seu roteiro! \\nVolte ao menu e continue o tour."
+>>>>>>> origin/development
