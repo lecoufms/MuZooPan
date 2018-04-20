@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = MyQuiz
+title = MuZooPan
 
 # (str) Package name
-package.name = myquiz
+package.name = muzoopan
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.muzoopan.ufms
 
 # (str) Source code where the main.py live
 source.dir = .
