@@ -468,4 +468,3 @@ class About(Screen):
         except Exception as d:
             print(d, 'b9')
   
->>>>>>> origin/development
