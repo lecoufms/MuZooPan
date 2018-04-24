@@ -28,7 +28,7 @@ source.dir = .
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.4
+version = 0.1
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -189,23 +189,30 @@ android.permissions = INTERNET, CAMERA
 android.arch = armeabi-v7a
 
 #
-# Python for android (p4a) specific
-#
+# (str) Semicolon separated list of Java .jar files to add to the libs so
+# that pyjnius can access their classes. Don't add jars that you do not need,
+# since extra jars can slow down the build process. Allows wildcards matching,
+# for example: OUYA-ODK/libs/*.jar
+#android.add_jars = foo.jar;bar.jar;path/to/more/*.jar
+android.add_jars = libs/android/zbar.jar
 
-# (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
-#p4a.source_dir =
+# (str) python-for-android branch to use, if not master, useful to try
+# not yet merged features.
+#android.branch = master
 
-# (str) The directory in which python-for-android should look for your own build recipes (if any)
-#p4a.local_recipes =
+# (str) OUYA Console category. Should be one of GAME or APP
+# If you leave this blank, OUYA support will not be enabled
+#android.ouya.category = GAME
 
-# (str) Filename to the hook for p4a
-#p4a.hook =
+# (str) Filename of OUYA Console icon. It must be a 732x412 png image.
+#android.ouya.icon.filename = %(source.dir)s/data/ouya_icon.png
 
-# (str) Bootstrap to use for android builds
-# p4a.bootstrap = sdl2
+# (str) XML file to include as an intent filters in <activity> tag
+#android.manifest.intent_filters = 
 
 # (list) Android additionnal libraries to copy into libs/armeabi
-#android.add_libs_armeabi = libs/android/*.so
+android.add_libs_armeabi = libs/android/*.so
+
 
 
 #
