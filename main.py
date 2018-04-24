@@ -1,6 +1,6 @@
 #-*- encoding:utf-8 -*-
 from kivy.app import App
-import os, glob,json#, camera
+import os, glob,json, camera
 from kivy.lang import Builder
 from kivy.logger import Logger
 from src.screens import Screens
@@ -97,21 +97,6 @@ class MainApp(App):
         self.on_stop()
         return True
 
-    def arquivo_pontuacao(self):
-        try:
-            f = open(os.path.join('files','quiz','tela_final','pontos.json'), 'w')
-            tes=read_json.parseJson('pontuacao',dir=os.path.join('files','quiz','tela_final',''))
-	    print(tes)
-	    pontos=[]
-	    pontos.append(tes)
-	    print(pontos)
-	    f.write(json.dumps(pontos, ensure_ascii=False, indent=2))
-            f.close()
-        except Exception as t:
-            print(t,'b1.1')
-            os.remove(os.path.join(os.path.dirname('__file__'),'files','quiz','tela_final','pontuacao.json'))
-
-
     def _onBackBtn(self, window, key, *args):
         if key == 27:
             try:
@@ -127,7 +112,7 @@ class MainApp(App):
                 return True
             except Exception:
                 if os.path.exists(os.path.join('files','quiz','tela_final','pontuacao.json')):
-                    self.arquivo_pontuacao()
+                   os.remove(os.path.join(os.path.dirname('__file__'),'files','quiz','tela_final','pontuacao.json'))
                 self.stop()
         return False
 
