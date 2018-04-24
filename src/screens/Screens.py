@@ -218,12 +218,13 @@ class AnimalScreen(Screen):
         return x
 
 class quizScreen(FloatLayout):
-    """Tela que contém as informações de um animal."""
+    """Tela QuizScreen."""
     list_dir={}
     list_file=[]
     pontos={}
     total=0
     falta=0
+    Obonus=0
     momento= resposta = None
     im1 = im2 = None
     path = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','quiz'))
@@ -285,10 +286,6 @@ class quizScreen(FloatLayout):
             self.momento = testete
 
     def arrumatudo(self):
-        from kivy.app import App
-        if self.gettamanho_lista_file() == 0:
-            self.saveN()
-            App.get_running_app()._ScreenFactory("PremioScrenn")
         self.arruma_pontuacao()
         self.ids.quantidade_perguntas.text=str(self.getfalta()) +'/'+ str(self.gettotal())
         self.define_quem_e_o_cara()
@@ -364,6 +361,11 @@ class quizScreen(FloatLayout):
             self.remove_widget(self.im2)
             self.resposta.background_color = get_color_from_hex('#fffeff')
             self.im2 = None
+        if self.gettamanho_lista_file() == 0:
+            from kivy.app import App
+            self.saveN()
+            App.get_running_app()._ScreenFactory("PremioScrenn")
+        self.Disabled()
         teste.background_color = get_color_from_hex('#fffeff')
         teste.state='normal'
         self.ids.confirmar.text='CONFIRMAR'
@@ -379,8 +381,10 @@ class quizScreen(FloatLayout):
             st=te[:-5]+'1.png'
         elif self.bonus == 2:
             st=te[:-5]+'2.png'
-        elif self.bonus >= 3:
+        elif self.bonus == 3:
             st=te[:-5]+'3.png'
+        elif self.bonus > 3:
+            st=te[:-5]+'4.png'
         self.ids.image_quantidade_acertos.source = str(st)
 
     def pontuacao_update(self): #setar na variaveis em kivy valor inicial qndo necessario
@@ -392,14 +396,26 @@ class quizScreen(FloatLayout):
                 self.qnt_revisao=self.qnt_revisao-1
         if self.bonus >= 4:
             p+=50
-        self.pontos['bonus'] = self.bonus
+        self.pontos['bonus'] = self.Obonus
         self.pontos['pontos'] += p
         self.pontos['acertos'] += 1
+
+
+    def Disabled(self):
+        self.ids.button1.disabled= not self.ids.button1.disabled
+        self.ids.button2.disabled=not self.ids.button2.disabled
+        self.ids.button3.disabled=not self.ids.button3.disabled
+        self.ids.button4.disabled=not self.ids.button4.disabled
+
+    def setbonus(self):
+        if self.bonus >= 3:
+            self.Obonus+=1
 
     def controler_confirmar(self):
         if self.verifica_resposta():
             self.bonus+=1
-            self.pontuacao_update()
+            self.setbonus()
+	    self.pontuacao_update()
             self.altera_barra()
             self.altera_quando_certo()
             self.arruma_pontuacao()
@@ -411,7 +427,8 @@ class quizScreen(FloatLayout):
             self.add_widget(self.im2)
             self.add_widget(self.im1)
    
-	self.qnt_revisao = 0
+        self.Disabled()
+    	self.qnt_revisao = 0
         self.ids.confirmar.text='PRÓXIMA'
 
     def setrevion(self):
