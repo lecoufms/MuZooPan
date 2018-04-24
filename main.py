@@ -81,7 +81,7 @@ class MainApp(App):
     sm = ScreenManager()
     value = NumericProperty()
     sm.transition = FadeTransition()
-    #detector = camera.ZbarQrcodeDetector()
+    detector = camera.ZbarQrcodeDetector()
 
     def __init__(self, **kwargs):
         super(MainApp, self).__init__(**kwargs)
