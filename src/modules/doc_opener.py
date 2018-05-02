@@ -14,7 +14,7 @@ def stripTag(text):
 
 def readDocument(name):
     from docx import Document
-
+    #eu estive aqui
     document = Document(name)
     text = {}
     last_tag = ''
