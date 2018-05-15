@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> e8483d6ab3f7ff442f35f384c19648894864e04a
 #-*- encoding:utf-8 -*-
 from kivy.app import App
 import os, glob,json#, camera
@@ -98,7 +102,22 @@ class MainApp(App):
         return True
 
     def arquivo_pontuacao(self):
+<<<<<<< HEAD
         os.remove(os.path.join(os.path.dirname('__file__'),'files','quiz','tela_final','pontuacao.json'))
+=======
+        try:
+            f = open(os.path.join('files','quiz','tela_final','pontos.json'), 'w')
+            tes=read_json.parseJson('pontuacao',dir=os.path.join('files','quiz','tela_final',''))
+	    print(tes)
+	    pontos=[]
+	    pontos.append(tes)
+	    print(pontos)
+	    f.write(json.dumps(pontos, ensure_ascii=False, indent=2))
+            f.close()
+        except Exception as t:
+            print(t,'b1.1')
+            os.remove(os.path.join(os.path.dirname('__file__'),'files','quiz','tela_final','pontuacao.json'))
+>>>>>>> e8483d6ab3f7ff442f35f384c19648894864e04a
 
 
     def _onBackBtn(self, window, key, *args):
