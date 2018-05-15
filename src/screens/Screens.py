@@ -1,88 +1,3 @@
-<<<<<<< HEAD
-import os, glob
-from kivy.lang import Builder
-from kivy.uix.image import Image
-from kivy.uix.button import Button
-from kivy.uix.widget import Widget
-from kivy.uix.label import Label
-from kivy.uix.carousel import Carousel
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.screenmanager import Screen
-from kivy.graphics import Rectangle, Color
-from kivy.uix.scrollview import ScrollView
-from src.modules import read_json, text_functions
-Builder.load_string("""
-<AnimalScreen>:
-    canvas.before:
-        Color:
-            rgba: 1, 1, 1, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size
-""")
-
-class ScrollableScreen(ScrollView, Screen):
-    """Janela rolável que herda as características de uma janela e um widget rolável.
-       As características genêricas desta janela estão inclusas e descritas no arquivo '.kv'."""
-
-    def __init__(self, **kwargs):
-        super(ScrollableScreen, self).__init__(**kwargs)  # Garante que a herança das características seja feita.
-
-    def _add_widget(self, widget):
-        """Este método insere um widget passado como parâmetro para o BoxLayout dentro desta janela."""
-        self.ids['box'].add_widget(widget)
-
-
-class AnimalScreen(type):
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(MetaSingleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
-
-class jaguatirica(Screen):
-    """Tela que contém as informações de um animal."""
-
-    def __init__(self, **kwargs):
-        super(jaguatirica, self).__init__(**kwargs)
-        self.name = 'jaguatirica'
-        self.__build()
-
-    def __build(self):
-        """Método que constroe a interface da tela do animal."""
-        try:
-            mypath = str('files/animals/' + self.name + '/')  # Diretório base
-            layout = BoxLayout()
-            j_info = read_json.parseJson(self.name, dir=str(mypath + 'info/'))  # Função que formata o Json
-            layout.add_widget(Label(text=j_info['nome do animal']))
-            layout.add_widget(self.__load_images(mypath))
-            layout.add_widget(Label(text=text_functions.parseText(j_info['Reino'])))
-            layout.add_widget(Label(text=j_info['texto'], halign='right', valign='middle'))
-            self.add_widget(layout)
-        except Exception as e:
-            print(e)
-            self.add_widget(Label(text="Não deu"))
-
-    def __load_images(self, mypath):
-        """Método que carrega as imagens e retorna um objeto Carrossel com as imagens encontradas."""
-        carousel = Carousel()
-        for diretorio in glob.glob(os.path.join(mypath, 'images/', '*')):
-            image = Image(source=diretorio)
-            carousel.add_widget(image)
-        return carousel
-
-class piranha(Screen):
-
-    def __init__(self, **kwargs):
-        super(piranha, self).__init__(**kwargs)
-        self.name = 'piranha'
-        btn = Button(text='click')
-        btn.bind(on_press=self.printOn)
-        self.add_widget(btn)
-
-    def printOn(self,instance):
-        print('foi')
-=======
 #-*- coding: utf-8 -*-
 import os, glob,json
 from kivy.lang import Builder
@@ -98,9 +13,12 @@ from kivy.uix.screenmanager import Screen
 from kivy.graphics import Rectangle, Color
 from kivy.uix.scrollview import ScrollView
 from src.modules import read_json, text_functions
-from kivy.properties import StringProperty, NumericProperty
+from kivy.properties import StringProperty, NumericProperty,ObjectProperty
 from kivy.uix.relativelayout import RelativeLayout
 from kivy.utils import get_color_from_hex
+from kivy.core.audio import SoundLoader
+from kivy.uix.slider import Slider
+from kivy.clock import Clock
 
 Builder.load_file("src/kv_files/main.kv")
 Builder.load_file("src/kv_files/scrollv.kv")
@@ -164,15 +82,110 @@ class ScrollableScreen(ScrollView, Screen):
         self.ids['box'].add_widget(widget)
 
 class Animal(FloatLayout):
+    path=os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','animals','sounds'))
+    
+    sound = ObjectProperty(None)
+    position_slider_sound=NumericProperty(0)
+    slider=ObjectProperty(None)
+    sounds= ObjectProperty(None, allownone=True)
+    button=ObjectProperty(None)
+    event=ObjectProperty(None)
+    name = StringProperty('')
+
     habitat = StringProperty('')
     curiosidades = StringProperty('')
     reproducao = StringProperty('')
     caracteristicas = StringProperty('')
+    
     def __init__(self,name='', **kwargs):
         super(Animal, self).__init__(**kwargs)
         if not name:
             return
         self.add_widget(self.load_widgets(name))
+
+    def play(self):
+        if self.sound :
+            if self.sound.state == 'stop':
+                self.sound.play()
+            else:
+                self.sound.stop()
+
+    def up_sound(self,there, name):
+        mypath=os.path.join (self.path, there,'')
+        self.sound=SoundLoader.load(mypath+name+'.wav')
+
+    def altera_tabbed_panel(self, *args):
+    	print(args, '1')
+    	if args != None:
+            if self.sounds != None:
+                self.sounds.stop()
+                self.button.background_normal = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app','icons','play'))+'.png'
+                self.stoop(self.button)
+        
+	
+    
+    def stoop(self,args):
+        print(args)
+        if abs(self.slider.value - self.slider.max) <0.99 or args == self.button:
+            self.sounds=None
+            Clock.unschedule(self.event)
+            self.slider.value=0
+            self.position_slider_sound=0
+            self.button.background_normal = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app','icons','play'))+'.png'
+            if self.sounds == None:
+                print('None')
+            print('merda')
+        else:
+            print('nope')
+
+
+
+    def sounds_change(self,sounds, value): #, instance, value):
+        if value > 0:
+            sounds.seek(value)
+
+    def slider_change(self,dt):
+        print(self.slider.value)
+        if  abs(self.sounds.get_pos()- self.slider.value) < 0.1:
+            if self.position_slider_sound == 0 and self.sounds.state == 'stop':
+                self.slider.value=self.position_slider_sound
+            elif self.position_slider_sound > 0 and self.sounds.state == 'stop':
+                self.slider.value=self.position_slider_sound
+            else:
+                self.slider.value += dt
+        else:
+            print( 'value:',self.slider.value, 'sounds:',self.sounds.get_pos())
+            self.sounds_change(self.sounds,self.slider.value)
+        
+    def up_sounds(self, button, slider,there,name,panel,tabbed_panel):        
+        if self.sounds == None:
+            self.button=button
+            cname=panel.lower()+'_'+name.lower()
+            mypath=os.path.join(self.path, there,'')
+            self.sounds = None
+            self.sounds = SoundLoader.load(mypath+cname+'.mp3')
+            self.sounds.bind(on_stop=self.stoop)
+            self.slider = slider
+            self.slider.max= self.sounds.length
+            self.slider.value = 0
+            tabbed_panel.bind(current_tab=self.altera_tabbed_panel)
+            self.event=Clock.schedule_interval(self.slider_change, 0.1)
+
+    def plays(self):
+        if self.sounds.state == 'stop' and self.position_slider_sound > 0:
+            self.sounds.play()
+            self.sounds.seek(self.position_slider_sound)
+            self.event()
+            self.button.background_normal = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app','icons','pause'))+'.png'
+        elif self.sounds.state == 'stop':
+            self.sounds.play()
+            self.event()
+            self.button.background_normal = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app','icons','pause'))+'.png'
+        elif self.sounds.state == 'play':
+            self.position_slider_sound=self.sounds.get_pos()
+            self.sounds.stop()
+            Clock.unschedule(self.event)
+            self.button.background_normal = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app','icons','play'))+'.png'
 
 
     def load_widgets(self, name, *args):
@@ -181,7 +194,12 @@ class Animal(FloatLayout):
             mypath = str('files/animals/' + name + '/')  # Diretório base
             layout = RelativeLayout()
             j_info = read_json.parseJson(name, dir=str(mypath + 'info/'))  # Função que formata o Json
-            layout.add_widget(Label(text=j_info['nome do animal'], pos_hint={"right": 1, "center_y": .9}))
+            
+            self.name = j_info['nome do animal']
+            #layout.add_widget(Label(text=j_info['nome do animal'], pos_hint={"right": 1, "center_y": .9})) Com problema 
+            
+            self.up_sound('animals',name)
+            
             self.change_text(j_info)
             layout.add_widget(self.__load_images(mypath))
             return layout
@@ -190,6 +208,7 @@ class Animal(FloatLayout):
             return Label(text=" Deu Ruim! ")
     
     def change_text(self,j):
+               
         self.habitat = j['habitat']
         self.curiosidades = j['curiosidades']
         self.reproducao = j['reproducao']
@@ -257,14 +276,21 @@ class PremioScrenn(Screen):
                     self.t_cons = "0"        
 
                 self.questions = j_info_score['total_question']
-		self.score0 = j_info_score['pontos']
+                self.score0 = j_info_score['pontos']
                 self.t_total_porcetagem = (self.questions - 3) * 150 + (3 * 100)
                 self.resultado = (self.score0 * 100)
-		self.resultado = (self.resultado/self.t_total_porcetagem)
+                self.resultado = (self.resultado/self.t_total_porcetagem)
                 self.t_score = self.resultado
-		print(self.resultado)
+                self.sounds('premiacao')
         except Exception as d:
             print(d,'b2')
+
+
+    def sounds(self,name):
+        name='files/app/sounds/'+name+'.wav'
+        som=SoundLoader.load(name)
+        if som and self.questions > 0:
+            som.play()
 
 class MainScreen(Screen):
     """Classe que indica a tela principal. definida no arquivo 'main.kv'."""
@@ -303,18 +329,21 @@ class AnimalScreen(Screen):
         return x
 
 class quizScreen(FloatLayout):
-    """Tela que contém as informações de um animal."""
+    """Tela QuizScreen."""
     list_dir={}
     list_file=[]
     pontos={}
-    total=0
-    falta=0
-    momento= resposta = None
-    im1 = im2 = None
+    total=NumericProperty(0)
+    falta=NumericProperty(0)
+    Obonus=NumericProperty(0)
+    momento= ObjectProperty(None, allownone=True)
+    resposta = ObjectProperty(None, allownone=True)
+    im1 = ObjectProperty(None, allownone=True)
+    im2 = ObjectProperty(None, allownone=True)
     path = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','quiz'))
     path=os.path.join (path,'')
     path2=os.path.join(path,'tela_final','')
-
+    pathIm=StringProperty(os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app', 'icons','bar_0'))+'.png')
     def __init__(self, **kwargs):
         super(quizScreen, self).__init__(**kwargs)
         self.setpontuacao()
@@ -322,7 +351,6 @@ class quizScreen(FloatLayout):
         self.arrumatudo()
 
     def setpontuacao(self):
-        pe=os.path.join(self.path2,'pontuacao.json')
         try:
             if os.path.exists(os.path.join(self.path2,'pontuacao.json')):
                 try:
@@ -330,7 +358,6 @@ class quizScreen(FloatLayout):
                 except Exception as e:
                     print(e)
             else:
-                print(os.path.exists(pe))   
                 self.pontos['pontos']=0
                 self.pontos['acertos']=0
                 self.pontos['revisao']=0
@@ -370,10 +397,6 @@ class quizScreen(FloatLayout):
             self.momento = testete
 
     def arrumatudo(self):
-        from kivy.app import App
-        if self.gettamanho_lista_file() == 0:
-            self.saveN()
-            App.get_running_app()._ScreenFactory("PremioScrenn")
         self.arruma_pontuacao()
         self.ids.quantidade_perguntas.text=str(self.getfalta()) +'/'+ str(self.gettotal())
         self.define_quem_e_o_cara()
@@ -414,15 +437,24 @@ class quizScreen(FloatLayout):
         texto_verificar= '{}'.format( self.press_state.text).lower()
         if (testetete['insira a resposta correta']) == texto_verificar[0:1]:
             return True
+        else:
+            return False
 
     def arruma_pontuacao(self):
         self.ids.label_quantidade_acertos.text=str(self.pontos['acertos'])
         self.ids.label_quantidade_pontos.text=str(self.pontos['pontos'])
 
+    def sounds(self,name):
+        name='files/app/sounds/'+name+'.wav'
+        som=SoundLoader.load(name)
+        if som:
+            som.play()
+
     def altera_quando_certo(self):
         self.press_state.state='normal'
         self.press_state.background_color = get_color_from_hex('#0cff00')
-        self.im1 = Image(id='im1',source = 'files/quiz/image/correct.png',pos=(self.press_state.x/6,self.press_state.y-7), size_hint=(0.1,0.1))
+        self.im1 = Image(id='im1',source = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app', 'icons','correct'))+'.png',pos=(self.press_state.x/6,self.press_state.y-7), size_hint=(0.1,0.1))
+        self.sounds('correct')
     
     def alternativa_correct(self):
         testetete=self.list_dir[self.momento]
@@ -432,16 +464,21 @@ class quizScreen(FloatLayout):
                return val
         
     def altera_quando_errado(self):
-        self.im2 = Image(id='im2',source='files/quiz/image/incorrect.png', pos=(self.press_state.x / 6, self.press_state.y-7), size_hint=(0.1,0.1))
+        self.im2 = Image(id='im2',source=os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app', 'icons','incorrect'))+'.png', pos=(self.press_state.x / 6, self.press_state.y-7), size_hint=(0.1,0.1))
         self.press_state.state='normal'
         self.press_state.background_color = get_color_from_hex('#fe0a00')
         self.resposta=self.alternativa_correct()
         self.resposta.state='normal'
-        self.im1=Image(id='im1',source = 'files/quiz/image/correct.png',pos=(self.resposta.x/6,self.resposta.y-7), size_hint=(0.1,0.1))
+        self.im1=Image(id='im1',source = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app', 'icons','correct'))+'.png',pos=(self.resposta.x/6,self.resposta.y-7), size_hint=(0.1,0.1))
         self.resposta.background_color = get_color_from_hex('#0cff00')
+        self.sounds('incorrect')
 
-    #criar funcao gerenciar arquivo
-           
+    def tela_premio(self):
+        from kivy.app import App
+        self.saveN()
+        App.get_running_app()._ScreenFactory("PremioScrenn")
+
+
     def controler_proximo(self,teste):
         self.remove_widget(self.im1)
         self.im1 = None
@@ -449,6 +486,9 @@ class quizScreen(FloatLayout):
             self.remove_widget(self.im2)
             self.resposta.background_color = get_color_from_hex('#fffeff')
             self.im2 = None
+        if self.gettamanho_lista_file() == 0:
+            self.tela_premio()
+        self.Disabled()
         teste.background_color = get_color_from_hex('#fffeff')
         teste.state='normal'
         self.ids.confirmar.text='CONFIRMAR'
@@ -464,12 +504,13 @@ class quizScreen(FloatLayout):
             st=te[:-5]+'1.png'
         elif self.bonus == 2:
             st=te[:-5]+'2.png'
-        elif self.bonus >= 3:
+        elif self.bonus == 3:
             st=te[:-5]+'3.png'
+        elif self.bonus > 3:
+            st=te[:-5]+'4.png'
         self.ids.image_quantidade_acertos.source = str(st)
 
-    def pontuacao_update(self): #setar na variaveis em kivy valor inicial qndo necessario
-        #t revisao b bonus p pontos
+    def pontuacao_update(self): 
         p=100
         if self.qnt_revisao > 0:
             while p > 0 and self.qnt_revisao > 0:
@@ -477,14 +518,26 @@ class quizScreen(FloatLayout):
                 self.qnt_revisao=self.qnt_revisao-1
         if self.bonus >= 4:
             p+=50
-        self.pontos['bonus'] = self.bonus
+        self.pontos['bonus'] = self.Obonus
         self.pontos['pontos'] += p
         self.pontos['acertos'] += 1
+
+
+    def Disabled(self):
+        self.ids.button1.disabled= not self.ids.button1.disabled
+        self.ids.button2.disabled=not self.ids.button2.disabled
+        self.ids.button3.disabled=not self.ids.button3.disabled
+        self.ids.button4.disabled=not self.ids.button4.disabled
+
+    def setbonus(self):
+        if self.bonus >= 3:
+            self.Obonus+=1
 
     def controler_confirmar(self):
         if self.verifica_resposta():
             self.bonus+=1
-            self.pontuacao_update()
+            self.setbonus()
+    	    self.pontuacao_update()
             self.altera_barra()
             self.altera_quando_certo()
             self.arruma_pontuacao()
@@ -495,8 +548,10 @@ class quizScreen(FloatLayout):
             self.altera_quando_errado()
             self.add_widget(self.im2)
             self.add_widget(self.im1)
+            print('ok')
    
-	self.qnt_revisao = 0
+        self.Disabled()
+    	self.qnt_revisao = 0
         self.ids.confirmar.text='PRÓXIMA'
 
     def setrevion(self):
@@ -553,4 +608,3 @@ class About(Screen):
         except Exception as d:
             print(d, 'b9')
   
->>>>>>> origin/development
