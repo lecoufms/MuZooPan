@@ -1,9 +1,10 @@
+#-*-coding: utf-8-*-
 #:import hex kivy.utils.get_color_from_hex
 
 <Label>
     font_size: '20dp'
     halign: 'justify'
-    #font_name: 'SF_Slapstick_Comic_Shaded'
+    font_name: u'MontserratMedium.ttf'
 
 <ToggleButton>:
     background_color: hex('#fffeff') if self.state=='normal' else (156,219,231, 0.6)
@@ -12,16 +13,18 @@
     color: hex('#000000')
     text_size: self.width,None
     height: self.texture_size[1]
-    padding: 20,20
+    padding: 20,20    
+    background_disabled_down: ''
+    background_disabled_normal: ''
+    disabled_color: 0,0,0,1
 
 <quizScreen>:
     press_state:
     qnt_revisao:0
     bonus:0
-    tes: 0 if self.ids.label_acertos.font_size == 15.0 else (self.ids.label_acertos.font_size-15.0)/6*0.1
     canvas.before:
         Color:
-            rgb: hex('#0088b7') 
+            rgb: hex('#0088b7') # ou este 0, 210, 267, 0
         Rectangle:
             pos: self.pos
             size: self.size
@@ -68,7 +71,7 @@
     Image:
         id: image_quantidade_acertos
         pos_hint:  {'center_x':0.82,'top':.95}    
-        source: 'files/quiz/image/bar_0.png'
+        source: root.pathIm
         size_hint: 0.17,0.1
         text:''
 
@@ -82,7 +85,7 @@
             Rectangle:
                 size: self.size
                 pos: self.pos
-        text: '' #texto justificaddo ok
+        text: '?' #texto justificaddo ok
         color: hex('#000000')
         text_size: self.width,None
         height: self.texture_size[1]
@@ -99,30 +102,34 @@
         text:''
 
         ToggleButton:
+            disabled: False
             id: button1
             group: "tess"
-            text: 'teste'
+            text: 'A)'
             on_press: root.press_state= self
             on_release: root.ids.confirmar.disabled=False
 
         ToggleButton:
+            disabled: False
             id: button2
             group: "tess"
-            text: ''
+            text: 'B)'
             on_press: root.press_state= self
             on_release: root.ids.confirmar.disabled=False
         
         ToggleButton:
+            disabled: False
             id: button3
             group: "tess"
-            text: ''
+            text: 'C)'
             on_press: root.press_state= self
             on_release: root.ids.confirmar.disabled=False
 
         ToggleButton:
+            disabled: False
             id: button4
             group: "tess"
-            text: ''     
+            text: 'D)'     
             on_press: root.press_state= self
             on_release: root.ids.confirmar.disabled=False
 
@@ -132,8 +139,9 @@
         size_hint: .2,None
         text: 'REVISAR' #texto justificaddo nope
         halign: 'center'
-        background_color:(1,1,1,0.1)
-        background_normal: 'img2.jpg'
+        background_color:(1,1,1,0)
+        background_normal: ''
+        background_down: 'img2.jpg'
         border: (2, 2, 2, 2)
         color: hex('#ffff00')
         on_press: root.qnt_revisao += 1
@@ -144,12 +152,18 @@
         pos_hint:  {'center_x':.83,'center_y':.09}    
         size_hint: .19,None
         text: 'CONFIRMAR' #texto justificaddo ok
-        background_color:(1,1,1,0.1)
-        background_normal: 'img2.jpg'
+        background_color:(1,1,1,0)
+        background_normal: ''
+        background_down: ''
         border: (2, 2, 2, 2)
         color: hex('#737373') if self.disabled==True else hex('#00b300')
         disabled:True
+        background_disabled_normal:''
         on_press: root.controler_confirmar() if self.text=='CONFIRMAR' else root.controler_proximo(root.press_state)
+        background_disabled_down: ''
+        background_disabled_normal: ''
+        disabled_color: .3,.3,.3,.5
+
     
     Label:
         pos_hint:  {'center_x':.5,'center_y':.09}    
