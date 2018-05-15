@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #:import hex kivy.utils.get_color_from_hex
 <mainScreen>:
     canvas.before:
@@ -45,53 +45,3 @@
         color: hex('#ffff00')
         text_size: self.width,None
         height: self.texture_size[1]
-=======
-
-#:import hex kivy.utils.get_color_from_hex
-<mainScreen>:
-    canvas.before:
-        Color:
-            rgba: 0, 136, 183, .4
-        Rectangle:
-            pos: self.pos
-            size: self.size
-
-    Image:
-        pos_hint: {'top':1.35, 'center_x':.5}
-        source: 'files/app/icons/muzoopan.png'
-        size: (300,300)
-        center_x: self.parent.center_x
-        center_y: self.parent.center_y
-        allow_stretch: True
-    MyButton:
-        on_release: App.detector.start()
-        size_hint: (.5,.35)
-        pos_hint: {'top':.65, 'center_x':.5}
-        background_color: [.46,1.39,.87,.8]
-        source: 'files/app/icons/cam.png'
-        center_x: self.parent.center_x
-        center_y: self.parent.center_y
-        allow_stretch: True
-    MyButton:
-        on_release: app._ScreenFactory('About')
-        size_hint: (.3,.25)
-        pos_hint: {'top':.35, 'center_x':.5}
-        background_color: [.46,1.39,.87,.8]
-        source: 'files/app/icons/about.png'
-        center_x: self.parent.center_x
-        center_y: self.parent.center_y
-        allow_stretch: True
-    Button:
-        on_release: app._ScreenFactory('QuizScreen2')
-        pos_hint:  {'center_x':.5,'top':.1}    
-        size_hint: .2,None
-        text: 'Quiz ' #texto justificaddo nope
-        halign: 'center'
-        background_color:(1,1,1,0.1)
-        background_normal: 'img2.jpg'
-        border: (2, 2, 2, 2)
-        color: hex('#ffff00')
-        text_size: self.width,None
-        height: self.texture_size[1]
-
->>>>>>> e8483d6ab3f7ff442f35f384c19648894864e04a
