@@ -1,7 +1,7 @@
 
 #-*- encoding:utf-8 -*-
 from kivy.app import App
-import os, glob,json, camera
+import os, glob,json#, camera
 from kivy.lang import Builder
 from kivy.logger import Logger
 from src.screens import Screens
@@ -82,7 +82,7 @@ class MainApp(App):
     sm = ScreenManager()
     value = NumericProperty()
     sm.transition = FadeTransition()
-    detector = camera.ZbarQrcodeDetector()
+    #detector = camera.ZbarQrcodeDetector()
 
     def __init__(self, **kwargs):
         super(MainApp, self).__init__(**kwargs)
@@ -105,8 +105,15 @@ class MainApp(App):
         if key == 27:
             try:
                 #TODO
-                if self.sm.current == "quizScreen":
+                if self.sm.current == "QuizScreen2":
                     return True
+                if self.sm.current == "AnimalScreen" and self.lastScreen:
+                    self.sm.current = "QuizScreen2"
+                    return True;
+
+                if self.sm.current == "PremioScrenn":
+                    self.sm.current = "About"
+                    return False;
 
                 if self.sm.current != 'MainScreen':
                     self.sm.current = 'MainScreen'
@@ -121,7 +128,12 @@ class MainApp(App):
         return False
 
     #TODO?
-    def _ScreenFactory(self, name, animal=''):
+    def _ScreenFactory(self, name, animal='',**kwargs):
+        try:
+            if kwargs['vimDoQuiz']:
+                self.lastScreen = True
+        except:
+            self.lastScreen = False
         _class = str('Factory.'+name)
         if animal:
             _class = eval(_class)(animal)
