@@ -1,7 +1,7 @@
 
 #-*- encoding:utf-8 -*-
 from kivy.app import App
-import os, glob,json#, camera
+import os, glob,json, camera
 from kivy.lang import Builder
 from kivy.logger import Logger
 from src.screens import Screens
@@ -82,7 +82,7 @@ class MainApp(App):
     sm = ScreenManager()
     value = NumericProperty()
     sm.transition = FadeTransition()
-    #detector = camera.ZbarQrcodeDetector()
+    detector = camera.ZbarQrcodeDetector()
 
     def __init__(self, **kwargs):
         super(MainApp, self).__init__(**kwargs)
