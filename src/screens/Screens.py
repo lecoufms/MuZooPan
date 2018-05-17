@@ -425,7 +425,6 @@ class quizScreen(FloatLayout):
             testew = dict(pontos=self.pontos['pontos'], acertos=self.pontos['acertos'], revisao=self.pontos['revisao'], bonus=self.pontos['bonus'], total_question=self.pontos['total_question'])
             tes = []
             tes.append(testew)
-	    print(tes)
             f.write(json.dumps(tes, ensure_ascii=False, indent=2))
             f.close()
         except Exception as t:
@@ -550,16 +549,15 @@ class quizScreen(FloatLayout):
             print('ok')
 
         self.Disabled()
-    	self.qnt_revisao = 0
+        self.qnt_revisao = 0
         self.ids.confirmar.text='PRÓXIMA'
 
     def setrevion(self):
         from kivy.app import App
         try:
             self.pontos['revisao']+=1
-	    self.saveN()
-	    self.setpontuacao()
-            print(self.momento, 'rere', self.pontos['revisao'])
+            self.saveN()
+            self.setpontuacao()
             App.get_running_app()._ScreenFactory("AnimalScreen",self.momento,vimDoQuiz=True)
         except Exception as t:
             print(t,'b8')
