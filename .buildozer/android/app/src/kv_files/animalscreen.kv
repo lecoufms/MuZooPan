@@ -1,0 +1,164 @@
+#-*- coding: utf-8 -*-
+#:import hex kivy.utils.get_color_from_hex
+<Animal>:
+    canvas.before:
+        Color:
+            rgba: hex('#0088b7') # ou este 0, 210, 267, 0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        id: nome
+        text: root.name
+        pos_hint:{"center_x": .5, "center_y": .9}
+    Button:
+        id: sound
+        on_press: root.play()
+        pos_hint:{"center_x": .94, "center_y": .9}
+        background_normal:'files/app/icons/play.png'
+        size_hint: 0.08,0.09
+
+    TabbedPanel:
+        id:tabbed_panel
+        size_hint: .955, .5
+        pos_hint: {'center_x': .5, 'center_y': .3}
+        tab_width: self.parent.width / 4
+        do_default_tab: False
+
+        TabbedPanelItem:
+            id: panel_1
+            text: 'HABITAT'
+            GridLayout:
+                cols:2
+                Label:
+                    id: text_panel_1
+                    text: root.habitat
+                    size_hint: .9,root.ids.panel_1.height
+                    text_size:self.width, None
+                    height: self.texture_size[1]
+                BoxLayout:
+                    id: box1
+                    size_hint: .1,root.ids.panel_1.height
+                    orientation:'vertical'
+                    pos_hint:{'center_x': .99, 'center_y': .9}
+                    Button:
+                        id:button1
+                        on_press: root.up_sounds(self, root.ids.bar1,'text_song',root.ids.nome.text,root.ids.panel_1.text, root.ids.tabbed_panel)
+                        on_release:root.plays()
+                        background_normal:'files/app/icons/play.png'
+                        size_hint: .8,.2
+                        pos_hint:{'center_x': .56}
+                    Slider:
+                        id:bar1
+                        min:0
+                        max:100
+                        value:0
+                        step:0.01
+                        pos_hint:{'center_x': .5}
+                        size_hint:(0.1, 0.95)
+                        orientation:'vertical'
+                
+        TabbedPanelItem:
+            id: panel_2
+            text: 'REPRODUCAO'
+            GridLayout:
+                cols:2
+                Label:
+                    id: text_panel_2
+                    text: root.reproducao
+                    size_hint: .9,root.ids.panel_2.height
+                    text_size:self.width, None
+                    height: self.texture_size[1]
+                BoxLayout:
+                    id: box2
+                    size_hint: .1,root.ids.panel_2.height
+                    orientation:'vertical'
+                    pos_hint:{'center_x': .99, 'center_y': .9}
+                    Button:
+                        on_press:root.up_sounds(self, root.ids.bar2,'text_song',root.ids.nome.text,root.ids.panel_2.text, root.ids.tabbed_panel)
+                        on_release:root.plays()
+                        background_normal:'files/app/icons/play.png'
+                        size_hint: .8,.2
+                        pos_hint:{'center_x': .56}
+                    Slider:
+                        id:bar2
+                        min:0
+                        max:100
+                        value:0
+                        step:0.01
+                        pos_hint:{'center_x': .5}
+                        size_hint:(0.1, 0.95)
+                        orientation:'vertical'
+        TabbedPanelItem:
+            id: panel_3
+            text: 'CARACTERISTICAS'
+            GridLayout:
+                cols:2
+                Label:
+                    id: text_panel_3
+                    text: root.caracteristicas
+                    size_hint: .9,root.ids.panel_3.height
+                    text_size:self.width, None
+                    height: self.texture_size[1]
+                BoxLayout:
+                    id: box3
+                    size_hint: .1,root.ids.panel_3.height
+                    orientation:'vertical'
+                    pos_hint:{'center_x': .99, 'center_y': .9}
+                    Button:
+                        on_press:root.up_sounds(self, root.ids.bar3,'text_song',root.ids.nome.text,root.ids.panel_3.text, root.ids.tabbed_panel)
+                        on_release:root.plays()
+                        background_normal:'files/app/icons/play.png'
+                        size_hint: .8,.2
+                        pos_hint:{'center_x': .56}
+                    Slider:
+                        id:bar3
+                        min:0
+                        max:100
+                        value:0
+                        pos_hint:{'center_x': .5}
+                        step:0.01
+                        size_hint:(0.1, 0.95)
+                        orientation:'vertical'
+        TabbedPanelItem:
+            id: panel_4
+            text: 'CURIOSIDADES'
+            GridLayout:
+                cols:2
+                Label:
+                    id: text_panel_4
+                    text: root.curiosidades
+                    size_hint: .9,root.ids.panel_4.height
+                    text_size:self.width, None
+                    height: self.texture_size[1]
+                BoxLayout:
+                    id: box1
+                    size_hint: .1,root.ids.panel_4.height
+                    orientation:'vertical'
+                    pos_hint:{'center_x': .99, 'center_y': .9}
+                    Button:
+                        on_press:root.up_sounds(self, root.ids.bar4,'text_song',root.ids.nome.text,root.ids.panel_4.text, root.ids.tabbed_panel)
+                        on_release:root.plays() 
+                        on_release:
+                        background_normal:'files/app/icons/play.png'
+                        size_hint: .8,.2
+                        pos_hint:{'center_x': .56}
+                    Slider:
+                        id:bar4
+                        min:0
+                        max:100
+                        value:0
+                        step:0.01
+                        pos_hint:{'center_x': .5}
+                        size_hint:(0.1, 0.95)
+                        orientation:'vertical'
+
+<ErrorLabel>:
+    canvas.before:
+        Color:
+            rgba: 0, 136, 183, .4
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text: "Este animal não está em seu roteiro! \\nVolte ao menu e continue o tour."

@@ -68,7 +68,7 @@ def menu_decorator(func):
         return nvdrawer
 
     return wrapper
-    
+
 class ScrollableScreen(ScrollView, Screen):
     """Janela rolável que herda as características de uma janela e um widget rolável.
        As características genêricas desta janela estão inclusas e descritas no arquivo '.kv'."""
@@ -82,7 +82,7 @@ class ScrollableScreen(ScrollView, Screen):
 
 class Animal(FloatLayout):
     path=os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','animals','sounds'))
-    
+
     sound = ObjectProperty(None)
     position_slider_sound=NumericProperty(0)
     slider=ObjectProperty(None)
@@ -95,7 +95,7 @@ class Animal(FloatLayout):
     curiosidades = StringProperty('')
     reproducao = StringProperty('')
     caracteristicas = StringProperty('')
-    
+
     def __init__(self,name='', **kwargs):
         super(Animal, self).__init__(**kwargs)
         if not name:
@@ -120,9 +120,9 @@ class Animal(FloatLayout):
                 self.sounds.stop()
                 self.button.background_normal = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app','icons','play'))+'.png'
                 self.stoop(self.button)
-        
-	
-    
+
+
+
     def stoop(self,args):
         print(args)
         if abs(self.slider.value - self.slider.max) <0.99 or args == self.button:
@@ -155,8 +155,8 @@ class Animal(FloatLayout):
         else:
             print( 'value:',self.slider.value, 'sounds:',self.sounds.get_pos())
             self.sounds_change(self.sounds,self.slider.value)
-        
-    def up_sounds(self, button, slider,there,name,panel,tabbed_panel):        
+
+    def up_sounds(self, button, slider,there,name,panel,tabbed_panel):
         if self.sounds == None:
             self.button=button
             cname=panel.lower()+'_'+name.lower()
@@ -193,21 +193,21 @@ class Animal(FloatLayout):
             mypath = str('files/animals/' + name + '/')  # Diretório base
             layout = RelativeLayout()
             j_info = read_json.parseJson(name, dir=str(mypath + 'info/'))  # Função que formata o Json
-            
+
             self.name = j_info['nome do animal']
-            #layout.add_widget(Label(text=j_info['nome do animal'], pos_hint={"right": 1, "center_y": .9})) Com problema 
-            
+            #layout.add_widget(Label(text=j_info['nome do animal'], pos_hint={"right": 1, "center_y": .9})) Com problema
+
             self.up_sound('animals',name)
-            
+
             self.change_text(j_info)
             layout.add_widget(self.__load_images(mypath))
             return layout
         except Exception as e:
             print(e,'b1')
             return Label(text=" Deu Ruim! ")
-    
+
     def change_text(self,j):
-               
+
         self.habitat = j['habitat']
         self.curiosidades = j['curiosidades']
         self.reproducao = j['reproducao']
@@ -229,12 +229,12 @@ class ErrorLabel(FloatLayout ):
 
 class mainScreen(FloatLayout):
     pass
-        
+
 
 class PremioScrenn(Screen):
 
-    t_score = NumericProperty(.2) 
-    t_score2 = StringProperty()    
+    t_score = NumericProperty(.2)
+    t_score2 = StringProperty()
     t_correct = StringProperty()
     t_bonus = StringProperty()
     t_cons = StringProperty()
@@ -272,7 +272,7 @@ class PremioScrenn(Screen):
                 if (j_info_score['revisao'] != 0):
                     self.t_cons = str(j_info_score['revisao'])
                 else:
-                    self.t_cons = "0"        
+                    self.t_cons = "0"
 
                 self.questions = j_info_score['total_question']
                 self.score0 = j_info_score['pontos']
@@ -371,7 +371,7 @@ class quizScreen(FloatLayout):
             if not el.endswith(".json"):
                 self.list_file.pop(i)
         self.list_file = [el.replace(".json","") for el in self.list_file]
-    
+
     def load_file(self):
         try:
             self.list_file= [f for f in os.listdir(self.path) if os.path.isfile(os.path.join(self.path, f))]
@@ -454,14 +454,14 @@ class quizScreen(FloatLayout):
         self.press_state.background_color = get_color_from_hex('#0cff00')
         self.im1 = Image(id='im1',source = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app', 'icons','correct'))+'.png',pos=(self.press_state.x/6,self.press_state.y-7), size_hint=(0.1,0.1))
         self.sounds('correct')
-    
+
     def alternativa_correct(self):
         testetete=self.list_dir[self.momento]
         for key, val in self.ids.items():
             te='{}'.format( val.text).lower()
             if te[0:1] == testetete['insira a resposta correta']:
                return val
-        
+
     def altera_quando_errado(self):
         self.im2 = Image(id='im2',source=os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app', 'icons','incorrect'))+'.png', pos=(self.press_state.x / 6, self.press_state.y-7), size_hint=(0.1,0.1))
         self.press_state.state='normal'
@@ -509,7 +509,7 @@ class quizScreen(FloatLayout):
             st=te[:-5]+'4.gif'
         self.ids.image_quantidade_acertos.source = str(st)
 
-    def pontuacao_update(self): 
+    def pontuacao_update(self):
         p=100
         if self.qnt_revisao > 0:
             while p > 0 and self.qnt_revisao > 0:
@@ -548,7 +548,7 @@ class quizScreen(FloatLayout):
             self.add_widget(self.im2)
             self.add_widget(self.im1)
             print('ok')
-   
+
         self.Disabled()
     	self.qnt_revisao = 0
         self.ids.confirmar.text='PRÓXIMA'
@@ -560,7 +560,7 @@ class quizScreen(FloatLayout):
 	    self.saveN()
 	    self.setpontuacao()
             print(self.momento, 'rere', self.pontos['revisao'])
-            App.get_running_app()._ScreenFactory("AnimalScreen",self.momento)
+            App.get_running_app()._ScreenFactory("AnimalScreen",self.momento,vimDoQuiz=True)
         except Exception as t:
             print(t,'b8')
 
@@ -577,7 +577,7 @@ class QuizScreen2(Screen):
     def build(self, widget):
         return widget
 
-            
+
     @staticmethod
     def getKvMarkup():
         x = ""
@@ -603,7 +603,6 @@ class About(Screen):
             self.text_cabecalho = str(j_info_about['cabecalho'].encode("utf-8"))
             self.text_funciona = str(j_info_about['quiz'].encode("utf-8"))
             self.text_quem = str(j_info_about['quem'].encode("utf-8"))
-            
+
         except Exception as d:
             print(d, 'b9')
-  
