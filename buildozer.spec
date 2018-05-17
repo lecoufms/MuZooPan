@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = MyQuiz
+title = MuZooPan
 
 # (str) Package name
-package.name = myquiz
+package.name = muzoopan
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.ufms.leco.br
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -82,7 +82,7 @@ fullscreen = 0
 # red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
 # darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
 # olive, purple, silver, teal.
-#android.presplash_color = #FFFFFF
+android.presplash_color = #28A09F
 
 # (list) Permissions
 android.permissions = INTERNET, CAMERA
@@ -134,7 +134,7 @@ android.permissions = INTERNET, CAMERA
 # since extra jars can slow down the build process. Allows wildcards matching,
 # for example: OUYA-ODK/libs/*.jar
 #android.add_jars = foo.jar;bar.jar;path/to/more/*.jar
-#android.add_jars = libs/android/zbar.jar
+android.add_jars = libs/android/zbar.jar
 
 
 # (list) List of Java files to add to the android project (can be java or a
@@ -163,7 +163,7 @@ android.permissions = INTERNET, CAMERA
 #android.manifest.intent_filters =
 
 # (list) Android additionnal libraries to copy into libs/armeabi
-#android.add_libs_armeabi = libs/android/*.so
+android.add_libs_armeabi = libs/android/*.so
 #android.add_libs_armeabi_v7a = libs/android-v7/*.so
 #android.add_libs_x86 = libs/android-x86/*.so
 #android.add_libs_mips = libs/android-mips/*.so
@@ -205,7 +205,7 @@ android.arch = armeabi-v7a
 # p4a.bootstrap = sdl2
 
 # (list) Android additionnal libraries to copy into libs/armeabi
-#android.add_libs_armeabi = libs/android/*.so
+android.add_libs_armeabi = libs/android/*.so
 
 
 #
