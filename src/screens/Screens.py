@@ -173,7 +173,7 @@ class Animal(FloatLayout):
     def plays(self):
         if self.sounds.state == 'stop' and self.position_slider_sound > 0:
             self.sounds.play()
-            self.sounds.seek(self.position_slider_sound)
+            self.sounds_change(self.sounds,self.position_slider_sound)
             self.event()
             self.button.background_normal = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app','icons','pause'))+'.png'
         elif self.sounds.state == 'stop':
@@ -505,7 +505,7 @@ class quizScreen(FloatLayout):
             st=te[:-5]+'2.png'
         elif self.bonus == 3:
             st=te[:-5]+'3.png'
-        elif self.bonus > 3:
+        if self.bonus >= 3:
             st=te[:-5]+'4.gif'
         self.ids.image_quantidade_acertos.source = str(st)
 
@@ -535,9 +535,9 @@ class quizScreen(FloatLayout):
     def controler_confirmar(self):
         if self.verifica_resposta():
             self.bonus+=1
-            self.setbonus()
-    	    self.pontuacao_update()
             self.altera_barra()
+            self.setbonus()
+            self.pontuacao_update()
             self.altera_quando_certo()
             self.arruma_pontuacao()
             self.add_widget(self.im1)

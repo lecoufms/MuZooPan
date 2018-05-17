@@ -1,19 +1,12 @@
 #-*- encoding:utf-8 -*-
-import json  # , camera
-import os
-
 from kivy.app import App
-<<<<<<< HEAD
 from kivy.config import ConfigParser
 from kivy.core.window import Window
-from kivy.event import EventDispatcher
-=======
-import os, glob,json#, camera
+import os, glob#, camera
 from kivy.lang import Builder
 from kivy.logger import Logger
 from src.screens import Screens
 from kivy.uix.label import Label
->>>>>>> 4404392cad5ccb47e67131a4e99cabd1a13089ac
 from kivy.factory import Factory
 from kivy.logger import Logger
 from kivy.properties import NumericProperty, StringProperty
@@ -91,7 +84,6 @@ class MainApp(App):
     sm = ScreenManager()
     value = NumericProperty()
     sm.transition = FadeTransition()
-<<<<<<< HEAD
     caminho = os.path.realpath(os.path.join(os.path.dirname('__ file__'), 'fonts', 'MontserratBold'))+'.ttf'
     fonts_path = {"font_txt": caminho, "font_titulo": os.path.realpath(os.path.join(os.path.dirname('__ file__'), 'fonts', 'ComicaBDBold'))+'.ttf'}
     config_bg = Label()
@@ -99,10 +91,7 @@ class MainApp(App):
     config_volume = Label()
     config_bg.text=config.get("AppConfig","bg_color")
     config_font_size.text = config.get("AppConfig","font_size")
-    config_volume.text = config.get("AppConfig","volume")    
-
-=======
->>>>>>> 4404392cad5ccb47e67131a4e99cabd1a13089ac
+    config_volume.text = config.get("AppConfig","volume")
     #detector = camera.ZbarQrcodeDetector()
 
     def __init__(self, **kwargs):
