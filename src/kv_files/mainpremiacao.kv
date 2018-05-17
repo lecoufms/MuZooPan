@@ -5,7 +5,7 @@
      
     canvas.before:
         Color:
-            rgb: hex('#0088b7')  
+            rgb: hex(app.config_bg.text)  
         Rectangle:
             pos: self.pos
             size: self.size
@@ -51,8 +51,8 @@
     FloatLayout: #Informações do lado direito superior
         Label:
             pos_hint: {'center_x': 0.9, 'top': .86}
-            font_name: 'MontserratBold.ttf'
-            font_size: '22sp'
+            font_name: str(app.fonts_path['font_txt'])
+            font_size: int(app.config_font_size.text)
             text: (('Excelente! \nSua pontuação foi perfeita! \nVocê acertou ' + root.t_correct + '\nperguntas e fez \n' +  str(root.t_score) + ' pontos') if root.t_score == 100 else (('Ótimo, \nvocê foi incrivel.  \nVocê acertou ' + str(root.t_correct) + '\nperguntas e fez \n' + str(root.t_score2) + ' pontos') if root.t_score < 100 and root.t_score >= 64.4 else( ('Muito bom! \nVocê ganhou \nmedalha de prata! \nVocê acertou ' + root.t_correct + '\nperguntas e fez ' + str(root.t_score2) + ' pontos') if root.t_score < 64.4 and root.t_score >=28.8 else ('Que legal! \nVocê ganhou \nmedalha de bronze! \nVocê acertou ' + str(root.t_correct) + '\nperguntas e fez \n' + str(root.t_score2) + ' pontos') ) ) )
             haling: 'center'
             markup: True
@@ -65,28 +65,29 @@
             background_color: hex('#0088b7')
             text: '[color=00FF00]SAIR[/color]'
             markup: True
-            font_name: 'teste.ttf'
+            font_name: str(app.fonts_path['font_titulo'])
+            font_size: int(app.config_font_size.text)
             on_press: app.arquivo_pontuacao()
             on_release: exit()
 
     FloatLayout:
         Label:
             pos_hint: {'center_x': 0.5, 'top': 0.5}
-            font_name: 'MontserratBold.ttf'
-            font_size: '25sp'
+            font_name: str(app.fonts_path['font_txt'])
+            font_size: int(app.config_font_size.text)
             text: 'Pontos: ' + root.t_score2
         Label:
             pos_hint: {'center_x': 0.5, 'top': 0.4}
-            font_name: 'MontserratBold.ttf'
-            font_size: '25sp'
+            font_name: str(app.fonts_path['font_txt'])
+            font_size: int(app.config_font_size.text)
             text: 'Acertos: ' + root.t_correct
         Label:
             pos_hint: {'center_x': 0.5, 'top': 0.3}
-            font_name: 'MontserratBold.ttf'
-            font_size: '25sp'
+            font_name: str(app.fonts_path['font_txt'])
+            font_size: int(app.config_font_size.text)
             text: 'Bônus: ' + root.t_bonus
         Label:
             pos_hint: {'center_x': 0.5, 'top': 0.2}
-            font_name: 'MontserratBold.ttf'
-            font_size: '25sp'
+            font_name: str(app.fonts_path['font_txt'])
+            font_size: int(app.config_font_size.text)
             text: 'Revisões: ' + root.t_cons

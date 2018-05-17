@@ -28,46 +28,45 @@ Builder.load_file("src/kv_files/mainpremiacao.kv")
 Builder.load_file("src/kv_files/sobre.kv")
 
 def menu_decorator(func):
-    def wrapper(instance, main_panel,*args):
-        from kivy.uix.widget import Widget
-        from kivy.metrics import dp
-        from kivy.base import runTouchApp
+    def wrapper(instance, main_panel, *args):
         from kivy.uix.boxlayout import BoxLayout
         from kivy.uix.label import Label
         from kivy.uix.button import Button
         from kivy.uix.popup import Popup
-        from kivy.uix.image import Image
-        from kivy.core.window import Window
-        from functools import partial
-        from kivy.app import App
         from src.modules.navigationdrawer import NavigationDrawer
+        from kivy.app import App
+        from functools import partial
+        from kivy.uix.switch import Switch
         nvdrawer = NavigationDrawer()
-        side_panel = BoxLayout(orientation='vertical')
-        side_panel.add_widget(Label(text='Panel label'))
-        popup = Popup(title='Sidebar popup',
-                      content=Label(
-                          text='You clicked the sidebar\npopup button'),
-                      size_hint=(0.7, 0.7))
-        first_button = Button(text='Popup\nbutton')
-        first_button.bind(on_release=popup.open)
-        side_panel.add_widget(first_button)
+        side_panel = BoxLayout(orientation='vertical',padding=6)
+        side_panel.add_widget(Label(text='Opções',font_size=30,font_name= App.get_running_app().fonts_path['font_titulo']))
+
         grid = GridLayout(cols=2)
         btnPlus = Button(text="A+")
-        #btnPlus.bind(on_release=partial(App.get_running_app().on_config_change, App.get_running_app().settings_cls,"font_size","font_size", App.get_running_app().value))
+        btnPlus.bind(on_release=partial(App.get_running_app().font_callback,5))
         btnLess = Button(text="A-")
-        #btnLess.bind(on_release=partial(App.get_running_app().on_config_change, App.get_running_app().settings_cls,"font_size","font_size", App.get_running_app().value))
+        btnLess.bind(on_release=partial(App.get_running_app().font_callback,-5))
         grid.add_widget(btnPlus)
         grid.add_widget(btnLess)
         side_panel.add_widget(grid)
+
+        gridAltocontraste = GridLayout(cols=2)
+        gridAltocontraste.add_widget(Label(text="Alto Contraste: "))
+        switchContraste = Switch(active=False)
+        switchContraste.bind(active=App.get_running_app().bg_color_callback)
+        gridAltocontraste.add_widget(switchContraste)
+        side_panel.add_widget(gridAltocontraste)
+
         nvdrawer.add_widget(side_panel)
-        img = Button(size_hint=(.5,.07),pos_hint={"right":.1,"center_y":.97})
-        img.background_color=(1, 12, 14, 1)
+        img = Button(size_hint=(.5, .07), pos_hint={"right": .1, "center_y": .97})
+        img.background_color = (1, 12, 14, 1)
         img.bind(on_press=nvdrawer.toggle_state)
         main_panel.add_widget(img)
         nvdrawer.add_widget(main_panel)
         nvdrawer.anim_type = "slide_above_anim"
 
         return nvdrawer
+
     return wrapper
     
 class ScrollableScreen(ScrollView, Screen):
@@ -507,7 +506,7 @@ class quizScreen(FloatLayout):
         elif self.bonus == 3:
             st=te[:-5]+'3.png'
         elif self.bonus > 3:
-            st=te[:-5]+'4.png'
+            st=te[:-5]+'4.gif'
         self.ids.image_quantidade_acertos.source = str(st)
 
     def pontuacao_update(self): 
@@ -530,7 +529,7 @@ class quizScreen(FloatLayout):
         self.ids.button4.disabled=not self.ids.button4.disabled
 
     def setbonus(self):
-        if self.bonus >= 3:
+        if self.bonus > 3:
             self.Obonus+=1
 
     def controler_confirmar(self):

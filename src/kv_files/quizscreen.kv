@@ -1,10 +1,13 @@
 #-*-coding: utf-8-*-
 #:import hex kivy.utils.get_color_from_hex
 
-<Label>
-    font_size: '20dp'
+<Label1@Label>
     halign: 'justify'
-    font_name: u'MontserratMedium.ttf'
+    font_name: str(app.fonts_path["font_titulo"])
+    font_size: 30
+<Label2@Label>:
+    font_name: str(app.fonts_path['font_txt'])
+    font_size: int(app.config_font_size.text)
 
 <ToggleButton>:
     background_color: hex('#fffeff') if self.state=='normal' else (156,219,231, 0.6)
@@ -17,6 +20,8 @@
     background_disabled_down: ''
     background_disabled_normal: ''
     disabled_color: 0,0,0,1
+    font_name: str(app.fonts_path['font_txt'])
+    font_size: int(app.config_font_size.text)
 
 <quizScreen>:
     press_state:
@@ -24,11 +29,11 @@
     bonus:0
     canvas.before:
         Color:
-            rgb: hex('#0088b7') # ou este 0, 210, 267, 0
+            rgb: hex(app.config_bg.text)# ou este 0, 210, 267, 0
         Rectangle:
             pos: self.pos
             size: self.size
-    Label:
+    Label1:
         id: label_acertos
         pos_hint:  {'center_x':.55,'top':1}
         size_hint: .9,None
@@ -37,8 +42,7 @@
         text_size: self.width,None
         height: self.texture_size[1]
         padding: 25,20
-    
-    Label:
+    Label1:
         id: label_pontos
         pos_hint:  {'center_x':1.18,'top':1}    
         size_hint: .9,None
@@ -48,7 +52,7 @@
         height: self.texture_size[1]
         padding: 25,20
 
-    Label:
+    Label1:
         id: label_quantidade_acertos
         pos_hint:  {'center_x':.60,'top':.97}
         size_hint: .9,None
@@ -58,7 +62,7 @@
         height: self.texture_size[1]
         padding: 25,20
     
-    Label:
+    Label1:
         id: label_quantidade_pontos
         pos_hint:  {'center_x':1.22,'top':.97}    
         size_hint: .9,None
@@ -75,7 +79,7 @@
         size_hint: 0.17,0.1
         text:''
 
-    Label:
+    Label2:
         id:pergunta
         pos_hint:  {'center_x':.56,'center_y':.80}    
         size_hint: .83,None
@@ -139,6 +143,8 @@
         size_hint: .2,None
         text: 'REVISAR' #texto justificaddo nope
         halign: 'center'
+        font_name: str(app.fonts_path['font_titulo'])
+        font_size: 30
         background_color:(1,1,1,0)
         background_normal: ''
         background_down: 'img2.jpg'
@@ -163,6 +169,8 @@
         background_disabled_down: ''
         background_disabled_normal: ''
         disabled_color: .3,.3,.3,.5
+        font_name: str(app.fonts_path['font_titulo'])
+        font_size: 30
 
     
     Label:
@@ -170,10 +178,14 @@
         size_hint: .2,None
         text: 'Pergunta' #texto justificaddo ok
         color: hex('#fffeff')
-   
+        font_name: str(app.fonts_path['font_titulo'])
+        font_size: 30
+  
     Label:
         id: quantidade_perguntas
         pos_hint:  {'center_x':.51,'center_y':.03}    
         size_hint: .2,None
         text: '' #texto justificaddo ok
         color: hex('#fffeff')
+        font_name: str(app.fonts_path['font_titulo'])
+        font_size: 30

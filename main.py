@@ -1,20 +1,21 @@
-
 #-*- encoding:utf-8 -*-
+import json  # , camera
+import os
+
 from kivy.app import App
-import os, glob,json, camera
-from kivy.lang import Builder
-from kivy.logger import Logger
-from src.screens import Screens
-from kivy.uix.label import Label
-from kivy.factory import Factory
-from kivy.uix.image import Image
-from kivy.core.window import Window
 from kivy.config import ConfigParser
-from kivy.properties import NumericProperty
-from kivy.uix.settings import SettingsWithTabbedPanel
-from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
+from kivy.core.window import Window
+from kivy.event import EventDispatcher
+from kivy.factory import Factory
+from kivy.logger import Logger
+from kivy.properties import NumericProperty, StringProperty
 from kivy.uix.behaviors import ButtonBehavior
-from src.modules import read_json, text_functions
+from kivy.uix.image import Image
+from kivy.utils import get_color_from_hex as hex
+from kivy.uix.label import Label
+from kivy.uix.screenmanager import ScreenManager, FadeTransition
+from kivy.uix.settings import SettingsWithTabbedPanel
+from src.screens import Screens
 
 config = ConfigParser()
 config.read('main.ini')
@@ -54,7 +55,7 @@ json = '''
     {  "type": "numeric",
         "title": "Volume do jogo",
         "section": "AppConfig",
-        "key": "game_volume"
+        "key": "volume"
     }
 ]
 '''
@@ -82,7 +83,16 @@ class MainApp(App):
     sm = ScreenManager()
     value = NumericProperty()
     sm.transition = FadeTransition()
-    detector = camera.ZbarQrcodeDetector()
+    caminho = os.path.realpath(os.path.join(os.path.dirname('__ file__'), 'fonts', 'MontserratBold'))+'.ttf'
+    fonts_path = {"font_txt": caminho, "font_titulo": os.path.realpath(os.path.join(os.path.dirname('__ file__'), 'fonts', 'ComicaBDBold'))+'.ttf'}
+    config_bg = Label()
+    config_font_size = Label()
+    config_volume = Label()
+    config_bg.text=config.get("AppConfig","bg_color")
+    config_font_size.text = config.get("AppConfig","font_size")
+    config_volume.text = config.get("AppConfig","volume")    
+
+    #detector = camera.ZbarQrcodeDetector()
 
     def __init__(self, **kwargs):
         super(MainApp, self).__init__(**kwargs)
@@ -93,6 +103,20 @@ class MainApp(App):
 
     def on_stop(self):
         return True
+
+    def bg_color_callback(self, instance, value):
+        if value:
+            self.config_bg.text = "#28A09F"
+        else:
+            self.config_bg.text =  "#0088B7"
+
+    def font_callback(self, value, instance):
+        if value > 0:
+            if int(self.config_font_size.text) < 35:
+                self.config_font_size.text = str(int(self.config_font_size.text)+value)
+        else:
+            if int(self.config_font_size.text) > 15:
+                self.config_font_size.text = str(int(self.config_font_size.text)+value)
 
     def on_pause(self):
         self.on_stop()
@@ -143,9 +167,9 @@ class MainApp(App):
         """
         config.setdefaults("AppConfig", {
                 'font_size': "text",
-                'font_size': 20,
+                'font_size': 30,
                 'bg_color': "#FFFFFF",
-                'game_volume': 20
+                'volume': 20
             })
 
     def build_settings(self, settings):
@@ -157,19 +181,19 @@ class MainApp(App):
         #settings.add_json_panel('My Label', self.config, 'settings.json')
         settings.add_json_panel('Acessibilidade', self.config, data=json)
 
-    def on_config_change(self, config, section, key, value, instance):
+    def on_config_change(self, config, section, key, value):
         """self.animal
         Respond to changes in the configuration.
         """
-        Logger.info("main.py: App.on_config_change: {0}, {1}, {2}, {3}, {4}".format(
-            instance, config, section, key, value))
+        Logger.info("main.py: App.on_config_change: {0}, {1}, {2}, {3}".format(config, section, key, value))
 
         if config is self.config:
             token = (section, key)
-            if token == ('bg_color', 'FFFFFF'):
+            if 'bg_color' in token:
                 print('Our key1 has been changed to', value)
-            elif token == ('font_size', 'font_size'):
-                print('Our key2 has been changed to', value)
+                self.config_bg.text = value
+            elif 'font_size' in token:
+                self.config_font_size.text = value
 
     def close_settings(self, settings=None):
         """

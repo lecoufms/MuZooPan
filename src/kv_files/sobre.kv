@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 
-<Label>:
+<Label1@Label>:
     size_hint_y: None
     text_size: self.width, None
     height: self.texture_size[1]
-    font_size: '20sp'
-    font_name: 'MontserratMedium.ttf'
-
+    font_name: str(app.fonts_path['font_txt'])
+    font_size: int(app.config_font_size.text)
 <About>:
 
     canvas.before:
         Color:
-            rgba: 0, 136, 183, .4
+            rgba: hex(app.config_bg.text)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -25,12 +24,12 @@
             size_hint: 1, None
             height: self.minimum_height
 
-            Label:
+            Label1:
                 text: str(root.text_cabecalho)
-            Label:
+            Label1:
                 text: str(root.text_funciona)
-            Label:
+            Label1:
                 text: str(root.text_quiz)
-            Label:
+            Label1:
                 text: str(root.text_quem)
 
