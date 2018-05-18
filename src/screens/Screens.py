@@ -173,7 +173,7 @@ class Animal(FloatLayout):
     def plays(self):
         if self.sounds.state == 'stop' and self.position_slider_sound > 0:
             self.sounds.play()
-            self.sounds.seek(self.position_slider_sound)
+            self.sounds_change(self.sounds,self.position_slider_sound)
             self.event()
             self.button.background_normal = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','app','icons','pause'))+'.png'
         elif self.sounds.state == 'stop':
@@ -429,7 +429,6 @@ class quizScreen(FloatLayout):
             testew = dict(pontos=self.pontos['pontos'], acertos=self.pontos['acertos'], revisao=self.pontos['revisao'], bonus=self.pontos['bonus'], total_question=self.pontos['total_question'])
             tes = []
             tes.append(testew)
-	    print(tes)
             f.write(json.dumps(tes, ensure_ascii=False, indent=2))
             f.close()
         except Exception as t:
@@ -509,7 +508,7 @@ class quizScreen(FloatLayout):
             st=te[:-5]+'2.png'
         elif self.bonus == 3:
             st=te[:-5]+'3.png'
-        elif self.bonus > 3:
+        if self.bonus >= 3:
             st=te[:-5]+'4.gif'
         self.ids.image_quantidade_acertos.source = str(st)
 
@@ -539,9 +538,9 @@ class quizScreen(FloatLayout):
     def controler_confirmar(self):
         if self.verifica_resposta():
             self.bonus+=1
-            self.setbonus()
-    	    self.pontuacao_update()
             self.altera_barra()
+            self.setbonus()
+            self.pontuacao_update()
             self.altera_quando_certo()
             self.arruma_pontuacao()
             self.add_widget(self.im1)
@@ -554,16 +553,15 @@ class quizScreen(FloatLayout):
             print('ok')
 
         self.Disabled()
-    	self.qnt_revisao = 0
+        self.qnt_revisao = 0
         self.ids.confirmar.text='PRÓXIMA'
 
     def setrevion(self):
         from kivy.app import App
         try:
             self.pontos['revisao']+=1
-	    self.saveN()
-	    self.setpontuacao()
-            print(self.momento, 'rere', self.pontos['revisao'])
+            self.saveN()
+            self.setpontuacao()
             App.get_running_app()._ScreenFactory("AnimalScreen",self.momento,vimDoQuiz=True)
         except Exception as t:
             print(t,'b8')
