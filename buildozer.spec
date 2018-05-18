@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = MyQuiz
+title = MuZooPan
 
 # (str) Package name
-package.name = myquiz
+package.name = muzoopan
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.muzoopan.ufms
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -49,7 +49,7 @@ requirements = kivy,python2
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = ./files/app/icons/icone.ico
 
 # (str) Supported orientation (one of landscape, portrait or all)
 orientation = portrait

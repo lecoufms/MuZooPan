@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-import os, glob,json
+import os,glob,json
 from kivy.lang import Builder
 from kivy.uix.image import Image
 from kivy.uix.button import Button
@@ -238,14 +238,16 @@ class PremioScrenn(Screen):
     t_correct = StringProperty()
     t_bonus = StringProperty()
     t_cons = StringProperty()
+    t_cons2 = NumericProperty()
     t_total_porcetagem = NumericProperty()
     t_score0 = NumericProperty()
     questions = NumericProperty()
+    text_prop = NumericProperty()
     resultado = NumericProperty(.2)
     CACHE_FOLDER_NAME = os.path.realpath (os.path.join (os.path.dirname ('__ file__'), 'files','quiz' ))
     path=os.path.join(CACHE_FOLDER_NAME,'')
     path2=os.path.join(path,'tela_final','')
-
+    
     def __init__(self,**kwargs):
         super(PremioScrenn, self).__init__(**kwargs)
         self.name = "PremioScrenn"
@@ -271,6 +273,7 @@ class PremioScrenn(Screen):
 
                 if (j_info_score['revisao'] != 0):
                     self.t_cons = str(j_info_score['revisao'])
+		    self.t_cons2 = j_info_score['revisao']
                 else:
                     self.t_cons = "0"
 
@@ -280,6 +283,7 @@ class PremioScrenn(Screen):
                 self.resultado = (self.score0 * 100)
                 self.resultado = (self.resultado/self.t_total_porcetagem)
                 self.t_score = self.resultado
+		self.text_prop = 28
                 self.sounds('premiacao')
         except Exception as d:
             print(d,'b2')
