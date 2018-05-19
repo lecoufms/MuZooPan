@@ -7,11 +7,7 @@ title = MuZooPan
 package.name = muzoopan
 
 # (str) Package domain (needed for android/ios packaging)
-<<<<<<< HEAD
 package.domain = org.muzoopan.ufms
-=======
-package.domain = org.ufms.leco.br
->>>>>>> bc62a547d6156252d3ec173f3542ba62edc79911
 
 # (str) Source code where the main.py live
 source.dir = .
