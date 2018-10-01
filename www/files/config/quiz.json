@@ -1,0 +1,15 @@
+[{
+  "name":"quiz",
+  "questions":[
+    {
+      "nomeAnimal":"jaguatirica",
+      "texto": "Qual o tamanho da pata desse bicho",
+      "alternativas": [{"a":"10cm"},{"b":"20cm"},{"c":"Ele não tem pata"},{"d":"É do tamanho certo para ele"}],
+      "resposta":"d"
+    },
+    {
+      "nomeAnimal":"jaguatiroca"
+    }
+
+  ]
+}]

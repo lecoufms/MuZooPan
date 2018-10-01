@@ -1,0 +1,18 @@
+[
+  {
+    "name":"jaguatirica",
+    "animalSound":"../files/sounds/animals/jaguatirica.wav",
+    "imgs":[
+        { "img":"../files/img/jaguatirica_busto.jpg"},
+        {"img":"../files/img/jaguatirica_deitada.jpg"},
+        {"img":"../files/img/jaguatirica_frente.jpg"}
+    ],
+    "menus":[
+      {"menu": "habitat",  "text":"Nativo da América, podem ser encontrados desde o norte da Argentina até o sul dos Estados Unidos, habitando ao longo de sua distribuição geográfica em diversos habitats como nas florestas tropicais, subtropicais, savanas e mangues.","textSound": "../files/sounds/text_song/habitat_jaguatirica.mp3"},
+      {"menu":"reproducao", "text":"A maturidade sexual dos machos ocorre por volta dos 2 anos de idade e das fêmeas entre 16 e 18 meses, depois disso as fêmeas entram no cio a cada 5 meses em média, durando aproximadamente 8 dias. O período de gestação dura entre 70 e 84 dias e nascem um ou dois filhotes, raramente nascem 3 ou 4. O filhote pesa 90 gramas ao nascer e são amamentados até os nove meses até que aprendam a caçar.","textSound": "../files/sounds/text_song/reproducao_jaguatirica.mp3"},
+      {"menu": "caracteristicas", "text":"Reino:Animalia;<br>Filo:Chordata;<br>Classe:Mammalia;<br> Ordem:Carnivora;<br>Família:Felidae;<br>Subfamília:Felinae;<br>Gênero:Leopardus;<br>Espécie:L. pardalis;<br>A Jaguatirica é um mamífero carnívoro da família dos felinos. Ela dorme de dia e a noite sai para caçar. Conseguem facilmente escalar árvores. A jaguatirica é considerada o terceiro maior felino do continente. Seu tamanho corporal varia de 70 a 100 cm de comprimento e pesa entre 7 e 15,5 kg. Possuem uma cauda mais curta do que outros felinos, com aproximadamente entre 25 a 40 cm de comprimento. Tendo um tamanho total (da cabeça a cauda) de 1,40 metros. As fêmeas costumam ser menores e mais leves que os machos.","textSound": "../files/sounds/text_song/caracteristicas_jaguatirica.mp3"},
+      {"menu": "curiosidades", "text": "A jaguatirica está no topo da cadeia alimentar, se alimentando da carne de outros animais menores, como roedores, mamíferos, aves, répteis, peixes, dentre outros. A jaguatirica come entre 600 e 900 gramas de carne por dia, sendo a carcaça enterrada quando não digerida toda de uma vez. é o mais abundante dentre os felídeos sul-americanos, sendo listada como estado de conservação \"pouco preocupante\", já foi muito caçada, para o comercio de sua pele, além de ser desejada como animal de estimação por seu tamanho mediano e sua beleza.","textSound": "../files/sounds/text_song/curiosidades_jaguatirica.mp3"}
+    ],
+    "3dModel":""
+  }
+]

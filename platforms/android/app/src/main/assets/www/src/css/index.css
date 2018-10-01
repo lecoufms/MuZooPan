@@ -1,0 +1,21 @@
+body {
+    background-color: #02a29f;
+}
+
+
+@font-face {
+	font-family: Montserrat;
+	src: url("Montserrat-Bold.ttf");
+}
+
+p{
+    position: relative;
+    left:.5vw;
+    top: 5vw;
+	font-family:Montserrat;
+	color:white;
+	font-size: 3vw;
+	class:"col-sm-md-12";
+	text-align: justify;
+	text-justify: auto;
+}
