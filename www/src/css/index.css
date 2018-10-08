@@ -8,6 +8,11 @@ body {
 	src: url("Montserrat-Bold.ttf");
 }
 
+@font-face {
+	font-family: ComicaBDBold;
+    src: url('Comica BD Bold.ttf');
+}
+
 p{
     position: relative;
     left:.5vw;
