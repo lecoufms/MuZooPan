@@ -144,8 +144,94 @@ div#myDiv {
         -2px -1px 0px #000;
 }
 
+.styleFont1{
+	margin: 0px;
+    padding: 0px;
+    font-style: normal;
+    font-family: Montserrat;
+}
 h5#buttonSobre {
     margin-top: 5%;
     color: orange;
- 	font-size: 600%;   
+ 	font-size: 5vw;   
+}
+div{
+	margin: 0px;
+	padding: 0px;
+}
+p#nomeTitulo{
+    text-align: center;
+    color: orange;
+    font-size: 7vw;
+    position: absolute;
+    top: 0vw;
+    left: 34vw;
+}
+span#iconSom{
+    position: absolute;
+    top: 3vw;
+    left: 88vw;
+    font-size: 7vw;
+    color: white;
+}
+.container{
+	position: absolute;
+	top: 11vw;
+}
+
+
+div#carouselExampleControls{
+    position: absolute;
+    left: 9vw;
+    width: auto;
+}
+
+img.d-block{
+    width: 80vw;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 9vw;
+    height: 7vw;
+}
+
+.container-fluid{
+	position: absolute;
+	top: 60vw;
+	width: 100%;
+	height: auto;
+	padding: 0;
+	background-color: #ffffffa1;
+}
+
+ul.nav{
+	width: 100%;
+}
+
+ul.nav li.styleFont1 a{
+	font-size: 3.3vw;
+    background-color: #ffffffa1;
+    color: orange;
+    float: left;
+    height: 9vw;
+    display: inline-block;
+    line-height: 9vw;
+    position: relative;
+    z-index: 1;
+    margin-right: 1.04vw;
+    padding-left: 1.8vw;
+    padding-right: 1.8vw;
+
+}
+
+ul.nav li.styleFont1 a:hover{
+	text-decoration: none;
+}
+
+.tab-pane fade{
+	background-color: black;
+}
+
+a.active.show{
+	border-bottom: 5px solid orange;
 }
