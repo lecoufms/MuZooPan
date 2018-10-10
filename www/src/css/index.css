@@ -15,8 +15,8 @@ body {
 
 p{
     position: relative;
-    left:.5vw;
-    top: 5vw;
+    left: -0.5vw;
+    top: 1vw;
 	font-family:Montserrat;
 	color:white;
 	font-size: 3vw;
@@ -41,6 +41,7 @@ p{
 	margin: 10px 0 10px 0;
 	color:#ff66ff;
 }
+
 
 .opt{
 	width: 98%;
@@ -67,23 +68,54 @@ p{
 	outline: none;
 	float: right;
 	margin: 2vw;
+	color: #0cff00;
+    font-style: normal;
+    font-family: ComicaBDBold;
+    text-shadow: 
+        /* first layer at 1px */
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000,
+        /* second layer at 2px */
+        -2px -2px 0px #000,
+        -1px -2px 0px #000,
+         0px -2px 0px #000,
+         1px -2px 0px #000,
+         2px -2px 0px #000,
+         2px -1px 0px #000,
+         2px  0px 0px #000,
+         2px  1px 0px #000,
+         2px  2px 0px #000,
+         1px  2px 0px #000,
+         0px  2px 0px #000,
+        -1px  2px 0px #000,
+        -2px  2px 0px #000,
+        -2px  1px 0px #000,
+        -2px  0px 0px #000,
+        -2px -1px 0px #000;
+        
 }
 
 .next-btn{
 	border: none;
 	outline:none;
-	width:  300px;
-	height: 35px;
-	border-radius: 20px;
 	cursor: pointer;
 	float: right;
 	margin: 10px;
 	position: relative;
 	bottom: 1vw;
+    top: -12vw;
+    left: 1%;
 }
 
 .next-btn:hover{
 	color: #f6f6f6;
+	font-family:ComicaBDBold;
 }
 
 .result{
@@ -96,12 +128,27 @@ p{
 	color: #0000;
 }
 #progress {
-	color: #2b2b2b;
-	font-size: 18px;
+	color: white;
+    position: relative;
+    bottom: .3vw;
+    right: 0;
+    width: 200px;
+    top: 0vw;
+    left: 37%;
+    font-size: 2vw;
+	
 }
+
 #foot{
-	position: static;
+	
 	bottom: .5vw;
+	color:#ffff00; 
+    position: relative;
+    bottom: .3vw;
+    right: 0;
+    width: 200px;
+    top: -6vw;
+    left: 0px;
 }
 
 div#myDiv {
@@ -154,6 +201,17 @@ h5#buttonSobre {
     margin-top: 5%;
     color: orange;
  	font-size: 5vw;   
+}
+p#acertos{
+	font-size: 3vw;
+    top:2vw;
+    left:-1%;
+}
+
+p#pontos{
+    font-size: 3vw;
+    top:-4vw;
+    left:89%;
 }
 div{
 	margin: 0px;
