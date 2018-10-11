@@ -69,36 +69,6 @@ p{
 	float: right;
 	margin: 2vw;
 	color: #0cff00;
-    font-style: normal;
-    font-family: ComicaBDBold;
-    text-shadow: 
-        /* first layer at 1px */
-        -1px -1px 0px #000,
-         0px -1px 0px #000,
-         1px -1px 0px #000,
-        -1px  0px 0px #000,
-         1px  0px 0px #000,
-        -1px  1px 0px #000,
-         0px  1px 0px #000,
-         1px  1px 0px #000,
-        /* second layer at 2px */
-        -2px -2px 0px #000,
-        -1px -2px 0px #000,
-         0px -2px 0px #000,
-         1px -2px 0px #000,
-         2px -2px 0px #000,
-         2px -1px 0px #000,
-         2px  0px 0px #000,
-         2px  1px 0px #000,
-         2px  2px 0px #000,
-         1px  2px 0px #000,
-         0px  2px 0px #000,
-        -1px  2px 0px #000,
-        -2px  2px 0px #000,
-        -2px  1px 0px #000,
-        -2px  0px 0px #000,
-        -2px -1px 0px #000;
-        
 }
 
 .next-btn{
@@ -115,7 +85,6 @@ p{
 
 .next-btn:hover{
 	color: #f6f6f6;
-	font-family:ComicaBDBold;
 }
 
 .result{
@@ -147,17 +116,10 @@ p{
     bottom: .3vw;
     right: 0;
     width: 200px;
-    top: -6vw;
+    top: 6vw;
     left: 0px;
 }
 
-div#myDiv {
-	-ms-transform: rotate(20deg); /* IE 9 */
-	-webkit-transform: rotate(90deg); /* Safari */
-	transform: rotate(90deg); /* Standard syntax */
-	width: 10%;
-	right: 1vw;
-}
 
 .styleFont2{
     font-style: normal;
@@ -232,7 +194,7 @@ span#iconSom{
     font-size: 7vw;
     color: white;
 }
-.container{
+#myContainerAnimal{
 	position: absolute;
 	top: 11vw;
 }
@@ -253,7 +215,7 @@ img.d-block{
     height: 7vw;
 }
 
-.container-fluid{
+#myContainerFluidAnimal{
 	position: absolute;
 	top: 60vw;
 	width: 100%;
@@ -292,4 +254,37 @@ ul.nav li.styleFont1 a:hover{
 
 a.active.show{
 	border-bottom: 5px solid orange;
+}
+td{
+    overflow: hidden;
+}
+
+td#textEs{
+    width: 77vw;
+}
+
+td#textFa{
+    width: 15vw; 
+}
+div#myDiv{
+    overflow: hidden;
+}
+
+div#myDiv > audio {
+    position: absolute;
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg); /* Standard syntax */
+    left: 56%;
+    top: 39vw;
+}
+
+td > p {
+    width: 100%;
+    min-height: 62vw !important;
+    position: relative;
+    top: 4px;
+    color: black;
+    clear:both;
+    padding: 2vw;
 }

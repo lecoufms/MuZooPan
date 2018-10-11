@@ -8,10 +8,15 @@ body {
 	src: url("Montserrat-Bold.ttf");
 }
 
+@font-face {
+	font-family: ComicaBDBold;
+    src: url('Comica BD Bold.ttf');
+}
+
 p{
     position: relative;
-    left:.5vw;
-    top: 5vw;
+    left: -0.5vw;
+    top: 1vw;
 	font-family:Montserrat;
 	color:white;
 	font-size: 3vw;
@@ -36,6 +41,7 @@ p{
 	margin: 10px 0 10px 0;
 	color:#ff66ff;
 }
+
 
 .opt{
 	width: 98%;
@@ -62,19 +68,19 @@ p{
 	outline: none;
 	float: right;
 	margin: 2vw;
+	color: #0cff00;
 }
 
 .next-btn{
 	border: none;
 	outline:none;
-	width:  300px;
-	height: 35px;
-	border-radius: 20px;
 	cursor: pointer;
 	float: right;
 	margin: 10px;
 	position: relative;
 	bottom: 1vw;
+    top: -12vw;
+    left: 1%;
 }
 
 .next-btn:hover{
@@ -91,18 +97,194 @@ p{
 	color: #0000;
 }
 #progress {
-	color: #2b2b2b;
-	font-size: 18px;
-}
-#foot{
-	position: static;
-	bottom: .5vw;
+	color: white;
+    position: relative;
+    bottom: .3vw;
+    right: 0;
+    width: 200px;
+    top: 0vw;
+    left: 37%;
+    font-size: 2vw;
+	
 }
 
-div#myDiv {
-	-ms-transform: rotate(20deg); /* IE 9 */
-	-webkit-transform: rotate(90deg); /* Safari */
-	transform: rotate(90deg); /* Standard syntax */
-	width: 10%;
-	right: 1vw;
+#foot{
+	
+	bottom: .5vw;
+	color:#ffff00; 
+    position: relative;
+    bottom: .3vw;
+    right: 0;
+    width: 200px;
+    top: 6vw;
+    left: 0px;
+}
+
+
+.styleFont2{
+    font-style: normal;
+    font-family: ComicaBDBold;
+	text-shadow: 
+        /* first layer at 1px */
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000,
+        /* second layer at 2px */
+        -2px -2px 0px #000,
+        -1px -2px 0px #000,
+         0px -2px 0px #000,
+         1px -2px 0px #000,
+         2px -2px 0px #000,
+         2px -1px 0px #000,
+         2px  0px 0px #000,
+         2px  1px 0px #000,
+         2px  2px 0px #000,
+         1px  2px 0px #000,
+         0px  2px 0px #000,
+        -1px  2px 0px #000,
+        -2px  2px 0px #000,
+        -2px  1px 0px #000,
+        -2px  0px 0px #000,
+        -2px -1px 0px #000;
+}
+
+.styleFont1{
+	margin: 0px;
+    padding: 0px;
+    font-style: normal;
+    font-family: Montserrat;
+}
+h5#buttonSobre {
+    margin-top: 5%;
+    color: orange;
+ 	font-size: 5vw;   
+}
+p#acertos{
+	font-size: 3vw;
+    top:2vw;
+    left:-1%;
+}
+
+p#pontos{
+    font-size: 3vw;
+    top:-4vw;
+    left:89%;
+}
+div{
+	margin: 0px;
+	padding: 0px;
+}
+p#nomeTitulo{
+    text-align: center;
+    color: orange;
+    font-size: 7vw;
+    position: absolute;
+    top: 0vw;
+    left: 34vw;
+}
+span#iconSom{
+    position: absolute;
+    top: 3vw;
+    left: 88vw;
+    font-size: 7vw;
+    color: white;
+}
+#myContainerAnimal{
+	position: absolute;
+	top: 11vw;
+}
+
+
+div#carouselExampleControls{
+    position: absolute;
+    left: 9vw;
+    width: auto;
+}
+
+img.d-block{
+    width: 80vw;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 9vw;
+    height: 7vw;
+}
+
+#myContainerFluidAnimal{
+	position: absolute;
+	top: 60vw;
+	width: 100%;
+	height: auto;
+	padding: 0;
+	background-color: #ffffffa1;
+}
+
+ul.nav{
+	width: 100%;
+}
+
+ul.nav li.styleFont1 a{
+	font-size: 3.3vw;
+    background-color: #ffffffa1;
+    color: orange;
+    float: left;
+    height: 9vw;
+    display: inline-block;
+    line-height: 9vw;
+    position: relative;
+    z-index: 1;
+    margin-right: 1.04vw;
+    padding-left: 1.8vw;
+    padding-right: 1.8vw;
+
+}
+
+ul.nav li.styleFont1 a:hover{
+	text-decoration: none;
+}
+
+.tab-pane fade{
+	background-color: black;
+}
+
+a.active.show{
+	border-bottom: 5px solid orange;
+}
+td{
+    overflow: hidden;
+}
+
+td#textEs{
+    width: 77vw;
+}
+
+td#textFa{
+    width: 15vw; 
+}
+div#myDiv{
+    overflow: hidden;
+}
+
+div#myDiv > audio {
+    position: absolute;
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg); /* Standard syntax */
+    left: 56%;
+    top: 39vw;
+}
+
+td > p {
+    width: 100%;
+    min-height: 62vw !important;
+    position: relative;
+    top: 4px;
+    color: black;
+    clear:both;
+    padding: 2vw;
 }

@@ -27,7 +27,6 @@
     </div>
 
 </script>
-
 <script id="obj" type="text/template7">
         <div><p id="nomeTitulo" class="styleFont2">{{name}}</p></div>
         <div>
@@ -37,7 +36,7 @@
                 </span>
         </div>
         
-        <div class="container">
+        <div id="myContainerAnimal" class="container">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     {{#each imgs}}
@@ -63,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="container-fluid">
+            <div id="myContainerFluidAnimal" class="container-fluid">
                 <ul class="nav nav-pills">
                     {{#each menus}}
                         {{#js_if "@index"}} 
@@ -85,16 +84,18 @@
                         {{/js_if}}
                                 <table>
                                     <tr>
-                                        <td> <p>{{text}}</p></td>
-                                        <td><div style="text-align: center;">
-                                            <div id="myDiv">
-                                                <audio controls>
-                                                    <source src={{textSound}} type="audio/mpeg">
-                                                </audio>
-                                            </div>
+                                        <td id="textEs"> 
+                                            <p>{{text}}</p>
+                                        </td>
+                                        <td id="textFa">
                                         </td>
                                     </tr>
                                 </table>
+                                <div id="myDiv">
+                                    <audio controls>
+                                        <source src={{textSound}} type="audio/mpeg">
+                                    </audio>
+                                </div>
                             </div>
                     {{/each}}
                 </div>
