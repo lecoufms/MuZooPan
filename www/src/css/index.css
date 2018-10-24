@@ -87,6 +87,34 @@ p{
 	color: #f6f6f6;
 }
 
+.btn{
+    font-size: 3vw;
+    bottom: 1vw;
+    top: 5vw;
+    left: 43%;
+    color: #0cff00;
+}
+.sombra{
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    font-size: 5em; 
+    color: #fffdd9;
+    text-align: center;
+}
+.mensagem{
+    text-align: center;
+    font-size: 3vw;
+}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:174px;
+
+}
+
+
 .result{
 	height: 100px;
 	text-align: center;
