@@ -23,7 +23,7 @@ function readFile(file)
             {
                 context = JSON.parse(rawFile.responseText);
                 if(!selectContext(context)){
-                    renderOnScreen({"name":"error","mensagem":"Desculpe amigx!<br> Este animal não pertence ao seu roteiro."});
+                    renderOnScreen({"name":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne a tela incial e tente novamente."});
                 }
             }
         }
