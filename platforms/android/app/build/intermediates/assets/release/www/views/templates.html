@@ -105,6 +105,49 @@
 
 <script id="Error404" type="text/template7">
     <div id="404" class="container">
-        <p>{{mensagem}}</p>
+        <p id="ops" class="sombra">Ops!</p>
+        <img class="displayed" src="../files/img/imagemErro.png">
+         <p id="msg" class="mensagem">{{mensagem}}</p>
+        <p id="button" class="btn styleFont2" onclick="window.location.href="index.html";">Início</p>
+    </div>
+</script>
+<script id= "quiz" type="text/template7">
+    <div class = "conteiner">
+        <div id="quiz1" class="container-fluid row row-xs-12">
+                <div class= "col col-sm-10 text-center">
+                    <p id="acertos" class="styleFont2">Acertos</p>
+                    <p id="qnAcertos" class="styleFont2">Acertos</p>
+                </div>
+                <div class= "col col-sm-2 text-center">
+                    <p id="pontos" class="styleFont2">Pontos</p>
+                    <p id="qnPontos" class="styleFont2">Pontos</p>
+                     <div class="row">
+                        <div class="col col-xs-2 thumbnail text-center">
+                            <img id="barra0" src="../files/img/bar_0.png" alt="..." class="img-responsive" style="width:80%; min-width:50%;">
+                        </div>
+                        <p id="tetse"> <p>
+                    </div>
+                </div>
+        </div>
+        <div class="container-fluid col col-xs-12" style="text-align: center">
+
+                    <div id="question" class="question">
+                        <p class="styleFont1">  </p>
+                    </div>
+                    <div class="container">
+                        <div id="alternativa row">
+                            <label class="opt"><span id="opt1" class="styleFont1"></span></label>
+                            
+                        </div>    
+                        <label class="opt"><span id="opt2" class="styleFont1"></span></label>
+                        <label class="opt"><span id="opt3" class="styleFont1"></span></label>
+                        <label class="opt"><span id="opt4" class="styleFont1"></span></label>
+                    </div>
+        </div>
+        <div class="container-fluid row row-xs-12" style="text-align: center">
+                    <p id="foot" class=" col-sm-2 styleFont2">Revisar</p>
+                    <p id="progress" class=" col-sm-8 styleFont2">Question x of y</p>
+                    <p id="next-btn" class=" col-sm-2 next-btn styleFont2">CONFIRMAR</p>
+        </div>
     </div>
 </script>

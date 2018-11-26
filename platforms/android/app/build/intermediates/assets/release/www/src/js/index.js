@@ -1,3 +1,4 @@
+var history=[];
 
 function changePage(path){
   window.location.assign(path);
@@ -12,7 +13,7 @@ function changePrepare(text,isApp){
               changePage("views/view.html");
           }else if(text=="quiz"){
               window.localStorage.setItem("config", "quiz");
-              changePage("views/quiz.html");
+              changePage("views/view.html");
            }else{
               window.localStorage.setItem("config", "obj");
               changePage("views/view.html");
@@ -42,4 +43,22 @@ function barcodescanner() {
           disableSuccessBeep: false // iOS and Android
       }
    );
+}
+/*
+toDo maquina de estado
+*/
+function anterior() {
+  if (history.length == 0) {
+    return;
+  }
+  window.localStorage.setItem("qrcodeInput", history[history.length-1].qrcode);
+  window.localStorage.setItem("config", history[history.length-1].config);
+  render();
+}
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", anterior, false);
 }

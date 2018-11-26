@@ -1,23 +1,23 @@
 [
     {
-        "merged": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-v21_notification_action_background.xml.flat",
-        "source": "C:\\Users\\Valdenize SR\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\e688ab3ebb6c216d03f17bae260ffde1\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-port-xxxhdpi_screen.png.flat",
         "source": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxxhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-v21_notification_action_background.xml.flat",
+        "source": "C:\\Users\\Valdenize SR\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\e688ab3ebb6c216d03f17bae260ffde1\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
         "merged": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-port-xxhdpi_screen.png.flat",
         "source": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\screen.png"
     },
     {
-        "merged": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_media_cancel_action.xml.flat",
-        "source": "C:\\Users\\Valdenize SR\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.0.aar\\22a8280bf61ea69f25cf26da3f988122\\res\\layout\\notification_media_cancel_action.xml"
-    },
-    {
         "merged": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_media_action.xml.flat",
         "source": "C:\\Users\\Valdenize SR\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.0.aar\\22a8280bf61ea69f25cf26da3f988122\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_media_cancel_action.xml.flat",
+        "source": "C:\\Users\\Valdenize SR\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.0.aar\\22a8280bf61ea69f25cf26da3f988122\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-land-xxhdpi_screen.png.flat",

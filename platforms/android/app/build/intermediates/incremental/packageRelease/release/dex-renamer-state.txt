@@ -1,4 +1,4 @@
-#Thu Oct 11 14:36:20 BRT 2018
+#Mon Nov 26 17:20:13 BRST 2018
 base.0=C\:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
 path.0=classes.dex
 renamed.0=classes.dex
