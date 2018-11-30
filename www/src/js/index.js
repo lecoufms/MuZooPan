@@ -84,6 +84,7 @@ function onLoad() {
 
 function anterior(e) {
   e.preventDefault();
+    console.log('teste');
     var ind = cordova.file.applicationDirectory+'www/index.html';
     if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior")){
       console.log('vamos voltar da revisao, prob');
@@ -91,10 +92,10 @@ function anterior(e) {
         window.localStorage.setItem("qrcodeInput", onde.nome);
         window.localStorage.setItem("config", onde.nome);
         changePage("view.html");
-    }else if ((window.location.href !== ind) || (window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio")){
-      exit();
     }else if (window.location.href !== ind) {
       console.log('vou ao index, bele');
         window.history.back();
+    }else if ((window.location.href === ind) || (window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio")){
+      exit();
     }
 }

@@ -7,16 +7,55 @@
         <link rel="stylesheet" type="text/css" href="src/vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="src/css/index.css">
         <title>Muzoopan</title>
+        <script type="text/javascript" src="src/js/app.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="src/js/index.js"></script>
     </head>
-    <body>
+    <body onload="onLoad()">
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-bar-block w3-border-right"  id="mySidebar">
+            <button id ="buttonMenu2" class="w3-bar-item w3-large">Close &times;</button>
+            <div >
+                <h3>Opções</h3>
+            </div>          
+            <div style="visibility: hidden;" >
+                <label for="volume">Volume</label>
+                <div>
+                    <input type="range" name="volume" class="custom-range" id="volume" min="0" max="100" step="5">
+                </div>
+            </div>
+            <div >
+                <label  for="contraste" id="text">Alto-cotraste</label>
+                <div class="checkbox">
+                    <label>
+                        <input name="contraste" id="estilo" type="checkbox">
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationTooltipUsername">Fonte</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="aumentaFonte">+</span>
+                </div>
+                <input type="text" class="form-control" id="fonte" aria-describedby="validationTooltipUsernamePrepend" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="diminuiFonte">-</span>
+                </div>
+              </div>
+            </div>    
+        </div>
+
+        <!-- Page Content -->
+
+          <button id="buttonMenu" class="w3-button w3-teal w3-xlarge">☰</button> 
+
         <div style="text-align: center;">
             <div class="container">
                 <div class="col-sm-12"><img src="files/img/Muzoopan.png" style="width: 100%"></div>
                 <div class="col-sm-12"><img src="files/img/logo.png" style="width: 70%"></div>
-                <div class="col-sm-12"><img src="files/img/cam.png" style="width: 50%" onclick="barcodescanner()"></div>
-                <div class="col-sm-12"><h5 id="buttonSobre" class="styleFont2" onclick="changePrepare('about',true)"> Sobre</h5></div>
+                <div class="col-sm-12"><img id ="camera"src="files/img/cam.png" style="width: 50%"></div>
+                <div class="col-sm-12 justify-content-center"><span id="buttonSobre" class="styleFont2"> Sobre</span></div>
             </div>
         </div>
     <script src="src/vendors/bootstrap/js/jquery-slim.min.js"></script>

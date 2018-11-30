@@ -18,11 +18,8 @@ function Estilo() {
   getEstilo();
 }
 function Fonte() {
-  if (document.getElementById('fonte').value) {
-    window.localStorage.setItem("fonte", document.getElementById('fonte').value);
-  }else{
-    document.getElementById('fonte').value=window.localStorage.getItem("fonte");
-  }
+  window.localStorage.setItem("fonte", document.getElementById('fonte').value);
+  document.getElementById('fonte').value=window.localStorage.getItem("fonte");
   console.log(document.getElementById('fonte').value);
   getEstilo();
 }

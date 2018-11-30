@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
 MERGED from [:barcodescanner-release-2.1.5:] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\3cfe70216e74d40c8170cbc4565b9c40\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:support-v4:27.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.0.aar\abe013d0fe3478b514909a01445e4d05\AndroidManifest.xml:17:1-22:12
 MERGED from [:CordovaLib] C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\CordovaLib\build\intermediates\manifests\full\release\AndroidManifest.xml:20:1-27:12
@@ -13,9 +13,9 @@ MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Valdenize S
 MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\2dc3db352337680ae4a551da48c6eddd\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\e688ab3ebb6c216d03f17bae260ffde1\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\fe46d081bfb41b510aa06e9053465c37\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
-INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-19:12
+INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
 	package
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:102-135
 		INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml
@@ -148,6 +148,10 @@ ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\s
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:18:58-81
 	android:name
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:18:19-57
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:19:5-81
+	android:name
+		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:19:22-78
 meta-data#android.arch.lifecycle.VERSION
 ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\fe46d081bfb41b510aa06e9053465c37\AndroidManifest.xml:25:9-27:47
 	android:value
