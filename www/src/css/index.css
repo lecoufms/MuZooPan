@@ -15,11 +15,13 @@
     --corFundoSMenu: #ffffffa1;
     --corFonteQuizConfDes: grey;
     --corFundoAlter: white;
+    --tamanhoFonte: 3;
 }
 body {
     background-color: var(--corFundo);
-    font-size: 3vw;
+    font-size: calc(var(--tamanhoFonte) * 1px)!important ;
 }
+
 
 @font-face {
     font-family: Montserrat;
@@ -42,7 +44,6 @@ p{
 .title{
     padding-top: 20px;
     text-align: center;
-    font-size: 3vw;
     text-transform: uppercase;
 /*  color: #1b1e21;*/
 }
@@ -134,7 +135,7 @@ p{
     font-style: normal;
     font-family: Montserrat;
 }
-h5#buttonSobre {
+#buttonSobre {
     color: var(--corFonteTitulo);
 }
 p#acertos{
@@ -196,12 +197,10 @@ td#textFa{
     display: inherit;
 }
 audio#audioFalado{
-    /* padding: 4px; */
     position: absolute;
     -ms-transform: rotate(20deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Safari */
     transform: rotate(90deg); /* Standard syntax */
-
 }
 td > p {
     width: 100%;
@@ -209,5 +208,86 @@ td > p {
     color: var(--corFonteTextoLido);
     clear:both;
     padding: 2vw;
+    font-size: calc(var(--tamanhoFonte) * 1vw);
+}
+
+
+
+/*
+ex menu n
+
+*/
+
+
+.w3-button{
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.w3-button{
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}   
+
+.w3-button:disabled{
+    cursor:not-allowed;
+    opacity:0.3;
+}
+
+:disabled *{
+    pointer-events:none;
+}
+.w3-sidebar{
+    height:100%;
+    width: 55%;
+    background-color:#fff;
+    position:fixed!important;
+    z-index:1;
+    overflow:auto;
+}
+.w3-bar-block .w3-bar-item{
+    width:100%;
+    display:block;
+    padding:8px 16px;
+    text-align:left;
+    border:none;
+    white-space:normal;
+    float:none;
+    outline:0;
+}
+.w3-bar-block .w3-bar-item{
+    text-align:center;
+}
+
+@media (max-width:992px){
+  .w3-sidebar.w3-collapse{
+        display:none;
+    } 
+}
+.w3-large{
+    font-size:18px!important;
+}
+.w3-xlarge{
+    font-size:24px!important;
+}
+#mySidebar{
+    display:none;
+}
+.w3-button:hover{
+    color:#000!important;
+    background-color:#ccc!important;
 }
 

@@ -10,38 +10,58 @@ var opt1;
 var opt2;
 var opt3;
 var opt4;
-
+var realizada;
 var nextBtn;
 // var resultCont = document.getElementById('result');
 var myQuestions;
 var Quiz;
 var questionMy;
 
+function vaiRetornar() {
+    var data = localStorage.getItem('anterior');
+    console.log(data);
+    if(data){
+        var jdata = JSON.parse(data);
+        if(jdata){
+            console.log('vaiRetornar');
+            var timeD = new Date(jdata.data);
+            if (timeD.toLocaleDateString() == (new Date()).toLocaleDateString()) {
+                currentQuestion = jdata.pergunta.indice;
+                realizada=jdata;
+                score = jdata.pontos;
+                acerto = jdata.acerto;
+                bonus = jdata.sequencia;
+                questionMy = document.getElementById(jdata.aResposta)
+                if (questionMy != null) {
+                    clickAlt(questionMy);
+                }
+            }else{
+                currentQuestion=0;
+                qualQuestion();
+            }
+        }
+    }else{
+        currentQuestion=0;
+        qualQuestion();
+    }
+}
+
 temQuestions = function (context){
     for (var i =0; i < context.length; i++) {
         console.log(context[i]["name"]);
         if(context[i]["name"] == 'quiz'){
             myQuestions =context[i]["questions"];
-            currentQuestion=0;
             Quiz=true;
+            vaiRetornar();
             return;
         }
     }
 }
 
-/*function qualQuestion(){
-    if (currentQuestion == 0) {
-        myQuestions.sort();
-    }else{
-        currentQuestion= currentQuestion+1;
-    }
-    questionMy = myQuestions;
+function qualQuestion(){
+    realizadaQ = {'nome' : myQuestions[i].nomeAnimal, 'indice': currentQuestion};
+    realizada = {"nome": "quiz", "data": new Date(), "pergunta" : realizadaQ, "pontos":score, "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
 }
-
-function resultQ() {
-    console.log('result');
-}
-*/
 
 function pontuacao(){
     document.getElementById('qnAcertos').innerText=acerto;
@@ -75,7 +95,7 @@ function retiraVisuResposta(){
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFundoAlter');
     var img1 = document.getElementById('correct');
     var img2 = document.getElementById('incorrect');
-    questionMy.parentNode.style.background=newCor;
+    questionMy.parentNode.style.background='';
     if (img2 != null) {
         var alter = eCerta();
         alter.parentNode.style.background=newCor;
@@ -83,7 +103,8 @@ function retiraVisuResposta(){
         questionMy.parentNode.parentNode.removeChild(img2);
     }else{
         questionMy.parentNode.parentNode.removeChild(img1);
-    }    
+    }
+    questionMy=null;   
 }
 function loadQuesition(qIndex) {
     var q = myQuestions[qIndex];
@@ -104,16 +125,42 @@ function eCerta() {
         return opt4;
     }
 }
+function resolveSuccess(fs) {
+    console.log(fs.data);
+    var file = 'files/config/quiz.json';
+    fs.getFile(file, { create: true, exclusive: false }, function (fileEntry) {
+
+        console.log("fileEntry is file?" + fileEntry.isFile.toString());
+        console.log(fileEntry.name);
+        // fileEntry.fullPath == '/someFile.txt'
+        // writeFile(fileEntry, null);
+
+    }, function (e) {
+        console.log(e.target);
+    });
+}
+function armazena(file) {
+    console.log(file);
+    window.resolveLocalFileSystemURI(cordova.file.applicationDirectory, resolveSuccess, function (e) {
+        console.log(e.target);
+    });
+}
+
 function respostaCerta(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');    
     var img = document.createElement('img');
+    // var audio = document.createElement('audio');
     img.src="../files/img/correct.png";
     img.className='img-responsive';
     img.id='correct';
     img.style.width='10%';
+    /*audio.autoplay=true;
+    audio.src='../files/sounds/quiz/correct.wav';*/
     my.parentNode.style.background=newCor;
     my.parentNode.parentNode.appendChild(img);
+    // my.parentNode.parentNode.insertAdjacentElement('beforebegin',audio);
 }
+
 function respostaErrada(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizE');    
     my.parentNode.style.background=newCor;
@@ -122,17 +169,20 @@ function respostaErrada(my) {
     img.className='img-responsive';
     img.id='incorrect';
     img.style.width='10%';
-    my.parentNode.parentNode.appendChild(img);   
+    my.parentNode.parentNode.appendChild(img);
+    
 }
+
 function alteraNextButton(){
     var pai = document.getElementById('next-btn').parentNode;
     var filho = document.getElementById('next-btn');
+    var cls = document.getElementById('next-btn').className;
     var newFilho = document.createElement('p');
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');
     if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
         newFilho.innerText='PRÓXIMA';
         newFilho.id='next-btn';
-        newFilho.className='col-sm-2 next-btn styleFont2';
+        newFilho.className= cls;
         newFilho.cursor='pointer';
         newFilho.style.color = newCor;
         newFilho.style.cursor='pointer';
@@ -140,11 +190,12 @@ function alteraNextButton(){
     }else if(document.getElementById('next-btn').innerText == 'PRÓXIMA'){
         newFilho.innerText = 'CONFIRMAR';
         newFilho.id='next-btn';
-        newFilho.className='col-sm-2 next-btn styleFont2';
+        newFilho.className= cls;
     }
     pai.removeChild(filho);
     pai.appendChild(newFilho);
 }
+
 function EcertoAlt(){
     if (questionMy.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
         bonus+=1;
@@ -158,9 +209,10 @@ function EcertoAlt(){
         respostaErrada(questionMy);
         respostaCerta(eCerta());
     }
-    alteraNextButton();
     revisao =0;
+    alteraNextButton();
 }
+
 function podeButton(){
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');
     if (document.getElementById('next-btn').style.getPropertyValue('--corFonteQuizConfDes') != newCor) {
@@ -169,9 +221,11 @@ function podeButton(){
         document.getElementById('next-btn').addEventListener('click',prox);
     }
 }
+
 function progress() {
     document.getElementById('progress').innerText='Pergunta'+myQuestions.length+' / '+(currentQuestion+1);
 }
+
 function alteraBarra(barraA, barraN){
     var t= document.getElementById('barra'+barraA).src;
     var tn=t.length;
@@ -179,18 +233,18 @@ function alteraBarra(barraA, barraN){
     var img = document.createElement('img');
     img.className='img-responsive';
     pai.removeChild(document.getElementById('barra'+barraA));
-    img.src= t.substring(0,(tn-9))+'bar_'+barraN+'.png';
+    img.src= '../files/img/bar_'+(!barraN ? '':barraN )+'.png';
     img.id='barra'+barraN;
     img.style.width='80%';
     pai.appendChild(img);
-    document.getElementById('tetse').innerText=document.getElementById('barra'+barraN).src;
 }
+
 function prox() {
     if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
         EcertoAlt();
     }else if (document.getElementById('next-btn').innerText == 'PRÓXIMA') {
         if (currentQuestion == (myQuestions.length-1)) {
-            alert('Premio');
+            Nextpremio();
         }else{
             retiraVisuResposta();
             currentQuestion=currentQuestion+1;
@@ -208,20 +262,28 @@ function clickAlt(button) {
         podeButton();
     }
 }
-/*a resolver
-function removeEventAlter() {
-    opt1.parentNode.removeEventListener('click',clickAlt,true);
-    opt2.parentNode.removeEventListener('click',clickAlt,true);
-    opt3.parentNode.removeEventListener('click',clickAlt,true);
-    opt4.parentNode.removeEventListener('click',clickAlt,true);
-}
-*/
+
 function addEventAlter() {
     opt1.parentNode.addEventListener('click',clickAlt.bind(null,opt1),true);
     opt2.parentNode.addEventListener('click',clickAlt.bind(null,opt2),true);
     opt3.parentNode.addEventListener('click',clickAlt.bind(null,opt3),true);
     opt4.parentNode.addEventListener('click',clickAlt.bind(null,opt4),true);
 }
+
+function  Nextpremio(){
+    qualQuestion();
+    window.localStorage.setItem('anterior',JSON.stringify(realizada));
+    console.log(window.localStorage.getItem('anterior'));
+    window.localStorage.setItem("qrcodeInput", "premio");
+    window.localStorage.setItem("config", "app");
+    try{
+        armazena('../files/config/history.json');
+    } catch (e) {
+        console.log(e);
+    }
+    changePage("view.html");
+}
+
 ready = function(){
     temQuestions(context);
     if (Quiz) {
@@ -236,13 +298,20 @@ ready = function(){
         loadQuesition(currentQuestion);
         addEventAlter();
         pontuacao();
-        document.getElementById('tetse').innerText=document.getElementById('barra0').src;
+        alteraBarra(queBarraSou(),qualBarraPBonus());
        $("#foot").click(function(){ 
             revisao=revisao+1;
+            qualQuestion();
+            window.localStorage.setItem('anterior',JSON.stringify(realizada));
+            console.log(window.localStorage.getItem('anterior'));
             window.localStorage.setItem("qrcodeInput", myQuestions[currentQuestion].nomeAnimal);
             window.localStorage.setItem("config", "obj");
-            history.push({qrcode:myQuestions[currentQuestion].nomeAnimal,config:'quiz'})
-            render();
+            try{
+                armazena('../files/config/history.json');
+            } catch (e) {
+                console.log(e);
+            }
+            changePage("view.html");
         });
     }
 }

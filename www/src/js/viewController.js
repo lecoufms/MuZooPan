@@ -36,7 +36,7 @@ function renderOnScreen(ctxt) {
         var compiledTemplate = Template7.compile(template);
         html = compiledTemplate(ctxt);
         document.getElementById("visible").innerHTML=html;
-        if (window.localStorage.getItem("config")=="quiz") {
+        if (window.localStorage.getItem("config") == "quiz") {
             ready();
         }
 }
@@ -46,3 +46,7 @@ function render(){
 }
 (function(){return $("#invisible").load("templates.html",render)})();
 
+function onLoadV() {
+    onDeviceReady();
+    onMenu();
+}
