@@ -125,6 +125,7 @@ function eCerta() {
         return opt4;
     }
 }
+/*
 function resolveSuccess(fs) {
     console.log(fs.data);
     var file = 'files/config/quiz.json';
@@ -139,11 +140,12 @@ function resolveSuccess(fs) {
         console.log(e.target);
     });
 }
+*/
 function armazena(file) {
     console.log(file);
-    window.resolveLocalFileSystemURI(cordova.file.applicationDirectory, resolveSuccess, function (e) {
+/*    window.resolveLocalFileSystemURI(cordova.file.applicationDirectory, resolveSuccess, function (e) {
         console.log(e.target);
-    });
+    });*/
 }
 
 function respostaCerta(my) {
