@@ -11,19 +11,41 @@
 <script id="premio" type="text/template7">
 
     <div id="premioT">
-        <img id="parabensImg" src={{imagemParabens}}>
-        <img id="premioImg" src={{imagemPremio}}>
-        {{#each fogos}}
-           <div ><img src={{caminho}} width={{largura}} height={{altura}} style={{estilo}} alt=”animated”></div>
+        <img id="parabensImg" class="rounded mx-auto d-block img-responsive" style=" width:80%;" src={{this.conteudo.imagemParabens}}>
+        {{#each conteudo.Premio}}
+            {{#js_if "this.nome === @root.premiacao.premio" }}
+                <div class="container row">
+                    <div class="container col-sm-md-3">
+                        <img class="img-fluid float-left img-responsive" style=" width:55%;" id="premioImg" src={{caminho}}>
+                    </div>
+                     <div class="container col-sm-md-3">
+                        <p id="textoMot" style={{estilo}}>
+                                {{textos.texto0}} {{@root.premiacao.acertos}} {{textos.texto1}} {{@root.premiacao.pontos}} {{textos.texto2}}
+                        </p>
+                     </div>
+                 </div>
+                 <audio id="premioAudio" autoplay src="{{@root.conteudo.premioSound}}">
+                </audio>
+                {{#each @root.conteudo.fogos}}
+                    <div ><img id={{js "'fogos'+@index"}} src={{caminho}} style="width:{{largura}}" class="img-responsive" alt=”animated”></div>
+                {{/each}}
+                <div class="container col-sm-md-3">
+                    <p id="textoPonto" style={{estilo}}>
+                        Pontos: {{@root.premiacao.pontos}}
+                    </p>
+                    <p id="textoAcertos" style={{estilo}}>
+                        Acertos: {{@root.premiacao.acertos}}
+                    </p>
+                    <p id="textoBonus" style={{estilo}}>
+                        Bônus: {{@root.premiacao.bonus}}
+                    </p>
+                    <p id="textoRevisao" style={{estilo}}>
+                        Revisões: {{@root.premiacao.revisao}}
+                    </p>
+                </div>
+            {{/js_if}}
         {{/each}}
-
-        {{#each textos}}
-            <div class="container col-sm-md-3">
-                <p style={{estilo}}>{{texto}}</p>
-            </div>
-        {{/each}}
-
-        <button onclick="exit()" > Sair </button>
+        <button onclick="exit()" style="margem-botton:5%;"> Sair </button>
     </div>
 
 </script>

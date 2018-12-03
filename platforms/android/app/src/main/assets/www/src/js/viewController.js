@@ -30,10 +30,27 @@ function readFile(file)
     }
     rawFile.send(null);
 }
+function alterar(contexto){
+    var conteudo;
+    if(window.localStorage.getItem("config") == "obj"){
+        conteudo= contexto;
+    }else if(window.localStorage.getItem("qrcodeInput") == "quiz"){
+        conteudo = contexto;
+    }else if(window.localStorage.getItem("qrcodeInput") == "about"){
+        conteudo = contexto;
+    }else if (window.localStorage.getItem("qrcodeInput") == "premio") {
+        var premio = defineMedalha();
+        conteudo = { "premiacao": premio, "conteudo" : contexto };
+    }
+    console.log(conteudo);
+    return conteudo;
+}
 
 function renderOnScreen(ctxt) {
         var template = $("#"+ (ctxt.name=="error"? "Error404":(window.localStorage.getItem("config")=="obj"? "obj":ctxt.name))).html();
         var compiledTemplate = Template7.compile(template);
+        ctxt= alterar(ctxt);
+        console.log(ctxt);
         html = compiledTemplate(ctxt);
         document.getElementById("visible").innerHTML=html;
         if (window.localStorage.getItem("config") == "quiz") {
@@ -46,7 +63,14 @@ function render(){
 }
 (function(){return $("#invisible").load("templates.html",render)})();
 
-function onLoadV() {
-    onDeviceReady();
+function onDeviceReadyV() {
+    document.addEventListener("backbutton", anterior,false);
+    document.addEventListener("volumedownbutton", stateVolumeH, false);
+    document.addEventListener("volumeupbutton", stateVolumeH, false);
+    console.log(cordova.file);
     onMenu();
+}
+
+function onLoadV() {
+    document.addEventListener("deviceready", onDeviceReadyV, true);
 }

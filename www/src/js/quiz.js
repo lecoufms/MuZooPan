@@ -1,5 +1,6 @@
 var currentQuestion = 0;
 var score = 0;
+var totalRevisao=0;
 var revisao=0;
 var acerto=0;
 var bonus = 0;
@@ -12,37 +13,53 @@ var opt3;
 var opt4;
 var realizada;
 var nextBtn;
+var premiacao;
 // var resultCont = document.getElementById('result');
 var myQuestions;
 var Quiz;
 var questionMy;
+var jdata;
 
-function vaiRetornar() {
+function preparaRetorno(argument) {
     var data = localStorage.getItem('anterior');
     console.log(data);
     if(data){
-        var jdata = JSON.parse(data);
-        if(jdata){
-            console.log('vaiRetornar');
-            var timeD = new Date(jdata.data);
-            if (timeD.toLocaleDateString() == (new Date()).toLocaleDateString()) {
-                currentQuestion = jdata.pergunta.indice;
-                realizada=jdata;
-                score = jdata.pontos;
-                acerto = jdata.acerto;
-                bonus = jdata.sequencia;
-                questionMy = document.getElementById(jdata.aResposta)
-                if (questionMy != null) {
-                    clickAlt(questionMy);
-                }
-            }else{
-                currentQuestion=0;
-                qualQuestion();
+        jdata = JSON.parse(data);
+    }else{
+        currentQuestion=0;
+        vamosPreparaPPasseio();
+    }
+}
+function setVariaveis() {
+    currentQuestion = jdata.pergunta.indice;
+    realizada=jdata;
+    score = jdata.pontos;
+    acerto = jdata.acerto;
+    bonus = jdata.sequencia;
+    totalRevisao = jdata.totalR;
+    revisao= jdata.revisao;
+}
+function vaiRetornar() {
+    preparaRetorno();
+    if(jdata){
+        console.log('vaiRetornar');
+        var timeD = new Date(jdata.data);
+        if (timeD.toLocaleDateString() == (new Date()).toLocaleDateString()) {
+            setVariaveis();
+            questionMy = document.getElementById(jdata.aResposta)
+            // if ((jdata.pergunta.indice+1) == jdata.tamanho) {
+            //     Nextpremio();
+            // }
+            if (questionMy != null) {
+                clickAlt(questionMy);
             }
+        }else{
+            currentQuestion=0;
+            vamosPreparaPPasseio();
         }
     }else{
         currentQuestion=0;
-        qualQuestion();
+        vamosPreparaPPasseio();
     }
 }
 
@@ -58,9 +75,9 @@ temQuestions = function (context){
     }
 }
 
-function qualQuestion(){
-    realizadaQ = {'nome' : myQuestions[i].nomeAnimal, 'indice': currentQuestion};
-    realizada = {"nome": "quiz", "data": new Date(), "pergunta" : realizadaQ, "pontos":score, "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
+function vamosPreparaPPasseio(){
+    realizadaQ = {'nome' : myQuestions[currentQuestion].nomeAnimal, 'indice': currentQuestion};
+    realizada = {"nome": "quiz", "data": new Date(), "pergunta" : realizadaQ,"tamanho": myQuestions.length, "pontos":score, "totalR": totalRevisao, "revisao" : revisao,  "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
 }
 
 function pontuacao(){
@@ -95,16 +112,25 @@ function retiraVisuResposta(){
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFundoAlter');
     var img1 = document.getElementById('correct');
     var img2 = document.getElementById('incorrect');
+    var pai;
+    var audio;
     questionMy.parentNode.style.background='';
     if (img2 != null) {
+        pai = img2.parentNode;
+        audio  = document.getElementById('incorrectAudio');
         var alter = eCerta();
         alter.parentNode.style.background=newCor;
-        alter.parentNode.parentNode.removeChild(img1);
-        questionMy.parentNode.parentNode.removeChild(img2);
+        pai.removeChild(img1);
+        pai.removeChild(img2);
+        pai.removeChild(audio);
     }else{
-        questionMy.parentNode.parentNode.removeChild(img1);
+        pai = img1.parentNode;
+        audio  = document.getElementById('correctAudio');
+        pai.removeChild(img1);
+        pai.removeChild(audio);
     }
-    questionMy=null;   
+    questionMy=null;
+
 }
 function loadQuesition(qIndex) {
     var q = myQuestions[qIndex];
@@ -125,10 +151,22 @@ function eCerta() {
         return opt4;
     }
 }
-/*
+
 function resolveSuccess(fs) {
     console.log(fs.data);
-    var file = 'files/config/quiz.json';
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log(entry.toURL());
+     console.log('cdvfile URI: ' + entry.toInternalURL());
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+/*    var file = 'files/config/quiz.json';
     fs.getFile(file, { create: true, exclusive: false }, function (fileEntry) {
 
         console.log("fileEntry is file?" + fileEntry.isFile.toString());
@@ -138,29 +176,40 @@ function resolveSuccess(fs) {
 
     }, function (e) {
         console.log(e.target);
-    });
-}
-*/
-function armazena(file) {
-    console.log(file);
-/*    window.resolveLocalFileSystemURI(cordova.file.applicationDirectory, resolveSuccess, function (e) {
-        console.log(e.target);
     });*/
 }
 
+function armazena(file) {
+    console.log(file);
+    window.resolveLocalFileSystemURI(cordova.file.applicationDirectory, resolveSuccess, function (e) {
+        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        console.log(e.target);
+        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    });
+}
+function insertAudio(my, qual){
+    var audio = document.createElement('audio');
+    audio.autoplay=true;
+    audio.src='../files/sounds/quiz/'+qual+'.ogg';
+    audio.id=qual+"Audio";
+    my.parentNode.insertAdjacentElement('beforebegin',audio);
+}
 function respostaCerta(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');    
     var img = document.createElement('img');
-    // var audio = document.createElement('audio');
     img.src="../files/img/correct.png";
     img.className='img-responsive';
     img.id='correct';
     img.style.width='10%';
-    /*audio.autoplay=true;
-    audio.src='../files/sounds/quiz/correct.wav';*/
     my.parentNode.style.background=newCor;
-    my.parentNode.parentNode.appendChild(img);
-    // my.parentNode.parentNode.insertAdjacentElement('beforebegin',audio);
+    my.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
+    
 }
 
 function respostaErrada(my) {
@@ -205,11 +254,13 @@ function EcertoAlt(){
         pontuacao();
         alteraBarra(queBarraSou(),qualBarraPBonus());
         respostaCerta(questionMy);
+        insertAudio(questionMy,'correct');
     }else{
         bonus=0;
         alteraBarra(queBarraSou(),qualBarraPBonus());
         respostaErrada(questionMy);
         respostaCerta(eCerta());
+        insertAudio(questionMy,'incorrect');
     }
     revisao =0;
     alteraNextButton();
@@ -273,7 +324,7 @@ function addEventAlter() {
 }
 
 function  Nextpremio(){
-    qualQuestion();
+    vamosPreparaPPasseio();
     window.localStorage.setItem('anterior',JSON.stringify(realizada));
     console.log(window.localStorage.getItem('anterior'));
     window.localStorage.setItem("qrcodeInput", "premio");
@@ -301,22 +352,45 @@ ready = function(){
         addEventAlter();
         pontuacao();
         alteraBarra(queBarraSou(),qualBarraPBonus());
-       $("#foot").click(function(){ 
-            revisao=revisao+1;
-            qualQuestion();
-            window.localStorage.setItem('anterior',JSON.stringify(realizada));
-            console.log(window.localStorage.getItem('anterior'));
-            window.localStorage.setItem("qrcodeInput", myQuestions[currentQuestion].nomeAnimal);
-            window.localStorage.setItem("config", "obj");
-            try{
-                armazena('../files/config/history.json');
-            } catch (e) {
-                console.log(e);
+       $("#foot").click(function(){
+            if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
+                totalRevisao=totalRevisao+1;
+                revisao=revisao+1;
+                vamosPreparaPPasseio();
+                window.localStorage.setItem('anterior',JSON.stringify(realizada));
+                console.log(window.localStorage.getItem('anterior'));
+                window.localStorage.setItem("qrcodeInput", myQuestions[currentQuestion].nomeAnimal);
+                window.localStorage.setItem("config", "obj");
+                try{
+                    armazena('../files/config/history.json');
+                } catch (e) {
+                    console.log(e);
+                }
+                changePage("view.html");
             }
-            changePage("view.html");
         });
     }
 }
+
+function defineMedalha() {
+    preparaRetorno();
+    setVariaveis();
+    var resultado = (score*100)/(((jdata.tamanho - 3) * 150) + (3 * 100));
+    var result;
+    if (resultado == 100) {
+        result = "trofeu";
+    }else if (resultado < 100 && resultado >= 64.4) {
+        result = "ouro";
+    }else if (resultado < 64.4 && resultado >= 28.8) {
+        result = "prata";
+    }else if (resultado < 28.8) {
+        result = "bronze";
+    }
+    console.log(resultado);
+    var premio = {"premio" : result, "pontos" : score, "acertos" : acerto, "bonus" : bonus, "revisao" : totalRevisao};
+    return premio;
+}
+
 
 
 /*var currentQuestion = 0;

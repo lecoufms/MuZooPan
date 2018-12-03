@@ -12,6 +12,9 @@
         <param name="onload" value="true" />
     </feature>
     <allow-navigation href="cdvfile:*" />
+    <feature name="AndroidVolume">
+        <param name="android-package" value="com.mcluck.plugin.AndroidVolume" />
+    </feature>
     <name>HelloCordova</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

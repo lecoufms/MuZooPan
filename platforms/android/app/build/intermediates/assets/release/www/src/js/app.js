@@ -1,19 +1,19 @@
 function onMenu() {
-    document.getElementById("buttonMenu").addEventListener("click", sideBar);
-    document.getElementById("buttonMenu2").addEventListener("click", buttonMenu);
-    document.getElementById('estilo').addEventListener("click", Estilo);
-    document.getElementById("volume").addEventListener("click", stateVolume);
-    document.getElementById('aumentaFonte').addEventListener("click", aumentaFonte);
-    document.getElementById('diminuiFonte').addEventListener("click", diminuiFonte);
-    document.getElementById('fonte').addEventListener("change", Fonte);
-    getEstilo();
+  document.getElementById("buttonMenu").addEventListener("click", sideBar);
+  document.getElementById("buttonMenu2").addEventListener("click", buttonMenu);
+  document.getElementById('estilo').addEventListener("click", Estilo);
+  document.getElementById("volume").addEventListener("change", stateVolumeD);
+  document.getElementById('aumentaFonte').addEventListener("click", aumentaFonte);
+  document.getElementById('diminuiFonte').addEventListener("click", diminuiFonte);
+  document.getElementById('fonte').addEventListener("change", Fonte);
+  getEstilo();
 }
 
 function Estilo() {
   if (document.getElementById('estilo').checked) {
-    window.localStorage.setItem("contraste", "on");
+  window.localStorage.setItem("contraste", "on");
   }else{
-    window.localStorage.setItem("contraste", "off");
+  window.localStorage.setItem("contraste", "off");
   }
   getEstilo();
 }
@@ -24,61 +24,106 @@ function Fonte() {
   getEstilo();
 }
 function setContraste() {
-    document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTitulo','grey');
+  document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTitulo','grey');
 }
 function removeContraste() {
-    document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTitulo','#fb5a01');
+  document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTitulo','#fb5a01');
 }
 function setTamanhoFonte(tamanho) {
-    document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
-    document.getElementById('fonte').value= tamanho;
+  document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
+  document.getElementById('fonte').value= tamanho;
 }
 function getEstilo(){
-  if (window.localStorage.getItem("contraste") == 'null') {
-    window.localStorage.setItem("contraste", "off");
+  if (window.localStorage.getItem("contraste") == null) {
+  window.localStorage.setItem("contraste", "off");
   }
-  if (window.localStorage.getItem("fonte") == 'null') {
-    var tamanho = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--tamanhoFonte');
-    window.localStorage.setItem("fonte", tamanho);
+  if (window.localStorage.getItem("fonte") == null) {
+  var tamanho = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--tamanhoFonte');
+  window.localStorage.setItem("fonte", tamanho);
+  }
+  if (window.localStorage.getItem("volume") == null) {
+      window.androidVolume.getMusic(function (sucess) {
+        console.log('volume localStorage');
+      window.localStorage.setItem("volume",sucess);
+    }, fail);
   }
   console.log(window.localStorage.getItem("contraste"));
   if (window.localStorage.getItem("contraste") == "on") {
-    document.getElementById('estilo').checked=true;
-    setContraste();
+  document.getElementById('estilo').checked=true;
+  setContraste();
   }else if (window.localStorage.getItem("contraste") == "off") {
-    removeContraste();
-    document.getElementById('estilo').checked=false;
+  removeContraste();
+  document.getElementById('estilo').checked=false;
   }
   if (window.localStorage.getItem("fonte") != 'null') {
-    setTamanhoFonte(parseInt(window.localStorage.getItem('fonte')));
+  setTamanhoFonte(parseInt(window.localStorage.getItem('fonte')));
+  }
+  if (window.localStorage.getItem("volume") != 'null') {
+    console.log('volume html');
+    setVolumeHtml(window.localStorage.getItem("volume"));
   }
 }
 function exit(){
-    window.localStorage.removeItem("anterior");
-    navigator.app.exitApp();
+  console.log("exit");
+  window.localStorage.removeItem("anterior");
+  if (cordova.platformId != "browser") {
+  navigator.app.exitApp();
+  }
 }
 
 function buttonMenu() {
-    document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("mySidebar").style.display = "none";
 }
 function sideBar() {
-    document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("mySidebar").style.display = "block";
 }
-function stateVolume() {
-    console.log( parseInt(document.getElementById("volume").value));
+
+
+function fail(evt) {
+  console.log(evt);
 }
+function sucess(sucess) {
+  console.log(sucess);
+}
+function stateVolumeD() {
+  console.log("music");
+  console.log( parseInt(document.getElementById("volume").value));
+  setVolumeDi(parseInt(document.getElementById("volume").value));
+}
+function stateVolumeH() {
+  console.log("music");
+  window.androidVolume.getMusic(function (sucess) {
+        console.log('volume localStorage');
+      setVolumeHtml(parseInt(sucess));
+    }, fail);
+  console.log( parseInt(document.getElementById("volume").value));
+  setVolumeDi(parseInt(document.getElementById("volume").value));
+}
+function setVolumeHtml(valor) {
+  document.getElementById("volume").value = valor;
+  window.localStorage.setItem("volume",valor);
+}
+function setVolumeDi(valor){
+  window.androidVolume.setMusic(valor, false, sucess, fail);
+  window.localStorage.setItem("volume",valor);
+}
+
+
+
 function stateFonte() {
-    console.log( parseInt(document.getElementById("fonte").value));
+  console.log( parseInt(document.getElementById("fonte").value));
 }
 function aumentaFonte(){
-    console.log(typeof document.getElementById('fonte').value);
-    document.getElementById('fonte').value= parseInt(document.getElementById('fonte').value) + 1;
-    Fonte();
+  console.log(typeof document.getElementById('fonte').value);
+  document.getElementById('fonte').value= parseInt(document.getElementById('fonte').value) + 1;
+  Fonte();
 }
 function diminuiFonte(){
-    document.getElementById('fonte').value= parseInt(document.getElementById('fonte').value) - 1;
-    Fonte();
+  document.getElementById('fonte').value= parseInt(document.getElementById('fonte').value) - 1;
+  Fonte();
 }
+
+
 
 
 

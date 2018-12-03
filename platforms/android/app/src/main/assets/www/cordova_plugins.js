@@ -180,6 +180,14 @@ module.exports = [
       "cordova"
     ],
     "runs": true
+  },
+  {
+    "id": "cordova-plugin-android-volume.AndroidVolume",
+    "file": "plugins/cordova-plugin-android-volume/www/AndroidVolume.js",
+    "pluginId": "cordova-plugin-android-volume",
+    "clobbers": [
+      "androidVolume"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -187,7 +195,8 @@ module.exports.metadata =
 {
   "cordova-plugin-whitelist": "1.3.3",
   "phonegap-plugin-barcodescanner": "8.0.0",
-  "cordova-plugin-file": "6.0.1"
+  "cordova-plugin-file": "6.0.1",
+  "cordova-plugin-android-volume": "0.0.12"
 };
 // BOTTOM OF METADATA
 });
