@@ -1,6 +1,6 @@
 
 .idea/workspace.xml
-/platforms/
-/platforms/*
-/node_modules
-/node_modules/*
+platforms/
+platforms/*
+node_modules
+node_modules/*
