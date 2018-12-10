@@ -2,7 +2,6 @@
     --corFonteQuizTextoLido: black; /* Texto lido Quiz */
     --corFundo:#0088b7; /* Cor fundo */
     --corFonteTitulo: #fb5a01; /*Sobre e nomeAnimal */
-
     --corFonteQuizInfo: white; /*acerto, ponto, progesso */
     --corFonteQuizV: #0cff00; /* confirmar, cor fundo acerto, proximo*/
     --corFonteQuizE: #fe0a00; /* fundo error*/
@@ -15,6 +14,10 @@
     --corFundoSMenu: #ffffffa1;
     --corFonteQuizConfDes: grey;
     --corFundoAlter: white;
+    --corFundoCon:#151231; /*cor fundo contraste*/
+    --corFonteTextContras:white; /*cor fonte texo lido contraste*/
+    --corFonteMenuCont:black; /*cor fonte menu contraste*/
+    --corBarraMenuCon:white;  /*cor barra menu contraste*/
     --tamanhoFonte: 3;
 }
 body {
@@ -47,6 +50,19 @@ p{
     text-transform: uppercase;
 /*  color: #1b1e21;*/
 }
+.pergunta{
+    
+    left: 3vw;
+
+}
+
+.next{
+    right: 5vw;
+
+}
+
+
+
 
 .question{
     padding: 4vw;
@@ -98,7 +114,17 @@ p{
 }
 #foot{
     color: var(--corFonteQuizR); 
+    left:1vw;
 }
+
+.nomeTit{
+    font-size: 9vw;
+}
+
+.texto{
+    font-size: 5vw;
+}
+
 .styleFont2{
     font-style: normal;
     font-family: ComicaBDBold;
@@ -137,9 +163,23 @@ p{
 }
 #buttonSobre {
     color: var(--corFonteTitulo);
+    font-size: 7vw;
 }
+
+.acert{
+    top:3vw;
+    left:4vw;
+}
+
+.pont{
+    top:3vw;
+    left:7vw;
+}
+
+
 p#acertos{
     color: var(--corFonteQuizInfo);
+
 }
 
 p#pontos{
@@ -161,6 +201,22 @@ div#carouselExampleControls{
 }
 img.d-block{
 }
+
+.img-responsive{
+    right: 4vw;
+}
+
+#incorrect{
+    width: 10%;
+    right: 40vw
+}
+
+#correct{
+    width: 10%;
+    right: 40vw
+}
+
+
 .carousel-control-next-icon, .carousel-control-prev-icon {
 }
 #myContainerFluidAnimal{
@@ -168,6 +224,7 @@ img.d-block{
     background-color: var(--corFundoSMenu);
 }
 ul.nav{
+    font-size: 3vw;
 }
 ul.nav li.styleFont1 a{
     background-color: var(--corFundoS);
@@ -191,6 +248,7 @@ td{
 }
 
 td#textEs{
+    font-size: 4vw;
 }
 
 td#textFa{
