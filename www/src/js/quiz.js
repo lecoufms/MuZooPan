@@ -288,7 +288,7 @@ function alteraBarra(barraA, barraN){
     pai.removeChild(document.getElementById('barra'+barraA));
     img.src= '../files/img/bar_'+(!barraN ? '':barraN )+'.png';
     img.id='barra'+barraN;
-    img.style.width='80%';
+    img.style.width='18vw';
     pai.appendChild(img);
 }
 
