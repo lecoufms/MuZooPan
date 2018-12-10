@@ -159,14 +159,14 @@ function resolveSuccess(fs) {
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log(entry.toURL());
-     console.log('cdvfile URI: ' + entry.toInternalURL());
+    console.log(fs.toURL());
+     console.log('cdvfile URI: ' + fs.toInternalURL());
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-/*    var file = 'files/config/quiz.json';
+    /*    var file = 'files/config/quiz.json';
     fs.getFile(file, { create: true, exclusive: false }, function (fileEntry) {
 
         console.log("fileEntry is file?" + fileEntry.isFile.toString());

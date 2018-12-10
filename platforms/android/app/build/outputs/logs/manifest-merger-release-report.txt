@@ -112,6 +112,7 @@ ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\s
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:13:41-109
 uses-sdk
 ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:15:5-74
+INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:15:5-74
 MERGED from [:barcodescanner-release-2.1.5:] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\3cfe70216e74d40c8170cbc4565b9c40\AndroidManifest.xml:7:5-9:41
 MERGED from [:barcodescanner-release-2.1.5:] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\3cfe70216e74d40c8170cbc4565b9c40\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:27.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.0.aar\abe013d0fe3478b514909a01445e4d05\AndroidManifest.xml:20:5-44
@@ -130,28 +131,31 @@ MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Valdenize SR\.g
 MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\e688ab3ebb6c216d03f17bae260ffde1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\fe46d081bfb41b510aa06e9053465c37\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\fe46d081bfb41b510aa06e9053465c37\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:15:5-74
 	android:targetSdkVersion
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:15:42-71
 	android:minSdkVersion
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:15:15-41
-uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:16:5-65
-	android:name
-		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:16:22-62
-uses-permission#android.permission.FLASHLIGHT
-ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:17:5-69
-	android:name
-		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:17:22-66
-uses-feature#android.hardware.camera
-ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:18:5-84
-	android:required
-		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:18:58-81
-	android:name
-		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:18:19-57
+		INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:19:5-81
+ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:16:5-81
 	android:name
-		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:19:22-78
+		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:16:22-78
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:17:5-65
+	android:name
+		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:17:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:18:5-69
+	android:name
+		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:18:22-66
+uses-feature#android.hardware.camera
+ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:19:5-84
+	android:required
+		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:19:58-81
+	android:name
+		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:19:19-57
 meta-data#android.arch.lifecycle.VERSION
 ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valdenize SR\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\fe46d081bfb41b510aa06e9053465c37\AndroidManifest.xml:25:9-27:47
 	android:value

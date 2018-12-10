@@ -1,11 +1,11 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
-    "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-    "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-    "pluginId": "phonegap-plugin-barcodescanner",
+    "id": "cordova-plugin-android-volume.AndroidVolume",
+    "file": "plugins/cordova-plugin-android-volume/www/AndroidVolume.js",
+    "pluginId": "cordova-plugin-android-volume",
     "clobbers": [
-      "cordova.plugins.barcodeScanner"
+      "androidVolume"
     ]
   },
   {
@@ -182,21 +182,21 @@ module.exports = [
     "runs": true
   },
   {
-    "id": "cordova-plugin-android-volume.AndroidVolume",
-    "file": "plugins/cordova-plugin-android-volume/www/AndroidVolume.js",
-    "pluginId": "cordova-plugin-android-volume",
+    "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+    "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+    "pluginId": "phonegap-plugin-barcodescanner",
     "clobbers": [
-      "androidVolume"
+      "cordova.plugins.barcodeScanner"
     ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-plugin-whitelist": "1.3.3",
-  "phonegap-plugin-barcodescanner": "8.0.0",
+  "cordova-plugin-android-volume": "0.0.12",
   "cordova-plugin-file": "6.0.1",
-  "cordova-plugin-android-volume": "0.0.12"
+  "cordova-plugin-whitelist": "1.3.3",
+  "phonegap-plugin-barcodescanner": "8.0.0"
 };
 // BOTTOM OF METADATA
 });

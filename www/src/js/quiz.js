@@ -159,14 +159,14 @@ function resolveSuccess(fs) {
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log(entry.toURL());
-     console.log('cdvfile URI: ' + entry.toInternalURL());
+    console.log(fs.toURL());
+     console.log('cdvfile URI: ' + fs.toInternalURL());
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-/*    var file = 'files/config/quiz.json';
+    /*    var file = 'files/config/quiz.json';
     fs.getFile(file, { create: true, exclusive: false }, function (fileEntry) {
 
         console.log("fileEntry is file?" + fileEntry.isFile.toString());
@@ -198,16 +198,18 @@ function insertAudio(my, qual){
     audio.autoplay=true;
     audio.src='../files/sounds/quiz/'+qual+'.ogg';
     audio.id=qual+"Audio";
+    audio.style.display="none";
     my.parentNode.insertAdjacentElement('beforebegin',audio);
 }
 function respostaCerta(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');    
     var img = document.createElement('img');
     img.src="../files/img/correct.png";
-    img.className='img-responsive';
+    img.className='img-responsive col-1';
     img.id='correct';
     img.style.width='10%';
     my.parentNode.style.background=newCor;
+    my.parentNode.className="opt col-11";
     my.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
     
 }

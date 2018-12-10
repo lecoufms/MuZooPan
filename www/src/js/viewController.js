@@ -65,12 +65,12 @@ function render(){
 
 function onDeviceReadyV() {
     document.addEventListener("backbutton", anterior,false);
-    document.addEventListener("volumedownbutton", stateVolumeH, false);
-    document.addEventListener("volumeupbutton", stateVolumeH, false);
+    document.addEventListener("volumeupbutton", stateVolumeUsetH);
+    document.addEventListener("volumedownbutton", stateVolumeDsetH);
     console.log(cordova.file);
     onMenu();
 }
 
 function onLoadV() {
-    document.addEventListener("deviceready", onDeviceReadyV, true);
+    document.addEventListener("deviceready", onDeviceReadyV);
 }

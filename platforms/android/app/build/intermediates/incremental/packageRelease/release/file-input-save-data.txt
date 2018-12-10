@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Dec 03 16:55:06 BRST 2018
+#Thu Dec 06 14:37:15 BRST 2018
 210.set=ASSET
 2.path=html-ru/sharing.html
 14.set=ASSET
@@ -33,7 +33,7 @@
 152.baseType=DIRECTORY
 32.baseType=DIRECTORY
 131.path=www/files/img/bar_1.png
-183.path=www/src/vendors/bootstrap/js/bootstrap.min.js.map
+183.path=www/plugins/cordova-plugin-file/www/Metadata.js
 118.baseType=DIRECTORY
 132.set=ASSET
 99.baseType=DIRECTORY
@@ -116,7 +116,7 @@
 132.path=html-zh-rCN/about1d.html
 185.baseType=DIRECTORY
 65.baseType=DIRECTORY
-184.path=www/plugins/cordova-plugin-file/www/Metadata.js
+184.path=www/src/vendors/bootstrap/js/bootstrap.min.js.map
 223.baseType=DIRECTORY
 142.set=ASSET
 189.set=ASSET
@@ -642,7 +642,7 @@ count=247
 90.path=html-ru/index.html
 13.set=ASSET
 242.path=www/src/js/viewController.js
-165.path=www/files/img/logo.png
+165.path=www/files/img/bar_.png
 1.base=C\:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\assets\\release
 232.baseType=DIRECTORY
 11.baseType=DIRECTORY
@@ -725,7 +725,7 @@ count=247
 91.path=html-zh-rHK/about1d.html
 23.set=ASSET
 243.path=www/src/vendors/bootstrap/js/bootstrap.js
-166.path=www/files/img/bar_.png
+166.path=www/files/img/logo.png
 2.base=C\:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan\\platforms\\android\\app\\build\\intermediates\\assets\\release
 141.path=html-nl/index.html
 127.set=ASSET

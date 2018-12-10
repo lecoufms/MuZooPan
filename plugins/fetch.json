@@ -24,13 +24,5 @@
     },
     "is_top_level": true,
     "variables": {}
-  },
-  "cordova-plugin-android-volume": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-android-volume"
-    },
-    "is_top_level": true,
-    "variables": {}
   }
 }
