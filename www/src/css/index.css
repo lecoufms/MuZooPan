@@ -348,4 +348,19 @@ ex menu n
     color:#000!important;
     background-color:#ccc!important;
 }
+.sombra{
+    text-shadow: -1px 0 black, 0 1px black,
+    1px 0 black, 0 -1px black;
+    font-size: 14vw;
+    text-align: center;
 
+}
+.mensagem{
+
+    font-size: 6vw;
+    text-align: center;
+
+}
+.btn{
+    font-size: 7vw;
+}
