@@ -50,7 +50,7 @@
 
 </script>
 <script id="obj" type="text/template7">
-        <div><p id="nomeTitulo" class="styleFont2">{{name}}</p></div>
+        <div><p id="nomeTitulo" class="nomeTit styleFont2">{{name}}</p></div>
         <div>
             <audio id="playIcon" src={{animalSound}}>
             </audio>
@@ -67,7 +67,7 @@
                         {{else}}
                             <div class='carousel-item active'>
                         {{/js_if}}
-                                <img class="d-block w-300" src={{img}}>
+                                <img class="col-10 offset-1 d-block w-300" src={{img}}>
                             </div>
                     {{/each}}
                         
@@ -106,7 +106,7 @@
                         {{/js_if}}
                                 <table>
                                     <tr>
-                                        <td id="textEs"> 
+                                        <td id="textEs" class="textEs"> 
                                             <p>{{text}}</p>
                                         </td>
                                         <td id="textFa">
@@ -136,11 +136,11 @@
 <script id= "quiz" type="text/template7">
     <div class = "conteiner">
         <div id="quiz1" class="container-fluid row row-xs-12">
-                <div class= "col col-sm-10 text-center">
-                    <p id="acertos" class="styleFont2">Acertos</p>
+                <div class= "col col-sm-10 texto acert text-center">
+                    <p id="acertos" class="styleFont2 acert">Acertos</p>
                     <p id="qnAcertos" class="styleFont2">Acertos</p>
                 </div>
-                <div class= "col col-sm-2 text-center">
+                <div class= "col col-sm-2 texto text-center pont">
                     <p id="pontos" class="styleFont2">Pontos</p>
                     <p id="qnPontos" class="styleFont2">Pontos</p>
                      <div class="row">
@@ -151,25 +151,25 @@
                     </div>
                 </div>
         </div>
-        <div class="container-fluid col col-xs-12" style="text-align: center">
+        <div class="container-fluid col col-xs-12 texto" style="text-align: center">
 
                     <div id="question" class="question">
                         <p class="styleFont1">  </p>
                     </div>
-                    <div class="container">
+                    <div class="container" style="width:90%">
                         <div id="alternativa row">
-                            <label class="opt"><span id="opt1" class="styleFont1"></span></label>
+                            <label class="opt"><span id="opt1" class=""></span></label>
                             
                         </div>    
-                        <label class="opt"><span id="opt2" class="styleFont1"></span></label>
-                        <label class="opt"><span id="opt3" class="styleFont1"></span></label>
-                        <label class="opt"><span id="opt4" class="styleFont1"></span></label>
+                        <label class="opt"><span id="opt2" class=""></span></label>
+                        <label class="opt"><span id="opt3" class=""></span></label>
+                        <label class="opt"><span id="opt4" class=""></span></label>
                     </div>
         </div>
         <div class="container-fluid row row-xs-12" style="text-align: center">
-                    <p id="foot" class=" col-sm-2 styleFont2">Revisar</p>
-                    <p id="progress" class=" col-sm-8 styleFont2">Question x of y</p>
-                    <p id="next-btn" class=" col-sm-2 next-btn styleFont2">CONFIRMAR</p>
+                    <p id="foot" class=" col-3 foot styleFont2 texto">Revisar</p>
+                    <p id="progress" class=" col-6 styleFont2 pergunta texto">Question x of y</p>
+                    <p id="next-btn" class="col-3 next next-btn styleFont2 texto">CONFIRMAR</p>
         </div>
     </div>
 </script>
