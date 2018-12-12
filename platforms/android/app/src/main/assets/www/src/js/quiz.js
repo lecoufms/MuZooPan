@@ -243,8 +243,8 @@ function respostaErrada(my) {
     img.style.width='19vw';
     divf.appendChild(img);
     divP.appendChild(divf);
-    my.parentNode.parentNode.parentNode.className="media pr-3";
-    my.parentNode.parentNode.className="col-10 pr-3  p-0";
+    my.parentNode.parentNode.parentNode.className="media pr-4";
+    my.parentNode.parentNode.className="col-10 pr-2  p-0";
     my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
 }
 

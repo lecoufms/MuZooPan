@@ -216,7 +216,7 @@ function respostaCerta(my) {
     divf.className="thumbnail text-center";
     my.parentNode.className="opt media-body";
     img.src="../files/img/correct.png";
-    img.className='img-responsive pr-3';
+    img.className='img-responsive pr-4';
     img.id='correct';
     img.style.width='19vw';
     my.parentNode.style.background=newCor;
@@ -239,12 +239,12 @@ function respostaErrada(my) {
     my.parentNode.className="opt media-body";
     img.src="../files/img/incorrect.png";
     img.id='incorrect';
-    img.className='img-responsive pr-3';
+    img.className='img-responsive pr-4';
     img.style.width='19vw';
     divf.appendChild(img);
     divP.appendChild(divf);
-    my.parentNode.parentNode.parentNode.className="media pr-3";
-    my.parentNode.parentNode.className="col-10 pr-3  p-0";
+    my.parentNode.parentNode.parentNode.className="media pr-4";
+    my.parentNode.parentNode.className="col-10 pr-2  p-0";
     my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
 }
 
