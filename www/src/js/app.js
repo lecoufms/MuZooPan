@@ -66,6 +66,7 @@ function getEstilo(){
 }
 function exit(){
     console.log("exit");
+    window.localStorage.removeItem("qrcodeInput");
     window.localStorage.removeItem("anterior");
     if (cordova.platformId != "browser") {
         navigator.app.exitApp();
@@ -73,10 +74,11 @@ function exit(){
 }
 
 function buttonMenu() {
-  document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("mySidebar").style.display = "none";
 }
 function sideBar() {
-  document.getElementById("mySidebar").style.display = "block";
+    stateVolumeUsetH();
+    document.getElementById("mySidebar").style.display = "block";
 }
 
 
@@ -133,22 +135,20 @@ function stateVolumeHsetD() {
         }
     }
 }
-function stateVolumeUsetH(e) {
+function stateVolumeUsetH() {
     console.log("action ");
     window.androidVolume.getMusic(function (sucess) {
             var valor = parseInt(sucess);
             console.log(typeof sucess);
-            var valor = (sucess+1);
-            console.log(' stateVolumeU '+valor);
+            // var valor = (sucess+1);
+            // console.log(' stateVolumeU '+valor);
             if (valor > 0) {
                 if (window.localStorage.getItem("volume") != valor) {
-                    setVolumeDis(valor);
                     setVolumeHtml(valor);
                 }
             }
 
     }, fail);
-    e.preventDefault();
     // console.log( parseInt(document.getElementById("volume").value));
 }
 function stateVolumeDsetH(e) {

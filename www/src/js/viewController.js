@@ -23,7 +23,7 @@ function readFile(file)
             {
                 context = JSON.parse(rawFile.responseText);
                 if(!selectContext(context)){
-                    renderOnScreen({"name":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne a tela incial e tente novamente."});
+                    renderOnScreen({"name":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne a tela incial e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))});
                 }
             }
         }
@@ -64,11 +64,11 @@ function render(){
 (function(){return $("#invisible").load("templates.html",render)})();
 
 function onDeviceReadyV() {
-    document.addEventListener("backbutton", anterior,false);
-    document.addEventListener("volumeupbutton", stateVolumeUsetH);
-    document.addEventListener("volumedownbutton", stateVolumeDsetH);
-    console.log(cordova.file);
     onMenu();
+    document.addEventListener("backbutton", anterior,false);
+    // document.addEventListener("volumeupbutton", stateVolumeUsetH);
+    // document.addEventListener("volumedownbutton", stateVolumeDsetH);
+    console.log(cordova.file);
 }
 
 function onLoadV() {

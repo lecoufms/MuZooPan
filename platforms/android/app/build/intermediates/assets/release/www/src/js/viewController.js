@@ -64,11 +64,11 @@ function render(){
 (function(){return $("#invisible").load("templates.html",render)})();
 
 function onDeviceReadyV() {
-    document.addEventListener("backbutton", anterior,false);
-    document.addEventListener("volumeupbutton", stateVolumeUsetH);
-    document.addEventListener("volumedownbutton", stateVolumeDsetH);
-    console.log(cordova.file);
     onMenu();
+    document.addEventListener("backbutton", anterior,false);
+    // document.addEventListener("volumeupbutton", stateVolumeUsetH);
+    // document.addEventListener("volumedownbutton", stateVolumeDsetH);
+    console.log(cordova.file);
 }
 
 function onLoadV() {

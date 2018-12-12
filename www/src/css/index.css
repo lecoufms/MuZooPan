@@ -371,3 +371,39 @@ ex menu n
 .btn{
     font-size: 7vw;
 }
+/*
+ex input checkbox button on/off
+*/
+
+/* Switch 1 Specific Styles Start */
+
+input[type="checkbox"].switch_1{
+    font-size: 5vw;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 3.5em;
+    height: 1.5em;
+    background: #ddd;
+    border-radius: 3em;
+    position: static;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch_1:checked{
+    content: "On";
+    background: var(--corFundo);
+  }
+  
+  input[type="checkbox"].switch_1:after{
+    position: absolute;
+    transition: all .2s ease-in-out;
+    content: "Off";
+  }
+  
+  input[type="checkbox"].switch_1:checked:after{
+    left: calc(100% - 1.5em);
+  }

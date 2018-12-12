@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ufms.leco" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://leco.ufms.br/">
+    <feature name="AndroidVolume">
+        <param name="android-package" value="com.mcluck.plugin.AndroidVolume" />
+    </feature>
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         <param name="onload" value="true" />
@@ -12,12 +15,12 @@
     <feature name="BarcodeScanner">
         <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
     </feature>
-    <name>HelloCordova</name>
+    <name>Muzoopan</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        MuZooPan é um jogo educacional para auxiliar alunos durante o passeio no laboratório de zoologia do Campus do Pantanal (UFMS).
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="leco.ufms@gmail.com" href="http://leco.ufms.br/">
+        LECO Team
     </author>
     <content src="index.html" />
     <access origin="*" />

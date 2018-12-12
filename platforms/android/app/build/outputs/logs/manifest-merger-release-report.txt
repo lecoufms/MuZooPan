@@ -17,7 +17,7 @@ INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\ap
 INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
 INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
 	package
-		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:102-135
+		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:102-125
 		INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -27,7 +27,7 @@ INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\ap
 	android:hardwareAccelerated
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:136-194
+		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:126-184
 	android:versionCode
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:2:46-73
 		INJECTED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml
@@ -64,7 +64,7 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valdenize SR\.gradle
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
 	android:icon
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
-activity#io.cordova.hellocordova.MainActivity
+activity#com.ufms.leco.MainActivity
 ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:label
 		ADDED from C:\Users\Valdenize SR\Desktop\GitHub\MuZooPan\platforms\android\app\src\main\AndroidManifest.xml:6:97-134

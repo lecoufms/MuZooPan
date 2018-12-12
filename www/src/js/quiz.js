@@ -109,25 +109,31 @@ function qualBarraPBonus() {
     }
 }
 function retiraVisuResposta(){
-    var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFundoAlter');
     var img1 = document.getElementById('correct');
     var img2 = document.getElementById('incorrect');
-    var pai;
+    var pai1;
+    var pai2;
     var audio;
+    questionMy.parentNode.parentNode.className="col-10 offset-1";
     questionMy.parentNode.style.background='';
     if (img2 != null) {
-        pai = img2.parentNode;
+        pai1 = img1.parentNode.parentNode.parentNode;
+        pai2 = img2.parentNode.parentNode.parentNode;
+        pai2.className="";
+        pai1.className="";
         audio  = document.getElementById('incorrectAudio');
         var alter = eCerta();
-        alter.parentNode.style.background=newCor;
-        pai.removeChild(img1);
-        pai.removeChild(img2);
-        pai.removeChild(audio);
+        alter.parentNode.style.background='';
+        alter.parentNode.parentNode.className="col-10 offset-1";
+        pai1.removeChild(img1.parentNode.parentNode);
+        pai2.removeChild(img2.parentNode.parentNode);
+        pai2.removeChild(audio);
     }else{
-        pai = img1.parentNode;
+        pai1 = img1.parentNode.parentNode.parentNode;
+        pai1.className="";
         audio  = document.getElementById('correctAudio');
-        pai.removeChild(img1);
-        pai.removeChild(audio);
+        pai1.removeChild(img1.parentNode.parentNode);
+        pai1.removeChild(audio);
     }
     questionMy=null;
 
@@ -199,18 +205,26 @@ function insertAudio(my, qual){
     audio.src='../files/sounds/quiz/'+qual+'.ogg';
     audio.id=qual+"Audio";
     audio.style.display="none";
-    my.parentNode.insertAdjacentElement('beforebegin',audio);
+    my.parentNode.parentNode.parentNode.insertAdjacentElement('afterbegin',audio);
 }
 function respostaCerta(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');    
     var img = document.createElement('img');
+    var divP= document.createElement('div');
+    var divf = document.createElement("div");
+    divP.className = "row align-self-center";
+    divf.className="thumbnail text-center";
+    my.parentNode.className="opt media-body";
     img.src="../files/img/correct.png";
-    img.className='img-responsive col-1';
+    img.className='img-responsive pr-3';
     img.id='correct';
-    img.style.width='10%';
+    img.style.width='19vw';
     my.parentNode.style.background=newCor;
-    my.parentNode.className="opt col-11";
-    my.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
+    divf.appendChild(img);
+    divP.appendChild(divf);
+    my.parentNode.parentNode.parentNode.className="media pr-4";
+    my.parentNode.parentNode.className="col-10 pr-2  p-0";
+    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
     
 }
 
@@ -218,12 +232,20 @@ function respostaErrada(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizE');    
     my.parentNode.style.background=newCor;
     var img = document.createElement('img');
+    var divP= document.createElement('div');
+    var divf = document.createElement("div");
+    divP.className = "row align-self-center";
+    divf.className="thumbnail text-center";
+    my.parentNode.className="opt media-body";
     img.src="../files/img/incorrect.png";
-    img.className='img-responsive';
     img.id='incorrect';
-    img.style.width='10%';
-    my.parentNode.parentNode.appendChild(img);
-    
+    img.className='img-responsive pr-3';
+    img.style.width='19vw';
+    divf.appendChild(img);
+    divP.appendChild(divf);
+    my.parentNode.parentNode.parentNode.className="media pr-3";
+    my.parentNode.parentNode.className="col-10 pr-3  p-0";
+    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
 }
 
 function alteraNextButton(){

@@ -1,0 +1,24 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-android-volume": {
+      "PACKAGE_NAME": "com.ufms.leco"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.ufms.leco"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ufms.leco"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.ufms.leco"
+    }
+  },
+  "dependent_plugins": {}
+}

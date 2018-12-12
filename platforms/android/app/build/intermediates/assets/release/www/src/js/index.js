@@ -22,13 +22,15 @@ function changePrepare(text,isApp){
 }
 
 function barcodescanner(event) {
-    camera = false;
     cordova.plugins.barcodeScanner.scan(
         function (result) {
             console.log("cancelado "+result.cancelled);
             if (!result.cancelled) {
                 changePrepare(result.text);
-            }   camera = true;
+                camera = true;
+            }else{
+                camera = false;
+            }
         },
         function (error) {
             alert("Scanning failed: " + error);
@@ -46,6 +48,7 @@ function barcodescanner(event) {
             disableSuccessBeep: false // iOS and Android
       }
     );
+    camera = false;
 }
 
 /*
@@ -107,8 +110,10 @@ function anterior(e) {
     }else if (window.location.href !== ind) {
         console.log('vou ao index, bele');
         window.history.go(-1);
-    }else if ( (window.location.href === ind && camera) || (window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio")){
+    }else if (window.location.href === ind && camera){
         alert(camera);
+        exit();
+    }else if ( window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio"){
         exit();
     }
 }

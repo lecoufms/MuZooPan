@@ -130,7 +130,11 @@
         <p id="ops" class="sombra">Ops!</p>
         <img class="displayed col-8 offset-2" src="../files/img/imagemErro.png">
          <p id="msg" class="mensagem">{{mensagem}}</p>
-        <p id="button" class="btn styleFont2 col-3 offset-4" onclick="window.location.href="index.html";">Início</p>
+        {{#js_if "this.anterior.nome == 'quiz'"}}
+           <p>{{this.anterior.nome}}</p> 
+        {{else}}
+            <p id="button" class="btn styleFont2 col-3 offset-4" onclick="window.location.href="index.html";">Início</p>
+        {{/js_if}}
     </div>
 </script>
 <script id= "quiz" type="text/template7">
@@ -145,9 +149,8 @@
                     <span id="qnPontos" class="offset-3 styleFont2">Pontos</span>
                      <div class="row">
                         <div class="col col-xs-2 thumbnail text-center">
-                            <img id="barra0" src="../files/img/bar_0.png" alt="..." class="img-responsive" style="width:18vw;">
+                            <img id="barra0" src="../files/img/bar_.png" alt="..." class="img-responsive" style="width:18vw;">
                         </div>
-                        <p id="tetse"> <p>
                     </div>
                 </div>
         </div>
@@ -156,18 +159,27 @@
                     <div id="question" class="question">
                         <p class="styleFont1">  </p>
                     </div>
-                    <div class="container" style="width:90%">
-                        <div id="alternativa" class = "row">
-                            <label class="opt col-11 offset-1"><span id="opt1" class="styleFont1"></span></label>
+                    <div class="col" >
+                        <div class = "">
+                            <div id="alternativa" class = "col-10 offset-1">
+                                <label class="opt"><span id="opt1" class="styleFont1"></span></label>
+                            </div>
+
                         </div>
-                        <div class="row"> 
-                            <label class="opt col-11 offset-1"><span id="opt2" class="styleFont1"></span></label>
+                        <div class=""> 
+                            <div id="alternativa" class = "col-10 offset-1">
+                                <label class="opt"><span id="opt2" class="styleFont1"></span></label>
+                            </div>
                         </div>
-                        <div class="row">
-                            <label class="opt col-11 offset-1"><span id="opt3" class="styleFont1"></span></label>
+                        <div class="">
+                            <div id="alternativa" class = "col-10 offset-1">
+                                <label class="opt"><span id="opt3" class="styleFont1"></span></label>
+                            </div>
                         </div>
-                        <div class="row">
-                            <label class="opt col-11 offset-1"><span id="opt4" class="styleFont1"></span></label>
+                        <div class="">
+                            <div id="alternativa" class = "col-10 offset-1">
+                                <label class="opt"><span id="opt4" class="styleFont1"></span></label>
+                            </div>
                         </div>
                     </div>
         </div>
@@ -178,6 +190,7 @@
         </div>
     </div>
 </script>
+
 <script id="index" type="text/template7">
      <div style="text-align: center;">
             <div class="container">
