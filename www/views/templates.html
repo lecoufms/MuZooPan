@@ -8,44 +8,73 @@
     </div>
 </script>
 
+
 <script id="premio" type="text/template7">
 
     <div id="premioT">
-        <img id="parabensImg" class="rounded mx-auto d-block img-responsive" style=" width:80%;" src={{this.conteudo.imagemParabens}}>
+        <img id="parabensImg" class="rounded mx-auto d-block img-responsive Parabens" src={{this.conteudo.imagemParabens}}> 
+
         {{#each conteudo.Premio}}
             {{#js_if "this.nome === @root.premiacao.premio" }}
-                <div class="container row">
-                    <div class="container col-sm-md-3">
-                        <img class="img-fluid float-left img-responsive" style=" width:55%;" id="premioImg" src={{caminho}}>
+
+                <div class="container">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <img id="fogos0" src="../files/img/firework.gif" class="img-re offset-1" alt="animated">
+                        </div>
+                        <div class="col">
+                            <img id="fogos1" src="../files/img/firework.gif" class="img-re offset-5" alt="animated">
+                        </div>    
                     </div>
-                     <div class="container col-sm-md-3">
-                        <p id="textoMot" style={{estilo}}>
-                                {{textos.texto0}} {{@root.premiacao.acertos}} {{textos.texto1}} {{@root.premiacao.pontos}} {{textos.texto2}}
-                        </p>
-                     </div>
-                 </div>
-                 <audio id="premioAudio" autoplay src="{{@root.conteudo.premioSound}}">
+                </div>  
+
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-5">
+                            <img class="img-fluid float-left Premio" id="premioImg" src={{caminho}}>
+                        </div>
+                        <div class="col-6">
+                            <p id="textoMot" style={{estilo}}>
+                            {{textos.texto0}} {{@root.premiacao.acertos}} {{textos.texto1}} {{@root.premiacao.pontos}} {{textos.texto2}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <audio id="premioAudio" autoplay src="{{@root.conteudo.premioSound}}">
                 </audio>
-                {{#each @root.conteudo.fogos}}
-                    <div ><img id={{js "'fogos'+@index"}} src={{caminho}} style="width:{{largura}}" class="img-responsive" alt=”animated”></div>
-                {{/each}}
-                <div class="container col-sm-md-3">
-                    <p id="textoPonto" style={{estilo}}>
-                        Pontos: {{@root.premiacao.pontos}}
-                    </p>
-                    <p id="textoAcertos" style={{estilo}}>
-                        Acertos: {{@root.premiacao.acertos}}
-                    </p>
-                    <p id="textoBonus" style={{estilo}}>
-                        Bônus: {{@root.premiacao.bonus}}
-                    </p>
-                    <p id="textoRevisao" style={{estilo}}>
-                        Revisões: {{@root.premiacao.revisao}}
-                    </p>
+
+
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-4">
+                            <p id="textoPonto">
+                              Pontos: {{@root.premiacao.pontos}}
+                           </p>
+                        <p id="textoAcertos">
+                            Acertos: {{@root.premiacao.acertos}}
+                        </p>
+                        <p id="textoBonus">
+                         Bônus: {{@root.premiacao.bonus}}
+                        </p>
+                        <p id="textoRevisao">
+                            Revisões: {{@root.premiacao.revisao}}
+                        </p>    
+      
+                        </div>
+                        <div class="col-6">
+                            <img id="fogos0" src="../files/img/firework.gif" class="offset-4" style="width:35vw" alt="animated">
+                        </div>
+                    </div>
+                </div>
+
+
+
                 </div>
             {{/js_if}}
         {{/each}}
-        <button onclick="exit()" style="margem-botton:5%;"> Sair </button>
+        <div class="offset-5 buttomSair styleFont2">
+            <span onclick="exit()"> Sair </span>
+        </div>
     </div>
 
 </script>
@@ -54,13 +83,13 @@
         <div>
             <audio id="playIcon" src={{animalSound}}>
             </audio>
-                <span id= "iconSom" class="glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
+                <span id= "iconSom" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
                 </span>
         </div>
         
         <div id="myContainerAnimal" class="container">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
+                <div class="carousel-inner ">
                     {{#each imgs}}
                         {{#js_if "@index"}} 
                             <div class="carousel-item"> 
@@ -162,23 +191,23 @@
                     <div class="col" >
                         <div class = "">
                             <div id="alternativa" class = "col-10 offset-1">
-                                <label class="opt"><span id="opt1" class="styleFont1"></span></label>
+                                <label class="opt"><span id="opt1" class=""></span></label>
                             </div>
 
                         </div>
                         <div class=""> 
                             <div id="alternativa" class = "col-10 offset-1">
-                                <label class="opt"><span id="opt2" class="styleFont1"></span></label>
+                                <label class="opt"><span id="opt2" class=""></span></label>
                             </div>
                         </div>
                         <div class="">
                             <div id="alternativa" class = "col-10 offset-1">
-                                <label class="opt"><span id="opt3" class="styleFont1"></span></label>
+                                <label class="opt"><span id="opt3" class=""></span></label>
                             </div>
                         </div>
                         <div class="">
                             <div id="alternativa" class = "col-10 offset-1">
-                                <label class="opt"><span id="opt4" class="styleFont1"></span></label>
+                                <label class="opt"><span id="opt4" class=""></span></label>
                             </div>
                         </div>
                     </div>
