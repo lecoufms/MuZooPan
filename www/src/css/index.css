@@ -22,7 +22,7 @@
 }
 body {
     background-color: var(--corFundo);
-    font-size: calc(var(--tamanhoFonte) * 1px)!important ;
+    font-size: calc(var(--tamanhoFonte) * 1vw)!important ;
 }
 
 
@@ -198,6 +198,8 @@ p#nomeTitulo{
 }
 span#iconSom{
     color: white;
+    font-size: 9vw;
+    top:-14vw;
 }
 #myContainerAnimal{
 }
@@ -405,9 +407,34 @@ input[type="checkbox"].switch_1{
   }
   
   input[type="checkbox"].switch_1:checked:after{
+
     left: calc(100% - 9vw);
     content: "On";
   }
+
+  .Premio{
+    width: 40vw;
+  }
+
+  .Parabens{
+    width: 65vw;
+  }
+  .img-re{
+    position: relative;
+    width: 18vw;
+  }
+
+  p#textoPonto, p#textoAcertos, p#textoBonus, p#textoRevisao{
+    
+    margin-bottom: 0rem;
+  }
+
+  .buttomSair{
+    color: var(--corFonteQuizV);
+    font-size: 5vw;
+    position: relative;
+  }
+
 
 /*
 slider volume
