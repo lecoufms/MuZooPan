@@ -2,8 +2,8 @@ function fail(evt) {
     console.log("fail "+evt);
 }
 function onMenu() {
-    document.getElementById("buttonMenu").addEventListener("click", sideBar);
-    document.getElementById("buttonMenu2").addEventListener("click", buttonMenu);
+    // document.getElementById("buttonMenu").addEventListener("click", sideBar);
+    // document.getElementById("buttonMenu2").addEventListener("click", buttonMenu);
     document.getElementById('estilo').addEventListener("click", Estilo);
     document.getElementById("volume").addEventListener("change", stateVolumeHsetD);
     document.getElementById('aumentaFonte').addEventListener("click", aumentaFonte);
