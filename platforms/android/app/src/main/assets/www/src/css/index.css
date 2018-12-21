@@ -23,6 +23,7 @@
 body {
     background-color: var(--corFundo);
     font-size: calc(var(--tamanhoFonte) * 1vw)!important ;
+    color: var(--corFonteTextoLidoPadrao) !important;
 }
 
 
@@ -300,7 +301,12 @@ ex input checkbox button on/off
 */
 
 /* Switch 1 Specific Styles Start */
-
+#contraste{
+    background: grey;
+    height: 9vw;
+    border-radius: 1vw;
+    position: absolute;
+}
 input[type="checkbox"].switch_1{
     font-size: 4vw;
     -webkit-appearance: none;
@@ -309,7 +315,7 @@ input[type="checkbox"].switch_1{
     width: 16vw;
     height: 7vw;
     background: #ddd;
-    border-radius: 4vw;
+    border-radius: 2vw;
     position: static;
     cursor: pointer;
     outline: none;
@@ -318,22 +324,25 @@ input[type="checkbox"].switch_1{
   }
   
   input[type="checkbox"].switch_1:checked{
-    
     background: var(--corFundo);
   }
   
   input[type="checkbox"].switch_1:after{
     position: absolute;
     transition: all .2s ease-in-out;
-    content: "Off";
+    content: "OFF";
+    padding-top: 0.4vw;
   }
   
   input[type="checkbox"].switch_1:checked:after{
-
-    left: calc(100% - 9vw);
-    content: "On";
+    left: calc(100vw - 92vw);
+    content: "ON";
+    color: white;
   }
-
+/*
+*/
+/*
+*/
   .Premio{
     width: 40vw;
   }

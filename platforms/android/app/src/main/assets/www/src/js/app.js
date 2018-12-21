@@ -88,7 +88,7 @@ function sideBar() {
 
 
 function sideBar2() {
-    document.getElementById("mySidebar").style.width = "40%";
+    document.getElementById("mySidebar").style.width = "60vw";
 }
 
 
