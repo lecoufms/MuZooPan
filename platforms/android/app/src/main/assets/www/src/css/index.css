@@ -22,7 +22,7 @@
 }
 body {
     background-color: var(--corFundo);
-    font-size: calc(var(--tamanhoFonte) * 1px)!important ;
+    font-size: calc(var(--tamanhoFonte) * 1vw)!important ;
 }
 
 
@@ -198,6 +198,8 @@ p#nomeTitulo{
 }
 span#iconSom{
     color: white;
+    font-size: 9vw;
+    top:-14vw;
 }
 #myContainerAnimal{
 }
@@ -275,6 +277,129 @@ td > p {
 
 
 
+/* erro*/
+
+.sombra{
+    text-shadow: -1px 0 black, 0 1px black,
+    1px 0 black, 0 -1px black;
+    font-size: 14vw;
+    text-align: center;
+
+}
+.mensagem{
+
+    font-size: 6vw;
+    text-align: center;
+
+}
+.btn{
+    font-size: 7vw;
+}
+/*
+ex input checkbox button on/off
+*/
+
+/* Switch 1 Specific Styles Start */
+
+input[type="checkbox"].switch_1{
+    font-size: 4vw;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 16vw;
+    height: 7vw;
+    background: #ddd;
+    border-radius: 4vw;
+    position: static;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch_1:checked{
+    
+    background: var(--corFundo);
+  }
+  
+  input[type="checkbox"].switch_1:after{
+    position: absolute;
+    transition: all .2s ease-in-out;
+    content: "Off";
+  }
+  
+  input[type="checkbox"].switch_1:checked:after{
+
+    left: calc(100% - 9vw);
+    content: "On";
+  }
+
+  .Premio{
+    width: 40vw;
+  }
+
+  .Parabens{
+    width: 65vw;
+  }
+  .img-re{
+    position: relative;
+    width: 18vw;
+  }
+
+  p#textoPonto, p#textoAcertos, p#textoBonus, p#textoRevisao{
+    
+    margin-bottom: 0rem;
+  }
+
+  .buttomSair{
+    color: var(--corFonteQuizV);
+    font-size: 5vw;
+    position: relative;
+  }
+
+
+/*
+slider volume
+*/
+ 
+
+.slider {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 4vw;
+  border-radius: 5vw;
+  background: #1b1a1a;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+
+
+
 /*
 ex menu n
 
@@ -345,105 +470,28 @@ ex menu n
 .w3-xlarge{
     font-size:24px!important;
 }
-#mySidebar{
-    display:none;
-}
 .w3-button:hover{
     color:#000!important;
     background-color:#ccc!important;
 }
+.overlay3{
 
-/* erro*/
-
-.sombra{
-    text-shadow: -1px 0 black, 0 1px black,
-    1px 0 black, 0 -1px black;
-    font-size: 14vw;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
     text-align: center;
-
+    opacity: 0;
+    transition: opacity 1s;
 }
-.mensagem{
-
-    font-size: 6vw;
-    text-align: center;
-
-}
-.btn{
-    font-size: 7vw;
-}
-/*
-ex input checkbox button on/off
-*/
-
-/* Switch 1 Specific Styles Start */
-
-input[type="checkbox"].switch_1{
-    font-size: 4vw;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    width: 16vw;
-    height: 7vw;
-    background: #ddd;
-    border-radius: 4vw;
-    position: static;
-    cursor: pointer;
-    outline: none;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-  }
-  
-  input[type="checkbox"].switch_1:checked{
-    
+#mySidebar{
+    width: 0;
+    position: relative;
+    z-index:150;
     background: var(--corFundo);
-  }
-  
-  input[type="checkbox"].switch_1:after{
-    position: absolute;
-    transition: all .2s ease-in-out;
-    content: "Off";
-  }
-  
-  input[type="checkbox"].switch_1:checked:after{
-    left: calc(100% - 9vw);
-    content: "On";
-  }
-
-/*
-slider volume
-*/
- 
-
-.slider {
-  -webkit-appearance: none;
-  width: 90%;
-  height: 4vw;
-  border-radius: 5vw;
-  background: #1b1a1a;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 5vw;
-    height: 5vw;
-    border-radius: 50%;
-    background: black;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 5vw;
-    height: 5vw;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
 }

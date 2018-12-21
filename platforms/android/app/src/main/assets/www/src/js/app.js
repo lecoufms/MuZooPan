@@ -2,13 +2,15 @@ function fail(evt) {
     console.log("fail "+evt);
 }
 function onMenu() {
-    // document.getElementById("buttonMenu").addEventListener("click", sideBar);
+    document.getElementById("buttonMenu").addEventListener("click", sideBar);
     // document.getElementById("buttonMenu2").addEventListener("click", buttonMenu);
+    document.getElementById("myCanvasNav").addEventListener("click", buttonMenu);
     document.getElementById('estilo').addEventListener("click", Estilo);
-    document.getElementById("volume").addEventListener("change", stateVolumeHsetD);
+    // document.getElementById("volume").addEventListener("change", stateVolumeHsetD);
     document.getElementById('aumentaFonte').addEventListener("click", aumentaFonte);
     document.getElementById('diminuiFonte').addEventListener("click", diminuiFonte);
     document.getElementById('fonte').addEventListener("change", Fonte);
+    document.getElementById("buttonMenu").addEventListener("click", sideBar2);
     getEstilo();
 }
 
@@ -60,8 +62,8 @@ function getEstilo(){
         setTamanhoFonte(parseInt(window.localStorage.getItem('fonte')));
     }
     if (window.localStorage.getItem("volume")) {
-        setVolumeHtml(window.localStorage.getItem("volume"));
-        setVolumeDis(window.localStorage.getItem("volume"));
+        // setVolumeHtml(window.localStorage.getItem("volume"));
+        // setVolumeDis(window.localStorage.getItem("volume"));
     }
 }
 function exit(){
@@ -74,15 +76,20 @@ function exit(){
 }
 
 function buttonMenu() {
-    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("myCanvasNav").style.width = "0";
+    document.getElementById("myCanvasNav").style.opacity = "0"; 
 }
 function sideBar() {
-    stateVolumeUsetH();
-    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myCanvasNav").style.width = "100%";
+    document.getElementById("myCanvasNav").style.opacity = "0.8";
+    // stateVolumeUsetH();
 }
 
 
-
+function sideBar2() {
+    document.getElementById("mySidebar").style.width = "40%";
+}
 
 
 function stateFonte() {
@@ -110,64 +117,64 @@ function diminuiFonte(){
 
 
 
-function sucess(sucess) {
-    console.log("sucesso ao alterar volume Music" + sucess);
-}
+// function sucess(sucess) {
+//     console.log("sucesso ao alterar volume Music" + sucess);
+// }
 
-function setVolumeHtml(valor) {
-    document.getElementById("volume").value = valor;
-    window.localStorage.setItem("volume", valor);
-}
-function setVolumeDis(valor) {
-    window.androidVolume.setMusic(valor, false, sucess, fail);
-    window.localStorage.setItem("volume",valor);
-}
-
-
+// function setVolumeHtml(valor) {
+//     document.getElementById("volume").value = valor;
+//     window.localStorage.setItem("volume", valor);
+// }
+// function setVolumeDis(valor) {
+//     window.androidVolume.setMusic(valor, false, sucess, fail);
+//     window.localStorage.setItem("volume",valor);
+// }
 
 
 
-function stateVolumeHsetD() {
-    var valor =  document.getElementById("volume").value;
-    if(valor > 0){
-        if (window.localStorage.getItem("volume") != valor) {
-            setVolumeDis(valor);
-        }
-    }
-}
-function stateVolumeUsetH() {
-    console.log("action ");
-    window.androidVolume.getMusic(function (sucess) {
-            var valor = parseInt(sucess);
-            console.log(typeof sucess);
-            // var valor = (sucess+1);
-            // console.log(' stateVolumeU '+valor);
-            if (valor > 0) {
-                if (window.localStorage.getItem("volume") != valor) {
-                    setVolumeHtml(valor);
-                }
-            }
 
-    }, fail);
-    // console.log( parseInt(document.getElementById("volume").value));
-}
-function stateVolumeDsetH(e) {
-    console.log("action ");
-    window.androidVolume.getMusic(function (sucess) {
-            var valor = parseInt(sucess);
-            console.log(typeof sucess);
-            var valor = (sucess-1);
-            console.log(' stateVolumeD '+ valor);
-            if (valor > 0 ) {
-                if (window.localStorage.getItem("volume") != valor) {
-                    setVolumeDis(valor);
-                    setVolumeHtml(valor);
-                }
-            }
-    }, fail);
-    e.preventDefault();
-    // console.log( parseInt(document.getElementById("volume").value));
-}
+
+// function stateVolumeHsetD() {
+//     var valor =  document.getElementById("volume").value;
+//     if(valor > 0){
+//         if (window.localStorage.getItem("volume") != valor) {
+//             setVolumeDis(valor);
+//         }
+//     }
+// }
+// function stateVolumeUsetH() {
+//     console.log("action ");
+//     window.androidVolume.getMusic(function (sucess) {
+//             var valor = parseInt(sucess);
+//             console.log(typeof sucess);
+//             // var valor = (sucess+1);
+//             // console.log(' stateVolumeU '+valor);
+//             if (valor > 0) {
+//                 if (window.localStorage.getItem("volume") != valor) {
+//                     setVolumeHtml(valor);
+//                 }
+//             }
+
+//     }, fail);
+//     // console.log( parseInt(document.getElementById("volume").value));
+// }
+// function stateVolumeDsetH(e) {
+//     console.log("action ");
+//     window.androidVolume.getMusic(function (sucess) {
+//             var valor = parseInt(sucess);
+//             console.log(typeof sucess);
+//             var valor = (sucess-1);
+//             console.log(' stateVolumeD '+ valor);
+//             if (valor > 0 ) {
+//                 if (window.localStorage.getItem("volume") != valor) {
+//                     setVolumeDis(valor);
+//                     setVolumeHtml(valor);
+//                 }
+//             }
+//     }, fail);
+//     e.preventDefault();
+//     // console.log( parseInt(document.getElementById("volume").value));
+// }
 
 
 
