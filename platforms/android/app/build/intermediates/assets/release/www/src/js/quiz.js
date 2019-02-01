@@ -141,6 +141,9 @@ function retiraVisuResposta(){
 function loadQuesition(qIndex) {
     var q = myQuestions[qIndex];
     questionEl.innerText = (qIndex+1) + '. '+q.texto;
+    console.log(myQuestions[qIndex]);
+    console.log(myQuestions[qIndex]);
+    console.log(myQuestions[qIndex]);
     opt1.innerText = Object.keys(q.alternativas[0])[0].toUpperCase()+') '+Object.values(q.alternativas[0])[0];
     opt2.innerText = Object.keys(q.alternativas[1])[0].toUpperCase()+') '+Object.values(q.alternativas[1])[0];
     opt3.innerText = Object.keys(q.alternativas[2])[0].toUpperCase()+') '+Object.values(q.alternativas[2])[0];
@@ -214,16 +217,16 @@ function respostaCerta(my) {
     var divf = document.createElement("div");
     divP.className = "row align-self-center";
     divf.className="thumbnail text-center";
-    my.parentNode.className="opt media-body";
     img.src="../files/img/correct.png";
     img.className='img-responsive pr-3';
     img.id='correct';
-    img.style.width='19vw';
+    img.style.width='15vw';
+    my.parentNode.className="opt media-body";
     my.parentNode.style.background=newCor;
     divf.appendChild(img);
     divP.appendChild(divf);
-    my.parentNode.parentNode.parentNode.className="media pr-3";
-    my.parentNode.parentNode.className="col-10 pr-3  p-0";
+    my.parentNode.parentNode.parentNode.className="media pr-5";
+    my.parentNode.parentNode.className="col-12 pl-3 pr-3 p-0";
     my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
     
 }
@@ -239,12 +242,12 @@ function respostaErrada(my) {
     my.parentNode.className="opt media-body";
     img.src="../files/img/incorrect.png";
     img.id='incorrect';
-    img.className='img-responsive pr-3';
-    img.style.width='19vw';
+    img.className='img-responsive pr-3 mr-1';
+    img.style.width='14vw';
     divf.appendChild(img);
     divP.appendChild(divf);
-    my.parentNode.parentNode.parentNode.className="media pr-3";
-    my.parentNode.parentNode.className="col-10 pr-3  p-0";
+    my.parentNode.parentNode.parentNode.className="media pr-5";
+    my.parentNode.parentNode.className="col-12 pl-3 pr-3 p-0";
     my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
 }
 
@@ -365,7 +368,7 @@ ready = function(){
     temQuestions(context);
     if (Quiz) {
         container = document.getElementById('quizContainer');
-        questionEl = document.getElementById('question');
+        questionEl = document.getElementById('question').children[0];
         opt1 = document.getElementById('opt1');
         opt2 = document.getElementById('opt2');
         opt3 = document.getElementById('opt3');

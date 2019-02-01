@@ -1,19 +1,19 @@
 {
-  "_from": "cordova-plugin-android-volume",
+  "_from": "cordova-plugin-android-volume@0.0.12",
   "_id": "cordova-plugin-android-volume@0.0.12",
   "_inBundle": false,
   "_integrity": "sha512-jKhyjnNX9hWfJbSIsSlJL6rvw852ofv0n5Q+aH4UxMpHBVGmlQZCtL5fGCJU+jYwvU2MddmI7Wd9Bl79eoZIGg==",
   "_location": "/cordova-plugin-android-volume",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-plugin-android-volume",
+    "raw": "cordova-plugin-android-volume@0.0.12",
     "name": "cordova-plugin-android-volume",
     "escapedName": "cordova-plugin-android-volume",
-    "rawSpec": "",
+    "rawSpec": "0.0.12",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "0.0.12"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-android-volume/-/cordova-plugin-android-volume-0.0.12.tgz",
   "_shasum": "e4c931bc9ea4b2a346f31abfe734c86004c660cf",
-  "_spec": "cordova-plugin-android-volume",
+  "_spec": "cordova-plugin-android-volume@0.0.12",
   "_where": "C:\\Users\\Valdenize SR\\Desktop\\GitHub\\MuZooPan",
   "author": "",
   "bugs": {

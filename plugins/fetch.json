@@ -28,7 +28,7 @@
   "cordova-plugin-android-volume": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-android-volume"
+      "id": "cordova-plugin-android-volume@0.0.12"
     },
     "is_top_level": true,
     "variables": {}

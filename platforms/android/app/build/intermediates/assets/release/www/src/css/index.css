@@ -1,28 +1,40 @@
 :root{
     --corFonteQuizTextoLido: black; /* Texto lido Quiz */
-    --corFundo:#0088b7; /* Cor fundo */
-    --corFonteTitulo: #fb5a01; /*Sobre e nomeAnimal */
-    --corFonteQuizInfo: white; /*acerto, ponto, progesso */
+    --corFundoNormal:#0088b7; /* Cor fundo */
+    --corFonteTituloNormal: #fb5a01; /*Sobre e nomeAnimal */
+    --corFonteQuizInfo: white; /*acerto, ponto, progresso */
     --corFonteQuizV: #0cff00; /* confirmar, cor fundo acerto, proximo*/
     --corFonteQuizE: #fe0a00; /* fundo error*/
     --corFonteQuizR: #ffff00; /* cor revisar*/
     --corFonteMenu: #fb5a01; /* cor menu tela animal */
     --corFonteTextoLido: black; /* texto lido tela animal */
     --corFonteTextoLidoPadrao: white; /* texto lido padrao */
-    --corFundoS: #9eccff;
-    --corFundoMenuS: #ffffffa1;
-    --corFundoSMenu: #ffffffa1;
+    --corFundoSelect: #9eccff; /*s select*/
+    --corFundoNavAnimal: #ffffffa1;
     --corFonteQuizConfDes: grey;
     --corFundoAlter: white;
+    --tamanhoFonte: 10;
+
     --corFundoCon:#151231; /*cor fundo contraste*/
-    --corFonteTextContras:white; /*cor fonte texo lido contraste*/
+    --corFundoMenuCont: grey;
+    --corFonteTextContras:white; /*cor fonte texto lido contraste*/
     --corFonteMenuCont:black; /*cor fonte menu contraste*/
     --corBarraMenuCon:white;  /*cor barra menu contraste*/
-    --tamanhoFonte: 3;
+    
+    --corFundo: var(--corFundoNormal);
+    --corFonteTitulo: var(--corFonteTituloNormal); /*Sobre e nomeAnimal */
+    --corFundoMenuOpcao: var(--corFundoNavAnimal);
+    --corFundoMenuCorpo: var(--corFundoNavAnimal);
+    --corBarraMenu: var(--corFundoSelect);
+    --corFonteTextoLidoMenuOpcao: var(--corFonteTituloNormal);
+    --corFonteTextoLidoMenuCorpo:var(--corFonteTextoLido);
+
 }
+
 body {
     background-color: var(--corFundo);
-    font-size: calc(var(--tamanhoFonte) * 1px)!important ;
+    font-size: calc(var(--tamanhoFonte) * 1px) !important;
+    color: var(--corFonteTextoLidoPadrao) !important;
 }
 
 
@@ -39,6 +51,7 @@ body {
 p{
     font-family:Montserrat;
     color: var(--corFonteTextoLidoPadrao);
+    font-size: calc(var(--tamanhoFonte) * 1px) !important;
     class:"col-sm-md-12";
     text-align: justify;
     text-justify: auto;
@@ -84,7 +97,7 @@ p{
 }
 
 .opt:hover, .opt:active{
-    background: var(--corFundoS);
+    background: var(--corFundoSelect);
     color: var(--corFonteQuizTextoLido);
 }
 .next-btn{
@@ -117,11 +130,11 @@ p{
 }
 
 .nomeTit{
-    font-size: 9vw;
+    /*font-size: 2em;*/
 }
 
 .texto{
-    font-size: 5vw;
+    /*font-size: 1em;*/
     top: 5vw;
 }
 
@@ -163,7 +176,7 @@ p{
 }
 #buttonSobre {
     color: var(--corFonteTitulo);
-    font-size: 7vw;
+    /*font-size: 2em;*/
 }
 
 .acert{
@@ -198,12 +211,7 @@ p#nomeTitulo{
 }
 span#iconSom{
     color: white;
-}
-#myContainerAnimal{
-}
-div#carouselExampleControls{
-}
-img.d-block{
+    top:-14vw;
 }
 
 .img-responsive{
@@ -221,23 +229,35 @@ img.d-block{
 }
 
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
-}
 #myContainerFluidAnimal{
     padding: 0;
-    background-color: var(--corFundoSMenu);
 }
-ul.nav{
-    font-size: 3vw;
+/*ul.nav{
+    font-size: 0.5em;
+}*/
+#NavCorpo{
+    background-color: var(--corFundoMenuCorpo);
+}
+#NavMenu{
+    background-color: var(--corFundoMenuOpcao);
 }
 ul.nav li.styleFont1 a{
-    background-color: var(--corFundoS);
-    color: var(--corFonteTitulo);
+    background-color: var(--corBarraMenu);
+    color: var(--corFonteTextoLidoMenuOpcao);
     display: inline-block;
-    line-height: 9vw;
+    line-height: 2em;
     z-index: 1;
-    padding-left: 5vw;
-    padding-right: 1.8vw;
+    padding: 1vw;
+}
+ul.nav li.styleFont1 {
+    margin: 0 0.5vw 0 0.5vw;
+}
+ul.nav li.styleFont1:first-child{
+    margin: 0 0.5vw 0 0;
+}
+
+ul.nav li.styleFont1:last-child{
+    margin: 0 0 0 0.5vw;
 }
 ul.nav li.styleFont1 a:hover{
     text-decoration: none;
@@ -246,32 +266,169 @@ ul.nav li.styleFont1 a:hover{
     background-color: black;
 }
 a.active.show{
-    border-bottom: 5px solid orange;
+    border-bottom: 1vw solid var(--corFonteTextoLidoMenuOpcao);
+    padding: 1vw 1vw 0 1vw !important;
 }
-td{
-}
-
-td#textEs{
-    font-size: 4vw;
+a.menuAnimal{
+    /*font-size: 0.8em;*/
 }
 
 td#textFa{
     display: inherit;
 }
-audio#audioFalado{
-    position: absolute;
+audio{
+    height: 20px !important;
+}
+#audioFalado{
+    position: relative;
     -ms-transform: rotate(20deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Safari */
     transform: rotate(90deg); /* Standard syntax */
+    width: 90%;
 }
-td > p {
-    width: 100%;
-    min-height: 62vw !important;
-    color: var(--corFonteTextoLido);
-    clear:both;
-    padding: 2vw;
-    font-size: calc(var(--tamanhoFonte) * 1vw);
+
+
+p#textEs {
+/*    width: 100%;
+    min-height: 62vw !important;*/
+    color: var(--corFonteTextoLidoMenuCorpo);
+    /*clear:both;
+    padding: 2vw;*/
+    /*font-size: 1em;*/
 }
+
+
+
+/* erro*/
+
+.sombra{
+    text-shadow: -1px 0 black, 0 1px black,
+    1px 0 black, 0 -1px black;
+    /*font-size: 14vw;*/
+    text-align: center;
+
+}
+.mensagem{
+
+    /*font-size: 6vw;*/
+    text-align: center;
+
+}
+.btn{
+    /*font-size: 7vw;*/
+}
+/*
+ex input checkbox button on/off
+*/
+
+/* Switch 1 Specific Styles Start */
+#contraste{
+    background: grey;
+    border-radius: 1vw;
+    font-size: 0.8em;
+}
+input[type="checkbox"].switch_1{
+    font-size: 1em;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background: #94acb7;
+    border-radius: 3vw;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: white;
+  }
+  
+  input[type="checkbox"].switch_1:checked{
+    background: var(--corFundo);
+  }
+  
+  input[type="checkbox"].switch_1:after{
+    position: relative;
+    transition: all .2s ease-in-out;
+    content: "OFF";
+
+  }
+  
+  input[type="checkbox"].switch_1:checked:after{
+    content: "ON";
+    left: calc(100% - 1.5em);
+  }
+/*
+*/
+/*
+*/
+  .Premio{
+    width: 40vw;
+  }
+
+  .Parabens{
+    width: 65vw;
+  }
+  .img-re{
+    position: relative;
+    width: 18vw;
+  }
+
+  p#textoPonto, p#textoAcertos, p#textoBonus, p#textoRevisao{
+    
+    margin-bottom: 0rem;
+  }
+
+  .buttomSair{
+    color: var(--corFonteQuizV);
+    /*font-size: 1.2em;*/
+    position: relative;
+  }
+
+
+/*
+slider volume
+*/
+ 
+.slidecontainer{
+    background: grey;
+    border-radius: 1vw;
+    padding: 0.5vw;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4vw;
+  border-radius: 5vw;
+  background: #1b1a1a;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
 
 
 
@@ -281,33 +438,6 @@ ex menu n
 */
 
 
-.w3-button{
-    border:none;
-    display:inline-block;
-    padding:8px 16px;
-    vertical-align:middle;
-    overflow:hidden;
-    text-decoration:none;
-    color:inherit;
-    background-color:inherit;
-    text-align:center;
-    cursor:pointer;
-    white-space:nowrap;
-}
-
-.w3-button{
-    -webkit-touch-callout:none;
-    -webkit-user-select:none;
-    -khtml-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
-}   
-
-.w3-button:disabled{
-    cursor:not-allowed;
-    opacity:0.3;
-}
 
 :disabled *{
     pointer-events:none;
@@ -320,9 +450,9 @@ ex menu n
     z-index:1;
     overflow:auto;
 }
-.w3-bar-block .w3-bar-item{
-    width:100%;
-    display:block;
+.w3-bar-block{
+    width:0;
+    display:none;
     padding:8px 16px;
     text-align:left;
     border:none;
@@ -330,7 +460,7 @@ ex menu n
     float:none;
     outline:0;
 }
-.w3-bar-block .w3-bar-item{
+.w3-bar-block{
     text-align:center;
 }
 
@@ -339,35 +469,33 @@ ex menu n
         display:none;
     } 
 }
-.w3-large{
-    font-size:18px!important;
-}
-.w3-xlarge{
-    font-size:24px!important;
+
+
+
+.overlay3{
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
 }
 #mySidebar{
-    display:none;
+    width: 0;
+    position: relative;
+    z-index:150;
+    background: var(--corFundo);
 }
-.w3-button:hover{
-    color:#000!important;
-    background-color:#ccc!important;
-}
-
-/* erro*/
-
-.sombra{
-    text-shadow: -1px 0 black, 0 1px black,
-    1px 0 black, 0 -1px black;
-    font-size: 14vw;
-    text-align: center;
-
-}
-.mensagem{
-
-    font-size: 6vw;
-    text-align: center;
-
-}
-.btn{
-    font-size: 7vw;
+.icon{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
 }

@@ -1,7 +1,7 @@
-var camera= true; 
-function changePage(path){
-  window.location.assign(path);
-}
+camera= true; 
+// function changePage(path){
+//   window.location.assign(path);
+// }
 
 function changePrepare(text,isApp){
     (function factory(text) {
@@ -10,12 +10,15 @@ function changePrepare(text,isApp){
             if (isApp){
                 window.localStorage.setItem("config", "app");
                 changePage("views/view.html");
+                // render();
             }else if(text=="quiz"){
                 window.localStorage.setItem("config", "quiz");
                 changePage("views/view.html");
+                // render();
             }else{
                 window.localStorage.setItem("config", "obj");
                 changePage("views/view.html");
+                // render();
             }
         }
     }) (text);
@@ -40,7 +43,7 @@ function barcodescanner(event) {
             showFlipCameraButton : true, // iOS and Android
             showTorchButton : true, // iOS and Android
             saveHistory: true, // Android, save scan history (default false)
-            prompt : "Place a barcode inside the scan area", // Android
+            prompt : "Coloque um qrcode dentro da área de scan", // Android
             resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
             formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
             orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
@@ -60,20 +63,7 @@ toDo maquina de estado
 }*/
 
 
-function onDeviceReady() {
-    // Register the event listener
-    // document.addEventListener("pause", estadoAtual);
-    // document.addEventListener("resume", restaura); .applicationDirectory applicationDirectory  
-    onMenu();
-    document.getElementById('camera').addEventListener("click", barcodescanner.bind(camera),true);
-    document.getElementById('buttonSobre').addEventListener("click", changePrepare.bind(null,'about',true),true);
-    document.addEventListener("backbutton", anterior,true);
-    
-    // document.addEventListener("volumeupbutton", stateVolumeUsetH);
-    // document.addEventListener("volumedownbutton", stateVolumeDsetH);
-  
-    console.log(cordova.file);
-}
+
 /*// function teste para o plugin file do cordova
 
 function onFileSystemSuccess(fileSystem) {
@@ -88,32 +78,17 @@ function fail(evt) {
 }
 */
 
+$(document).ready(function(){
+    document.addEventListener("deviceready", onDeviceReady, true);
+    getEstilo();
+    onMenu();
+    document.getElementById('camera').addEventListener("click", barcodescanner.bind(camera),true);
+    document.getElementById('buttonSobre').addEventListener("click", changePrepare.bind(null,'about',true),true);
 
-
+});
+/*
 function onLoad() {
     document.addEventListener("deviceready", onDeviceReady, true);
-}
+}*/
 
 
-function anterior(e) {
-    e.preventDefault();
-    console.log('teste');
-    var ind = cordova.file.applicationDirectory+'www/index.html';
-    if (window.localStorage.getItem("config") == "quiz") {
-        console.log("não pode jovem");
-    }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior")){
-        console.log('vamos voltar da revisao, prob');
-        var onde = JSON.parse(window.localStorage.getItem('anterior'));
-        window.localStorage.setItem("qrcodeInput", onde.nome);
-        window.localStorage.setItem("config", onde.nome);
-        changePage("view.html");
-    }else if (window.location.href !== ind) {
-        console.log('vou ao index, bele');
-        window.history.go(-1);
-    }else if (window.location.href === ind && camera){
-        alert(camera);
-        exit();
-    }else if ( window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio"){
-        exit();
-    }
-}

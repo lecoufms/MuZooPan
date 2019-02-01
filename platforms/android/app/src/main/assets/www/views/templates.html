@@ -80,7 +80,7 @@
 </script>
 <script id="obj" type="text/template7">
         <div><p id="nomeTitulo" class="nomeTit styleFont2">{{name}}</p></div>
-        <div>
+        <div class="icon">
             <audio id="playIcon" src={{animalSound}}>
             </audio>
                 <span id= "iconSom" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
@@ -114,39 +114,30 @@
             </div>
 
             <div id="myContainerFluidAnimal" class="container-fluid">
-                <ul class="nav nav-pills">
+                <ul id ="NavMenu"class="nav nav-pills row p-0 m-0">
                     {{#each menus}}
                         {{#js_if "@index"}} 
-                            <li class ="styleFont1"> 
+                            <li class ="styleFont1 col"> 
                         {{else}}
-                            <li class="active styleFont1">
+                            <li class="active styleFont1 col">
                         {{/js_if}}
-                            <a data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
+                            <a class="menuAnimal col-12" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>
                         </li>
                     {{/each}}
                 </ul>
-                <div class="tab-content">
+                <div id="NavCorpo" class="tab-content">
                     {{#each menus}}
                         {{#js_if "@index"}} 
                             <div id={{js "'menu'+@index"}} class="tab-pane fade">
                         {{else}}
                             <div id={{js "'menu'+@index"}} class="tab-pane fade in active">
                         {{/js_if}}
-                                <table>
-                                    <tr>
-                                        <td id="textEs" class="textEs"> 
-                                            <p>{{text}}</p>
-                                        </td>
-                                        <td id="textFa">
-                                        </td>
-                                    </tr>
-                                </table>
-                                <div id="myDiv">
-                                    <audio controls>
-                                        <source src={{textSound}} type="audio/mpeg">
-                                    </audio>
-                                </div>
+                                <audio id="audioFalad" class="" controls>
+                                    <source src={{textSound}} type="audio/mpeg">
+                                </audio>
+                                <p id="textEs" class="p-0 col-12">{{text}}</p>
+                                    
                             </div>
                     {{/each}}
                 </div>
@@ -188,7 +179,7 @@
                     <div id="question" class="question">
                         <p class="styleFont1">  </p>
                     </div>
-                    <div class="col" >
+                    <div class="col mt-3" >
                         <div class = "">
                             <div id="alternativa" class = "col-10 offset-1">
                                 <label class="opt"><span id="opt1" class=""></span></label>
@@ -218,16 +209,4 @@
                     <p id="next-btn" class="col-3 next next-btn styleFont2 texto">CONFIRMAR</p>
         </div>
     </div>
-</script>
-
-<script id="index" type="text/template7">
-     <div style="text-align: center;">
-            <div class="container">
-                <div class="col-sm-12"><img src="files/img/Muzoopan.png" style="width: 100%"></div>
-                <div class="col-sm-12"><img src="files/img/logo.png" style="width: 70%"></div>
-                <div class="col-sm-12"><img id ="camera"src="files/img/cam.png" style="width: 50%"></div>
-                <div class="col-sm-12 justify-content-center"><span id="buttonSobre" class="styleFont2"> Sobre</span></div>
-            </div>
-        </div>
-
 </script>

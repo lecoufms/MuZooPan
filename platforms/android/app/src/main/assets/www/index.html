@@ -6,35 +6,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="src/vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="src/css/index.css">
+        <link rel="stylesheet" type="text/css" href="src/vendors/bootstrap/css/bootstrap-3-3-7.min.css">
         <title>Muzoopan</title>
-        <script type="text/javascript" src="src/js/app.js"></script>
+        <script type="text/javascript" src="src/js/template7/template7.min.js"></script>
+        <script src="src/vendors/bootstrap/js/jquery-slim.min.js"></script>
+        <script src="src/vendors/bootstrap/js/popper.min.js"></script>
+        <script src="src/vendors/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="src/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="src/js/app.js"></script>
         <script type="text/javascript" src="src/js/index.js"></script>
     </head>
-    <body onload="onLoad()">
+    <body>
         <!-- Sidebar -->
           <div id="myCanvasNav" class="overlay3"></div>
 
         <div class="w3-sidebar w3-bar-block w3-border-right " id="mySidebar">
-            <div class="mt-2 pt-5 ml-3">
-                <h3 class="styleFont2 text-center">OPÇÕES</h3>
+            <div class="col-12 mt-2">
+                <p id="opcoes" class="styleFont2 text-center">OPÇÕES</p>
             </div>          
-            <div class="mt-2 pt-5 ml-3">
+            <div class="col-12 mt-2">
                 <label for="volume">Volume</label>
                 <div class="slidecontainer">
                     <input type="range" step="5" class="form-control-range slider" id="volume" min="0" max="100">
                 </div>
             </div>
-            <div class="col-9 mt-2 p-0 pt-5 ml-3">
-                <label for="contraste" id="text">Alto-cotraste</label>
-                <div id="contraste" class="col-4 pt-1 mb-3">
+            <div class="col-12 mt-2 p-1">
+                <label for="contraste" id="text">Alto-contraste</label>
+                <div id="contraste" class="p-1 m-0 ml-5">
                     <input name="contraste" id="estilo" type="checkbox" class="switch_1 col-12 p-0">
                 </div>
             </div>
-            <div class="col-md-4 mt-5 pt-5 pl-2 p-0 mb-2 ml-3">
+            <div class="col-10">
                 <label for="validationTooltipUsername">Fonte</label>
               <div class="input-group">
-                <input type="text" class="form-control col-4" id="fonte" aria-describedby="validationTooltipUsernamePrepend" required="">
+                <input type="text" class="form-control col-4 p-0" id="fonte" aria-describedby="validationTooltipUsernamePrepend" required="">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="aumentaFonte">+</span>
                 </div>
@@ -47,9 +54,9 @@
 
         <!-- Page Content -->
 
-          <button id="buttonMenu" class="w3-button w3-teal w3-xlarge">☰</button> 
-    
-  
+          <button id="buttonMenu" class="w3-button w3-teal icon"> 
+            <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button> 
         <div style="text-align: center;">
             <div class="container">
                 <div class="col-sm-12"><img src="files/img/Muzoopan.png" style="width: 100%"></div>
@@ -58,7 +65,4 @@
                 <div class="col-sm-12 justify-content-center"><span id="buttonSobre" class="styleFont2"> Sobre</span></div>
             </div>
         </div>
-    <script src="src/vendors/bootstrap/js/jquery-slim.min.js"></script>
-    <script src="src/vendors/bootstrap/js/popper.min.js"></script>
-    <script src="src/vendors/bootstrap/js/bootstrap.min.js"></script>
 </body>

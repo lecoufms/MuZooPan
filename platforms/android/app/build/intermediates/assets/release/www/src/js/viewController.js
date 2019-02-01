@@ -23,7 +23,7 @@ function readFile(file)
             {
                 context = JSON.parse(rawFile.responseText);
                 if(!selectContext(context)){
-                    renderOnScreen({"name":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne a tela incial e tente novamente."});
+                    renderOnScreen({"name":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne a tela incial e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))});
                 }
             }
         }
@@ -32,45 +32,44 @@ function readFile(file)
 }
 function alterar(contexto){
     var conteudo;
-    if(window.localStorage.getItem("config") == "obj"){
-        conteudo= contexto;
-    }else if(window.localStorage.getItem("qrcodeInput") == "quiz"){
-        conteudo = contexto;
-    }else if(window.localStorage.getItem("qrcodeInput") == "about"){
-        conteudo = contexto;
-    }else if (window.localStorage.getItem("qrcodeInput") == "premio") {
+    if (window.localStorage.getItem("qrcodeInput") == "premio") {
         var premio = defineMedalha();
         conteudo = { "premiacao": premio, "conteudo" : contexto };
+    }else{
+        conteudo = contexto;
     }
-    console.log(conteudo);
+    
     return conteudo;
 }
 
 function renderOnScreen(ctxt) {
-        var template = $("#"+ (ctxt.name=="error"? "Error404":(window.localStorage.getItem("config")=="obj"? "obj":ctxt.name))).html();
-        var compiledTemplate = Template7.compile(template);
-        ctxt= alterar(ctxt);
-        console.log(ctxt);
-        html = compiledTemplate(ctxt);
-        document.getElementById("visible").innerHTML=html;
-        if (window.localStorage.getItem("config") == "quiz") {
-            ready();
-        }
+    var template = $("#"+ (ctxt.name=="error"? "Error404":(window.localStorage.getItem("config")=="obj"? "obj":ctxt.name))).html();
+    var compiledTemplate = Template7.compile(template);
+    ctxt= alterar(ctxt);
+    
+    html = compiledTemplate(ctxt);
+    document.getElementById("visible").innerHTML=html;
+    if (window.localStorage.getItem("config") == "quiz") {
+        ready();
+    }
 }
 
+camera=true;
 function render(){
+    // if (document.getElementById("visible").innerHTML === '' || window.localStorage.getItem("config") === "index") {
+    //     window.localStorage.setItem("config","index");
+    //     renderOnScreen([]);
+    
+    // }else{
+        // readFile("files/config/"+window.localStorage.getItem("config")+".json");
+    // }
     readFile("../files/config/"+window.localStorage.getItem("config")+".json");
 }
 (function(){return $("#invisible").load("templates.html",render)})();
 
-function onDeviceReadyV() {
-    onMenu();
-    document.addEventListener("backbutton", anterior,false);
-    // document.addEventListener("volumeupbutton", stateVolumeUsetH);
-    // document.addEventListener("volumedownbutton", stateVolumeDsetH);
-    console.log(cordova.file);
-}
 
-function onLoadV() {
-    document.addEventListener("deviceready", onDeviceReadyV);
-}
+$(document).ready(function(){
+    document.addEventListener("deviceready", onDeviceReady, true);
+    getEstilo();
+    onMenu();
+});
