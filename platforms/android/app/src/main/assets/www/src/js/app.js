@@ -116,15 +116,15 @@ function onDeviceReady() {
 
 
 function setTamanhoFonte(tamanho) {
-    if (tamanho >= 15 && tamanho <= 100) {
+    if (tamanho >= 15 && tamanho <= 30) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
         document.getElementById('fonte').value= tamanho;
     }else if (tamanho <= 15) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 10);  
         document.getElementById('fonte').value= 1;
-    }else if (tamanho > 100) {
-        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 40);  
-        document.getElementById('fonte').value= 100;
+    }else if (tamanho > 30) {
+        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 30);  
+        document.getElementById('fonte').value= 30;
     }
 }
 function getEstilo(){

@@ -13,7 +13,7 @@
     --corFundoNavAnimal: #ffffffa1;
     --corFonteQuizConfDes: grey;
     --corFundoAlter: white;
-    --tamanhoFonte: 10;
+    --tamanhoFonte: 15;
 
     --corFundoCon:#151231; /*cor fundo contraste*/
     --corFundoMenuCont: grey;
@@ -209,7 +209,7 @@ p#nomeTitulo{
 }
 span#iconSom{
     color: white;
-    top:-14vw;
+    /*top:-14vw;*/
 }
 
 .img-responsive{
@@ -507,7 +507,7 @@ ex menu n
             cursor: pointer;
             padding: 0 5px;
             -webkit-transition: all linear 0.2s;
-            font-size: 7vw;
+            
         }
          .player-controls span:hover {
             color: #EEE;

@@ -79,12 +79,14 @@
 
 </script>
 <script id="obj" type="text/template7">
-        <div><p id="nomeTitulo" class="nomeTit styleFont2">{{name}}</p></div>
-        <div class="icon">
-            <audio id="playIcon" src={{animalSound}}>
-            </audio>
-                <span id= "iconSom" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
-                </span>
+        <div class="row">
+            <p id="nomeTitulo" class="nomeTit styleFont2 col-10">{{name}}</p>
+            <div class="icon">
+                <audio id="playIcon" src={{animalSound}}>
+                </audio>
+                    <span id= "" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
+                    </span>
+            </div>
         </div>
         
         <div id="myContainerAnimal" class="container">
@@ -138,8 +140,8 @@
                                     <div class="col-1 m-0 p-0">
                                         <div class="row m-0 p-0"> 
                                             <div class="player-controls col-12 mb-2 mt-2 p-2">
-                                                <span id={{js "'play_menu'+@index"}} class="player-play glyphicon glyphicon-play m-0 p-0"></span>
-                                                <span id={{js "'pause_menu'+@index"}} class="player-pause glyphicon glyphicon-pause m-0 p-0"></span>
+                                                <span id={{js "'play_menu'+@index"}} class="icon player-play glyphicon glyphicon-play m-0 p-0"></span>
+                                                <span id={{js "'pause_menu'+@index"}} class="icon player-pause glyphicon glyphicon-pause m-0 p-0"></span>
                                                 <audio class="player m-0 p-0"  src={{textSound}} type="audio/mpeg"></audio>
                                             </div>
                                             <div class="col-12 progressAu p-2">
