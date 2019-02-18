@@ -3,9 +3,18 @@ function anterior(e) {
     e.preventDefault();
     console.log('teste');
     var ind = cordova.file.applicationDirectory+'www/index.html';
+    var anterior;
+    var jdata;
+    if (window.localStorage.getItem("anterior")) {
+        anterior = localStorage.getItem('anterior');
+        console.log(anterior);
+        if(anterior){
+            jdata = JSON.parse(anterior);
+        }
+    }
     if (window.localStorage.getItem("config") == "quiz") {
         console.log("não pode jovem");
-    }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior")){
+    }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior") && (jdata.totalR < jdata.tamanho)){
         console.log('vamos voltar da revisao, prob');
         var onde = JSON.parse(window.localStorage.getItem('anterior'));
         window.localStorage.setItem("qrcodeInput", onde.nome);
@@ -111,10 +120,10 @@ function setTamanhoFonte(tamanho) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
         document.getElementById('fonte').value= tamanho;
     }else if (tamanho <= 15) {
-        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 15);  
+        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 10);  
         document.getElementById('fonte').value= 1;
     }else if (tamanho > 100) {
-        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 100);  
+        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 40);  
         document.getElementById('fonte').value= 100;
     }
 }

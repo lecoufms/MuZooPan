@@ -30,13 +30,11 @@
     --corFonteTextoLidoMenuCorpo:var(--corFonteTextoLido);
 
 }
-
-body {
+body{
     background-color: var(--corFundo);
     font-size: calc(var(--tamanhoFonte) * 1px) !important;
     color: var(--corFonteTextoLidoPadrao) !important;
 }
-
 
 @font-face {
     font-family: Montserrat;
@@ -498,4 +496,45 @@ ex menu n
     border: none;
     color: white;
     font-size: 25px;
+}
+
+
+/*texto falado tela animal */
+.player-controls {
+        float: left;
+    }
+         .player-controls span{
+            cursor: pointer;
+            padding: 0 5px;
+            -webkit-transition: all linear 0.2s;
+            font-size: 7vw;
+        }
+         .player-controls span:hover {
+            color: #EEE;
+        }
+    .player-display {
+        float: left;
+        float: right;
+        margin-left: 50px;
+    }
+        .player-display .player-current-track {
+            color: white;
+        }
+    .player {
+        float: left;
+    }
+    .player-timeline {
+        max-height: 36vh;
+/*        height: 40vh;*/
+        height: 36vh;
+        width: 3vw;
+        background: #999;
+    }
+    .player-timeline-control {
+        width: 3vw;
+        height: 100%;
+        background: #555;
+    }
+span.player-pause{
+    display: none;
 }

@@ -133,10 +133,23 @@
                         {{else}}
                             <div id={{js "'menu'+@index"}} class="tab-pane fade in active">
                         {{/js_if}}
-                                <audio id="audioFalad" class="" controls>
-                                    <source src={{textSound}} type="audio/mpeg">
-                                </audio>
-                                <p id="textEs" class="p-0 col-12">{{text}}</p>
+                                <div class="row p-0 m-0 p-1">
+                                    <p id="textEs" class="col-11 m-0 p-0">{{text}}</p>
+                                    <div class="col-1 m-0 p-0">
+                                        <div class="row m-0 p-0"> 
+                                            <div class="player-controls col-12 mb-2 mt-2 p-2">
+                                                <span id={{js "'play_menu'+@index"}} class="player-play glyphicon glyphicon-play m-0 p-0"></span>
+                                                <span id={{js "'pause_menu'+@index"}} class="player-pause glyphicon glyphicon-pause m-0 p-0"></span>
+                                                <audio class="player m-0 p-0"  src={{textSound}} type="audio/mpeg"></audio>
+                                            </div>
+                                            <div class="col-12 progressAu p-2">
+                                                <div id={{js "'player-timeline_menu'+@index"}} class="player-timeline ml-1">
+                                                    <div id={{js "'player-timeline-control_menu'+@index"}} class="player-timeline-control"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                     
                             </div>
                     {{/each}}
@@ -150,9 +163,6 @@
         <p id="ops" class="sombra">Ops!</p>
         <img class="displayed col-8 offset-2" src="../files/img/imagemErro.png">
          <p id="msg" class="mensagem">{{mensagem}}</p>
-        {{#js_if "this.anterior.nome == 'quiz'"}}
-           <p>{{this.anterior.nome}}</p> 
-        {{else}}
             <p id="button" class="btn styleFont2 col-3 offset-4" onclick="window.location.href="index.html";">Início</p>
         {{/js_if}}
     </div>
@@ -209,4 +219,5 @@
                     <p id="next-btn" class="col-3 next next-btn styleFont2 texto">CONFIRMAR</p>
         </div>
     </div>
+
 </script>

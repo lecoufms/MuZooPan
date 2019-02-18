@@ -47,9 +47,9 @@ function vaiRetornar() {
         if (timeD.toLocaleDateString() == (new Date()).toLocaleDateString()) {
             setVariaveis();
             questionMy = document.getElementById(jdata.aResposta)
-            if ((jdata.pergunta.indice+1) == jdata.tamanho) {
-                Nextpremio();
-            }
+            // if ((jdata.pergunta.indice+1) == jdata.tamanho) {
+            //     Nextpremio();
+            // }
             if (questionMy != null) {
                 clickAlt(questionMy);
             }
@@ -77,7 +77,7 @@ temQuestions = function (context){
 
 function vamosPreparaPPasseio(){
     realizadaQ = {'nome' : myQuestions[currentQuestion].nomeAnimal, 'indice': currentQuestion};
-    realizada = {"nome": "quiz", "data": new Date(), "pergunta" : realizadaQ,"tamanho": myQuestions.length, "pontos":score, "totalR": totalRevisao, "revisao" : revisao,  "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
+    realizada = {"nome": "quiz", "fina": false,"data": new Date(), "pergunta" : realizadaQ,"tamanho": myQuestions.length, "pontos":score, "totalR": totalRevisao, "revisao" : revisao,  "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
 }
 
 function pontuacao(){
@@ -313,7 +313,7 @@ function alteraBarra(barraA, barraN){
     var img = document.createElement('img');
     img.className='img-responsive';
     pai.removeChild(document.getElementById('barra'+barraA));
-    img.src= '../files/img/bar_'+(!barraN ? '':barraN )+'.png';
+    img.src= '../files/img/bar_'+(!barraN ? ''+'.png':(barraN==4 ? barraN +'.gif': barraN+'.png'));
     img.id='barra'+barraN;
     img.style.width='18vw';
     pai.appendChild(img);
@@ -417,7 +417,6 @@ function defineMedalha() {
     var premio = {"premio" : result, "pontos" : score, "acertos" : acerto, "bonus" : bonus, "revisao" : totalRevisao};
     return premio;
 }
-
 
 
 /*var currentQuestion = 0;

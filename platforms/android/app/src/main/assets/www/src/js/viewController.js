@@ -23,7 +23,7 @@ function readFile(file)
             {
                 context = JSON.parse(rawFile.responseText);
                 if(!selectContext(context)){
-                    renderOnScreen({"name":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne a tela incial e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))});
+                    renderOnScreen({"name":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))});
                 }
             }
         }
@@ -51,6 +51,8 @@ function renderOnScreen(ctxt) {
     document.getElementById("visible").innerHTML=html;
     if (window.localStorage.getItem("config") == "quiz") {
         ready();
+    }else if (window.localStorage.getItem("config") == "obj") {
+        readyAnimal();
     }
 }
 
