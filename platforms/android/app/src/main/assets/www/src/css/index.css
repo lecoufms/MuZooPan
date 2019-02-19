@@ -217,13 +217,13 @@ span#iconSom{
 }
 
 #incorrect{
-    width: 10%;
-    right: 40vw
+
+    height: 8vh;
 }
 
 #correct{
-    width: 10%;
-    right: 40vw
+ 
+    height: 8vh;
 }
 
 
@@ -495,7 +495,7 @@ ex menu n
     background: none;
     border: none;
     color: white;
-    font-size: 25px;
+    font-size: 7vw;
 }
 
 

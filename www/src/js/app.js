@@ -112,19 +112,33 @@ function onDeviceReady() {
     }
     console.log(cordova.platformId);
 }
-
+function setMaximo(){
+    if (window.screen.availWidth < 576) {
+        return 30;
+    }else if(window.screen.availWidth < 768){
+        return 50;
+    }else if(window.screen.availWidth < 992){
+        return 70;
+    }else if(window.screen.availWidth < 1200){
+        return 90;
+    }else{
+        return 100;
+    }
+}
 
 
 function setTamanhoFonte(tamanho) {
-    if (tamanho >= 15 && tamanho <= 30) {
+    minimo=10;
+    maximo=setMaximo();
+    if (tamanho >= minimo && tamanho <= maximo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
         document.getElementById('fonte').value= tamanho;
-    }else if (tamanho <= 15) {
-        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 10);  
-        document.getElementById('fonte').value= 1;
-    }else if (tamanho > 30) {
-        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', 30);  
-        document.getElementById('fonte').value= 30;
+    }else if (tamanho <= minimo) {
+        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', minimo);
+        document.getElementById('fonte').value= minimo;
+    }else if (tamanho > maximo) {
+        document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', maximo);  
+        document.getElementById('fonte').value= maximo;
     }
 }
 function getEstilo(){

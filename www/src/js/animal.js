@@ -1,14 +1,9 @@
 readyAnimal = function() {
-    // $( "span.player-play" ).each(function( index ) {
-    //   console.log( index + ": " + $( this ) );
-    //   $( this ).on( "click", ButtonPlayer.bind() );
-    // });
     $( "span.player-play" ).each(function( index ) {
       pause=$(this).parent().children(".player-pause");
       play=$(this);
       audio=$(this).parent().children(".player")[0];
       control=$(this).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
-      console.log( index + ": " + $( this ) + "  "+ $(audio).attr('class')+$(play).attr('class')+$(control).attr('class'));
       $( this ).on( "click", ButtonPlayer.bind(null,pause,play));
       $(this).on("click",progressAnimal.bind(null,audio,play,control));
     });
@@ -18,7 +13,6 @@ readyAnimal = function() {
       audio=$(play).parent().children(".player")[0];
       $( this ).on( "click", ButtonPlayer.bind(null,pause,play));
       control=$(play).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
-      console.log( index + ": " + $( this ) + "  "+ $(audio).attr('class')+$(play).attr('class')+$(control).attr('class'));
       $(this).on("click",progressAnimal.bind(null,audio,play,control));
     });
     // $("div.tab-pane").on("click", todos);
@@ -45,7 +39,6 @@ readyAnimal = function() {
     
 };
 function ButtonPlayer(pause, play){
-    console.log('click'+$(pause).attr('class')+" "+$(play).attr('class'));
     if ($(pause).css("display") == "none") {
         $(play).css("display", "none");
         $(pause).css("display", "inline-block");
@@ -58,12 +51,10 @@ function ButtonPlayer(pause, play){
 function progressAnimal(audio, play, control){
     valor = (audio.currentTime*100)/audio.duration;
     valor2=100-valor;
-    console.log($(play).css("display")+ audio.currentTime);
     if ($(play).css("display") == "none" && audio.currentTime >= 0) {
         audio.play();
         $(control).css("height", valor2+"%");
     }else{
-        console.log('pause');
         audio.pause();
     }   
 }
@@ -78,8 +69,6 @@ function seek(audio,e){
     valor3=100-valor2;
     valor4=(valor3*audio.duration)/100;
     audio.currentTime=valor4;
-    console.log(e +"    "+audio);
-    
 }
 function todos(e){
     $( "span.player-play" ).each(function( index ) {
