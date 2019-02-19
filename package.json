@@ -4,8 +4,8 @@
   "displayName": "Muzoopan",
   "cordova": {
     "platforms": [
-      "android",
-      "browser"
+      "browser",
+      "android"
     ],
     "plugins": {
       "phonegap-plugin-barcodescanner": {

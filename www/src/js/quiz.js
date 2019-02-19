@@ -221,7 +221,7 @@ function respostaCerta(my) {
     my.parentNode.className="opt media-body m-0";
     my.parentNode.style.background=newCor;
     my.parentNode.parentNode.parentNode.className="media";
-    my.parentNode.parentNode.className="col-10 m-0";
+    my.parentNode.parentNode.className="col-10 m-0 mb-4";
     my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
     
 }
@@ -235,7 +235,7 @@ function respostaErrada(my) {
     img.id='incorrect';
     my.parentNode.className="opt media-body m-0";
     my.parentNode.parentNode.parentNode.className="media";
-    my.parentNode.parentNode.className="col-10 m-0";
+    my.parentNode.parentNode.className="col-10 m-0 mb-4";
     my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
 }
 

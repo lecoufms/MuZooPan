@@ -23,8 +23,8 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-    <engine name="android" spec="^7.1.4" />
     <engine name="browser" spec="^5.0.4" />
+    <engine name="android" spec="^7.1.4" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.1">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.1.1" />
     </plugin>
