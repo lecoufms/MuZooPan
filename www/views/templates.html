@@ -79,12 +79,14 @@
 
 </script>
 <script id="obj" type="text/template7">
-        <div><p id="nomeTitulo" class="nomeTit styleFont2">{{name}}</p></div>
-        <div class="icon">
-            <audio id="playIcon" src={{animalSound}}>
-            </audio>
-                <span id= "iconSom" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
-                </span>
+        <div class="row p-0 m-0">
+            <p id="nomeTitulo" class="nomeTit styleFont2 col-10">{{name}}</p>
+            <div class="icon">
+                <audio id="playIcon" src={{animalSound}}>
+                </audio>
+                    <span id= "" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
+                    </span>
+            </div>
         </div>
         
         <div id="myContainerAnimal" class="container">
@@ -138,8 +140,8 @@
                                     <div class="col-1 m-0 p-0">
                                         <div class="row m-0 p-0"> 
                                             <div class="player-controls col-12 mb-2 mt-2 p-2">
-                                                <span id={{js "'play_menu'+@index"}} class="player-play glyphicon glyphicon-play m-0 p-0"></span>
-                                                <span id={{js "'pause_menu'+@index"}} class="player-pause glyphicon glyphicon-pause m-0 p-0"></span>
+                                                <span id={{js "'play_menu'+@index"}} class="icon player-play glyphicon glyphicon-play m-0 p-0"></span>
+                                                <span id={{js "'pause_menu'+@index"}} class="icon player-pause glyphicon glyphicon-pause m-0 p-0"></span>
                                                 <audio class="player m-0 p-0"  src={{textSound}} type="audio/mpeg"></audio>
                                             </div>
                                             <div class="col-12 progressAu p-2">
@@ -164,19 +166,18 @@
         <img class="displayed col-8 offset-2" src="../files/img/imagemErro.png">
          <p id="msg" class="mensagem">{{mensagem}}</p>
             <p id="button" class="btn styleFont2 col-3 offset-4" onclick="window.location.href="index.html";">Início</p>
-        {{/js_if}}
     </div>
 </script>
 <script id= "quiz" type="text/template7">
     <div class = "conteiner">
         <div id="quiz1" class="container-fluid row row-xs-12">
-                <div class= "col col-3 texto acert text-center">
-                    <span id="acertos" class="styleFont2 acert">Acertos</span>
-                    <span id="qnAcertos" class="styleFont2">Acertos</span>
+                <div class= "col-9 texto acert text-center">
+                    <span id="acertos" class="styleFont2 acert row">Acertos</span>
+                    <span id="qnAcertos" class="styleFont2 row offset-1">Acertos</span>
                 </div>
-                <div class= "col-2 texto text-center pont offset-6"> 
-                    <span id="pontos" class="styleFont2">Pontos </span>
-                    <span id="qnPontos" class="offset-3 styleFont2">Pontos</span>
+                <div class= "col-2 texto text-center pont"> 
+                    <span id="pontos" class="styleFont2 col offset-3">Pontos </span>
+                    <span id="qnPontos" class="offset-3 col styleFont2">Pontos</span>
                      <div class="row">
                         <div class="col col-xs-2 thumbnail text-center">
                             <img id="barra0" class="mt-1" style="width:18vw;" src="../files/img/bar_.png" alt="..." >
@@ -184,29 +185,31 @@
                     </div>
                 </div>
         </div>
+
         <div class="container-fluid col col-xs-12 mt-4">
                     <div id="question" class="question ml-3 mr-3">
+
                         <p class="styleFont1">  </p>
                     </div>
-                    <div class="col mt-3" >
+                    <div class="col mt-4 p-0" >
                         <div class = "">
-                            <div id="alternativa" class = "col-10 offset-1">
+                            <div id="alternativa" class = "col-10 offset-1 mb-4">
                                 <label class="opt"><span id="opt1" class=""></span></label>
                             </div>
 
                         </div>
                         <div class=""> 
-                            <div id="alternativa" class = "col-10 offset-1">
+                            <div id="alternativa" class = "col-10 offset-1 mb-4">
                                 <label class="opt"><span id="opt2" class=""></span></label>
                             </div>
                         </div>
                         <div class="">
-                            <div id="alternativa" class = "col-10 offset-1">
+                            <div id="alternativa" class = "col-10 offset-1 mb-4">
                                 <label class="opt"><span id="opt3" class=""></span></label>
                             </div>
                         </div>
                         <div class="">
-                            <div id="alternativa" class = "col-10 offset-1">
+                            <div id="alternativa" class = "col-10 offset-1 mb-4">
                                 <label class="opt"><span id="opt4" class=""></span></label>
                             </div>
                         </div>

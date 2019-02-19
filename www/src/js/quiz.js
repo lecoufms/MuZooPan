@@ -114,25 +114,27 @@ function retiraVisuResposta(){
     var pai1;
     var pai2;
     var audio;
-    questionMy.parentNode.parentNode.className="col-10 offset-1";
+    questionMy.parentNode.parentNode.className="col-10 offset-1 mt-4 mb-4";
     questionMy.parentNode.style.background='';
+    questionMy.parentNode.className="opt m-0";
     if (img2 != null) {
-        pai1 = img1.parentNode.parentNode.parentNode;
-        pai2 = img2.parentNode.parentNode.parentNode;
+        pai1 = img1.parentNode;
+        pai2 = img2.parentNode;
         pai2.className="";
         pai1.className="";
         audio  = document.getElementById('incorrectAudio');
         var alter = eCerta();
         alter.parentNode.style.background='';
-        alter.parentNode.parentNode.className="col-10 offset-1";
-        pai1.removeChild(img1.parentNode.parentNode);
-        pai2.removeChild(img2.parentNode.parentNode);
+        alter.parentNode.parentNode.className="col-10 offset-1 mt-4 mb-4";
+        alter.parentNode.className="opt m-0"
+        pai1.removeChild(img1);
+        pai2.removeChild(img2);
         pai2.removeChild(audio);
     }else{
-        pai1 = img1.parentNode.parentNode.parentNode;
+        pai1 = img1.parentNode;
         pai1.className="";
         audio  = document.getElementById('correctAudio');
-        pai1.removeChild(img1.parentNode.parentNode);
+        pai1.removeChild(img1);
         pai1.removeChild(audio);
     }
     questionMy=null;
@@ -213,21 +215,14 @@ function insertAudio(my, qual){
 function respostaCerta(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');    
     var img = document.createElement('img');
-    var divP= document.createElement('div');
-    var divf = document.createElement("div");
-    divP.className = "row align-self-center";
-    divf.className="thumbnail text-center";
     img.src="../files/img/correct.png";
-    img.className='img-responsive pr-3';
+    img.className='img-fluid align-self-center col-1 m-0 p-0';
     img.id='correct';
-    img.style.width='15vw';
-    my.parentNode.className="opt media-body";
+    my.parentNode.className="opt media-body m-0";
     my.parentNode.style.background=newCor;
-    divf.appendChild(img);
-    divP.appendChild(divf);
-    my.parentNode.parentNode.parentNode.className="media pr-5";
-    my.parentNode.parentNode.className="col-12 pl-3 pr-3 p-0";
-    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
+    my.parentNode.parentNode.parentNode.className="media";
+    my.parentNode.parentNode.className="col-10 m-0 mb-4";
+    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
     
 }
 
@@ -235,20 +230,13 @@ function respostaErrada(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizE');    
     my.parentNode.style.background=newCor;
     var img = document.createElement('img');
-    var divP= document.createElement('div');
-    var divf = document.createElement("div");
-    divP.className = "row align-self-center";
-    divf.className="thumbnail text-center";
-    my.parentNode.className="opt media-body";
     img.src="../files/img/incorrect.png";
+    img.className='img-fluid align-self-center col-1 m-0 p-0';
     img.id='incorrect';
-    img.className='img-responsive pr-3 mr-1';
-    img.style.width='14vw';
-    divf.appendChild(img);
-    divP.appendChild(divf);
-    my.parentNode.parentNode.parentNode.className="media pr-5";
-    my.parentNode.parentNode.className="col-12 pl-3 pr-3 p-0";
-    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
+    my.parentNode.className="opt media-body m-0";
+    my.parentNode.parentNode.parentNode.className="media";
+    my.parentNode.parentNode.className="col-10 m-0 mb-4";
+    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
 }
 
 function alteraNextButton(){
