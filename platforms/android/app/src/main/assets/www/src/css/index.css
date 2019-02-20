@@ -124,7 +124,6 @@ p{
 }
 #foot{
     color: var(--corFonteQuizR); 
-    left:1vw;
 }
 
 .nomeTit{
@@ -176,7 +175,6 @@ p{
     color: var(--corFonteTitulo);
     /*font-size: 2em;*/
 }
-
 .acert{
     top:3vw;
     left:4vw;
@@ -215,17 +213,6 @@ span#iconSom{
 .img-responsive{
     right: 4vw;
 }
-
-#incorrect{
-
-    height: 8vh;
-}
-
-#correct{
- 
-    height: 8vh;
-}
-
 
 #myContainerFluidAnimal{
     padding: 0;
@@ -270,6 +257,12 @@ a.active.show{
 a.menuAnimal{
     /*font-size: 0.8em;*/
 }
+
+
+
+
+
+
 
 td#textFa{
     display: inherit;
