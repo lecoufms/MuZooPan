@@ -116,14 +116,14 @@
             </div>
 
             <div id="myContainerFluidAnimal" class="container-fluid">
-                <ul id ="NavMenu"class="nav nav-pills row p-0 m-0">
+                <ul id ="NavMenu"class="nav nav-pills row p-0 m-0 mt-3">
                     {{#each menus}}
                         {{#js_if "@index"}} 
                             <li class ="styleFont1 col"> 
                         {{else}}
                             <li class="active styleFont1 col">
                         {{/js_if}}
-                            <a class="menuAnimal col-12" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
+                            <a class="menuAnimal" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>
                         </li>
                     {{/each}}
@@ -215,10 +215,10 @@
                         </div>
                     </div>
         </div>
-        <div class="container-fluid row row-xs-12" style="text-align: center">
-                    <p id="foot" class="  col-3 ml-1 foot styleFont2">Revisar</p>
-                    <p id="progress" class=" col-4 ml-4 styleFont2">Question x of y</p>
-                    <p id="next-btn" class="col-3 ml-4 next-btn styleFont2">CONFIRMAR</p>
+        <div class="container-fluid row">
+                    <p id="progress" class="col-lg-12 col-lg-8 styleFont2" style="text-align: center">Question x of y</p>
+                    <p id="foot" class="col-6 foot styleFont2">Revisar</p>
+                    <p id="next-btn" class="col-6 next-btn p-0 styleFont2" style="text-align: right">CONFIRMAR</p>
         </div>
     </div>
 
