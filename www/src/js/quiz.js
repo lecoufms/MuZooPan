@@ -114,38 +114,34 @@ function retiraVisuResposta(){
     var pai1;
     var pai2;
     var audio;
-    questionMy.parentNode.parentNode.className="col-10 offset-1 mt-4 mb-4";
+    questionMy.parentNode.parentNode.className="col-10 offset-1 mb-4";
     questionMy.parentNode.style.background='';
     questionMy.parentNode.className="opt m-0";
     if (img2 != null) {
-        pai1 = img1.parentNode;
-        pai2 = img2.parentNode;
+        pai1 = img1.parentNode.parentNode.parentNode;
+        pai2 = img2.parentNode.parentNode.parentNode;
         pai2.className="";
         pai1.className="";
         audio  = document.getElementById('incorrectAudio');
         var alter = eCerta();
         alter.parentNode.style.background='';
-        alter.parentNode.parentNode.className="col-10 offset-1 mt-4 mb-4";
+        alter.parentNode.parentNode.className="col-10 offset-1 mb-4";
         alter.parentNode.className="opt m-0"
-        pai1.removeChild(img1);
-        pai2.removeChild(img2);
+        pai1.removeChild(img1.parentNode.parentNode);
+        pai2.removeChild(img2.parentNode.parentNode);
         pai2.removeChild(audio);
     }else{
-        pai1 = img1.parentNode;
+        pai1 = img1.parentNode.parentNode.parentNode;
         pai1.className="";
         audio  = document.getElementById('correctAudio');
-        pai1.removeChild(img1);
+        pai1.removeChild(img1.parentNode.parentNode);
         pai1.removeChild(audio);
     }
     questionMy=null;
-
 }
 function loadQuesition(qIndex) {
     var q = myQuestions[qIndex];
     questionEl.innerText = (qIndex+1) + '. '+q.texto;
-    console.log(myQuestions[qIndex]);
-    console.log(myQuestions[qIndex]);
-    console.log(myQuestions[qIndex]);
     opt1.innerText = Object.keys(q.alternativas[0])[0].toUpperCase()+') '+Object.values(q.alternativas[0])[0];
     opt2.innerText = Object.keys(q.alternativas[1])[0].toUpperCase()+') '+Object.values(q.alternativas[1])[0];
     opt3.innerText = Object.keys(q.alternativas[2])[0].toUpperCase()+') '+Object.values(q.alternativas[2])[0];
@@ -215,14 +211,21 @@ function insertAudio(my, qual){
 function respostaCerta(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');    
     var img = document.createElement('img');
+    var divP= document.createElement('div');
+    var divf = document.createElement("div");
+    divP.className = "col-1 m-0 p-0";
+    divf.className="thumbnail text-center";
     img.src="../files/img/correct.png";
-    img.className='img-fluid align-self-center col-1 m-0 p-0';
+    img.className='img-fluid';
     img.id='correct';
+    img.style.height=my.parentNode.parentNode.offsetHeight+"px";
     my.parentNode.className="opt media-body m-0";
     my.parentNode.style.background=newCor;
+    divf.appendChild(img);
+    divP.appendChild(divf);
+    my.parentNode.parentNode.className="col-10 mb-4";
     my.parentNode.parentNode.parentNode.className="media";
-    my.parentNode.parentNode.className="col-10 m-0 mb-4";
-    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
+    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
     
 }
 
@@ -230,20 +233,27 @@ function respostaErrada(my) {
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizE');    
     my.parentNode.style.background=newCor;
     var img = document.createElement('img');
+    var divP= document.createElement('div');
+    var divf = document.createElement("div");
+    divP.className = "col-1 m-0 p-0";
+    divf.className="thumbnail text-center";
+    img.className='img-fluid';
     img.src="../files/img/incorrect.png";
-    img.className='img-fluid align-self-center col-1 m-0 p-0';
     img.id='incorrect';
+    img.style.height=my.parentNode.parentNode.offsetHeight+"px";
     my.parentNode.className="opt media-body m-0";
+    divf.appendChild(img);
+    divP.appendChild(divf);
+    my.parentNode.parentNode.className="col-10 mb-4";
     my.parentNode.parentNode.parentNode.className="media";
-    my.parentNode.parentNode.className="col-10 m-0 mb-4";
-    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",img);
+    my.parentNode.parentNode.parentNode.insertAdjacentElement("afterbegin",divP);
 }
 
 function alteraNextButton(){
     var pai = document.getElementById('next-btn').parentNode;
     var filho = document.getElementById('next-btn');
     var cls = document.getElementById('next-btn').className;
-    var newFilho = document.createElement('p');
+    var newFilho = document.createElement('span');
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');
     if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
         newFilho.innerText='PRÓXIMA';
@@ -291,7 +301,7 @@ function podeButton(){
 }
 
 function progress() {
-    document.getElementById('progress').innerText='Pergunta'+myQuestions.length+' / '+(currentQuestion+1);
+    document.getElementById('progress').innerText='Pergunta '+myQuestions.length+'/'+(currentQuestion+1);
 }
 
 function alteraBarra(barraA, barraN){
@@ -299,11 +309,11 @@ function alteraBarra(barraA, barraN){
     var tn=t.length;
     var pai = document.getElementById('barra'+barraA).parentNode;
     var img = document.createElement('img');
-    img.className='img-responsive';
+    img.className='img-fluid';
     pai.removeChild(document.getElementById('barra'+barraA));
     img.src= '../files/img/bar_'+(!barraN ? ''+'.png':(barraN==4 ? barraN +'.gif': barraN+'.png'));
     img.id='barra'+barraN;
-    img.style.width='18vw';
+    // img.style.width='18vw';
     pai.appendChild(img);
 }
 

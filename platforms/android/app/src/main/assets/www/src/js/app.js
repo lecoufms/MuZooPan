@@ -52,7 +52,7 @@ function onMenu() {
     document.getElementById('diminuiFonte').addEventListener("click", diminuiFonte);
     document.getElementById('fonte').addEventListener("change", Fonte);
     document.getElementById("buttonMenu").addEventListener("click", sideBar2);
-
+    window.addEventListener("resize", setTamanhoFonte);
 }
 
 function Estilo() {
@@ -113,6 +113,7 @@ function onDeviceReady() {
     console.log(cordova.platformId);
 }
 function setMaximo(){
+    console.log(window.screen.availWidth);
     if (window.screen.availWidth < 576) {
         return 30;
     }else if(window.screen.availWidth < 768){
@@ -127,19 +128,22 @@ function setMaximo(){
 }
 
 
-function setTamanhoFonte(tamanho) {
+function setTamanhoFonte() {
     minimo=10;
     maximo=setMaximo();
+    tamanho=window.localStorage.getItem("fonte");
+    console.log(tamanho+" tamanho     " +maximo);
     if (tamanho >= minimo && tamanho <= maximo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
         document.getElementById('fonte').value= tamanho;
-    }else if (tamanho <= minimo) {
+    }else if (tamanho < minimo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', minimo);
         document.getElementById('fonte').value= minimo;
     }else if (tamanho > maximo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', maximo);  
         document.getElementById('fonte').value= maximo;
     }
+    window.localStorage.setItem("fonte", document.getElementById('fonte').value);
 }
 function getEstilo(){
     if (window.localStorage.getItem("contraste") == null) {
@@ -157,7 +161,7 @@ function getEstilo(){
         document.getElementById('estilo').checked=false;
     }
     if (window.localStorage.getItem("fonte")) {
-        setTamanhoFonte(parseInt(window.localStorage.getItem('fonte')));
+        setTamanhoFonte();
     }
     try{
 
@@ -200,12 +204,14 @@ function sideBar2() {
 
 function aumentaFonte(){
     console.log(typeof document.getElementById('fonte').value);
-    setTamanhoFonte(parseInt(document.getElementById('fonte').value) + 1);
-    Fonte();
+    valor=parseInt(document.getElementById('fonte').value) + 1;
+    window.localStorage.setItem("fonte", valor);
+    setTamanhoFonte();
 }
 function diminuiFonte(){
-    setTamanhoFonte(parseInt(document.getElementById('fonte').value) - 1);
-    Fonte();
+    valor=parseInt(document.getElementById('fonte').value) - 1;
+    window.localStorage.setItem("fonte", valor);
+    setTamanhoFonte();
 }
 
 

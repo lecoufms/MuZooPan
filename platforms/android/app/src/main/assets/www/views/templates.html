@@ -166,59 +166,57 @@
         <img class="displayed col-8 offset-2" src="../files/img/imagemErro.png">
          <p id="msg" class="mensagem">{{mensagem}}</p>
             <p id="button" class="btn styleFont2 col-3 offset-4" onclick="window.location.href="index.html";">Início</p>
-        {{/js_if}}
     </div>
 </script>
 <script id= "quiz" type="text/template7">
-    <div class = "conteiner">
-        <div id="quiz1" class="container-fluid row row-xs-12">
-                <div class= "col-9 texto acert text-center">
+    <div class = "conteiner-fluid">
+        <div id="quiz1" class="row m-0">
+                <div class= "col-1 texto acert text-center">
                     <span id="acertos" class="styleFont2 acert row">Acertos</span>
                     <span id="qnAcertos" class="styleFont2 row offset-1">Acertos</span>
                 </div>
-                <div class= "col-2 texto text-center pont"> 
-                    <span id="pontos" class="styleFont2 col offset-3">Pontos </span>
-                    <span id="qnPontos" class="offset-3 col styleFont2">Pontos</span>
-                     <div class="row">
-                        <div class="col col-xs-2 thumbnail text-center">
-                            <img id="barra0" src="../files/img/bar_.png" alt="..." class="img-responsive" style="width:18vw;">
+                <div class= "col-3 offset-6 p-0 texto text-center pont"> 
+                    <span id="pontos" class="styleFont2 offset-6">Pontos </span>
+                    <span id="qnPontos" class="offset-6 styleFont2">Pontos</span>
+                     <div class="offset-6 mb-5">
+                        <div class="thumbnail">
+                            <img id="barra0" class="img-fluid" src="../files/img/bar_.png" alt="..." >
                         </div>
                     </div>
                 </div>
         </div>
-        <div class="container-fluid col-12 col-xs-12 texto p-0">
 
-                    <div id="question" class="question m-3">
-                        <p class="styleFont1">  </p>
+        <div class="container mt-4">
+            <div id="question" class="question ml-3 mr-3">
+                <p class="styleFont1">  </p>
+            </div>
+            <div class="col mt-4 p-0" >
+                <div class = "">
+                    <div id="alternativa" class = "col-10 offset-1 mb-4">
+                        <label class="opt"><span id="opt1" class=""></span></label>
                     </div>
-                    <div class="col mt-4 p-0" >
-                        <div class = "">
-                            <div id="alternativa" class = "col-10 offset-1 mb-4">
-                                <label class="opt"><span id="opt1" class=""></span></label>
-                            </div>
-
-                        </div>
-                        <div class=""> 
-                            <div id="alternativa" class = "col-10 offset-1 mb-4">
-                                <label class="opt"><span id="opt2" class=""></span></label>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div id="alternativa" class = "col-10 offset-1 mb-4">
-                                <label class="opt"><span id="opt3" class=""></span></label>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div id="alternativa" class = "col-10 offset-1 mb-4">
-                                <label class="opt"><span id="opt4" class=""></span></label>
-                            </div>
-                        </div>
+                </div>
+                <div class=""> 
+                    <div id="alternativa" class = "col-10 offset-1 mb-4">
+                        <label class="opt"><span id="opt2" class=""></span></label>
                     </div>
+                </div>
+                <div class="">
+                    <div id="alternativa" class = "col-10 offset-1 mb-4">
+                        <label class="opt"><span id="opt3" class=""></span></label>
+                    </div>
+                </div>
+                <div class="">
+                    <div id="alternativa" class = "col-10 offset-1 mb-4">
+                        <label class="opt"><span id="opt4" class=""></span></label>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container-fluid row row-xs-12" style="text-align: center">
-                    <p id="foot" class=" col-3 foot styleFont2 texto">Revisar</p>
-                    <p id="progress" class=" col-6 styleFont2 pergunta texto">Question x of y</p>
-                    <p id="next-btn" class="col-3 next next-btn styleFont2 texto">CONFIRMAR</p>
+        <div class="row m-0 p-0" style="text-align: center">
+                    <span id="foot" class="  col m-0 p-0 foot styleFont2">Revisar</span>
+                    <span id="progress" class=" col m-0 p-0 styleFont2">Question x of y</span>
+                    <span id="next-btn" class="col m-0 p-0 next-btn styleFont2">CONFIRMAR</span>
         </div>
     </div>
 
