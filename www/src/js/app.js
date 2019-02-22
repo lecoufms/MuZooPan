@@ -53,6 +53,7 @@ function onMenu() {
     document.getElementById('fonte').addEventListener("change", Fonte);
     document.getElementById("buttonMenu").addEventListener("click", sideBar2);
     window.addEventListener("resize", setTamanhoFonte);
+    
 }
 
 function Estilo() {
@@ -136,13 +137,23 @@ function setTamanhoFonte() {
     if (tamanho >= minimo && tamanho <= maximo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
         document.getElementById('fonte').value= tamanho;
+        if (window.localStorage.getItem("config") == "obj") {
+            gerenciaNavMenu();
+        }
     }else if (tamanho < minimo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', minimo);
         document.getElementById('fonte').value= minimo;
+        if (window.localStorage.getItem("config") == "obj") {
+            gerenciaNavMenu();
+        }
     }else if (tamanho > maximo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', maximo);  
         document.getElementById('fonte').value= maximo;
+        if (window.localStorage.getItem("config") == "obj") {
+            gerenciaNavMenu();
+        }
     }
+    
     window.localStorage.setItem("fonte", document.getElementById('fonte').value);
 }
 function getEstilo(){

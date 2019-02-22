@@ -116,14 +116,14 @@
             </div>
 
             <div id="myContainerFluidAnimal" class="container-fluid">
-                <ul id ="NavMenu"class="nav nav-pills nav-justified p-0 m-0 mt-3">
+                <ul id ="NavMenu"class="nav nav-pills nav-justified">
                     {{#each menus}}
                         {{#js_if "@index"}} 
                             <li class ="styleFont1 nav-item"> 
                         {{else}}
                             <li class="active styleFont1 nav-item">
                         {{/js_if}}
-                            <a class="menuAnimal" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
+                            <a class="menuAnimal nav-link menuAnimal col" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>
                         </li>
                     {{/each}}

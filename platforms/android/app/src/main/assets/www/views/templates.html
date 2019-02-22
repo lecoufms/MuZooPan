@@ -123,7 +123,7 @@
                         {{else}}
                             <li class="active styleFont1 nav-item">
                         {{/js_if}}
-                            <a id={{js "'m'+@index"}}  class="nav-link menuAnimal col " data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
+                            <a class="menuAnimal nav-link menuAnimal col" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>
                         </li>
                     {{/each}}
@@ -213,10 +213,10 @@
                 </div>
             </div>
         </div>
-        <div class="row m-0 p-0" style="text-align: center">
-                    <span id="foot" class="  col-6 order-2 m-0 p-0 foot styleFont2">Revisar</span>
-                    <span id="progress" class=" col-12 order-1 m-0 p-0 styleFont2">Question x of y</span>
-                    <span id="next-btn" class="col-6 order-3 m-0 p-0 next-btn styleFont2">Confirmar</span>
+        <div class="row m-0 p-0">
+                    <span id="progress" class="col-lg-12 col-lg-8 styleFont2" style="text-align: center">Question x of y</span>
+                    <span id="foot" class="col-6 foot styleFont2">Revisar</span>
+                    <span id="next-btn" class="col-6 next-btn p-0 styleFont2" style="text-align: right">CONFIRMAR</span>
         </div>
     </div>
 

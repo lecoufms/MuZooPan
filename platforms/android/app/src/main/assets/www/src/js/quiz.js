@@ -255,16 +255,16 @@ function alteraNextButton(){
     var cls = document.getElementById('next-btn').className;
     var newFilho = document.createElement('span');
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');
-    if (document.getElementById('next-btn').innerText == 'Confirmar') {
-        newFilho.innerText='Próxima';
+    if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
+        newFilho.innerText='PRÓXIMA';
         newFilho.id='next-btn';
         newFilho.className= cls;
         newFilho.cursor='pointer';
         newFilho.style.color = newCor;
         newFilho.style.cursor='pointer';
         newFilho.addEventListener("click", prox);
-    }else if(document.getElementById('next-btn').innerText == 'Próxima'){
-        newFilho.innerText = 'Confirmar';
+    }else if(document.getElementById('next-btn').innerText == 'PRÓXIMA'){
+        newFilho.innerText = 'CONFIRMAR';
         newFilho.id='next-btn';
         newFilho.className= cls;
     }
@@ -318,9 +318,9 @@ function alteraBarra(barraA, barraN){
 }
 
 function prox() {
-    if (document.getElementById('next-btn').innerText == 'Confirmar') {
+    if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
         EcertoAlt();
-    }else if (document.getElementById('next-btn').innerText == 'Próxima') {
+    }else if (document.getElementById('next-btn').innerText == 'PRÓXIMA') {
         if (currentQuestion == (myQuestions.length-1)) {
             Nextpremio();
         }else{
@@ -334,8 +334,8 @@ function prox() {
 }
 function clickAlt(button) {
     console.log(button.innerText);
-    console.log(document.getElementById('next-btn').innerText + ' == ' + 'Confirmar');
-    if (document.getElementById('next-btn').innerText == 'Confirmar') {
+    console.log(document.getElementById('next-btn').innerText + ' == ' + 'CONFIRMAR');
+    if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
         questionMy=button;
         podeButton();
     }
@@ -378,7 +378,7 @@ ready = function(){
         pontuacao();
         alteraBarra(queBarraSou(),qualBarraPBonus());
        $("#foot").click(function(){
-            if (document.getElementById('next-btn').innerText == 'Confirmar') {
+            if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
                 totalRevisao=totalRevisao+1;
                 revisao=revisao+1;
                 vamosPreparaPPasseio();
