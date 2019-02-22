@@ -226,7 +226,7 @@ span#iconSom{
 #NavMenu{
     background-color: var(--corFundoMenuOpcao);
 }
-ul.nav li.styleFont1 a{
+ul.nav li.nav-item.styleFont1 a.nav-link{
     background-color: var(--corBarraMenu);
     color: var(--corFonteTextoLidoMenuOpcao);
     display: inline-block;
