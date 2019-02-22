@@ -55,6 +55,7 @@ p{
     text-justify: auto;
 }
 
+
 .title{
     padding-top: 20px;
     text-align: center;
@@ -112,6 +113,11 @@ p{
 .next-btn:hover{
     color: var(--corFonteQuizConfDes, #f6f6f6);
 }
+.next-btn{
+    text-align: right;
+
+}
+
 .result{
     text-align: center;
 }
