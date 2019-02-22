@@ -36,10 +36,10 @@ readyAnimal = function() {
         audio=$(this).parent().parent().parent().children(".player-controls").children(".player")[0];
         $(this).on("click",seek.bind(this,audio));
     });
-    $("#fonte").on("change",gerenciaNavMenu);
-    $("#aumentaFonte").on("click",gerenciaNavMenu);
-    $("#diminuiFonte").on("click",gerenciaNavMenu);
-    gerenciaNavMenu();
+    // $("#fonte").on("change",gerenciaNavMenu);
+    // $("#aumentaFonte").on("click",gerenciaNavMenu);
+    // $("#diminuiFonte").on("click",gerenciaNavMenu);
+    // gerenciaNavMenu();
 };
 function teste(){
   filho = $("div #NavMenu").children()[0];
