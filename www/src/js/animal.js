@@ -36,8 +36,45 @@ readyAnimal = function() {
         audio=$(this).parent().parent().parent().children(".player-controls").children(".player")[0];
         $(this).on("click",seek.bind(this,audio));
     });
-    
+    // $("#fonte").on("change",gerenciaNavMenu);
+    // $("#aumentaFonte").on("click",gerenciaNavMenu);
+    // $("#diminuiFonte").on("click",gerenciaNavMenu);
+    // gerenciaNavMenu();
 };
+function teste(){
+  filho = $("div #NavMenu").children()[0];
+  $(filho).children().removeClass("col");
+  console.log($(filho).children().width());
+  $(filho).children().addClass("col");
+  console.log($(filho).children().width());
+}
+
+function gerenciaNavMenu(){
+    var t1=0;
+    var t2=0;
+    $("div #NavMenu").children().each(function(){
+      filho = $(this).children()[0];
+      t1=t1+parseInt($(filho).css("width"));
+      $(filho).removeClass("col");
+      t2=t2+parseInt($(filho).css("width"));
+      $(filho).addClass("col");
+    });
+    var hf= t1-t2;
+    var v=t2+hf;
+    var fonte=0;
+    console.log("div #NavMenu" + " "+t1 + " "+t2 + " "+hf + " "+v + " "+ window.localStorage.getItem("fonte"));
+    if (t1 >= parseInt($("#NavMenu").css("width")) && (hf+t2) >= parseInt($("#NavMenu").css("width"))) {
+        $("#NavMenu").attr("class", "nav flex-column nav-justified");
+        fonte=window.localStorage.getItem("fonte");
+        console.log("entrei 1");
+    }
+    if(t2 < parseInt($("#NavMenu").css("width")) ){
+      console.log("entrei 2");
+      if ((parseInt($("#NavMenu").css("width")) - t2) > 2) {
+          $("#NavMenu").attr("class", "nav nav-pills nav-justified");
+      }
+    }
+}
 function ButtonPlayer(pause, play){
     if ($(pause).css("display") == "none") {
         $(play).css("display", "none");

@@ -301,7 +301,7 @@ function podeButton(){
 }
 
 function progress() {
-    document.getElementById('progress').innerText='Pergunta '+myQuestions.length+'/'+(currentQuestion+1);
+    document.getElementById('progress').innerText='Pergunta '+myQuestions.length+' / '+(currentQuestion+1);
 }
 
 function alteraBarra(barraA, barraN){

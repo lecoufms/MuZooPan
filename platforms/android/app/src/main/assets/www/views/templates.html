@@ -116,14 +116,14 @@
             </div>
 
             <div id="myContainerFluidAnimal" class="container-fluid">
-                <ul id ="NavMenu"class="nav nav-pills row p-0 m-0">
+                <ul id ="NavMenu"class="nav nav-pills nav-justified">
                     {{#each menus}}
                         {{#js_if "@index"}} 
-                            <li class ="styleFont1 col"> 
+                            <li class ="styleFont1 nav-item"> 
                         {{else}}
-                            <li class="active styleFont1 col">
+                            <li class="active styleFont1 nav-item">
                         {{/js_if}}
-                            <a class="menuAnimal col-12" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
+                            <a id={{js "'m'+@index"}}  class="nav-link menuAnimal col " data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>
                         </li>
                     {{/each}}
@@ -214,9 +214,9 @@
             </div>
         </div>
         <div class="row m-0 p-0" style="text-align: center">
-                    <span id="foot" class="  col m-0 p-0 foot styleFont2">Revisar</span>
-                    <span id="progress" class=" col m-0 p-0 styleFont2">Question x of y</span>
-                    <span id="next-btn" class="col m-0 p-0 next-btn styleFont2">CONFIRMAR</span>
+                    <span id="foot" class="  col-6 order-2 m-0 p-0 foot styleFont2">Revisar</span>
+                    <span id="progress" class=" col-12 order-1 m-0 p-0 styleFont2">Question x of y</span>
+                    <span id="next-btn" class="col-6 order-3 m-0 p-0 next-btn styleFont2">Confirmar</span>
         </div>
     </div>
 
