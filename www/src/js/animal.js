@@ -73,6 +73,10 @@ readyAnimal = function() {
 		audio=$(this).parent().parent().parent().children(".player-controls").children(".player")[0];
 		$(this).on("click",seek.bind(this,audio));
 	});
+	$("#NavMenu").children().each(function(){
+		$(this).children().on("click",todos);
+   	});
+
 };
 function ButtonPlayer(pause, play){
 	if ($(pause).css("display") == "none") {
@@ -109,6 +113,13 @@ function seek(audio,e){
 function todos(e){
 	$( "span.player-play" ).each(function( index ) {
 	  $(this).css("display","inline-block");
+	  control=$(this).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
+	  $(control).css("height", 100+"%");
+	});
+	$( "audio.player" ).each(function( index ) {
+		a=$(this)[0];
+		a.pause();
+		a.currentTime = 0;
 	});
 	$( "span.player-pause" ).each(function( index ) {
 	  $(this).css("display","none");
