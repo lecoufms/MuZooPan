@@ -238,7 +238,7 @@ ul.nav li.nav-item.styleFont1 a.nav-link{
     display: inline-block;
     line-height: 2em;
     z-index: 1;
-    /*padding: 1vw;*/
+    padding: 1vw;
 }
 ul.nav li.styleFont1 {
     margin: 0 0.5vw 0 0.5vw;

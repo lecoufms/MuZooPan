@@ -84,7 +84,7 @@ $(document).ready(function(){
     onMenu();
     document.getElementById('camera').addEventListener("click", barcodescanner.bind(camera),true);
     document.getElementById('buttonSobre').addEventListener("click", changePrepare.bind(null,'about',true),true);
-
+    window.localStorage.removeItem("qrcodeInput");
 });
 /*
 function onLoad() {

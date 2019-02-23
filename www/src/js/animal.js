@@ -7,22 +7,35 @@ function teste(){
 }
 
 function gerenciaNavMenu(){
-   	var widthFilhos=0;
-   	$("#NavMenu").children().each(function(){
-   		$(this).children().removeClass("col");
-   		widthFilhos=widthFilhos+parseInt($(this).children().css("width"));
-   		$(this).children().addClass("col");
-   	});
-   	if($("#NavMenu").attr("class") == "nav flex-column nav-justified" && widthFilhos < window.screen.availWidth){
-   		$("#NavMenu").attr("class", "nav nav-pills nav-justified");	
-   		console.log("entrei no if 2");
-   	}else if ($("#NavMenu").attr("class") == "nav nav-pills nav-justified" && parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height"))) {
-   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
-   		console.log("entrei no if 1");
-   	}
+	
+	   	var widthFilhos=0;
+	   	$("#NavMenu").children().each(function(){
+	   		$(this).children().removeClass("col");
+	   		widthFilhos=widthFilhos+parseInt($(this).children().css("width"));
+	   		$(this).children().addClass("col");
+	   	});
+	   	var n = parseInt($("#NavMenu").css("height"))/ parseInt($("#NavMenu").children().css("height"));
+	   	console.log(n);
+	   	if (n != $("#NavMenu").children().length || n != 1) {
+	   		if (parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height")) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
+		   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
+		   		console.log("entrei no if 1");
+		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified"){
+		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified");	
+		   		console.log("entrei no if 2");
+		   		if (parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height")) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
+			   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
+			   		console.log("entrei no if 1");
+			   	}
+		   	}
+		   	
+	   	}else{
+	   		console.log("esta perfeito");
+	   	}
+	
+   	console.log("entrei gerenciaNavMenu");
 }
 readyAnimal = function() {
-	gerenciaNavMenu();
 	$( "span.player-play" ).each(function( index ) {
 	  pause=$(this).parent().children(".player-pause");
 	  play=$(this);

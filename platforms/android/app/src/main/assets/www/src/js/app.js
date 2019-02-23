@@ -111,6 +111,9 @@ function onDeviceReady() {
     }catch (e)  {
         console.log(e);
     }
+    if (window.localStorage.getItem("config") == "obj") {
+        gerenciaNavMenu();
+    }
     console.log(cordova.platformId);
 }
 function setMaximo(){
@@ -148,7 +151,7 @@ function setTamanhoFonte() {
         }
     }else if (tamanho > maximo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', maximo);  
-        document.getElementById('fonte').value= maximo;
+        document.getElementById('fonte').value= maximo; 
         if (window.localStorage.getItem("config") == "obj") {
             gerenciaNavMenu();
         }
