@@ -65,8 +65,8 @@ function vaiRetornar() {
 
 temQuestions = function (context){
     for (var i =0; i < context.length; i++) {
-        console.log(context[i]["name"]);
-        if(context[i]["name"] == 'quiz'){
+        console.log(context[i]["key"]);
+        if(context[i]["key"] == 'quiz'){
             myQuestions =context[i]["questions"];
             Quiz=true;
             vaiRetornar();

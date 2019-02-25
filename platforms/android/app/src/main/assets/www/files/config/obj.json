@@ -1,5 +1,6 @@
 [
   {
+    "key":"jaguatirica",
     "name":"Jaguatirica",
     "animalSound":"../files/sounds/animals/jaguatirica.wav",
     "imgs":[
@@ -16,6 +17,7 @@
     "3dModel":""
   },
   {
+    "key":"capivara",
     "name":"Capivara",
     "animalSound":"../files/sounds/animals/capivara.wav",
     "imgs":[
@@ -32,6 +34,7 @@
     "3dModel":""
   },
   {
+    "key":"cascavel",
     "name":"Cascavel",
     "animalSound":"../files/sounds/animals/cascavel.wav",
     "imgs":[
@@ -48,6 +51,7 @@
     "3dModel":""
   },
   {
+    "key":"peixe piranha",
     "name":"Peixe Piranha",
     "animalSound":"../files/sounds/animals/piranha.wav",
     "imgs":[
@@ -64,6 +68,7 @@
     "3dModel":""
   },
   {
+    "key":"sapo cururu",
     "name":"Sapo Cururu",
     "animalSound":"../files/sounds/animals/sapo.wav",
     "imgs":[

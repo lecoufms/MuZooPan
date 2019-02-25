@@ -3,7 +3,7 @@ var html;
 
 function selectContext(c) {
     for(i=0; i<c.length; i++){
-        if(c[i].name == window.localStorage.getItem("qrcodeInput") || 'animal,'+c[i].name == window.localStorage.getItem("qrcodeInput")){
+        if(c[i].key == window.localStorage.getItem("qrcodeInput") || 'animal,'+c[i].key == window.localStorage.getItem("qrcodeInput")){
             renderOnScreen(c[i]);
             return true;
         }
@@ -23,7 +23,7 @@ function readFile(file)
             {
                 context = JSON.parse(rawFile.responseText);
                 if(!selectContext(context)){
-                    renderOnScreen({"name":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))});
+                    renderOnScreen({"key":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))});
                 }
             }
         }
@@ -43,7 +43,7 @@ function alterar(contexto){
 }
 
 function renderOnScreen(ctxt) {
-    var template = $("#"+ (ctxt.name=="error"? "Error404":(window.localStorage.getItem("config")=="obj"? "obj":ctxt.name))).html();
+    var template = $("#"+ (ctxt.key=="error"? "Error404":(window.localStorage.getItem("config")=="obj"? "obj":ctxt.key))).html();
     var compiledTemplate = Template7.compile(template);
     ctxt= alterar(ctxt);
     

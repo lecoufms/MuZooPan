@@ -1,10 +1,12 @@
 [{
+  "key": "about",
   "name": "about",
   "cabecalho":"MuZooPan é um jogo educacional para auxiliar alunos durante o passeio no laboratório de zoologia do Campus do Pantanal (UFMS).",
   "funciona":"Como funciona: <br> - Na Tela inicial, clique na câmera do MuzooPan, quando ela abrir você deve apontá-la para o QRcode do animal;<br> - Na tela do animal você poderá ver fotos, aúdios e informações importantes sobre ele.",
   "quiz":"Quiz:<p> No final dos passeio, você pode responder um Quiz com perguntas para reforçar o que foi visto durante o passeio! <br>- Acerte as perguntas e ganhe 100 pontos.<br>- Se ficar preso em uma pergunta você pode usar o revisar, mas cada vez que utilizá-la perderá pontos 50 da pergunta.<br>- Acerte uma sequencia de 3 perguntas e libere um bonus de 50 pontos para as perguntas seguintes.<br>- No final veja quantas perguntas acertou e quantos pontos foram feitos.",
   "quem":"<p>Quem somos:<p>MuZooPan É um projeto desenvolvido a partir da parceria entre o laboratório de zoologia do curso de Ciências Biológicas e do Laboratório de Estudos de Computação do curso de Sistemas de Informação da UFMS-CPAN</p><p>Coordenador do projeto:<br>Lucineide Rodrigues da Silva</p> <p> Acadêmicos de Sistemas de Informação:<br><br>Allison Vincius de Aráujo Cuellar<br>Cintia Roberta Lara de Andrade<br>Denner Figueiredo<br>José Manuel Carmen Sandonas<br>Michael Douglas da Silva Ferreira<br>Náthaly do Amaral Verzas<br>Silviane Christo da Silva Brito Souza<br>Valdenize da Silva Ribeiro<br>Vinicius Gabriel de Souza<br>Wesley Barbosa da Silva</p><p>Colaboradores:<br><br>Anderson Pereira das Neves - UFMS-CPAN<br>Cassia Mayara Santos - UFMS-CPAN<br>Déborah Cainelli - UFMS-CPAN<br>Ingrid de Menezes Brasil - Fiocruz<br>Jeilson Nazário Mercado - UFMS-CPAN<br>Jennyffer Dias Chaim Asseff - UFMS-CPAN<br>Jéssica Thais Miranda Rodrigues - UFMS-CPAN<br>Juliana Furtado da Costa Queiroz - UFMS-CPAN<br>Laissa Camacho Moraes - UFMS-CPAN<br>Leandro Soares Guedes - IFMS Corumbá<br>Luis Felipe Jimenez - IFMS Corumbá<br>Raphaela Helena Benevides Ferreira - UFMS-CPAN<br>Yasmin Cristine Aguero Pereira - UFMS-CPAN</p>"
 },{
+  "key": "premio",
   "name": "premio",
   "imagemParabens": "../files/img/msg.gif",
   "premioSound" : "../files/sounds/quiz/premiacao.ogg",
