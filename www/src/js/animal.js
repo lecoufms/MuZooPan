@@ -10,9 +10,9 @@ function gerenciaNavMenu(){
 	
 	   	var widthFilhos=0;
 	   	$("#NavMenu").children().each(function(){
-	   		$(this).children().removeClass("col");
+	   		$(this).children().addClass("p-0");
 	   		widthFilhos=widthFilhos+parseInt($(this).children().css("width"));
-	   		$(this).children().addClass("col");
+	   		$(this).children().removeClass("p-0");
 	   	});
 	   	var n = parseInt($("#NavMenu").css("height"))/ parseInt($("#NavMenu").children().css("height"));
 	   	console.log(n);

@@ -28,6 +28,7 @@
     --corBarraMenu: var(--corFundoSelect);
     --corFonteTextoLidoMenuOpcao: var(--corFonteTituloNormal);
     --corFonteTextoLidoMenuCorpo:var(--corFonteTextoLido);
+    --corMarcadorMenu: var(--corFonteTituloNormal);
 
 }
 body{
@@ -232,13 +233,8 @@ span#iconSom{
 #NavMenu{
     background-color: var(--corFundoMenuOpcao);
 }
-ul.nav li.nav-item.styleFont1 a.nav-link{
+ul.nav li.nav-item.styleFont1{
     background-color: var(--corBarraMenu);
-    color: var(--corFonteTextoLidoMenuOpcao);
-    display: inline-block;
-    line-height: 2em;
-    z-index: 1;
-    padding: 1vw;
 }
 ul.nav li.styleFont1 {
     margin: 0 0.5vw 0 0.5vw;
@@ -250,6 +246,14 @@ ul.nav li.styleFont1:first-child{
 ul.nav li.styleFont1:last-child{
     margin: 0 0 0 0.5vw;
 }
+ul.nav li.nav-item.styleFont1 a.nav-link{
+    background-color: var(--corBarraMenu);
+    color: var(--corFonteTextoLidoMenuOpcao);
+    display: inline-block;
+    line-height: 2em;
+    z-index: 1;
+    padding: 1vw;
+}
 ul.nav li.styleFont1 a:hover{
     text-decoration: none;
 }
@@ -257,7 +261,7 @@ ul.nav li.styleFont1 a:hover{
     background-color: black;
 }
 a.active.show{
-    border-bottom: 1vw solid var(--corFonteTextoLidoMenuOpcao);
+    border-bottom: 1vw solid var(--corMarcadorMenu);
     padding: 1vw 1vw 0 1vw !important;
 }
 a.menuAnimal{
