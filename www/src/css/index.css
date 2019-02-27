@@ -145,7 +145,6 @@ p{
 .styleFont2{
     font-style: normal;
     font-family: ComicaBDBold;
-    font-size: calc(var(--tamanhoFonte) * 1.5px) !important;
     text-shadow: 
         /* first layer at 1px */
         -1px -1px 0px #000,
@@ -268,11 +267,6 @@ a.active.show{
 a.menuAnimal{
     /*font-size: 0.8em;*/
 }
-
-
-
-
-
 
 
 td#textFa{
@@ -543,4 +537,6 @@ span.player-pause{
     display: none;
 }
 
-
+.font-maior{
+    font-size: calc(var(--tamanhoFonte) * 1.5px) !important;
+}
