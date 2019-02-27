@@ -34,7 +34,9 @@ function changePage(path){
   window.location.assign(path);
 }
 
-
+function inicio(){
+    window.location.href="../index.html";
+}
 
 function fail(evt) {
     console.log("fail "+evt);
@@ -43,7 +45,12 @@ function fail(evt) {
 
 
 function onMenu() {
-    document.getElementById("buttonMenu").addEventListener("click", sideBar);
+    try{
+        
+        document.getElementById("buttonMenu").addEventListener("click", sideBar);
+    }catch (e) {
+        console.log(e);
+    }
     // document.getElementById("buttonMenu2").addEventListener("click", buttonMenu);
     document.getElementById("myCanvasNav").addEventListener("click", buttonMenuClose);
     document.getElementById('estilo').addEventListener("click", Estilo);
@@ -51,7 +58,12 @@ function onMenu() {
     document.getElementById('aumentaFonte').addEventListener("click", aumentaFonte);
     document.getElementById('diminuiFonte').addEventListener("click", diminuiFonte);
     document.getElementById('fonte').addEventListener("change", Fonte);
-    document.getElementById("buttonMenu").addEventListener("click", sideBar2);
+    try{
+        document.getElementById("buttonMenu").addEventListener("click", sideBar2);   
+    }catch (e) {
+        console.log(e);
+    }
+    
     window.addEventListener("resize", setTamanhoFonte);
     
 }

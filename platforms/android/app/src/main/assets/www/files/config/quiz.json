@@ -4,22 +4,63 @@
   "questions":[
     {
       "nomeAnimal":"Jaguatirica",
-      "texto": "Qual o tamanho da pata desse bicho",
-      "alternativas": [{"a":"10cm"},{"b":"20cm"},{"c":"Ele não tem pata"},{"d":"É do tamanho certo para ele"}],
-      "resposta":"d"
+      "texto": "Em qual dos seguintes habitats a Jaguatirica pode ser encontrada?",
+      "alternativas": [{"a":"Deserto"},{"b":"Ártico"},{"c":"Savanas"},{"d":"Manguezais"}],
+      "resposta":"c"
+    },
+    {
+      "nomeAnimal":"Jaguatirica",
+      "texto": "A jaguatirica é um animal...",
+      "alternativas": [{"a":"Herbívoro"},{"b":"Carnívoro"},{"c":"Onívoro"},{"d":"Não se alimenta"}],
+      "resposta":"b"
     },
     {
       "nomeAnimal":"Capivara",
-      "texto": "Qual o tamanho da pata desse bicho",
-      "alternativas": [{"a":"10cm"},{"b":"20cm"},{"c":"Ele não tem pata"},{"d":"É do tamanho certo para ele"}],
-      "resposta":"a"
+      "texto": "Qual é a época de reprodução das capivaras?",
+      "alternativas": [{"a":"Janeiro a março"},{"b":"Setembro a fevereiro"},{"c":"Grande parte dos meses"},{"d":"Abril a agosto"}],
+      "resposta":"c"
+    },
+    {
+      "nomeAnimal":"Capivara",
+      "texto": "Qual o período de gestação da Capivara?",
+      "alternativas": [{"a":"Quatro meses"},{"b":"Um mês"},{"c":"Cinco meses"},{"d":"Três meses"}],
+      "resposta":"c"
     },
     {
       "nomeAnimal": "Cascavel",
-      "texto": "o que é uma cascavel?",
-      "alternativas": [{"a": "uma ave"},{"b": "um peixe"},{"c": "um molusco"},{"d": "uma cobra"}],
+      "texto": "Em relação a sua reprodução, a cascavel (Crotalus durissus) é:",
+      "alternativas": [{"a": "Ovípara"},{"b": "Ovovípara"},{"c": "Vivípara"},{"d": "Ovulípara"}],
+      "resposta": "c"
+    },
+    {
+      "nomeAnimal": "Cascavel",
+      "texto": "A média de vida de uma cascavel oscila entre:",
+      "alternativas": [{"a": "5 a 7 anos"},{"b": "11 a 14 anos"},{"c": "9 a 11 anos"},{"d": "10 a 12 anos"}],
       "resposta": "d"
+    },
+    {
+      "nomeAnimal":"Peixe Piranha",
+      "texto": "Em qual período do ano ocorre a reprodução dos peixes piranha?",
+      "alternativas": [{"a":"Abril a junho"},{"b":"Janeiro a março"},{"c":"Setembro a outubro"},{"d":"Dezembro a março"}],
+      "resposta":"d"
+    },
+    {
+      "nomeAnimal":"Peixe Piranha",
+      "texto": "A distribuição geográfica dos peixes piranha ocorre em qual America?",
+      "alternativas": [{"a":"América Central"},{"b":"América do Norte"},{"c":"América do Sul"},{"d":"América Continental"}],
+      "resposta":"c"
+    },
+    {
+      "nomeAnimal":"Sapo Cururu",
+      "texto": "Qual o nome das glândulas de veneno localizado atrás dos olhos desses animais?",
+      "alternativas": [{"a":"Glândula parótides"},{"b":"Glândula sebácea"},{"c":"Membrana nictitante"},{"d":"Membrana interdigital"}],
+      "resposta":"a"
+    },
+    {
+      "nomeAnimal":"Sapo Cururu",
+      "texto": "Quanto as características físicas do Sapo Cururu, podemos diferenciar o macho da fêmea por:",
+      "alternativas": [{"a":"As fêmeas são menores de cor amarelo-pardo e machos maiores de cor marrom"},{"b":"As fêmeas são maiores de cor marrom e machos menores de cor amarelo-pardo"},{"c":"Os machos são menores de cor marrom e fêmeas maiores de cor amarelo-pardo"},{"d":"Machos são maiores de cor amarelo-pardo e fêmeas menores de cor marrom"}],
+      "resposta":"b"
     }
-
   ]
 }]
