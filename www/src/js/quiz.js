@@ -151,7 +151,7 @@ function eCerta() {
     if (opt1.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
         return opt1;
     }else if (opt2.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
-        return opt;
+        return opt2;
     }else if (opt3.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
         return opt3;
     }else if (opt4.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
@@ -301,7 +301,7 @@ function podeButton(){
 }
 
 function progress() {
-    document.getElementById('progress').innerText='Pergunta '+myQuestions.length+' / '+(currentQuestion+1);
+    document.getElementById('progress').innerText='Pergunta '+(currentQuestion+1)+' / '+(myQuestions.length);
 }
 
 function alteraBarra(barraA, barraN){
