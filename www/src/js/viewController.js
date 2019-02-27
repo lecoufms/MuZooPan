@@ -35,6 +35,7 @@ function alterar(contexto){
     if (window.localStorage.getItem("qrcodeInput") == "premio") {
         var premio = defineMedalha();
         conteudo = { "premiacao": premio, "conteudo" : contexto };
+        window.localStorage.removeItem("anterior");
     }else{
         conteudo = contexto;
     }
@@ -74,5 +75,5 @@ function render(){
 
 $(document).ready(function(){
     document.addEventListener("deviceready", onDeviceReady, true);
-    
+
 });

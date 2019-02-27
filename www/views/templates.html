@@ -78,7 +78,7 @@
                 </div>
             {{/js_if}}
         {{/each}}
-        <div class="offset-5 buttomSair botao-sair styleFont2">
+        <div class="offset-5 buttomSair font-maior styleFont2">
             <span onclick="exit()"> Sair </span>
         </div>
     </div>
@@ -89,8 +89,9 @@
             <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
-            <p id="nomeTitulo" class="nomeTit styleFont2 col-9">{{name}}</p>
-            <div class="icon">
+            <p id="nomeTitulo" class="nomeTit styleFont2 font-maior col-9">{{name}}</p>
+            <div class="icon align-self-center">
+
                 <audio id="playIcon" src={{animalSound}}>
                 </audio>
                     <span id= "" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
