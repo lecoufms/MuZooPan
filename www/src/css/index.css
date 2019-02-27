@@ -145,6 +145,7 @@ p{
 .styleFont2{
     font-style: normal;
     font-family: ComicaBDBold;
+    font-size: calc(var(--tamanhoFonte) * 1.5px) !important;
     text-shadow: 
         /* first layer at 1px */
         -1px -1px 0px #000,
@@ -541,3 +542,5 @@ ex menu n
 span.player-pause{
     display: none;
 }
+
+
