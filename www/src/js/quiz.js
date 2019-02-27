@@ -218,7 +218,9 @@ function respostaCerta(my) {
     img.src="../files/img/correct.png";
     img.className='img-fluid';
     img.id='correct';
-    img.style.height=my.parentNode.parentNode.offsetHeight+"px";
+    // img.style.height=my.parentNode.parentNode.offsetHeight+"px";
+    valor = my.parentNode.parentNode.offsetHeight*70/100;
+    img.style.maxHeight=valor+"px";
     my.parentNode.className="opt media-body m-0";
     my.parentNode.style.background=newCor;
     divf.appendChild(img);
@@ -240,7 +242,8 @@ function respostaErrada(my) {
     img.className='img-fluid';
     img.src="../files/img/incorrect.png";
     img.id='incorrect';
-    img.style.height=my.parentNode.parentNode.offsetHeight+"px";
+    valor=my.parentNode.parentNode.offsetHeight*70/100
+    img.style.maxHeight=valor+"px";
     my.parentNode.className="opt media-body m-0";
     divf.appendChild(img);
     divP.appendChild(divf);

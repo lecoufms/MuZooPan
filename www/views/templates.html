@@ -1,5 +1,9 @@
 
 <script id="about" type="text/template7">
+
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+            <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button>
     <div id="aboutd" class="container-fluid mt-4">
         <p>{{cabecalho}}</p>
         <p>{{funciona}}</p>
@@ -10,7 +14,9 @@
 
 
 <script id="premio" type="text/template7">
-
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+            <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button>
     <div id="premioT">
         <img id="parabensImg" class="rounded mx-auto d-block img-responsive Parabens" src={{this.conteudo.imagemParabens}}> 
 
@@ -80,8 +86,11 @@
 </script>
 <script id="obj" type="text/template7">
         <div class="row p-0 m-0">
-            <p id="nomeTitulo" class="nomeTit styleFont2 col-10">{{name}}</p>
-            <div class="icon">
+            <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+            <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button>
+            <p id="nomeTitulo" class="nomeTit styleFont2 col-9">{{name}}</p>
+            <div class="icon align-self-center">
                 <audio id="playIcon" src={{animalSound}}>
                 </audio>
                     <span id= "" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
@@ -123,7 +132,7 @@
                         {{else}}
                             <li class="active styleFont1 nav-item">
                         {{/js_if}}
-                            <a class="menuAnimal nav-link menuAnimal col" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
+                            <a class="menuAnimal nav-link menuAnimal" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>
                         </li>
                     {{/each}}
@@ -161,6 +170,9 @@
 </script>
 
 <script id="Error404" type="text/template7">
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+            <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button>
     <div id="404" class="container">
         <p id="ops" class="sombra mt-5">Ops!</p>
         <img class="displayed col-8 offset-2" src="../files/img/imagemErro.png">
@@ -169,6 +181,9 @@
     </div>
 </script>
 <script id= "quiz" type="text/template7">
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+            <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button>
     <div class = "conteiner-fluid">
         <div id="quiz1" class="row m-0">
                 <div class= "col-1 texto acert text-center ml-1">
