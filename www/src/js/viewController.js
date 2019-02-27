@@ -55,6 +55,8 @@ function renderOnScreen(ctxt) {
     }else if (window.localStorage.getItem("config") == "obj") {
         readyAnimal();
     }
+    getEstilo();
+    onMenu();
 }
 
 camera=true;
@@ -73,10 +75,5 @@ function render(){
 
 $(document).ready(function(){
     document.addEventListener("deviceready", onDeviceReady, true);
-    try{
-        getEstilo();
-        onMenu();   
-    }catch (e)  {
-        console.log(e);
-    }
+
 });

@@ -7,39 +7,26 @@ function teste(){
 }
 
 function gerenciaNavMenu(){
-	
 	   	var widthFilhos=0;
 	   	$("#NavMenu").children().each(function(){
 	   		$(this).children().addClass("p-0");
-	   		$(this).children().removeClass("col");
 	   		widthFilhos=widthFilhos+parseInt($(this).children().css("width"));
 	   		$(this).children().removeClass("p-0");
-	   		$(this).children().addClass("col");
 	   	});
 	   	var n = parseInt($("#NavMenu").css("height"))/ parseInt($("#NavMenu").children().css("height"));
 	   	console.log(n);
 	   	if (n != $("#NavMenu").children().length || n != 1) {
 	   		if (parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height")) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
-			   	$("#NavMenu").children().each(function(){
-			   		$(this).children().removeClass("col");
-			   	});
 		   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
 		   		console.log("entrei no if 1");
 		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified"){
 		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified");	
-		   		$("#NavMenu").children().each(function(){
-			   		$(this).children().addClass("col");
-			   	});
 		   		console.log("entrei no if 2");
 		   		if (parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height")) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
-			   		$("#NavMenu").children().each(function(){
-				   		$(this).children().removeClass("col");
-				   	});
 			   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
 			   		console.log("entrei no if 1");
 			   	}
 		   	}
-		   	
 	   	}else{
 	   		console.log("esta perfeito");
 	   	}

@@ -1,7 +1,7 @@
 
 <script id="about" type="text/template7">
 
-    <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-2 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
     <div id="aboutd" class="container-fluid mt-4">
@@ -14,7 +14,7 @@
 
 
 <script id="premio" type="text/template7">
-    <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-2 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
     <div id="premioT">
@@ -85,12 +85,13 @@
 
 </script>
 <script id="obj" type="text/template7">
-        <div class="row p-0 m-0">
+        <div class="row p-0 m-0 mt-2">
             <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
             <p id="nomeTitulo" class="nomeTit styleFont2 font-maior col-9">{{name}}</p>
             <div class="icon align-self-center">
+
                 <audio id="playIcon" src={{animalSound}}>
                 </audio>
                     <span id= "" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
@@ -132,7 +133,7 @@
                         {{else}}
                             <li class="active styleFont1 nav-item">
                         {{/js_if}}
-                            <a class="menuAnimal nav-link menuAnimal col" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
+                            <a class="menuAnimal nav-link" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>
                         </li>
                     {{/each}}
@@ -148,7 +149,7 @@
                                     <p id="textEs" class="col-11 m-0 p-0">{{text}}</p>
                                     <div class="col-1 m-0 p-0">
                                         <div class="row m-0 p-0"> 
-                                            <div class="player-controls col-10 mx-auto p-0 m-0">
+                                            <div class="player-controls col-8 mx-auto p-0 m-0">
                                                 <span id={{js "'play_menu'+@index"}} class="icon player-play glyphicon glyphicon-play m-0 p-0"></span>
                                                 <span id={{js "'pause_menu'+@index"}} class="icon player-pause glyphicon glyphicon-pause m-0 p-0"></span>
                                                 <audio class="player m-0 p-0"  src={{textSound}} type="audio/mpeg"></audio>
@@ -170,7 +171,7 @@
 </script>
 
 <script id="Error404" type="text/template7">
-    <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-2 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
     <div id="404" class="container">
@@ -183,7 +184,7 @@
     </div>
 </script>
 <script id= "quiz" type="text/template7">
-    <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-2 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
     <div class = "conteiner-fluid">
