@@ -95,7 +95,15 @@ p{
     border: 3vw;
     word-wrap: break-word;
 }
-
+.optNSelect{
+    display: block;
+    padding: 10px 0 10px 15px;
+    vertical-align: middle;
+    background: var(--corFundoAlter);
+    color: var(--corFonteQuizTextoLido);
+    border: 3vw;
+    word-wrap: break-word;
+}
 .opt:hover, .opt:active{
     background: var(--corFundoSelect);
     color: var(--corFonteQuizTextoLido);
@@ -145,6 +153,7 @@ p{
 .styleFont2{
     font-style: normal;
     font-family: ComicaBDBold;
+    font-size: calc(var(--tamanhoFonte) * 1.5px) !important;
     text-shadow: 
         /* first layer at 1px */
         -1px -1px 0px #000,
@@ -541,3 +550,5 @@ ex menu n
 span.player-pause{
     display: none;
 }
+
+

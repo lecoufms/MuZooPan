@@ -137,6 +137,7 @@ function retiraVisuResposta(){
         pai1.removeChild(img1.parentNode.parentNode);
         pai1.removeChild(audio);
     }
+    colocarSeleciona();
     questionMy=null;
 }
 function loadQuesition(qIndex) {
@@ -259,7 +260,11 @@ function alteraNextButton(){
     var newFilho = document.createElement('span');
     var newCor = document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteQuizV');
     if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
-        newFilho.innerText='PRÓXIMA';
+        if(currentQuestion == (myQuestions.length-1)){
+            newFilho.innerText='CONCLUIR';
+        }else{
+            newFilho.innerText='PRÓXIMA';
+        }
         newFilho.id='next-btn';
         newFilho.className= cls;
         newFilho.cursor='pointer';
@@ -275,6 +280,18 @@ function alteraNextButton(){
     pai.appendChild(newFilho);
 }
 
+function retirarSeleciona(){
+    $(".opt").each(function(){  
+        $(this).removeClass("opt");
+        $(this).addClass("optNSelect");
+    });
+}
+function colocarSeleciona(){
+    $(".optNSelect").each(function(){  
+        $(this).removeClass("optNSelect");
+        $(this).addClass("opt");
+    });
+}
 function EcertoAlt(){
     if (questionMy.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
         bonus+=1;
@@ -290,6 +307,7 @@ function EcertoAlt(){
         respostaCerta(eCerta());
         insertAudio(questionMy,'incorrect');
     }
+    retirarSeleciona();
     revisao =0;
     alteraNextButton();
 }
@@ -323,7 +341,7 @@ function alteraBarra(barraA, barraN){
 function prox() {
     if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
         EcertoAlt();
-    }else if (document.getElementById('next-btn').innerText == 'PRÓXIMA') {
+    }else if (document.getElementById('next-btn').innerText == 'PRÓXIMA' || document.getElementById('next-btn').innerText == 'CONCLUIR') {
         if (currentQuestion == (myQuestions.length-1)) {
             Nextpremio();
         }else{
