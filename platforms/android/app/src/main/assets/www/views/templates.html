@@ -1,7 +1,7 @@
 
 <script id="about" type="text/template7">
 
-    <button id="buttonMenu" class="icon align-self-start col-1 mt-2 p-0"> 
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-3 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
     <div id="aboutd" class="container-fluid mt-4">
@@ -14,7 +14,7 @@
 
 
 <script id="premio" type="text/template7">
-    <button id="buttonMenu" class="icon align-self-start col-1 mt-2 p-0"> 
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-3 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
     <div id="premioT">
@@ -78,7 +78,7 @@
                 </div>
             {{/js_if}}
         {{/each}}
-        <div class="offset-5 buttomSair botao-sair styleFont2">
+        <div class="offset-5 buttomSair font-maior styleFont2">
             <span onclick="exit()"> Sair </span>
         </div>
     </div>
@@ -89,8 +89,9 @@
             <button id="buttonMenu" class="icon align-self-start col-1 mt-1 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
-            <p id="nomeTitulo" class="nomeTit styleFont2 col-9">{{name}}</p>
+            <p id="nomeTitulo" class="nomeTit styleFont2 font-maior col-9">{{name}}</p>
             <div class="icon">
+
                 <audio id="playIcon" src={{animalSound}}>
                 </audio>
                     <span id= "" class="offset-10 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
@@ -170,32 +171,33 @@
 </script>
 
 <script id="Error404" type="text/template7">
-    <button id="buttonMenu" class="icon align-self-start col-1 mt-2 p-0"> 
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-3 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
     <div id="404" class="container">
         <p id="ops" class="sombra mt-5">Ops!</p>
         <img class="displayed col-8 offset-2" src="../files/img/imagemErro.png">
         <p id="msg" class="mensagem mt-3">{{mensagem}}</p>
-        {{#js_if "this.anterior.nome != 'quiz'"}}
+        {{#js_if "this.anterior.vou !== 'revisao'"}}
            <p id="button" class="btn styleFont2 col-sm-12 col-md-8" style="text-align:center" onclick="inicio();">Início</p>
-        {{else}}
+        {{/js_if}} 
+
     </div>
 </script>
 <script id= "quiz" type="text/template7">
-    <button id="buttonMenu" class="icon align-self-start col-1 mt-2 p-0"> 
+    <button id="buttonMenu" class="icon align-self-start col-1 mt-3 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
     <div class = "conteiner-fluid">
         <div id="quiz1" class="row m-0">
-                <div class= "col-1 texto acert text-center ml-1">
+                <div class= "col-1 texto mr-auto acert text-center ">
                     <span id="acertos" class="styleFont2 acert row">Acertos</span>
                     <span id="qnAcertos" class="styleFont2 row offset-1">Acertos</span>
                 </div>
-                <div class= "col-3 offset-6 p-0 texto text-center pont"> 
-                    <span id="pontos" class="styleFont2 offset-6">Pontos </span>
-                    <span id="qnPontos" class="offset-6 styleFont2">Pontos</span>
-                     <div class="offset-6 mb-5">
+                <div class=" ml-auto  m-0 p-0 texto text-center pont"> 
+                    <span id="pontos" class="styleFont2 offset-7">Pontos </span>
+                    <span id="qnPontos" class="offset-7 styleFont2">Pontos</span>
+                     <div class="col-5 ml-auto mb-5">
                         <div class="thumbnail">
                             <img id="barra0" class="img-fluid" src="../files/img/bar_.png" alt="..." >
                         </div>

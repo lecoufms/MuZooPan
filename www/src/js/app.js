@@ -14,7 +14,7 @@ function anterior(e) {
     }
     if (window.localStorage.getItem("config") == "quiz") {
         console.log("não pode jovem");
-    }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior") && (jdata.totalR < jdata.tamanho)){
+    }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior")  && jdata.vou == "revisao"){
         console.log('vamos voltar da revisao, prob');
         var onde = JSON.parse(window.localStorage.getItem('anterior'));
         window.localStorage.setItem("qrcodeInput", onde.nome);
@@ -111,10 +111,19 @@ function removeContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuOpcao',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTituloNormal'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuCorpo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTextoLido'));
 }
+function estadoAtual(){
+    console.log("entrei no estadoAtual");
+    if (window.localStorage.getItem("config") == "quiz") {
+        vamosPreparaPPasseio("quiz","quiz");
+    }
+}
+/*function restaura(){
+
+}*/
 function onDeviceReady() {
     // Register the event listener
-    // document.addEventListener("pause", estadoAtual);
-    // document.addEventListener("resume", restaura); .applicationDirectory applicationDirectory  
+    document.addEventListener("pause", estadoAtual);
+    // document.addEventListener("resume", restaura); //.applicationDirectory applicationDirectory  
     
     document.addEventListener("backbutton", anterior,true);
     try{
@@ -199,7 +208,6 @@ function getEstilo(){
 function exit(){
     console.log("exit");
     window.localStorage.removeItem("qrcodeInput");
-    window.localStorage.removeItem("anterior");
     window.localStorage.removeItem("volume");
     if (cordova.platformId != "browser") {
         navigator.app.exitApp();

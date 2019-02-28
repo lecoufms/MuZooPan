@@ -27,7 +27,7 @@ function preparaRetorno(argument) {
         jdata = JSON.parse(data);
     }else{
         currentQuestion=0;
-        vamosPreparaPPasseio();
+        vamosPreparaPPasseio("quiz","quiz");
     }
 }
 function setVariaveis() {
@@ -44,22 +44,22 @@ function vaiRetornar() {
     if(jdata){
         console.log('vaiRetornar');
         var timeD = new Date(jdata.data);
-        if (timeD.toLocaleDateString() == (new Date()).toLocaleDateString()) {
+        if (context.data == jdata.data && (jdata.vou =="premio" || jdata.vou == "revisao")) {
             setVariaveis();
             questionMy = document.getElementById(jdata.aResposta)
-            // if ((jdata.pergunta.indice+1) == jdata.tamanho) {
-            //     Nextpremio();
-            // }
+            if ((jdata.pergunta.indice+1) == jdata.tamanho) {
+                Nextpremio();
+            }
             if (questionMy != null) {
                 clickAlt(questionMy);
             }
         }else{
             currentQuestion=0;
-            vamosPreparaPPasseio();
+            vamosPreparaPPasseio("quiz","quiz");
         }
     }else{
         currentQuestion=0;
-        vamosPreparaPPasseio();
+        vamosPreparaPPasseio("quiz","quiz");
     }
 }
 
@@ -75,9 +75,9 @@ temQuestions = function (context){
     }
 }
 
-function vamosPreparaPPasseio(){
-    realizadaQ = {'nome' : myQuestions[currentQuestion].nomeAnimal, 'indice': currentQuestion};
-    realizada = {"nome": "quiz", "fina": false,"data": new Date(), "pergunta" : realizadaQ,"tamanho": myQuestions.length, "pontos":score, "totalR": totalRevisao, "revisao" : revisao,  "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
+function vamosPreparaPPasseio(key, go){
+    realizadaQ = {'nome' : myQuestions[currentQuestion].keyAnimal, 'indice': currentQuestion};
+    realizada = {"nome": key, "vou": go,"data": context.data, "pergunta" : realizadaQ,"tamanho": myQuestions.length, "pontos":score, "totalR": totalRevisao, "revisao" : revisao,  "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
 }
 
 function pontuacao(){
@@ -88,6 +88,7 @@ function queBarraSou() {
     return document.getElementsByClassName('thumbnail')[0].children[0].id.substr(-1);   
 }
 function definePontuacao(){
+    console.log("revisao"+revisao);
     pontos=100;
     if (revisao > 0){
         while (pontos > 0 && revisao > 0){
@@ -214,7 +215,7 @@ function respostaCerta(my) {
     var img = document.createElement('img');
     var divP= document.createElement('div');
     var divf = document.createElement("div");
-    divP.className = "col-1 m-0 p-0";
+    divP.className = "col-1 m-0 p-0 align-self-center";
     divf.className="thumbnail text-center";
     img.src="../files/img/correct.png";
     img.className='img-fluid';
@@ -238,7 +239,7 @@ function respostaErrada(my) {
     var img = document.createElement('img');
     var divP= document.createElement('div');
     var divf = document.createElement("div");
-    divP.className = "col-1 m-0 p-0";
+    divP.className = "col-1 m-0 p-0 align-self-center";
     divf.className="thumbnail text-center";
     img.className='img-fluid';
     img.src="../files/img/incorrect.png";
@@ -370,7 +371,7 @@ function addEventAlter() {
 }
 
 function  Nextpremio(){
-    vamosPreparaPPasseio();
+    vamosPreparaPPasseio("premio","premio");
     window.localStorage.setItem('anterior',JSON.stringify(realizada));
     console.log(window.localStorage.getItem('anterior'));
     window.localStorage.setItem("qrcodeInput", "premio");
@@ -402,10 +403,10 @@ ready = function(){
             if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
                 totalRevisao=totalRevisao+1;
                 revisao=revisao+1;
-                vamosPreparaPPasseio();
+                vamosPreparaPPasseio("quiz","revisao");
                 window.localStorage.setItem('anterior',JSON.stringify(realizada));
                 console.log(window.localStorage.getItem('anterior'));
-                window.localStorage.setItem("qrcodeInput", myQuestions[currentQuestion].nomeAnimal);
+                window.localStorage.setItem("qrcodeInput", myQuestions[currentQuestion].keyAnimal);
                 window.localStorage.setItem("config", "obj");
                 try{
                     armazena('../files/config/history.json');

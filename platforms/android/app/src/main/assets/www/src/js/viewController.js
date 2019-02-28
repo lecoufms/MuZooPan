@@ -8,6 +8,7 @@ function selectContext(c) {
             return true;
         }
     }
+    console.log("false");
     return false;
 }
 
@@ -74,5 +75,5 @@ function render(){
 
 $(document).ready(function(){
     document.addEventListener("deviceready", onDeviceReady, true);
-    
+
 });
