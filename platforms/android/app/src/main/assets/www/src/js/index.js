@@ -5,15 +5,12 @@ function changePrepare(text,isApp){
             if (isApp){
                 window.localStorage.setItem("config", "app");
                 changePage("views/view.html");
-                // render();
             }else if(text=="quiz"){
                 window.localStorage.setItem("config", "quiz");
                 changePage("views/view.html");
-                // render();
             }else{
                 window.localStorage.setItem("config", "obj");
                 changePage("views/view.html");
-                // render();
             }
         }
     }) (text);
@@ -24,7 +21,10 @@ function barcodescanner(event) {
         function (result) {
             console.log("cancelado "+result.cancelled);
             if (!result.cancelled) {
+                camera = true;
                 changePrepare(result.text);
+            }else{
+                camera = false;
             }
         },
         function (error) {
@@ -34,7 +34,7 @@ function barcodescanner(event) {
             preferFrontCamera : false, // iOS and Android
             showFlipCameraButton : true, // iOS and Android
             showTorchButton : true, // iOS and Android
-            saveHistory: true, // Android, save scan history (default false)
+            saveHistory: false, // Android, save scan history (default false)
             prompt : "Coloque um qrcode dentro da área de scan", // Android
             resultDisplayDuration: 0, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
             formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
@@ -43,6 +43,7 @@ function barcodescanner(event) {
             disableSuccessBeep: false // iOS and Android
       }
     );
+    camera = false;
 }
 
 

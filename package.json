@@ -1,7 +1,5 @@
 {
-  "name": "com.ufms.leco",
-  "version": "1.0.0",
-  "displayName": "Muzoopan",
+  "displayName": "MuZooPan",
   "cordova": {
     "platforms": [
       "browser",
@@ -13,11 +11,13 @@
       },
       "cordova-plugin-whitelist": {},
       "cordova-plugin-file": {},
-      "cordova-plugin-android-volume": {}
+      "cordova-plugin-android-volume": {},
+      "cordova-android-support-gradle-release": {}
     }
   },
   "dependencies": {
     "cordova-android": "^7.1.4",
+    "cordova-android-support-gradle-release": "^2.0.1",
     "cordova-browser": "^5.0.4",
     "cordova-plugin-android-volume": "0.0.12",
     "cordova-plugin-file": "^6.0.1",

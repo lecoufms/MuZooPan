@@ -1,8 +1,9 @@
-var control;
+var camera= true; 
 function anterior(e) {
     e.preventDefault();
     console.log('teste');
     var ind = cordova.file.applicationDirectory+'www/index.html';
+    console.log(ind);
     var anterior;
     var jdata;
     if (window.localStorage.getItem("anterior")) {
@@ -23,13 +24,17 @@ function anterior(e) {
     }else if (window.location.href !== ind) {
         window.localStorage.removeItem("qrcodeInput");
         window.localStorage.removeItem("volume");
-        window.localStorage.removeItem("config")
+        window.localStorage.removeItem("config");
         console.log('vou ao index, bele');
         // window.history.go(-1);
         window.location.href="../index.html";
+    }else if (window.location.href === ind && camera){
+        exit();
+        // window.history.go(-1);
     }else if ( window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio"){
         exit();
     }
+    camera=true;
 }
 
 function changePage(path){
@@ -106,7 +111,13 @@ function removeContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuCorpo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTextoLido'));
 }
 
+function estadoAtual(){
+    window.localStorage.removeItem("qrcodeInput");
+    window.localStorage.removeItem("volume");
+    window.localStorage.removeItem("config");
+}
 function onDeviceReady() {
+     document.addEventListener("pause", estadoAtual);
     document.addEventListener("backbutton", anterior,true);
     try{
 

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-activityName="MuZooPan" id="com.ufms.leco" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://leco.ufms.br/">
+<widget id="com.ufms.leco" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://leco.ufms.br/">
     <name>MuZooPan</name>
     <description>
         MuZooPan é um jogo educacional para auxiliar alunos durante o passeio no laboratório de zoologia do Campus do Pantanal (UFMS).
@@ -36,6 +36,7 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-android-volume" spec="0.0.12" />
+    <plugin name="cordova-android-support-gradle-release" spec="^2.0.1" />
     <engine name="browser" spec="^5.0.4" />
     <engine name="android" spec="^7.1.4" />
 </widget>

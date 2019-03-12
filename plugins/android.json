@@ -7,6 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "27.+",
+      "PACKAGE_NAME": "com.ufms.leco"
+    },
     "cordova-plugin-android-volume": {
       "PACKAGE_NAME": "com.ufms.leco"
     },
