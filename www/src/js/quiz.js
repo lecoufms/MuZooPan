@@ -14,20 +14,18 @@ var opt4;
 var realizada;
 var nextBtn;
 var premiacao;
-// var resultCont = document.getElementById('result');
 var myQuestions;
 var Quiz;
 var questionMy;
 var jdata;
-
+var alter;
 function preparaRetorno(argument) {
     var data = localStorage.getItem('anterior');
-    console.log(data);
     if(data){
         jdata = JSON.parse(data);
+        return true;
     }else{
-        currentQuestion=0;
-        vamosPreparaPPasseio("quiz","quiz");
+        return false;
     }
 }
 function setVariaveis() {
@@ -38,46 +36,28 @@ function setVariaveis() {
     bonus = jdata.sequencia;
     totalRevisao = jdata.totalR;
     revisao= jdata.revisao;
+    return;
 }
 function vaiRetornar() {
-    preparaRetorno();
-    if(jdata){
-        console.log('vaiRetornar');
-        var timeD = new Date(jdata.data);
-        if (context.data == jdata.data && (jdata.vou =="premio" || jdata.vou == "revisao")) {
-            setVariaveis();
+    if(preparaRetorno()){
+        setVariaveis();
+        if (context.data == jdata.data && jdata.vou =="revisao") {
+            vamosPreparaPPasseio("quiz","quiz",currentQuestion);
+            window.localStorage.setItem('anterior',JSON.stringify(realizada));
             questionMy = document.getElementById(jdata.aResposta)
-            if ((jdata.pergunta.indice+1) == jdata.tamanho) {
-                Nextpremio();
-            }
             if (questionMy != null) {
                 clickAlt(questionMy);
             }
-        }else{
-            currentQuestion=0;
-            vamosPreparaPPasseio("quiz","quiz");
-        }
-    }else{
-        currentQuestion=0;
-        vamosPreparaPPasseio("quiz","quiz");
-    }
-}
-
-temQuestions = function (context){
-    for (var i =0; i < context.length; i++) {
-        console.log(context[i]["key"]);
-        if(context[i]["key"] == 'quiz'){
-            myQuestions =context[i]["questions"];
-            Quiz=true;
-            vaiRetornar();
-            return;
+        }else if (context.data == jdata.data && jdata.vou == "premio"){
+            Nextpremio();
         }
     }
 }
 
-function vamosPreparaPPasseio(key, go){
-    realizadaQ = {'nome' : myQuestions[currentQuestion].keyAnimal, 'indice': currentQuestion};
+function vamosPreparaPPasseio(key, go,indice,){
+    realizadaQ = {'nome' : myQuestions[indice].keyAnimal, 'indice': indice};
     realizada = {"nome": key, "vou": go,"data": context.data, "pergunta" : realizadaQ,"tamanho": myQuestions.length, "pontos":score, "totalR": totalRevisao, "revisao" : revisao,  "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
+    return;
 }
 
 function pontuacao(){
@@ -88,7 +68,6 @@ function queBarraSou() {
     return document.getElementsByClassName('thumbnail')[0].children[0].id.substr(-1);   
 }
 function definePontuacao(){
-    console.log("revisao"+revisao);
     pontos=100;
     if (revisao > 0){
         while (pontos > 0 && revisao > 0){
@@ -118,16 +97,15 @@ function retiraVisuResposta(){
     questionMy.parentNode.parentNode.className="col-10 offset-1 mb-4";
     questionMy.parentNode.style.background='';
     questionMy.parentNode.className="opt m-0";
-    if (img2 != null) {
+    if (img2) {
+        alter.parentNode.style.background='';
+        alter.parentNode.parentNode.className="col-10 offset-1 mb-4";
+        alter.parentNode.className="opt m-0";
         pai1 = img1.parentNode.parentNode.parentNode;
         pai2 = img2.parentNode.parentNode.parentNode;
         pai2.className="";
         pai1.className="";
         audio  = document.getElementById('incorrectAudio');
-        var alter = eCerta();
-        alter.parentNode.style.background='';
-        alter.parentNode.parentNode.className="col-10 offset-1 mb-4";
-        alter.parentNode.className="opt m-0"
         pai1.removeChild(img1.parentNode.parentNode);
         pai2.removeChild(img2.parentNode.parentNode);
         pai2.removeChild(audio);
@@ -140,6 +118,7 @@ function retiraVisuResposta(){
     }
     colocarSeleciona();
     questionMy=null;
+    alter=null
 }
 function loadQuesition(qIndex) {
     var q = myQuestions[qIndex];
@@ -151,55 +130,55 @@ function loadQuesition(qIndex) {
 }
 function eCerta() {
     if (opt1.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
-        return opt1;
+        return document.getElementById("opt1");
     }else if (opt2.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
-        return opt2;
+        return document.getElementById("opt2");
     }else if (opt3.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
-        return opt3;
+        return document.getElementById("opt3");
     }else if (opt4.innerText[0].toLowerCase() == myQuestions[currentQuestion].resposta) {
-        return opt4;
+        return document.getElementById("opt4");
     }
 }
 
 function resolveSuccess(fs) {
-    console.log(fs.data);
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log(fs.toURL());
-     console.log('cdvfile URI: ' + fs.toInternalURL());
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    /*    var file = 'files/config/quiz.json';
+    // console.log(fs.data);
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log(fs.toURL());
+     // console.log('cdvfile URI: ' + fs.toInternalURL());
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        var file = 'files/config/quiz.json';
     fs.getFile(file, { create: true, exclusive: false }, function (fileEntry) {
 
         console.log("fileEntry is file?" + fileEntry.isFile.toString());
-        console.log(fileEntry.name);
+        // console.log(fileEntry.name);
         // fileEntry.fullPath == '/someFile.txt'
         // writeFile(fileEntry, null);
 
     }, function (e) {
-        console.log(e.target);
-    });*/
+        // console.log(e.target);
+    });
 }
 
 function armazena(file) {
-    console.log(file);
+    // console.log(file);
     window.resolveLocalFileSystemURI(cordova.file.applicationDirectory, resolveSuccess, function (e) {
-        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        console.log(e.target);
-        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        // console.log(e.target);
+        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
     });
 }
 function insertAudio(my, qual){
@@ -220,7 +199,6 @@ function respostaCerta(my) {
     img.src="../files/img/correct.png";
     img.className='img-fluid';
     img.id='correct';
-    // img.style.height=my.parentNode.parentNode.offsetHeight+"px";
     valor = my.parentNode.parentNode.offsetHeight*70/100;
     img.style.maxHeight=valor+"px";
     my.parentNode.className="opt media-body m-0";
@@ -305,12 +283,18 @@ function EcertoAlt(){
         bonus=0;
         alteraBarra(queBarraSou(),qualBarraPBonus());
         respostaErrada(questionMy);
-        respostaCerta(eCerta());
+        alter=eCerta();
+        respostaCerta(alter);
         insertAudio(questionMy,'incorrect');
     }
     retirarSeleciona();
     revisao =0;
     alteraNextButton();
+    currentQuestion=currentQuestion+1;
+    if (currentQuestion < (myQuestions.length)) {
+        vamosPreparaPPasseio("quiz","quiz", currentQuestion);
+        window.localStorage.setItem('anterior',JSON.stringify(realizada));
+    }
 }
 
 function podeButton(){
@@ -335,7 +319,6 @@ function alteraBarra(barraA, barraN){
     pai.removeChild(document.getElementById('barra'+barraA));
     img.src= '../files/img/bar_'+(!barraN ? ''+'.png':(barraN==4 ? barraN +'.gif': barraN+'.png'));
     img.id='barra'+barraN;
-    // img.style.width='18vw';
     pai.appendChild(img);
 }
 
@@ -343,11 +326,10 @@ function prox() {
     if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
         EcertoAlt();
     }else if (document.getElementById('next-btn').innerText == 'PRÓXIMA' || document.getElementById('next-btn').innerText == 'CONCLUIR') {
-        if (currentQuestion == (myQuestions.length-1)) {
+        if (currentQuestion == (myQuestions.length)) {
             Nextpremio();
         }else{
             retiraVisuResposta();
-            currentQuestion=currentQuestion+1;
             loadQuesition(currentQuestion);
             progress();
             alteraNextButton();
@@ -355,8 +337,6 @@ function prox() {
     }
 }
 function clickAlt(button) {
-    console.log(button.innerText);
-    console.log(document.getElementById('next-btn').innerText + ' == ' + 'CONFIRMAR');
     if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
         questionMy=button;
         podeButton();
@@ -371,9 +351,8 @@ function addEventAlter() {
 }
 
 function  Nextpremio(){
-    vamosPreparaPPasseio("premio","premio");
+    vamosPreparaPPasseio("premio","premio",currentQuestion-1);
     window.localStorage.setItem('anterior',JSON.stringify(realizada));
-    console.log(window.localStorage.getItem('anterior'));
     window.localStorage.setItem("qrcodeInput", "premio");
     window.localStorage.setItem("config", "app");
     try{
@@ -384,9 +363,10 @@ function  Nextpremio(){
     changePage("view.html");
 }
 
+
 ready = function(){
-    temQuestions(context);
-    if (Quiz) {
+    myQuestions =context[0].questions;
+    vaiRetornar();
         container = document.getElementById('quizContainer');
         questionEl = document.getElementById('question').children[0];
         opt1 = document.getElementById('opt1');
@@ -403,9 +383,8 @@ ready = function(){
             if (document.getElementById('next-btn').innerText == 'CONFIRMAR') {
                 totalRevisao=totalRevisao+1;
                 revisao=revisao+1;
-                vamosPreparaPPasseio("quiz","revisao");
+                vamosPreparaPPasseio("quiz","revisao",currentQuestion);
                 window.localStorage.setItem('anterior',JSON.stringify(realizada));
-                console.log(window.localStorage.getItem('anterior'));
                 window.localStorage.setItem("qrcodeInput", myQuestions[currentQuestion].keyAnimal);
                 window.localStorage.setItem("config", "obj");
                 try{
@@ -416,7 +395,6 @@ ready = function(){
                 changePage("view.html");
             }
         });
-    }
 }
 
 function defineMedalha() {
@@ -433,82 +411,6 @@ function defineMedalha() {
     }else if (resultado < 28.8) {
         result = "bronze";
     }
-    console.log(resultado);
     var premio = {"premio" : result, "pontos" : score, "acertos" : acerto, "bonus" : bonus, "revisao" : totalRevisao};
     return premio;
 }
-
-
-/*var currentQuestion = 0;
-var score = 0;
-
-var container = document.getElementById('quizContainer');
-var questionEl = document.getElementById('question;');
-var opt1 = document.getElementById('opt1');
-var opt2 = document.getElementById('opt2');
-var opt3 = document.getElementById('opt3');
-var opt4 = document.getElementById('opt4');
-
-var nextBtn = document.getElementById('nextButton');
-var resultCont = document.getElementById('result');
-
-function loadQuesition(qIndex) {
-    var q = questions[qIndex];
-    questionEl.textContent = (qIndex+1) + '. '+q.question;
-    opt1.textContent = q.option1;
-    opt2.textContent = q.option2;
-    opt3.textContent = q.option3;
-    opt4.textContent = q.option4;
-
-};
-
-function loadNextQuestion() {
-    var
-}
-
-
-var currentQuestion =0;
-var score = 0;
-var  totQuestion = questions.length;
-var container =document.getElementById('quizcontainer');
-var questionEl = document.getElementById('question');
-var op1 = document.getElementById('opt1');
-var op2 = document.getElementById('opt2');
-var op3 = document.getElementById('opt3');
-var op4 = document.getElementById('opt4');
-var nextButton =document.getElementById('nextButton');
-var resultCont =document.getElementById('pontos');
-
-
-function loadQuestion(questionIndex) {
-    var q = questions[questionIndex];
-    questionEl.textContent = (questionIndex +1) +'.'+q.question;
-    opt1.textContent = q.option1;
-    opt2.textContent = q.option2;
-    opt3.textContent = q.option3;
-    opt4.textContent = q.option4;
-};
-function loadNextQustion() {
-var selectedOption =document.querySelector('input[type=radio]:checked');
-if (!selectedOption){
-    alert('Please select your answer');
-    return;
-}
-var answer = selectedOption.value;
-if (questions[currentQuestion].answer == answer){
-    score+=100;
-}
-selectedOption.checked = false;
-currentQuestion++;
-if (currentQuestion == totQuestion-1){
-    nextButton.textContent = 'Encerrar';
-    changePrepare("premio",true);
-} 
-if (currentQuestion ==totQuestion){
-    container.style.display = 'none';
-    resultCont.style.display = '';
-    resultCont.textContent = 'Your Score: '+score;
-    return;
-}
-loadQuestion(currentQuestion);
-}*/

@@ -1,11 +1,3 @@
-function teste(){
-  	filho = $("div #NavMenu").children()[0];
-  	$(filho).children().removeClass("col");
-  	console.log($(filho).children().width());
-  	$(filho).children().addClass("col");
-  	console.log($(filho).children().width());
-}
-
 function gerenciaNavMenu(){
 	   	var widthFilhos=0;
 	   	$("#NavMenu").children().each(function(){
@@ -14,24 +6,16 @@ function gerenciaNavMenu(){
 	   		$(this).children().removeClass("p-0");
 	   	});
 	   	var n = parseInt($("#NavMenu").css("height"))/ parseInt($("#NavMenu").children().css("height"));
-	   	console.log(n);
 	   	if (n != $("#NavMenu").children().length || n != 1) {
 	   		if (parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height")) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
 		   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
-		   		console.log("entrei no if 1");
 		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified"){
 		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified");	
-		   		console.log("entrei no if 2");
 		   		if (parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height")) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
 			   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
-			   		console.log("entrei no if 1");
 			   	}
 		   	}
-	   	}else{
-	   		console.log("esta perfeito");
 	   	}
-	
-   	console.log("entrei gerenciaNavMenu");
 }
 readyAnimal = function() {
 	$( "span.player-play" ).each(function( index ) {
@@ -50,11 +34,6 @@ readyAnimal = function() {
 	  control=$(play).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
 	  $(this).on("click",progressAnimal.bind(null,audio,play,control));
 	});
-	// $("div.tab-pane").on("click", todos);
-	
-	// document.getElementById('play').addEventListener('click',progress.bind(null,audio1),true);
-
-	// document.getElementById('pause').addEventListener('click',progress.bind(null,audio1),true);
 	$("audio.player").each(function(){
 		play=$(this).parent().children(".player-play");
 		pause=$(this).parent().children(".player-pause");

@@ -14,17 +14,19 @@ function anterior(e) {
     }
     if (window.localStorage.getItem("config") == "quiz") {
         console.log("não pode jovem");
-    }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior")  && jdata.vou == "revisao"){
+    }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior") && jdata.vou == "revisao"){
         console.log('vamos voltar da revisao, prob');
         var onde = JSON.parse(window.localStorage.getItem('anterior'));
         window.localStorage.setItem("qrcodeInput", onde.nome);
         window.localStorage.setItem("config", onde.nome);
         changePage("view.html");
     }else if (window.location.href !== ind) {
+        window.localStorage.removeItem("qrcodeInput");
+        window.localStorage.removeItem("volume");
+        window.localStorage.removeItem("config")
         console.log('vou ao index, bele');
-        window.history.go(-1);
-    }else if (window.location.href === ind && camera){
-        exit();
+        // window.history.go(-1);
+        window.location.href="../index.html";
     }else if ( window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio"){
         exit();
     }
@@ -45,25 +47,17 @@ function fail(evt) {
 
 
 function onMenu() {
-    try{
-        
-        document.getElementById("buttonMenu").addEventListener("click", sideBar);
-    }catch (e) {
-        console.log(e);
-    }
-    // document.getElementById("buttonMenu2").addEventListener("click", buttonMenu);
     document.getElementById("myCanvasNav").addEventListener("click", buttonMenuClose);
     document.getElementById('estilo').addEventListener("click", Estilo);
     document.getElementById("volume").addEventListener("change", stateVolumeHsetD);
     document.getElementById('aumentaFonte').addEventListener("click", aumentaFonte);
     document.getElementById('diminuiFonte').addEventListener("click", diminuiFonte);
     document.getElementById('fonte').addEventListener("change", Fonte);
-    try{
-        document.getElementById("buttonMenu").addEventListener("click", sideBar2);   
-    }catch (e) {
-        console.log(e);
-    }
-    
+    $("#buttonMenu").ready(function(){
+        document.getElementById("buttonMenu").addEventListener("click", sideBar);
+        document.getElementById("buttonMenu").addEventListener("click", sideBar2);
+
+    });
     window.addEventListener("resize", setTamanhoFonte);
     
 }
@@ -111,20 +105,8 @@ function removeContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuOpcao',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTituloNormal'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuCorpo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTextoLido'));
 }
-function estadoAtual(){
-    console.log("entrei no estadoAtual");
-    if (window.localStorage.getItem("config") == "quiz") {
-        vamosPreparaPPasseio("quiz","quiz");
-    }
-}
-/*function restaura(){
 
-}*/
 function onDeviceReady() {
-    // Register the event listener
-    document.addEventListener("pause", estadoAtual);
-    // document.addEventListener("resume", restaura); //.applicationDirectory applicationDirectory  
-    
     document.addEventListener("backbutton", anterior,true);
     try{
 
@@ -133,7 +115,10 @@ function onDeviceReady() {
         console.log(e);
     }
     if (window.localStorage.getItem("config") == "obj") {
-        gerenciaNavMenu();
+        $("#NavMenu").ready(function(){
+            console.log("NavMenu");
+            gerenciaNavMenu();
+        });
     }
     console.log(cordova.platformId);
 }
@@ -157,12 +142,15 @@ function setTamanhoFonte() {
     minimo=10;
     maximo=setMaximo();
     tamanho=window.localStorage.getItem("fonte");
-    console.log(tamanho+" tamanho     " +maximo);
     if (tamanho >= minimo && tamanho <= maximo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
         document.getElementById('fonte').value= tamanho;
         if (window.localStorage.getItem("config") == "obj") {
-            gerenciaNavMenu();
+            try{
+                gerenciaNavMenu();
+            }catch(e){
+                console.log(e);
+            }
         }
     }else if (tamanho < minimo) {
         document.styleSheets[1]["cssRules"][0]["style"].setProperty('--tamanhoFonte', minimo);
@@ -209,6 +197,7 @@ function exit(){
     console.log("exit");
     window.localStorage.removeItem("qrcodeInput");
     window.localStorage.removeItem("volume");
+    window.localStorage.removeItem("config")
     if (cordova.platformId != "browser") {
         navigator.app.exitApp();
     }
@@ -291,6 +280,7 @@ function stateVolumeHsetD() {
         }
     }
 }
+
 // function stateVolumesetlocalSt() {
 //     console.log("action ");
 //     if (cordova.platformId == "android") {
