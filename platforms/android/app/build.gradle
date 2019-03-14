@@ -91,7 +91,6 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "../cordova-android-support-gradle-release/leco-cordova-android-support-gradle-release.gradle"
 apply from: "../phonegap-plugin-barcodescanner/leco-barcodescanner.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 

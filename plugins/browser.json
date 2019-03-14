@@ -18,9 +18,6 @@
     },
     "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.ufms.leco"
-    },
-    "cordova-android-support-gradle-release": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {}
