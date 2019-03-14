@@ -15,7 +15,7 @@
     <feature name="BarcodeScanner">
         <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
     </feature>
-    <name>Muzoopan</name>
+    <name>MuZooPan</name>
     <description>
         MuZooPan é um jogo educacional para auxiliar alunos durante o passeio no laboratório de zoologia do Campus do Pantanal (UFMS).
     </description>
@@ -30,6 +30,11 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon density="mdpi" src="www/assets/icon.png" />
+    <icon density="ldpi" src="www/assets/icon.png" />
+    <icon density="hdpi" src="www/assets/icon.png" />
+    <icon density="xhdpi" src="www/assets/icon.png" />
+    <icon density="xxhdpi" src="www/assets/icon.png" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />

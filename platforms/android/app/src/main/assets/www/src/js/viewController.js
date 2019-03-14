@@ -3,11 +3,12 @@ var html;
 
 function selectContext(c) {
     for(i=0; i<c.length; i++){
-        if(c[i].key == window.localStorage.getItem("qrcodeInput") || 'animal,'+c[i].key == window.localStorage.getItem("qrcodeInput")){
+        if(c[i].key == window.localStorage.getItem("qrcodeInput")){
             renderOnScreen(c[i]);
             return true;
         }
     }
+    console.log("false");
     return false;
 }
 
@@ -23,6 +24,7 @@ function readFile(file)
             {
                 context = JSON.parse(rawFile.responseText);
                 if(!selectContext(context)){
+                    console.log("false");
                     renderOnScreen({"key":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))});
                 }
             }
@@ -43,36 +45,33 @@ function alterar(contexto){
 }
 
 function renderOnScreen(ctxt) {
+    console.log(ctxt.key);
     var template = $("#"+ (ctxt.key=="error"? "Error404":(window.localStorage.getItem("config")=="obj"? "obj":ctxt.key))).html();
     var compiledTemplate = Template7.compile(template);
     ctxt= alterar(ctxt);
     
     html = compiledTemplate(ctxt);
     document.getElementById("visible").innerHTML=html;
-    if (window.localStorage.getItem("config") == "quiz") {
-        ready();
-    }else if (window.localStorage.getItem("config") == "obj") {
-        readyAnimal();
-    }
-    getEstilo();
-    onMenu();
+    $("#visible").ready(function (e,ctxt){
+        if (window.localStorage.getItem("config") == "quiz") {
+            if($('#visible').is(':visible')){ 
+                    ready();
+            }
+        }else if (window.localStorage.getItem("config") == "obj") {
+            readyAnimal();
+        }
+        getEstilo();
+        onMenu();
+    })
+    
 }
 
 camera=true;
 function render(){
-    // if (document.getElementById("visible").innerHTML === '' || window.localStorage.getItem("config") === "index") {
-    //     window.localStorage.setItem("config","index");
-    //     renderOnScreen([]);
-    
-    // }else{
-        // readFile("files/config/"+window.localStorage.getItem("config")+".json");
-    // }
     readFile("../files/config/"+window.localStorage.getItem("config")+".json");
 }
 (function(){return $("#invisible").load("templates.html",render)})();
 
-
 $(document).ready(function(){
     document.addEventListener("deviceready", onDeviceReady, true);
-    
 });

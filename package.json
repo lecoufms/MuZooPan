@@ -1,7 +1,5 @@
 {
-  "name": "com.ufms.leco",
-  "version": "1.0.0",
-  "displayName": "Muzoopan",
+  "displayName": "MuZooPan",
   "cordova": {
     "platforms": [
       "browser",

@@ -15,17 +15,17 @@
 
         <script type="text/javascript" src="src/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script src="src/js/animal.js"></script>
+        <!-- <script src="src/js/animal.js"></script> -->
         <script type="text/javascript" src="src/js/app.js"></script>
         <script type="text/javascript" src="src/js/index.js"></script>
     </head>
     <body>
         <!-- Sidebar -->
-          <div id="myCanvasNav" class="overlay3"></div>
+         <div id="myCanvasNav" class="overlay3"></div>
 
         <div class="w3-sidebar w3-bar-block w3-border-right " id="mySidebar">
             <div class="col-12 mt-2">
-                <p id="opcoes" class="styleFont2 text-center">OPÇÕES</p>
+                <p class="styleFont2 text-center">OPÇÕES</p>
             </div>          
             <div class="col-12 mt-2">
                 <label for="volume">Volume</label>
@@ -35,35 +35,37 @@
             </div>
             <div class="col-12 mt-2 p-1">
                 <label for="contraste" id="text">Alto-contraste</label>
-                <div id="contraste" class="p-1 m-0 ml-5">
+                <div id="contraste" class="p-1 m-0 ml-4 mr-4">
                     <input name="contraste" id="estilo" type="checkbox" class="switch_1 col-12 p-0">
                 </div>
             </div>
             <div class="col-10">
                 <label for="validationTooltipUsername">Fonte</label>
-              <div class="input-group">
-                <input type="text" class="form-control col-4 p-0" id="fonte" aria-describedby="validationTooltipUsernamePrepend" required="">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="aumentaFonte">+</span>
-                </div>
+              <div class="input-group ml-4 pr-1">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="diminuiFonte">-</span>
                 </div>
+
+                <input type="text" class="form-control col-4 p-0" style="text-align:center" id="fonte" aria-describedby="validationTooltipUsernamePrepend" required="">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="aumentaFonte">+</span>
+                </div>
+        
               </div>
             </div>    
         </div>
 
         <!-- Page Content -->
 
-          <button id="buttonMenu" class="icon  align-self-start col-1 m-0 p-0"> 
+          <button id="buttonMenu" class="icon  align-self-start col-1 m-0 mt-3 p-0"> 
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button> 
         <div style="text-align: center;">
             <div class="container">
-                <div class="col-sm-12"><img src="files/img/Muzoopan.png" style="width: 100%"></div>
-                <div class="col-sm-12"><img src="files/img/logo.png" style="width: 70%"></div>
-                <div class="col-sm-12"><img id ="camera"src="files/img/cam.png" style="width: 50%"></div>
-                <div class="col-sm-12 justify-content-center"><span id="buttonSobre" class="styleFont2"> Sobre</span></div>
+                <div class="col-12"><img src="files/img/Muzoopan.png" style="width: 110%"></div>
+                <div class="col-12"><img src="files/img/logo.png" style="width: 100%"></div>
+                <div class="col-12"><img id ="camera"src="files/img/cam.png" style="width: 70%"></div>
+                <div class="col-12 justify-content-center"><span id="buttonSobre" class="styleFont2"> Sobre</span></div>
             </div>
         </div>
 </body>

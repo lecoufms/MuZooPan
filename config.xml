@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ufms.leco" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://leco.ufms.br/">
-    <name>Muzoopan</name>
+    <name>MuZooPan</name>
     <description>
         MuZooPan é um jogo educacional para auxiliar alunos durante o passeio no laboratório de zoologia do Campus do Pantanal (UFMS).
     </description>
@@ -15,6 +15,13 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <platform name="android">
+        <icon density="mdpi" src="www/assets/icon.png" />
+        <icon density="ldpi" src="www/assets/icon.png" />
+        <icon density="hdpi" src="www/assets/icon.png" />
+        <icon density="xhdpi" src="www/assets/icon.png" />
+        <icon density="xxhdpi" src="www/assets/icon.png" />
+    </platform>
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
