@@ -8,7 +8,6 @@ function selectContext(c) {
             return true;
         }
     }
-    console.log("false");
     return false;
 }
 
@@ -45,11 +44,9 @@ function alterar(contexto){
 }
 
 function renderOnScreen(ctxt) {
-    console.log(ctxt.key);
     var template = $("#"+ (ctxt.key=="error"? "Error404":(window.localStorage.getItem("config")=="obj"? "obj":ctxt.key))).html();
     var compiledTemplate = Template7.compile(template);
     ctxt= alterar(ctxt);
-    
     html = compiledTemplate(ctxt);
     document.getElementById("visible").innerHTML=html;
     $("#visible").ready(function (e,ctxt){
@@ -62,16 +59,17 @@ function renderOnScreen(ctxt) {
         }
         getEstilo();
         onMenu();
-    })
+    });
     
 }
-
-camera=true;
 function render(){
+    console.log(window.localStorage.getItem("config"));
+    console.log(window.localStorage.getItem("qrcodeInput"));
     readFile("../files/config/"+window.localStorage.getItem("config")+".json");
 }
 (function(){return $("#invisible").load("templates.html",render)})();
 
 $(document).ready(function(){
+    console.log(window.localStorage.getItem("config"));
     document.addEventListener("deviceready", onDeviceReady, true);
 });
