@@ -44,7 +44,7 @@ function vaiRetornar() {
         if (context.data == jdata.data && jdata.vou =="revisao") {
             vamosPreparaPPasseio("quiz","quiz",currentQuestion);
             window.localStorage.setItem('anterior',JSON.stringify(realizada));
-            questionMy = document.getElementById(jdata.aResposta)
+            questionMy = document.getElementById(jdata.aResposta);
             if (questionMy != null) {
                 clickAlt(questionMy);
             }
@@ -54,9 +54,21 @@ function vaiRetornar() {
     }
 }
 
-function vamosPreparaPPasseio(key, go,indice,){
+function vamosPreparaPPasseio(key, go,indice){
     realizadaQ = {'nome' : myQuestions[indice].keyAnimal, 'indice': indice};
-    realizada = {"nome": key, "vou": go,"data": context.data, "pergunta" : realizadaQ,"tamanho": myQuestions.length, "pontos":score, "totalR": totalRevisao, "revisao" : revisao,  "acerto": acerto, "sequencia": bonus, "aResposta": (questionMy ? questionMy.id : null)};
+    realizada = {
+        "nome": key,
+        "vou": go,
+        "data": context.data,
+        "pergunta" : realizadaQ,
+        "tamanho": myQuestions.length,
+        "pontos":score,
+        "totalR": totalRevisao,
+        "revisao" : revisao,
+        "acerto": acerto,
+        "sequencia": bonus,
+        "aResposta": (questionMy ? questionMy.id : null)
+    };
     return;
 }
 
@@ -291,7 +303,7 @@ function EcertoAlt(){
     revisao =0;
     alteraNextButton();
     currentQuestion=currentQuestion+1;
-    if (currentQuestion < (myQuestions.length)) {
+    if (currentQuestion < myQuestions.length) {
         vamosPreparaPPasseio("quiz","quiz", currentQuestion);
         window.localStorage.setItem('anterior',JSON.stringify(realizada));
     }

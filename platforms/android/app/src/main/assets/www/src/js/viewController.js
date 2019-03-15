@@ -63,13 +63,10 @@ function renderOnScreen(ctxt) {
     
 }
 function render(){
-    console.log(window.localStorage.getItem("config"));
-    console.log(window.localStorage.getItem("qrcodeInput"));
     readFile("../files/config/"+window.localStorage.getItem("config")+".json");
 }
 (function(){return $("#invisible").load("templates.html",render)})();
 
 $(document).ready(function(){
-    console.log(window.localStorage.getItem("config"));
     document.addEventListener("deviceready", onDeviceReady, true);
 });

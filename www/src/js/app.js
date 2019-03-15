@@ -22,9 +22,9 @@ function anterior(e) {
         window.localStorage.setItem("config", onde.nome);
         changePage("view.html");
     }else if (window.location.href !== ind) {
-        // window.localStorage.removeItem("qrcodeInput");
-        // window.localStorage.removeItem("volume");
-        // window.localStorage.removeItem("config");
+        window.localStorage.removeItem("qrcodeInput");
+        window.localStorage.removeItem("volume");
+        window.localStorage.removeItem("config");
         console.log('vou ao index, bele');
         // window.history.go(-1);
         window.location.href="../index.html";
@@ -38,8 +38,6 @@ function anterior(e) {
 }
 
 function changePage(path){
-    console.log(window.localStorage.getItem("config"));
-    console.log(window.localStorage.getItem("qrcodeInput"));
     window.location.assign(path);
 }
 
@@ -252,18 +250,6 @@ function diminuiFonte(){
     setTamanhoFonte();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 function sucess(sucess) {
     console.log("sucesso ao alterar volume Music" + sucess);
 }
@@ -282,9 +268,6 @@ function setVolumeDis(valor) {
         window.androidVolume.setMusic(valor, false, sucess, fail);
     }
 }
-
-
-
 
 
 function stateVolumeHsetD() {

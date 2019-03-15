@@ -2,10 +2,8 @@ function changePrepare(text,isApp){
     (function factory(text) {
         if (text) {
             window.localStorage.setItem("qrcodeInput", text);
-            console.log(window.localStorage.getItem("qrcodeInput"));
             if (isApp){
                 window.localStorage.setItem("config", "app");
-                console.log(window.localStorage.getItem("config"));
                 changePage("views/view.html");
             }else if(text=="quiz"){
                 window.localStorage.setItem("config", "quiz");
