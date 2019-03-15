@@ -68,6 +68,7 @@ function renderOnScreen(ctxt) {
 
 camera=true;
 function render(){
+    console.log(window.localStorage.getItem("config"));
     readFile("../files/config/"+window.localStorage.getItem("config")+".json");
 }
 (function(){return $("#invisible").load("templates.html",render)})();
