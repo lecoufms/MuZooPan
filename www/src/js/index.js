@@ -3,8 +3,10 @@ function changePrepare(text,isApp){
         console.log(text);
         if (text) {
             window.localStorage.setItem("qrcodeInput", text);
+            console.log(window.localStorage.getItem("qrcodeInput"));
             if (isApp){
                 window.localStorage.setItem("config", "app");
+                console.log(window.localStorage.getItem("config"));
                 changePage("views/view.html");
             }else if(text=="quiz"){
                 window.localStorage.setItem("config", "quiz");
@@ -47,12 +49,10 @@ function barcodescanner(event) {
     camera = false;
 }
 
-
 $(document).ready(function(){
     document.addEventListener("deviceready", onDeviceReady, true);
     document.getElementById('camera').addEventListener("click", barcodescanner.bind(camera),true);
     document.getElementById('buttonSobre').addEventListener("click", changePrepare.bind(null,'about',true),true);
-   
     getEstilo();
     onMenu();
 });
