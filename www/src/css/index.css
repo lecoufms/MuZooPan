@@ -188,6 +188,7 @@ p{
 }
 #buttonSobre {
     color: var(--corFonteTitulo);
+    font-size: calc(var(--tamanhoFonte) * 2px) !important;
     /*font-size: 2em;*/
 }
 .acert{
