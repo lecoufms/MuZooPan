@@ -152,47 +152,6 @@ function eCerta() {
     }
 }
 
-function resolveSuccess(fs) {
-    // console.log(fs.data);
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log(fs.toURL());
-     // console.log('cdvfile URI: ' + fs.toInternalURL());
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        var file = 'files/config/quiz.json';
-    fs.getFile(file, { create: true, exclusive: false }, function (fileEntry) {
-
-        console.log("fileEntry is file?" + fileEntry.isFile.toString());
-        // console.log(fileEntry.name);
-        // fileEntry.fullPath == '/someFile.txt'
-        // writeFile(fileEntry, null);
-
-    }, function (e) {
-        // console.log(e.target);
-    });
-}
-
-function armazena(file) {
-    // console.log(file);
-    window.resolveLocalFileSystemURI(cordova.file.applicationDirectory, resolveSuccess, function (e) {
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log(e.target);
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    });
-}
 function insertAudio(my, qual){
     var audio = document.createElement('audio');
     audio.autoplay=true;
