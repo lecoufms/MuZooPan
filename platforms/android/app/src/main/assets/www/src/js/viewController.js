@@ -69,4 +69,5 @@ function render(){
 
 $(document).ready(function(){
     document.addEventListener("deviceready", onDeviceReady, true);
+    document.addEventListener("deviceready", getDiretoryAndFile, true);
 });
