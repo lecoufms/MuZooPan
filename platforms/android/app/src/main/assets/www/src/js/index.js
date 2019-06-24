@@ -1,5 +1,6 @@
 function changePrepare(text,isApp){
     (function factory(text) {
+        console.log(text);
         if (text) {
             window.localStorage.setItem("qrcodeInput", text);
             if (isApp){
@@ -47,10 +48,9 @@ function barcodescanner(event) {
 }
 
 $(document).ready(function(){
-    document.getElementById('camera').addEventListener("click", barcodescanner.bind(camera),true);
-    console.log("teste");
-    document.getElementById('buttonSobre').addEventListener("click", function(){return changePrepare('about',true)});
     document.addEventListener("deviceready", onDeviceReady, true);
+    document.getElementById('camera').addEventListener("click", barcodescanner.bind(camera),true);
+    document.getElementById('buttonSobre').addEventListener("click", changePrepare.bind(null,'about',true),true);
     getEstilo();
     onMenu();
 });

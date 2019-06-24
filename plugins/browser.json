@@ -8,16 +8,16 @@
   },
   "installed_plugins": {
     "cordova-plugin-android-volume": {
-      "PACKAGE_NAME": "com.ufms.leco"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.ufms.leco"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.ufms.leco"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "phonegap-plugin-barcodescanner": {
-      "PACKAGE_NAME": "com.ufms.leco"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {}

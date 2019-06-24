@@ -61,7 +61,7 @@
     {
       "keyAnimal":"sapo cururu",
       "nomeAnimal":"Sapo Cururu",
-      "texto": "Qual o nome das glândulas de veneno localizado atrás dos olhos desses animais?",
+      "texto": "Qual o nome das glândulas de veneno localizado atrás dos olhos do sapo Cururu?",
       "alternativas": [{"a":"Glândula parótides"},{"b":"Glândula sebácea"},{"c":"Membrana nictitante"},{"d":"Membrana interdigital"}],
       "resposta":"a"
     },

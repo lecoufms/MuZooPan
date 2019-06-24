@@ -134,7 +134,7 @@ function retiraVisuResposta(){
 }
 function loadQuesition(qIndex) {
     var q = myQuestions[qIndex];
-    questionEl.innerText = (qIndex+1) + '. '+q.texto;
+    questionEl.innerText = q.texto;
     opt1.innerText = Object.keys(q.alternativas[0])[0].toUpperCase()+') '+Object.values(q.alternativas[0])[0];
     opt2.innerText = Object.keys(q.alternativas[1])[0].toUpperCase()+') '+Object.values(q.alternativas[1])[0];
     opt3.innerText = Object.keys(q.alternativas[2])[0].toUpperCase()+') '+Object.values(q.alternativas[2])[0];
@@ -206,7 +206,7 @@ function respostaCerta(my) {
     var img = document.createElement('img');
     var divP= document.createElement('div');
     var divf = document.createElement("div");
-    divP.className = "col-1 m-0 p-0 align-self-center";
+    divP.className = "col-1 m-0 p-0 mb-2 align-self-center";
     divf.className="thumbnail text-center";
     img.src="../files/img/correct.png";
     img.className='img-fluid';
@@ -229,7 +229,7 @@ function respostaErrada(my) {
     var img = document.createElement('img');
     var divP= document.createElement('div');
     var divf = document.createElement("div");
-    divP.className = "col-1 m-0 p-0 align-self-center";
+    divP.className = "col-1 m-0 p-0 mb-3 align-self-center";
     divf.className="thumbnail text-center";
     img.className='img-fluid';
     img.src="../files/img/incorrect.png";

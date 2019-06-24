@@ -99,7 +99,7 @@
             </div>
         </div>
         
-        <div id="myContainerAnimal" class="container">
+        <div id="myContainerAnimal" class="container pr-0 pl-0">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner mb-3">
                     {{#each imgs}}
@@ -108,7 +108,7 @@
                         {{else}}
                             <div class='carousel-item active'>
                         {{/js_if}}
-                                <img class="col-10 offset-1 d-block w-300" src={{img}}>
+                                <img class="col-12 d-block w-300" src={{img}}>
                             </div>
                     {{/each}}
                         
@@ -185,55 +185,63 @@
     </div>
 </script>
 <script id= "quiz" type="text/template7">
-<button id="buttonMenu" class="icon align-self-start col-1 mt-3 p-0"> 
-    <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-</button>
-<div class="container">
-        <div id="quiz1" class="row pl-2 pr-2">
-                <div class= "col-1 p-0 texto acert text-center ">
-                    <span id="acertos" class="styleFont2 acert row">Acertos</span>
-                    <span id="qnAcertos" class="styleFont2 row offset-1">Acertos</span>
-                </div>
-                <div class="col-11 ml-auto p-0 texto text-center pont"> 
-                    <span id="pontos" class="styleFont2 offset-8">Pontos </span>
-                    <span id="qnPontos" class="offset-8 styleFont2">Pontos</span>
-                     <div class="col-4 ml-auto mb-5 p-0">
-                        <div class="thumbnail">
-                            <img id="barra0" class="img-fluid" src="../files/img/bar_.png" alt="..." >
-                        </div>
-                    </div>
-                </div>
-        </div>
 
+<div class="container">
+  <div id="quiz1" class="row">
+    <div class="col- ml-1">
+        <button id="buttonMenu" class="icon align-self-start mt-3 p-0">
+            <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        </button>    
+    </div>
+    <div id="quiz1" class="col-6 texto acert text-left">
+         <span id="acertos" class="styleFont2 acert row">Acertos</span>
+                <span id="qnAcertos" class="styleFont2">Acertos</span>
+    </div>
+    <div class="col-3 offset-2 texto text-center pont">
+        <span id="pontos" class="styleFont2">Pontos </span>
+            <span id="qnPontos" class="styleFont2 row justify-content-center">Pontos</span>
+                <div class="thumbnail">
+                    <img id="barra0" class="img-fluid" src="../files/img/bar_.png" alt="..." >
+                </div>
+                
+    </div>
+  </div>
+
+
+
+<div class="container col-12 mt-4 p-0">
+   
         <div class="container">
-            <div id="question" class="question ml-3 mr-3">
+            <div id="question" class="question mt-1 ml mr">
                 <p class="styleFont1">  </p>
             </div>
-            <div class="col mt-4 p-0" >
+        </div>
+        <div class="container p-0">
+            <div class="col mt-3 p-0" >
                 <div class = "">
-                    <div id="alternativa" class = "col-10 offset-1 mb-4">
+                    <div id="alternativa" class = "col-10 offset-1 mb-3">
                         <label class="opt"><span id="opt1" class=""></span></label>
                     </div>
                 </div>
                 <div class=""> 
-                    <div id="alternativa" class = "col-10 offset-1 mb-4">
+                    <div id="alternativa" class = "col-10 offset-1 mb-3">
                         <label class="opt"><span id="opt2" class=""></span></label>
                     </div>
                 </div>
                 <div class="">
-                    <div id="alternativa" class = "col-10 offset-1 mb-4">
+                    <div id="alternativa" class = "col-10 offset-1 mb-3">
                         <label class="opt"><span id="opt3" class=""></span></label>
                     </div>
                 </div>
                 <div class="">
-                    <div id="alternativa" class = "col-10 offset-1 mb-4">
+                    <div id="alternativa" class = "col-10 offset-1 mb-3">
                         <label class="opt"><span id="opt4" class=""></span></label>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row m-0 p-0">
-                    <span id="progress" class="col-lg-12 col-lg-8 mb-4 styleFont2" style="text-align: center">Pergunta x / y</span>
+                    <span id="progress" class="col-lg-12 col-lg-8 mb-3 styleFont2" style="text-align: center">Pergunta x / y</span>
                     <span id="foot" class="col-5 foot styleFont2">REVISAR</span>
                     <span id="next-btn" class="col-7 m-0 next-btn styleFont2" style="text-align: right">CONFIRMAR</span>
         </div>
