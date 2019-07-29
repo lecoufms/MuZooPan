@@ -2,15 +2,16 @@ var camera= true;
 var getfile;
 var getdir;
 function anterior(e) {
+    alert(window.localStorage.getItem("anterior"));
     e.preventDefault();
     console.log('teste');
-    var ind = cordova.file.applicationDirectory+'www/index.html';
-    console.log(ind);
+    // var ind = cordova.file.applicationDirectory+'www/index.html';
+    // console.log(ind);
     var anterior;
     var jdata;
     if (window.localStorage.getItem("anterior")) {
         anterior = localStorage.getItem('anterior');
-        console.log(anterior);
+        alert(anterior);
         if(anterior){
             jdata = JSON.parse(anterior);
         }
@@ -23,14 +24,14 @@ function anterior(e) {
         window.localStorage.setItem("qrcodeInput", onde.nome);
         window.localStorage.setItem("config", onde.nome);
         changePage("view.html");
-    }else if (window.location.href !== ind) {
+    }else if (window.location.href.indexOf("index") == -1) {
         window.localStorage.removeItem("qrcodeInput");
         window.localStorage.removeItem("volume");
         window.localStorage.removeItem("config");
         console.log('vou ao index, bele');
-        // window.history.go(-1);
-        window.location.href="../index.html";
-    }else if (window.location.href === ind && camera){
+        window.history.go(-1);
+        // window.location.href="../index.html";
+    }else if (window.location.href.indexOf("index") != -1 && camera){
         exit();
         // window.history.go(-1);
     }else if ( window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio"){
@@ -113,90 +114,20 @@ function removeContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuCorpo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTextoLido'));
 }
 
-function writeToFile(file, data,peg) {
-    var mydata=data;
-    if(peg === undefined){
-        console.log('peg undefined');
-    }else{
-        peg.createWriter(function (fileWriter) {
-            console.log('entrei');
-            fileWriter.onwriteend = function (e) {
-                // for real-world usage, you might consider passing a success callback
-                console.log('Write of file "' + file + '"" completed.');
-            };
-
-            fileWriter.onerror = function (e) {
-                // you could hook this up with our global error handler, or pass in an error callback
-                console.log('Write failed: ' + JSON.stringify(e, null, '\t'));
-            };
-            var blob = new Blob([data], { type: 'text/plain;charset=utf-8' });
-            fileWriter.write(blob);
-        }, fail.bind(null, 'escreve in '+file));
-    }
-}
-
-function readMyFile(pega, file){
-    console.log("armazena");
-    pega.file(function(file){
-        var reader = new FileReader();
-        reader.onloadend = function() {
-            console.log("Successful file read: " + this.result);
-            if (this.result) {
-                window.localStorage.setItem('anterior', this.result);
-            }
-            console.log(window.localStorage.getItem('anterior'));
-        };
-        reader.readAsText(file);
-    },fail.bind(null, 'ler in '+file));
-}
-
 function estadoAtual(){
     window.localStorage.removeItem("qrcodeInput");
     window.localStorage.removeItem("volume");
     window.localStorage.removeItem("config");
-    /*chama o escreve no json*/
-    if (window.localStorage.getItem("anterior")) {
-        file='quiz.json';
-        writeToFile(file, window.localStorage.getItem("anterior"),getfile);
-        window.localStorage.removeItem("anterior");
-    }
-}
-function getmyFIle(diretorio, file){
-    if (getfile === undefined) {
-        diretorio.getFile(file,  {create: true}, function (fileEntry) {
-            console.log("fileEntry is file?" + fileEntry.isFile.toString());
-            getfile=fileEntry;
-            console.log(JSON.stringify(getfile));
-            console.log("vou readMyFile");
-            readMyFile(getfile, file);
-            // return console.log(JSON.stringify(getfile));
-        }, fail.bind(null, 'pega file'+file));
-    }else{
-        console.log('esta definido getfile');
-    }
-}
-function getDiretoryAndFile(){
-    if (getdir === undefined) {
-        file='quiz.json';
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-            console.log("entri");
-            console.log('file system open: ' + fs.name);
-            console.log(JSON.stringify(fs));
-            getdir = fs.root;
-            getmyFIle(fs.root,file);
-        }, fail.bind(null, 'pega o diretorio LocalFileSystem.PERSISTENT'));
-    }else{
-        console.log('esta definido getdir');
-    }
 }
 
 function onDeviceReady() {
     if (cordova.platformId != "browser") {
         document.addEventListener("pause", estadoAtual);
         document.addEventListener("backbutton", anterior,true);
+        alert("foi");
     }
     try{
-        setVolumeHtml();   
+        setVolumeHtml();
     }catch (e)  {
         console.log(e);
     }

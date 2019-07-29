@@ -1,5 +1,50 @@
 [
   {
+    "key":"jacaré do pantanal",
+    "name":"Jacaré do pantanal",
+    "animalSound":"",
+    "imgs":[
+        { "img":"../files/img/jacareDoPantanal_1.jpg"}
+    ],
+    "menus":[
+      {"menu": "habitat",  "text":"O chamado jacaré do Pantanal tem sua distribuição abrangendo a região centro oeste do Brasil, onde se localiza o pantanal. Estes animais  e vivem em rios, lagos e represas.","textSound": ""},
+      {"menu":"reprodução", "text":"São animais ovíparos, as fêmeas botam os ovos em ninho, entre 20 a 30 ovos em média e a fêmea cuida dos ovos. A época de reprodução é no verão, quente e chuvoso.","textSound": ""},
+      {"menu": "características", "text":"Nome científico:Caiman yacare;<br>Estes animais são répteis e podem chegar a 3 metros de comprimento, mas a média fica entre 2 e 2,5 metros. São animais chamados heterotérmicos, com temperatura do corpo variável. Vivem em bandos que pode conter centenas de animais.","textSound": ""},
+      {"menu": "curiosidades", "text": "Se alimentam principalmente de peixes, mas podendo alimentar-se de aves, mamíferos e até invertebrados.  Tem como predadores a onça e a jiboia. <br>Sua carne é apreciada na culinária pantaneira, e atualmente existem criadores destes animais que vendem sua carne e pele.","textSound": ""}
+    ],
+    "3dModel":""
+  },
+  {
+    "key":"escorpião",
+    "name":"Escorpião",
+    "animalSound":"",
+    "imgs":[
+        { "img":"../files/img/escorpiao_1.JPG"}
+    ],
+    "menus":[
+      {"menu": "habitat",  "text":"Pantanal (Brasil, Bolivia, Paraguai) e Agentina.","textSound": ""},
+      {"menu":"reprodução", "text":"Sua reprodução ocorre durante todo ano, a fecundação da fêmea é feita a partir de espermatóforo (estrutura que contém os espermatozoides depositados pelo macho).","textSound": ""},
+      {"menu": "características", "text":"Nome científico: Tityus trivittatus;<br>Esta espécie se caracteriza por ter duas faixais mais claras no dorso, tem coloração marrom com partes amarelas. São animais predadores  noturnos e vivem tanto em ambientes rurais como urbanos. Alimentam-se de insetos tais como baratas e grilos e são predados por aves e alguns mamíferos. Em ambiente urbanos se escondem em frestas,  buracos, debaixo de objetos tanto na área externa como interna das casas.","textSound": ""},
+      {"menu": "curiosidades", "text": "Na região do Pantanal, principalmente na cidade de Corumbá é o animal que mais tem registros de acidentes. Seu veneno não causa morte nos seres humanos, apenas uma dor intensa no local da picada.","textSound": ""}
+    ],
+    "3dModel":""
+  },
+  {
+    "key":"piranha",
+    "name":"Piranha; Piranha vermelha",
+    "animalSound":"",
+    "imgs":[
+        { "img":"../files/img/piranha_1.jpg"}
+    ],
+    "menus":[
+      {"menu": "habitat",  "text":"Vive em ambientes de água doce, rios, lagos, represas da América do Sul.","textSound": ""},
+      {"menu":"reprodução", "text":"A reprodução ocorre no incio do período de chuvas. A reprodução é externa.","textSound": ""},
+      {"menu": "características", "text":"Nome científico: Pygocentrus nattererio;<br>São peixes com tamanho variando entre 18 a 45 cm, de coloração amarelo-avermelhada e corpo achatado lateralmente e ovalado recoberto por escamas. Tem mandíbulas fortes e dentes pequenos, são predadores, alimentando-se de peixes perincipalmente, entretanto pode se alimentar de outros animais como pequenos pássaros e mamíferos.","textSound": ""},
+      {"menu": "curiosidades", "text": "Por ser um peixe muito comum nas águas do Pantanal acaba provocando muitos acidentes com pescadores, que ao manusear o animal acabam sendo mordidos. São animais que vivem em cardumes, que podem conter de dezenas a centenas de peixes. São animais apreciados na culinária pantaneira.","textSound": ""}
+    ],
+    "3dModel":""
+  },
+  {
     "key":"jaguatirica",
     "name":"Jaguatirica",
     "animalSound":"../files/sounds/animals/jaguatirica.wav",
