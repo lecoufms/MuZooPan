@@ -326,11 +326,6 @@ function  Nextpremio(){
     window.localStorage.setItem('anterior',JSON.stringify(realizada));
     window.localStorage.setItem("qrcodeInput", "premio");
     window.localStorage.setItem("config", "app");
-    try{
-        armazena('../files/config/history.json');
-    } catch (e) {
-        console.log(e);
-    }
     changePage("view.html");
 }
 
@@ -358,11 +353,6 @@ ready = function(){
                 window.localStorage.setItem('anterior',JSON.stringify(realizada));
                 window.localStorage.setItem("qrcodeInput", myQuestions[currentQuestion].keyAnimal);
                 window.localStorage.setItem("config", "obj");
-                try{
-                    armazena('../files/config/history.json');
-                } catch (e) {
-                    console.log(e);
-                }
                 changePage("view.html");
             }
         });

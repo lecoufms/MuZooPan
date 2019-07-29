@@ -1,3 +1,14 @@
+/*
+CONTRASTE
+    --corFundo: var(--corFundoNormal);
+    --corFonteTitulo: var(--corFonteTituloNormal); 
+    --corFundoMenuOpcao: var(--corFundoNavAnimal);
+    --corFundoMenuCorpo: var(--corFundoNavAnimal);
+    --corBarraMenu: var(--corFundoSelect);
+    --corFonteTextoLidoMenuOpcao: var(--corFonteTituloNormal);
+    --corFonteTextoLidoMenuCorpo:var(--corFonteTextoLido);
+
+*/
 :root{
     --corFonteQuizTextoLido: black; /* Texto lido Quiz */
     --corFundoNormal:#0088b7; /* Cor fundo */
@@ -13,7 +24,8 @@
     --corFundoNavAnimal: #ffffffa1;
     --corFonteQuizConfDes: grey;
     --corFundoAlter: white;
-    --tamanhoFonte: 15;
+    --tamanhoFonte: 13;
+    --corMarcadorMenu: var(--corFonteTituloNormal);
 
     --corFundoCon:#151231; /*cor fundo contraste*/
     --corFundoMenuCont: grey;
@@ -21,14 +33,13 @@
     --corFonteMenuCont:black; /*cor fonte menu contraste*/
     --corBarraMenuCon:white;  /*cor barra menu contraste*/
     
-    --corFundo: var(--corFundoNormal);
-    --corFonteTitulo: var(--corFonteTituloNormal); /*Sobre e nomeAnimal */
-    --corFundoMenuOpcao: var(--corFundoNavAnimal);
-    --corFundoMenuCorpo: var(--corFundoNavAnimal);
-    --corBarraMenu: var(--corFundoSelect);
-    --corFonteTextoLidoMenuOpcao: var(--corFonteTituloNormal);
-    --corFonteTextoLidoMenuCorpo:var(--corFonteTextoLido);
-    --corMarcadorMenu: var(--corFonteTituloNormal);
+    --corFundo: none;
+    --corFonteTitulo: none; /*Sobre e nomeAnimal */
+    --corFundoMenuOpcao: none;
+    --corFundoMenuCorpo: none;
+    --corBarraMenu: none;
+    --corFonteTextoLidoMenuOpcao: none;
+    --corFonteTextoLidoMenuCorpo:none;
 
 }
 body{

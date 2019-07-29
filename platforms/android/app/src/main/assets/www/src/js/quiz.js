@@ -134,7 +134,7 @@ function retiraVisuResposta(){
 }
 function loadQuesition(qIndex) {
     var q = myQuestions[qIndex];
-    questionEl.innerText = (qIndex+1) + '. '+q.texto;
+    questionEl.innerText = q.texto;
     opt1.innerText = Object.keys(q.alternativas[0])[0].toUpperCase()+') '+Object.values(q.alternativas[0])[0];
     opt2.innerText = Object.keys(q.alternativas[1])[0].toUpperCase()+') '+Object.values(q.alternativas[1])[0];
     opt3.innerText = Object.keys(q.alternativas[2])[0].toUpperCase()+') '+Object.values(q.alternativas[2])[0];
@@ -152,47 +152,6 @@ function eCerta() {
     }
 }
 
-function resolveSuccess(fs) {
-    // console.log(fs.data);
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log(fs.toURL());
-     // console.log('cdvfile URI: ' + fs.toInternalURL());
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        var file = 'files/config/quiz.json';
-    fs.getFile(file, { create: true, exclusive: false }, function (fileEntry) {
-
-        console.log("fileEntry is file?" + fileEntry.isFile.toString());
-        // console.log(fileEntry.name);
-        // fileEntry.fullPath == '/someFile.txt'
-        // writeFile(fileEntry, null);
-
-    }, function (e) {
-        // console.log(e.target);
-    });
-}
-
-function armazena(file) {
-    // console.log(file);
-    window.resolveLocalFileSystemURI(cordova.file.applicationDirectory, resolveSuccess, function (e) {
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log(e.target);
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-        // console.log("suusususuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-    });
-}
 function insertAudio(my, qual){
     var audio = document.createElement('audio');
     audio.autoplay=true;
@@ -206,7 +165,7 @@ function respostaCerta(my) {
     var img = document.createElement('img');
     var divP= document.createElement('div');
     var divf = document.createElement("div");
-    divP.className = "col-1 m-0 p-0 align-self-center";
+    divP.className = "col-1 m-0 p-0 mb-2 align-self-center";
     divf.className="thumbnail text-center";
     img.src="../files/img/correct.png";
     img.className='img-fluid';
@@ -229,7 +188,7 @@ function respostaErrada(my) {
     var img = document.createElement('img');
     var divP= document.createElement('div');
     var divf = document.createElement("div");
-    divP.className = "col-1 m-0 p-0 align-self-center";
+    divP.className = "col-1 m-0 p-0 mb-3 align-self-center";
     divf.className="thumbnail text-center";
     img.className='img-fluid';
     img.src="../files/img/incorrect.png";
@@ -367,11 +326,6 @@ function  Nextpremio(){
     window.localStorage.setItem('anterior',JSON.stringify(realizada));
     window.localStorage.setItem("qrcodeInput", "premio");
     window.localStorage.setItem("config", "app");
-    try{
-        armazena('../files/config/history.json');
-    } catch (e) {
-        console.log(e);
-    }
     changePage("view.html");
 }
 
@@ -399,11 +353,6 @@ ready = function(){
                 window.localStorage.setItem('anterior',JSON.stringify(realizada));
                 window.localStorage.setItem("qrcodeInput", myQuestions[currentQuestion].keyAnimal);
                 window.localStorage.setItem("config", "obj");
-                try{
-                    armazena('../files/config/history.json');
-                } catch (e) {
-                    console.log(e);
-                }
                 changePage("view.html");
             }
         });
