@@ -105,6 +105,7 @@ p{
     color: var(--corFonteQuizTextoLido);
     border: 3vw;
     word-wrap: break-word;
+    width: 111%;
 }
 .optNSelect{
     display: block;
@@ -114,6 +115,7 @@ p{
     color: var(--corFonteQuizTextoLido);
     border: 3vw;
     word-wrap: break-word;
+    width: 111%;
 }
 .opt:hover, .opt:active{
     background: var(--corFundoSelect);
@@ -559,4 +561,8 @@ span.player-pause{
 
 .font-maior{
     font-size: calc(var(--tamanhoFonte) * 1.5px) !important;
+}
+
+.cont{
+    width: 111%;
 }
