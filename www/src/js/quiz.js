@@ -3,7 +3,7 @@ var score = 0;
 var totalRevisao=0;
 var revisao=0;
 var acerto=0;
-var bonus = 0;
+var bonus = 1;
 var bonusTotal=0;
 var container;
 var questionEl;
@@ -133,6 +133,7 @@ function retiraVisuResposta(){
     alter=null
 }
 function loadQuesition(qIndex) {
+    console.log(qIndex);
     var q = myQuestions[qIndex];
     questionEl.innerText = q.texto;
     opt1.innerText = Object.keys(q.alternativas[0])[0].toUpperCase()+') '+Object.values(q.alternativas[0])[0];
