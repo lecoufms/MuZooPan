@@ -3,7 +3,7 @@ var score = 0;
 var totalRevisao=0;
 var revisao=0;
 var acerto=0;
-var bonus = 0;
+var bonus = 1;
 var bonusTotal=0;
 var container;
 var questionEl;
@@ -23,10 +23,15 @@ function preparaRetorno(argument) {
     var data = localStorage.getItem('anterior');
     if(data){
         jdata = JSON.parse(data);
-        return true;
-    }else{
-        return false;
-    }
+            console.log(jdata);
+            if (context.data === jdata.data) {
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
 }
 function setVariaveis() {
     currentQuestion = jdata.pergunta.indice;
@@ -88,7 +93,7 @@ function definePontuacao(){
         }
     }
     if (bonus >= 4){
-        pontos+=50;
+        // pontos+=50;
     }
     score += pontos;
     acerto += 1;
@@ -133,6 +138,7 @@ function retiraVisuResposta(){
     alter=null
 }
 function loadQuesition(qIndex) {
+    console.log(qIndex);
     var q = myQuestions[qIndex];
     questionEl.innerText = q.texto;
     opt1.innerText = Object.keys(q.alternativas[0])[0].toUpperCase()+') '+Object.values(q.alternativas[0])[0];
@@ -373,5 +379,6 @@ function defineMedalha() {
         result = "bronze";
     }
     var premio = {"premio" : result, "pontos" : score, "acertos" : acerto, "bonus" : bonus, "revisao" : totalRevisao};
+    console.log(resultado);
     return premio;
 }

@@ -3,14 +3,14 @@
   "name":"quiz",
   "questions":[
     {
-      "keyAnimal":"jacaré do pantanal",
+      "keyAnimal":"jacareDoPantanal",
       "nomeAnimal":"Jacaré do pantanal",
       "texto": "O jacaré do pantanal tem seu tamanho médio entre:",
       "alternativas": [{"a":"3 e 4 metros"},{"b":"2 a 2,5 metros"},{"c":"1 a 1,5 metros"},{"d":"5 a 6 metros"}],
       "resposta":"b"
     },
     {
-      "keyAnimal":"escorpião",
+      "keyAnimal":"escorpiao",
       "nomeAnimal":"Escorpião",
       "texto": "O escorpião se alimenta de?",
       "alternativas": [{"a":"Insetos"},{"b":"Sangue humano"},{"c":"De aves e mamíferos"},{"d":"De vegetais"}],

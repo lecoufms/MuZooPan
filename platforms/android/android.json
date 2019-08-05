@@ -31,7 +31,6 @@
       },
       "AndroidManifest.xml": {
         "parents": {
-          "/*": [],
           "/manifest/application": [
             {
               "xml": "<activity android:clearTaskOnLaunch=\"true\" android:configChanges=\"orientation|keyboardHidden|screenSize\" android:exported=\"false\" android:name=\"com.google.zxing.client.android.CaptureActivity\" android:theme=\"@android:style/Theme.NoTitleBar.Fullscreen\" android:windowSoftInputMode=\"stateAlwaysHidden\" />",
@@ -68,7 +67,7 @@
       "PACKAGE_NAME": "com.ufms.leco"
     },
     "phonegap-plugin-barcodescanner": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.0.0",
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.ufms.leco"
     }
   },
@@ -93,7 +92,7 @@
   ],
   "plugin_metadata": {
     "cordova-plugin-android-volume": "0.0.12",
-    "cordova-plugin-whitelist": "1.3.3",
-    "phonegap-plugin-barcodescanner": "8.0.0"
+    "cordova-plugin-whitelist": "1.3.4",
+    "phonegap-plugin-barcodescanner": "8.1.0"
   }
 }

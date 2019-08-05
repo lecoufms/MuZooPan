@@ -1,17 +1,17 @@
+$(document).ready(function(){
+    document.addEventListener("deviceready", onDeviceReady, false);
+    getEstilo();
+});
+
 var camera= true; 
-var getfile;
-var getdir;
 function anterior(e) {
-    alert(window.localStorage.getItem("anterior"));
-    e.preventDefault();
-    console.log('teste');
-    // var ind = cordova.file.applicationDirectory+'www/index.html';
-    // console.log(ind);
+    if (cordova.platformId != "browser") {
+        e.preventDefault();
+    }
     var anterior;
     var jdata;
     if (window.localStorage.getItem("anterior")) {
         anterior = localStorage.getItem('anterior');
-        alert(anterior);
         if(anterior){
             jdata = JSON.parse(anterior);
         }
@@ -115,17 +115,16 @@ function removeContraste() {
 }
 
 function estadoAtual(){
-    window.localStorage.removeItem("qrcodeInput");
-    window.localStorage.removeItem("volume");
-    window.localStorage.removeItem("config");
+    if (cordova.platformId != "browser") {
+        window.localStorage.removeItem("qrcodeInput");
+        window.localStorage.removeItem("volume");
+        window.localStorage.removeItem("config");
+    }
 }
 
 function onDeviceReady() {
-    if (cordova.platformId != "browser") {
-        document.addEventListener("pause", estadoAtual);
-        document.addEventListener("backbutton", anterior,true);
-        alert("foi");
-    }
+    document.addEventListener("pause", estadoAtual,false);
+    document.addEventListener("backbutton", anterior,false);
     try{
         setVolumeHtml();
     }catch (e)  {
@@ -204,7 +203,6 @@ function getEstilo(){
         setTamanhoFonte();
     }
     try{
-
         setVolumeHtml();   
     }catch (e) {
         console.log(e);

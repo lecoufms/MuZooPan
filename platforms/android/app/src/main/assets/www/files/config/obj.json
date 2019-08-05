@@ -1,6 +1,6 @@
 [
   {
-    "key":"jacaré do pantanal",
+    "key":"jacareDoPantanal",
     "name":"Jacaré do pantanal",
     "animalSound":"",
     "imgs":[
@@ -15,7 +15,7 @@
     "3dModel":""
   },
   {
-    "key":"escorpião",
+    "key":"escorpiao",
     "name":"Escorpião",
     "animalSound":"",
     "imgs":[
