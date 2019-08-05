@@ -23,6 +23,7 @@ function readFile(file)
             {
                 try{
                     context = JSON.parse(rawFile.responseText);
+                    console.log(context);
                 }catch (e)  {
                     console.log(e);
                 }
