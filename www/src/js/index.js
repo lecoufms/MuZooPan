@@ -18,8 +18,8 @@ function changePrepare(text,isApp){
 }
 
 function barcodescanner(event) {
-    //changePrepare("quiz");
-     cordova.plugins.barcodeScanner.scan(
+    // changePrepare("quiz");
+    cordova.plugins.barcodeScanner.scan(
          function (result) {
              console.log("cancelado "+result.cancelled);
              if (!result.cancelled) {
@@ -49,6 +49,7 @@ function barcodescanner(event) {
 }
 
 $(document).ready(function(){
+    // document.addEventListener("deviceready", onDeviceReady, false);
     document.getElementById('camera').addEventListener("click", barcodescanner.bind(camera),true);
     document.getElementById('buttonSobre').addEventListener("click", changePrepare.bind(null,'about',true),true);
     getEstilo();

@@ -82,7 +82,6 @@ function render(){
 }
 (function(){return $("#invisible").load("templates.html",render)})();
 
-document.addEventListener("deviceready", onDeviceReady, true);
     // {
     //   "keyAnimal":"jaguatirica",
     //   "nomeAnimal":"Jaguatirica",
