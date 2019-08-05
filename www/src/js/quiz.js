@@ -3,7 +3,7 @@ var score = 0;
 var totalRevisao=0;
 var revisao=0;
 var acerto=0;
-var bonus = 1;
+var bonus = 0;
 var bonusTotal=0;
 var container;
 var questionEl;
