@@ -131,9 +131,9 @@
                 <ul id ="NavMenu"class="nav nav-pills nav-justified">
                     {{#each menus}}
                         {{#js_if "@index"}} 
-                            <li class ="styleFont1 nav-item"> 
+                            <li class ="styleFont1 nav-item m-1"> 
                         {{else}}
-                            <li class="active styleFont1 nav-item">
+                            <li class="active styleFont1 nav-item m-1">
                         {{/js_if}}
                             <a class="menuAnimal nav-link" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>

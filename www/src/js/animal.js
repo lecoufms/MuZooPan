@@ -1,17 +1,27 @@
 function gerenciaNavMenu(){
 	   	var widthFilhos=0;
+	   	var heightFilho=0;
 	   	$("#NavMenu").children().each(function(){
 	   		$(this).children().addClass("p-0");
 	   		widthFilhos=widthFilhos+parseInt($(this).children().css("width"));
 	   		$(this).children().removeClass("p-0");
+	   		heightFilho+=parseInt($("#NavMenu").children().css("height"))+ parseInt($(this).css("margin"))*2;
+
 	   	});
+	   	heightFilho= heightFilho/4;
 	   	var n = parseInt($("#NavMenu").css("height"))/ parseInt($("#NavMenu").children().css("height"));
+	   	console.log(n);
+	   	console.log(widthFilhos);
+	   	console.log(window.screen.availWidth);
 	   	if (n != $("#NavMenu").children().length || n != 1) {
-	   		if (parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height")) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
+	   		if (parseInt($("#NavMenu").css("height")) > heightFilho && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
 		   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
+		   		console.log("nav flex-column nav-justified");
 		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified"){
 		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified");	
-		   		if (parseInt($("#NavMenu").css("height")) > parseInt($("#NavMenu").children().css("height")) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
+		   		console.log("nav nav-pills nav-justified");
+		   		if (parseInt($("#NavMenu").css("height")) > heightFilho && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
+		   			console.log("nav flex-column nav-justified");
 			   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
 			   	}
 		   	}
