@@ -128,14 +128,10 @@
             </div>
 
             <div id="myContainerFluidAnimal" class="container-fluid">
-                <ul id ="NavMenu"class="nav nav-pills nav-justified">
+                <ul id ="NavMenu"class="nav nav-pills nav-justified m-1">
                     {{#each menus}}
-                        {{#js_if "@index"}} 
-                            <li class ="styleFont1 nav-item m-1"> 
-                        {{else}}
-                            <li class="active styleFont1 nav-item m-1">
-                        {{/js_if}}
-                            <a class="menuAnimal nav-link" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
+                        <li class="styleFont1 nav-item mt-1 ml-1 mr-1">
+                            <a class="marcado btn col  nav-link" data-toggle="pill" href=#{{js "'menu'+@index"}}>{{menu}}
                             </a>
                         </li>
                     {{/each}}
@@ -148,7 +144,7 @@
                             <div id={{js "'menu'+@index"}} class="tab-pane fade in active">
                         {{/js_if}}
                                 <div class="row p-0 m-0 p-1">
-                                    <p id="textEs" class="col-11 m-0 p-0">{{text}}</p>
+                                    <p id="textEs" class="col m-0 p-0">{{text}}</p>
                                     {{#if textSound}}
                                         <div class="col-1 m-0 p-0">
                                             <div class="row m-0 p-0"> 
