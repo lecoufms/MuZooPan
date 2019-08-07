@@ -246,9 +246,10 @@ span#iconSom{
 #myContainerFluidAnimal{
     padding: 0;
 }
-/*ul.nav{
+/*
+ul.nav{
     font-size: 0.5em;
-}*/
+}
 #NavCorpo{
     background-color: var(--corFundoMenuCorpo);
 }
@@ -264,28 +265,37 @@ ul.nav li.styleFont1 {
 ul.nav li.styleFont1:first-child{
     margin: 0 0.5vw 0 0;
 }
-
 ul.nav li.styleFont1:last-child{
     margin: 0 0 0 0.5vw;
 }
-ul.nav li.nav-item.styleFont1 a.nav-link{
+a{
+    background-color: transparent !important;
+}
+*/
+ul.nav li.nav-item.styleFont1 a.btn.nav-link{
     background-color: var(--corBarraMenu);
     color: var(--corFonteTextoLidoMenuOpcao);
     display: inline-block;
     line-height: 2em;
     z-index: 1;
     padding: 1vw;
+    font-size: calc(var(--tamanhoFonte) * 1px) !important;
 }
 ul.nav li.styleFont1 a:hover{
     text-decoration: none;
 }
-.tab-pane fade{
+/*.tab-pane fade{
     background-color: black;
-}
-a.active.show{
+}*/
+a.marcado.active.show{
     border-bottom: 1vw solid var(--corMarcadorMenu);
     padding: 1vw 1vw 0 1vw !important;
 }
+a.active.show span{    
+    padding: 0 0 4px 0 !important;
+    border-bottom: 1vw solid var(--corMarcadorMenu);
+}
+
 a.menuAnimal{
     /*font-size: 0.8em;*/
 }
