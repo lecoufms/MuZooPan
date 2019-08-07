@@ -11,7 +11,7 @@ CONTRASTE
 */
 :root{
     --corFonteQuizTextoLido: black; /* Texto lido Quiz */
-    --corFundoNormal:#0088b7; /* Cor fundo */
+    --corFundoNormal:#039cd1; /* Cor fundo */
     --corFonteTituloNormal: #fb5a01; /*Sobre e nomeAnimal */
     --corFonteQuizInfo: white; /*acerto, ponto, progresso */
     --corFonteQuizV: #0cff00; /* confirmar, cor fundo acerto, proximo*/
