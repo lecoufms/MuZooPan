@@ -291,8 +291,8 @@ a.marcado.active.show{
     border-bottom: 1vw solid var(--corMarcadorMenu);
     padding: 1vw 1vw 0 1vw !important;
 }
-a.active.show span{    
-    padding: 0 0 4px 0 !important;
+a.marcada.active.show span{    
+    padding: 0 0 5px 0 !important;
     border-bottom: 1vw solid var(--corMarcadorMenu);
 }
 
