@@ -93,7 +93,7 @@ function definePontuacao(){
         }
     }
     if (bonus >= 4){
-        // pontos+=50;
+        pontos+=50;
     }
     score += pontos;
     acerto += 1;
