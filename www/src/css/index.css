@@ -204,16 +204,6 @@ p{
     font-size: calc(var(--tamanhoFonte) * 2px) !important;
     /*font-size: 2em;*/
 }
-.acert{
-    top:3vw;
-    left:4vw;
-}
-
-.pont{
-    top:3vw;
-    left:1vw;
-}
-
 
 p#acertos{
     color: var(--corFonteQuizInfo);
