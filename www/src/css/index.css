@@ -569,3 +569,13 @@ span.player-pause{
 .cont{
     width: 111%;
 }
+
+.carousel-control-next, .carousel-control-prev{
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    opacity: 1;
+}
+.carousel-item.video.active ~ .carousel-control-next, .carousel-item.video.active ~ .carousel-control-prev{
+    opacity: 0;
+}

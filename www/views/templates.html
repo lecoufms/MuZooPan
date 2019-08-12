@@ -101,10 +101,10 @@
             {{/if}}
         </div>
         
-        <div id="myContainerAnimal" class="container pr-0 pl-0">
+        <div id="myContainerAnimal" class="container pr-0 pl-0 mt-1">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner mb-3">
-                    {{#each imgs}}
+                    {{#each midia.imgs}}
                         {{#js_if "@index"}} 
                             <div class="carousel-item"> 
                         {{else}}
@@ -113,7 +113,17 @@
                                 <img class="col-12 d-block w-300" src={{img}}>
                             </div>
                     {{/each}}
-                        
+                    {{#if midia.videos[0]['video'] }}
+                        {{#each midia.videos}}
+                            <div class="carousel-item video"> 
+                                  <div class="view embed-responsive embed-responsive-16by9">
+                                    <video class="video-fluid embed-responsive-item" controls>
+                                      <source src={{video}} type={{type}} />
+                                    </video>
+                                  </div>
+                            </div>
+                        {{/each}}
+                    {{/if}}
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -130,10 +140,11 @@
             <div id="myContainerFluidAnimal" class="container-fluid">
                 <ul id ="NavMenu"class="nav nav-pills nav-justified m-1">
                     {{#each menus}}
-                        <li class="styleFont1 nav-item mt-1 ml-1 mr-1">
-                            <a class=" marcado btn col  nav-link" data-toggle="pill" href=#{{js "'menu'+@index"}}> <span>{{menu}}</span>
-                            </a>
-                        </li>
+                            <li class="styleFont1 nav-item mt-1 ml-1 mr-1">
+                                <a class=" marcado btn col  nav-link" data-toggle="pill" href=#{{js "'menu'+@index"}}> 
+                                        {{menu}}
+                                </a>
+                            </li>
                     {{/each}}
                 </ul>
                 <div id="NavCorpo" class="tab-content">
