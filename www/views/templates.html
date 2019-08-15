@@ -110,14 +110,14 @@
                         {{else}}
                             <div class='carousel-item active'>
                         {{/js_if}}
-                                <img class="col-12 d-block w-300" src={{img}}>
+                                <img class="col-12 d-block altura w-300" src={{img}}>
                             </div>
                     {{/each}}
                     {{#if midia.videos[0]['video'] }}
                         {{#each midia.videos}}
                             <div class="carousel-item video"> 
                                   <div class="view embed-responsive embed-responsive-16by9">
-                                    <video class="video-fluid embed-responsive-item" controls>
+                                    <video onpause="continuaTudo(this)" onended="continuaTudo(this)" onplay="paraTudo(this)" class="video-fluid embed-responsive-item altura " controls>
                                       <source src={{video}} type={{type}} />
                                     </video>
                                   </div>
