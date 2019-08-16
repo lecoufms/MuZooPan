@@ -104,16 +104,28 @@
         <div id="myContainerAnimal" class="container pr-0 pl-0">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner mb-3">
-                    {{#each imgs}}
+                    {{#each midia.imgs}}
                         {{#js_if "@index"}} 
                             <div class="carousel-item"> 
                         {{else}}
                             <div class='carousel-item active'>
                         {{/js_if}}
-                                <img class="col-12 d-block w-300" src={{img}}>
+                                <img class="col-12 d-block altura w-300" src={{img}}>
                             </div>
                     {{/each}}
-                        
+
+                    {{#if midia.videos[0]['video'] }}
+                        {{#each midia.videos}}
+                            <div class="carousel-item video"> 
+                                  <div class="view embed-responsive embed-responsive-16by9">
+                                    <video onpause="continuaTudo(this)" onended="continuaTudo(this)" onplay="paraTudo(this)" class="video-fluid embed-responsive-item altura " controls>
+                                      <source src={{video}} type={{type}} />
+                                    </video>
+                                  </div>
+                            </div>
+                        {{/each}}
+                    {{/if}}
+
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>

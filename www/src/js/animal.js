@@ -28,6 +28,16 @@ function gerenciaNavMenu(){
 		   	}
 	   	}
 }
+function paraTudo(my){
+	$(my).parent().parent().addClass("carousel-ite");
+	$(my).parent().parent().removeClass("carousel-item");
+	console.log($(my).parent().parent());
+}
+function continuaTudo(my){
+	$(my).parent().parent().addClass("carousel-item");
+	$(my).parent().parent().removeClass("carousel-ite");
+	console.log($(my).parent().parent());	
+}
 readyAnimal = function() {
 	$( "span.player-play" ).each(function( index ) {
 	  pause=$(this).parent().children(".player-pause");

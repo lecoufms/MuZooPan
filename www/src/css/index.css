@@ -576,6 +576,10 @@ span.player-pause{
     bottom: 50%;
     opacity: 1;
 }
-.carousel-item.video.active ~ .carousel-control-next, .carousel-item.video.active ~ .carousel-control-prev{
+.carousel-ite.video.active ~ .carousel-control-next, .carousel-ite.video.active ~ .carousel-control-prev{
     opacity: 0;
+}
+.altura{
+    height: auto;
+    max-height: 30%;
 }
