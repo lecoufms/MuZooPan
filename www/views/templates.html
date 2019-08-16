@@ -110,7 +110,7 @@
                         {{else}}
                             <div class='carousel-item text-center active'>
                         {{/js_if}}
-                                <img class="col-12 d-block h-50 w-300" src={{img}}>
+                                <img class="h-50 w-100" src={{img}}>
                             </div>
                     {{/each}}
 
@@ -127,12 +127,12 @@
                     {{/if}}
 
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon icon glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
                 
                         <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-next-icon icon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
@@ -160,7 +160,7 @@
                                     {{#if textSound}}
                                         <div class="col-1 m-0 p-0">
                                             <div class="row m-0 p-0"> 
-                                                <div class="player-controls col-8 mx-auto p-0 m-0">
+                                                <div class="player-controls col-8 text-center">
                                                     <span id={{js "'play_menu'+@index"}} class="icon player-play glyphicon glyphicon-play m-0 p-0"></span>
                                                     <span id={{js "'pause_menu'+@index"}} class="icon player-pause glyphicon glyphicon-pause m-0 p-0"></span>
                                                     <audio class="player m-0 p-0"  src={{textSound}} type="audio/mpeg"></audio>

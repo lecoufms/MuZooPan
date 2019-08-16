@@ -579,7 +579,6 @@ span.player-pause{
 .carousel-ite.video.active ~ .carousel-control-next, .carousel-ite.video.active ~ .carousel-control-prev{
     opacity: 0;
 }
-.altura{
-    height: auto;
-    max-height: 30%;
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    background-image: none !important;
 }
