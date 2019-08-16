@@ -103,6 +103,8 @@ function setContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corBarraMenu',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corBarraMenuCon'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuOpcao',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteMenuCont'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuCorpo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTextContras'));
+}
+function setContrasteNomeApp(){
     document.getElementById("nomeApp").src="files/img/MuzoopanCont.png";
 }
 function removeContraste() {
@@ -113,9 +115,10 @@ function removeContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corBarraMenu',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFundoSelect'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuOpcao',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTituloNormal'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuCorpo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTextoLido'));
+}
+function removeContrasteNomeApp(){
     document.getElementById("nomeApp").src="files/img/Muzoopan.png";
 }
-
 function estadoAtual(){
     if (cordova.platformId != "browser") {
         window.localStorage.removeItem("qrcodeInput");
@@ -197,8 +200,14 @@ function getEstilo(){
     if (window.localStorage.getItem("contraste") == "on") {
         document.getElementById('estilo').checked=true;
         setContraste();
+        if (window.location.href.indexOf("index") != -1) {
+            setContrasteNomeApp();
+        }
     }else if (window.localStorage.getItem("contraste") == "off") {
         removeContraste();
+        if (window.location.href.indexOf("index") != -1) {
+            removeContrasteNomeApp();
+        }
         document.getElementById('estilo').checked=false;
     }
     if (window.localStorage.getItem("fonte")) {

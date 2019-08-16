@@ -106,19 +106,19 @@
                 <div class="carousel-inner mb-3">
                     {{#each midia.imgs}}
                         {{#js_if "@index"}} 
-                            <div class="carousel-item"> 
+                            <div class="carousel-item text-center"> 
                         {{else}}
-                            <div class='carousel-item active'>
+                            <div class='carousel-item text-center active'>
                         {{/js_if}}
-                                <img class="col-12 d-block altura w-300" src={{img}}>
+                                <img class="col-12 d-block h-50 w-300" src={{img}}>
                             </div>
                     {{/each}}
 
                     {{#if midia.videos[0]['video'] }}
                         {{#each midia.videos}}
-                            <div class="carousel-item video"> 
-                                  <div class="view embed-responsive embed-responsive-16by9">
-                                    <video onpause="continuaTudo(this)" onended="continuaTudo(this)" onplay="paraTudo(this)" class="video-fluid embed-responsive-item" controls>
+                            <div class="carousel-item text-center video"> 
+                                  <div class="view">
+                                    <video onpause="continuaTudo(this)" onended="continuaTudo(this)" onplay="paraTudo(this)" class="h-50 w-100" controls>
                                       <source src={{video}} type={{type}} />
                                     </video>
                                   </div>
