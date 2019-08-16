@@ -101,7 +101,7 @@
             {{/if}}
         </div>
         
-        <div id="myContainerAnimal" class="container pr-0 pl-0">
+        <div id="myContainerAnimal" class="container-fluid pr-0 pl-0">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner mb-3">
                     {{#each midia.imgs}}
@@ -160,7 +160,7 @@
                                     {{#if textSound}}
                                         <div class="col-1 m-0 p-0">
                                             <div class="row m-0 p-0"> 
-                                                <div class="player-controls col-8 text-center">
+                                                <div class="player-controls col-8 mx-auto  p-0 m-0">
                                                     <span id={{js "'play_menu'+@index"}} class="icon player-play glyphicon glyphicon-play m-0 p-0"></span>
                                                     <span id={{js "'pause_menu'+@index"}} class="icon player-pause glyphicon glyphicon-pause m-0 p-0"></span>
                                                     <audio class="player m-0 p-0"  src={{textSound}} type="audio/mpeg"></audio>
