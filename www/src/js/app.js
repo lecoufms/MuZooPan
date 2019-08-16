@@ -103,6 +103,7 @@ function setContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corBarraMenu',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corBarraMenuCon'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuOpcao',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteMenuCont'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuCorpo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTextContras'));
+    document.getElementById("nomeApp").src="files/img/MuzoopanCont.png";
 }
 function removeContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFundo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFundoNormal'));
@@ -112,6 +113,7 @@ function removeContraste() {
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corBarraMenu',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFundoSelect'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuOpcao',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTituloNormal'));
     document.styleSheets[1]["cssRules"][0]["style"].setProperty('--corFonteTextoLidoMenuCorpo',document.styleSheets[1]["cssRules"][0]["style"].getPropertyValue('--corFonteTextoLido'));
+    document.getElementById("nomeApp").src="files/img/Muzoopan.png";
 }
 
 function estadoAtual(){
