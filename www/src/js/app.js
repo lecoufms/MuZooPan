@@ -121,6 +121,9 @@ function removeContrasteNomeApp(){
 }
 function estadoAtual(){
     if (cordova.platformId != "browser") {
+        if (window.localStorage.getItem("qrcodeInput") ==  "premio") {
+            window.localStorage.removeItem("anterior");
+        }
         window.localStorage.removeItem("qrcodeInput");
         window.localStorage.removeItem("volume");
         window.localStorage.removeItem("config");

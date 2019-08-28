@@ -1,6 +1,19 @@
 var context = "";
 var html;
 
+function podeQuiz(){
+    if ("quiz" == window.localStorage.getItem("qrcodeInput")) {
+        var data = localStorage.getItem('anterior');
+        if(data){
+            jdata = JSON.parse(data);
+            if (context[0].data === jdata.data && jdata.nome == "premio") {
+                window.localStorage.setItem("qrcodeInput", "premio");
+                window.localStorage.setItem("config", "app");
+                render();
+            }
+        }
+    }
+}
 function selectContext(c) {
     for(i=0; i<c.length; i++){
         if(c[i].key == window.localStorage.getItem("qrcodeInput")){
@@ -26,6 +39,7 @@ function readFile(file)
                 }catch (e)  {
                     console.log(e);
                 }
+                podeQuiz();
                 if(!selectContext(context)){
                     console.log("false");
                     renderOnScreen({"key":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))});
@@ -67,66 +81,6 @@ function renderOnScreen(ctxt) {
     
 }
 function render(){
-    if ("quiz" == window.localStorage.getItem("qrcodeInput")) {
-         var data = localStorage.getItem('anterior');
-        if(data){
-            jdata = JSON.parse(data);
-            if (jdata.vou == "premio") {
-                window.localStorage.setItem("qrcodeInput", "premio");
-                window.localStorage.setItem("config", "app");
-            }
-        }
-    }
     readFile("../files/config/"+window.localStorage.getItem("config")+".json");
 }
 (function(){return $("#invisible").load("templates.html",render)})();
-
-    // {
-    //   "keyAnimal":"jaguatirica",
-    //   "nomeAnimal":"Jaguatirica",
-    //   "texto": "Em qual dos seguintes habitats a Jaguatirica pode ser encontrada?",
-    //   "alternativas": [{"a":"Deserto"},{"b":"Ártico"},{"c":"Savanas"},{"d":"Manguezais"}],
-    //   "resposta":"c"
-    // },
-    // {
-    //   "keyAnimal":"capivara",
-    //   "nomeAnimal":"Capivara",
-    //   "texto": "Qual é a época de reprodução das capivaras?",
-    //   "alternativas": [{"a":"Janeiro a março"},{"b":"Setembro a fevereiro"},{"c":"Grande parte dos meses"},{"d":"Abril a agosto"}],
-    //   "resposta":"c"
-    // },
-    // {
-    //   "keyAnimal":"capivara",
-    //   "nomeAnimal":"Capivara",
-    //   "texto": "Qual o período de gestação da Capivara?",
-    //   "alternativas": [{"a":"Quatro meses"},{"b":"Um mês"},{"c":"Cinco meses"},{"d":"Três meses"}],
-    //   "resposta":"c"
-    // },
-    // {
-    //   "keyAnimal":"cascavel",
-    //   "nomeAnimal": "Cascavel",
-    //   "texto": "Em relação a sua reprodução, a cascavel (Crotalus durissus) é:",
-    //   "alternativas": [{"a": "Ovípara"},{"b": "Ovovípara"},{"c": "Vivípara"},{"d": "Ovulípara"}],
-    //   "resposta": "c"
-    // },
-    // {
-    //   "keyAnimal":"cascavel",
-    //   "nomeAnimal": "Cascavel",
-    //   "texto": "A média de vida de uma cascavel oscila entre:",
-    //   "alternativas": [{"a": "5 a 7 anos"},{"b": "11 a 14 anos"},{"c": "9 a 11 anos"},{"d": "10 a 12 anos"}],
-    //   "resposta": "d"
-    // },
-    // {
-    //   "keyAnimal":"peixe piranha",
-    //   "nomeAnimal":"Peixe Piranha",
-    //   "texto": "Em qual período do ano ocorre a reprodução dos peixes piranha?",
-    //   "alternativas": [{"a":"Abril a junho"},{"b":"Janeiro a março"},{"c":"Setembro a outubro"},{"d":"Dezembro a março"}],
-    //   "resposta":"d"
-    // },
-    // {
-    //   "keyAnimal":"peixe piranha",
-    //   "nomeAnimal":"Peixe Piranha",
-    //   "texto": "A distribuição geográfica dos peixes piranha ocorre em qual America?",
-    //   "alternativas": [{"a":"América Central"},{"b":"América do Norte"},{"c":"América do Sul"},{"d":"América Continental"}],
-    //   "resposta":"c"
-    // },

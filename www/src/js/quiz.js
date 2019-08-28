@@ -19,12 +19,12 @@ var Quiz;
 var questionMy;
 var jdata;
 var alter;
-function preparaRetorno(argument) {
+function preparaRetorno() {
     var data = localStorage.getItem('anterior');
     if(data){
         jdata = JSON.parse(data);
             console.log(jdata);
-            if (context.data === jdata.data) {
+            if (context[0].data === jdata.data) {
                 return true;
             }else{
                 return false;
@@ -46,14 +46,14 @@ function setVariaveis() {
 function vaiRetornar() {
     if(preparaRetorno()){
         setVariaveis();
-        if (context.data == jdata.data && jdata.vou =="revisao") {
+        if (context[0].data == jdata.data && jdata.vou =="revisao") {
             vamosPreparaPPasseio("quiz","quiz",currentQuestion);
             window.localStorage.setItem('anterior',JSON.stringify(realizada));
             questionMy = document.getElementById(jdata.aResposta);
             if (questionMy != null) {
                 clickAlt(questionMy);
             }
-        }else if (context.data == jdata.data && jdata.vou == "premio"){
+        }else if (context[0].data == jdata.data && jdata.vou == "premio"){
             Nextpremio();
         }
     }
@@ -64,7 +64,7 @@ function vamosPreparaPPasseio(key, go,indice){
     realizada = {
         "nome": key,
         "vou": go,
-        "data": context.data,
+        "data": context[0].data,
         "pergunta" : realizadaQ,
         "tamanho": myQuestions.length,
         "pontos":score,
