@@ -1,21 +1,18 @@
 var app = {
-    infoApp: {},
+    info_app: {},
     historico_sessao:[],
-    initialize: function() {
-        app.setInfoApp()
+    camera: null,
+    animal:null,
+    dirFiles: {},
+    dirConfig:{},
+    dirImage:{},
+    dirSounds:{},
+    dirVideos:{},
+    fileAtualizacao:{},
+    initialize: function(dados) {
+        app.camera=true
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-    setInfoApp(){
-        if (window.localStorage.getItem("app")) {
-            let app = localStorage.getItem('app');
-            if(app){
-                app.infoApp = JSON.parse(app);
-            }
-        }
-    },
-    setAppLocalStorage(){
-        window.localStorage.set("app", JSON.stringify(app.infoApp))
-    }
     startInit(){
         return $("#invisible").load("views/templates.html", app.gerente)
     },
@@ -23,6 +20,9 @@ var app = {
         $('#mensagemlLabel').text("Baixando recursos")
 
         $('#mensagem').modal('show')
+    },
+    getInfoServidor(){
+
     },
     gerente(){
         var context
@@ -33,6 +33,7 @@ var app = {
             window.localStorage.setItem("config", "inicial")
             context = {"key": "inicial"};
         }
+        console.log(context)
         app.changePage(context)
         app.onMenu()
         app.getEstilo()
@@ -40,7 +41,7 @@ var app = {
         app.historico_sessao.push({
             "config": window.localStorage.getItem("config"),
             "qrcodeInput": window.localStorage.getItem("qrcodeInput"),
-            "app": app.infoApp
+            "anterior":{}
         })
     },
     changePage(ctxt){
@@ -56,15 +57,16 @@ var app = {
         if (window.localStorage.getItem("config") == 'app'){
                 ;
         }else if(window.localStorage.getItem("config") == "quiz"){
-            app.telaAppAtual = TelaInicial.prototype.getInstance()
+                ;
         }else if (window.localStorage.getItem("config") == "obj"){
-            app.telaAppAtual = TelaAnimal.prototype.getInstance() //procurar como encontrar um objeto dentro de um array 
-            app.telaAppAtual.setKeysVisitaGuiada(window.localStorage.getItem("qrcodeInput"))
-            console.log(app.telaAppAtual.getKeysVisitaGuiada())
+            app.animal= TelaAnimal.prototype.getInstance()
+            app.animal.onDeviceReady();
+            console.log(app.animal)
+            // TelaAnimal.prototype.setKeysVisitaGuiada(window.localStorage.getItem("qrcodeInput"))
+            // console.log(TelaAnimal.prototype.getKeysVisitaGuiada())
         }else{
-            app.telaAppAtual = TelaInicial.prototype.getInstance()
+            TelaInicial.prototype.onDeviceReady();
         }
-        app.telaAppAtual.onDeviceReady();
     },
     async onDeviceReady() {
         await this.verificaDadosServidor()
@@ -74,34 +76,45 @@ var app = {
     },
     async verificaDadosServidor(){
         let nativePath
-        let file = 'https://datamuzoopan.herokuapp.com/controller/controller.php?key='+app.infoApp.key
+        let file = 'https://datamuzoopan.herokuapp.com/controller/controller.php?key='+window.localStorage.getItem("key")
+
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
 
             console.log('file system open: ' + JSON.stringify(fs.root));
 
             fs.root.getDirectory("file", { create: true,exclusive: true}, function (dirEntry) {
-
+                app.dirFiles = dirEntry
                 dirEntry.getDirectory("config", { create: true, exclusive: true}, function (dirEntry) {
-                
                     dirEntry.getFile(name, {create: true, exclusive: true}, function(fileEntry){
-                
                         fileEntry.createWriter(async function(escrever){
-                
                             escrever.onwrite = function(evt) {
                                 console.log("write success");
                             };
-                
                             let text = await app.getDadosServidor(file)
-                
                             escrever.write(JSON.stringify(app.fileAtualizacao));
-                
                         },File.prototype.fail)
-                
                     }, File.prototype.fail);
-                
                 }, File.prototype.fail)
-            
+                // console.log(app.dirFiles)
+                // if (app.dirFiles) {
+                //     // app.dirConfig =  File.prototype.getDir(app.dirFiles, "config",false)
+                //     // let obj = File.prototype.getFile(app.dirConfig, "obj", false)
+                //     // let text = File.prototype.readFile(obj)
+                //     console.log("foi1")
+                // }else{  
+                //     console.log("foi2")
+                //     app.info_app = await app.getDadosServidor(file)
+
+                //     // app.dirFiles = await File.prototype.getDir(fs.root, "files",false)
+                //     // console.log(app.dirFiles)
+                //     // app.dirConfig = await File.prototype.getDir(app.dirFiles, "config",true)
+                //     // let obj = await File.prototype.getFile(app.dirConfig, "obj", true)
+                //     // console.log(obj)
+                //     // await File.prototype.writeFile(obj, app.info_app.obj)
+                // }
+                // console.log(app.dirFiles)
             }, File.prototype.fail)
+
 
         }, File.prototype.fail);
     },
@@ -158,9 +171,12 @@ var app = {
     sucess(sucess) {
         console.log("sucesso ao alterar volume Music" + sucess);
     },
+    fail(evt) {
+        console.log("fail "+evt);
+    },
     setVolumeDis(valor) { 
         if (cordova.platformId == "android") {
-            window.androidVolume.setMusic(valor, false, sucess, File.prototype.fail);
+            window.androidVolume.setMusic(valor, false, sucess, fail);
         }
     },
     aumentaFonte(){
@@ -207,6 +223,7 @@ var app = {
             document.getElementById('fonte').value= maximo; 
             app.ready()
         }
+        
         window.localStorage.setItem("fonte", document.getElementById('fonte').value);
     },
     setMaximo(){
@@ -292,19 +309,22 @@ var app = {
                 window.androidVolume.getMusic(function (sucess) {
                     console.log(' null volume localStorage');
                     document.getElementById("volume").value = sucess;
-                }, File.prototype.fail);
+                }, fail);
         }
         
     },
     estadoAtual(){
-        app.setAppLocalStorage()
-        window.localStorage.removeItem("qrcodeInput");
-        window.localStorage.removeItem("volume");
-        window.localStorage.removeItem("config");
+        if (cordova.platformId != "browser") {
+            if (window.localStorage.getItem("qrcodeInput") ==  "premio") {
+                window.localStorage.removeItem("anterior");
+            }
+            window.localStorage.removeItem("qrcodeInput");
+            window.localStorage.removeItem("volume");
+            window.localStorage.removeItem("config");
+        }
     },
     exit(){
         console.log("exit");
-        app.setAppLocalStorage()
         window.localStorage.removeItem("qrcodeInput");
         window.localStorage.removeItem("volume");
         window.localStorage.removeItem("config")
@@ -314,8 +334,39 @@ var app = {
 
     },
     anterior(e) {
-        e.preventDefault();
-        //DO
+        if (cordova.platformId != "browser") {
+            e.preventDefault();
+        }
+        var anterior;
+        var jdata;
+        if (window.localStorage.getItem("anterior")) {
+            anterior = localStorage.getItem('anterior');
+            if(anterior){
+                jdata = JSON.parse(anterior);
+            }
+        }
+        if (window.localStorage.getItem("config") == "quiz") {
+            console.log("não pode jovem");
+        }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior") && jdata.vou == "revisao"){
+            console.log('vamos voltar da revisao, prob');
+            var onde = JSON.parse(window.localStorage.getItem('anterior'));
+            window.localStorage.setItem("qrcodeInput", onde.nome);
+            window.localStorage.setItem("config", onde.nome);
+            app.gerente();
+        }else if (window.localStorage.getItem("config") != "inicial") {
+            window.localStorage.removeItem("qrcodeInput");
+            window.localStorage.removeItem("volume");
+            window.localStorage.removeItem("config");
+            console.log('vou ao index, bele');
+            app.gerente();
+            // window.location.href="../index.html";
+        }else if (window.location.href.indexOf("index") != -1 && app.camera){
+            app.exit();
+            // window.history.go(-1);
+        }else if ( window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio"){
+            app.exit();
+        }
+        camera=true;
     },
     receivedEvent(id) {
         
@@ -323,6 +374,7 @@ var app = {
 };
 
 app.initialize();
+
 
 $("#invisible").ready(app.startInit)
 $("#mensagem").ready(app.startModalAtualizacao)

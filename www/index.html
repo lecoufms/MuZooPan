@@ -6,21 +6,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="src/vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="src/css/index.css">
-        <link rel="stylesheet" type="text/css" href="src/vendors/bootstrap/css/bootstrap-3-3-7.min.css">
         <title>Muzoopan</title>
-        <script type="text/javascript" src="src/js/template7/template7.min.js"></script>
+        <script type="text/javascript" src="src/vendors/template7/template7.min.js"></script>
         <script src="src/vendors/bootstrap/js/jquery-slim.min.js"></script>
         <script src="src/vendors/bootstrap/js/popper.min.js"></script>
         <script src="src/vendors/bootstrap/js/bootstrap.min.js"></script>
-
         <script type="text/javascript" src="src/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="src/vendor/fontawesome/js/all.min.js"></script>
+        
+        <script type="text/javascript" src="src/js/file.js"></script>
+        <script type="text/javascript" src="src/js/telaAnimal.js"></script>
+        <script type="text/javascript" src="src/js/telaQuiz.js"></script>
+        <script type="text/javascript" src="src/js/telaInicial.js"></script>
         <script type="text/javascript" src="src/js/app.js"></script>
-        <script type="text/javascript" src="src/js/index.js"></script>
+
     </head>
     <body>
+        <div id="invisible"></div>
         <!-- Sidebar -->
-         <div id="myCanvasNav" class="overlay3"></div>
+        <div class="modal fade" id="mensagem" tabindex="-1" role="dialog" aria-labelledby="mensagemlLabel" aria-hidden="true"  style="color:black;">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="mensagemlLabel" style="color: black;"></h5>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex justify-content-center">
+                  <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" style="visibility: hidden;" id="fecharModal"  data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div id="myCanvasNav" class="overlay3"></div>
 
         <div class="w3-sidebar w3-bar-block w3-border-right " id="mySidebar">
             <div class="col-12 justify-content-center">
@@ -53,18 +77,5 @@
               </div>
             </div>    
         </div>
-
-        <!-- Page Content -->
-
-          <button id="buttonMenu" class="icon  align-self-start col-1 m-0 mt-3 p-0"> 
-            <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-          </button> 
-        <div style="text-align: center;">
-            <div class="container">
-                <div class="col-12"><img id="nomeApp" style="width: 110%"></div>
-                <div class="col-12"><img src="files/img/logo.png" style="width: 80%"></div>
-                <div class="col-12"><img id ="camera"src="files/img/cam.png" style="width: 53%"></div>
-                <div class="col-12 justify-content-center"><span id="buttonSobre" class="styleFont2"> Sobre</span></div>
-            </div>
-        </div>
+        <div class="app" id="visible"></div>
 </body>
