@@ -1,5 +1,6 @@
 [
   {
+    "idtemplate":"quiz",
     "key":"quiz",
     "name":"quiz",
     "data":"27-08-2019 08:37:48",
@@ -63,14 +64,15 @@
     ]
   },
   {
+    "idtemplate":"premiacao",
     "key": "premio",
     "name": "premio",
-    "imagemParabens": "../files/img/msg.gif",
-    "premioSound" : "../files/sounds/quiz/premiacao.ogg",
+    "imagemParabens": "/files/img/msg.gif",
+    "premioSound" : "/files/sounds/quiz/premiacao.ogg",
     "Premio": [
       {
         "nome": "bronze",
-        "caminho": "../files/img/bronze.png",
+        "caminho": "/files/img/bronze.png",
         "altura": "15%",
         "largura":"10%",
         "estilos":"position:absolute;left:5px;",
@@ -83,7 +85,7 @@
       },
       {
         "nome": "prata",
-        "caminho": "../files/img/silver.png",
+        "caminho": "/files/img/silver.png",
         "altura": "15%",
         "largura":"10%",
         "estilos":"position:absolute;left:5px;",
@@ -96,7 +98,7 @@
       },
       {
         "nome": "ouro",
-        "caminho": "../files/img/gold.png",
+        "caminho": "/files/img/gold.png",
         "altura": "15%",
         "largura":"10%",
         "estilos":"position:absolute;left:5px;",
@@ -109,7 +111,7 @@
       },
       {
         "nome": "trofeu",
-        "caminho": "../files/img/trophy.png",
+        "caminho": "/files/img/trophy.png",
         "altura": "15%",
         "largura":"10%",
         "estilos":"position:absolute;left:5px;",
@@ -123,19 +125,19 @@
     ],
     "fogos": [
       {
-        "caminho": "../files/img/firework.gif",
+        "caminho": "/files/img/firework.gif",
         "altura": "15%",
         "largura":"10%",
         "estilo":"position:absolute;left:5px;"
       },
       {
-        "caminho": "../files/img/firework.gif",
+        "caminho": "/files/img/firework.gif",
         "altura": "20%",
         "largura":"15%",
         "estilo":"position:absolute;top:10%;right:15%;"
       }, 
       {
-        "caminho": "../files/img/firework.gif",
+        "caminho": "/files/img/firework.gif",
         "altura": "35%",
         "largura":"30%",
         "estilo":"position:absolute;top:25vw;right:5px;"

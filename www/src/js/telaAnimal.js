@@ -1,24 +1,39 @@
 class TelaAnimal{
 	static instancia = null
-	construct(){
+
+	constructor(){
 		this.keysVisitaGuiada=[]
 	}
+	
 	getInstance(){
-		if (!this.instancia) {
-			this.instancia =  new TelaAnimal()
-			return this.instancia
+		if (!TelaAnimal.instancia) {
+			TelaAnimal.instancia =  new TelaAnimal()
+			return TelaAnimal.instancia
 		}else{
-			return this.instancia
+			return TelaAnimal.instancia
 		}
 	}
+	
 	setKeysVisitaGuiada(key){
-		this.keysVisitaGuiada.push(key)
+		if (this.existeEmKeysVisitaGuiada) {
+			this.keysVisitaGuiada.push(key)
+		}
 	}
+	
 	getKeysVisitaGuiada(){
 		return this.keysVisitaGuiada;
 	}
+	
+	existeEmKeysVisitaGuiada(){
+		return (this.keysVisitaGuiada.indexOf(window.localStorage.getItem("qrcodeInput")) == -1)
+	}
+
+	updateElementInTela(){
+		this.gerenciaNavMenu();
+    }
+    
 	onDeviceReady(){
-		// this.gerenciaNavMenu();
+		this.gerenciaNavMenu();
 		// this.setClickPlayes();
 		// $( "span.player-play" ).each(function( index ) {
 		  

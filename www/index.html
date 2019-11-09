@@ -4,23 +4,23 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: ms-appdata: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
         <link rel="stylesheet" type="text/css" href="src/vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="src/css/index.css">
         <title>Muzoopan</title>
-        <script type="text/javascript" src="src/vendors/template7/template7.min.js"></script>
-        <script src="src/vendors/bootstrap/js/jquery-slim.min.js"></script>
-        <script src="src/vendors/bootstrap/js/popper.min.js"></script>
-        <script src="src/vendors/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="src/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="src/vendor/fontawesome/js/all.min.js"></script>
+        <script type="text/javascript" src="src/vendors/template7/template7.min.js"></script>
+        <script type="text/javascript" src="src/vendors/jquery/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="src/vendors/fontawesome/js/all.min.js"></script>
         
         <script type="text/javascript" src="src/js/file.js"></script>
+        <script type="text/javascript" src="src/js/tela.js"></script>
         <script type="text/javascript" src="src/js/telaAnimal.js"></script>
         <script type="text/javascript" src="src/js/telaQuiz.js"></script>
         <script type="text/javascript" src="src/js/telaInicial.js"></script>
         <script type="text/javascript" src="src/js/app.js"></script>
 
+        <script src="src/vendors/bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div id="invisible"></div>
@@ -65,11 +65,13 @@
             <div class="col-12 justify-content-center">
                 <label for="validationTooltipUsername">Fonte</label>
               <div class="input-group justify-content-center">
+
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="diminuiFonte">-</span>
                 </div>
 
-                <input type="text" class="form-control col-4 p-0" style="text-align:center" id="fonte" aria-describedby="validationTooltipUsernamePrepend" required="">
+                <input type="text" class="form-control col-4 p-0" style="text-align:center" id="fonte">
+                
                 <div class="input-group-append">
                     <span class="input-group-text" id="aumentaFonte">+</span>
                 </div>

@@ -1,34 +1,37 @@
 [
-    {
+    
+  {
+    "idtemplate":"obj",
     "key":"jacareDoPantanal",
     "name":"Jacaré do pantanal",
     "animalSound":"",
     "midia":{
       "imgs":[
-          { "img":"../files/img/jacareDoPantanal_1.jpg"}
+          { "img":"/files/img/jacareDoPantanal_1.jpg"}
       ],
       "videos":[
         {
-          "video": "../files/videos/jacareDoPantanal_1.mp4", "type": "video/mp4"
+          "video": "/files/videos/jacareDoPantanal_1.mp4", "type": "video/mp4"
         }
 
       ]
     },
     "menus":[
-      {"menu": "Habitat",  "text":"O chamado jacaré do Pantanal tem sua distribuição abrangendo a região centro oeste do Brasil, onde se localiza o pantanal. Estes animais vivem em rios, lagos e represas.","textSound": "../files/sounds/text_song/habitat_jacare.mp3"},
-      {"menu":"Reprodução", "text":"São animais ovíparos, as fêmeas botam os ovos em ninho, entre 20 a 30 ovos em média e a fêmea cuida dos ovos. A época de reprodução é no verão, quente e chuvoso.","textSound": "../files/sounds/text_song/reproducao_jacare.mp3"},
-      {"menu": "Características", "text":"Nome científico:Caiman yacare;<br>Estes animais são répteis e podem chegar a 3 metros de comprimento, mas a média fica entre 2 e 2,5 metros. São animais chamados heterotérmicos, com temperatura do corpo variável. Vivem em bandos que pode conter centenas de animais.","textSound": "../files/sounds/text_song/caracteristicas_jacare.mp3"},
-      {"menu": "Curiosidades", "text": "Se alimentam principalmente de peixes, mas podendo alimentar-se de aves, mamíferos e até invertebrados.  Tem como predadores a onça e a jiboia. <br>Sua carne é apreciada na culinária pantaneira, e atualmente existem criadores destes animais que vendem sua carne e pele.","textSound": "../files/sounds/text_song/curiosidades_jacare.mp3"}
+      {"menu": "Habitat",  "text":"O chamado jacaré do Pantanal tem sua distribuição abrangendo a região centro oeste do Brasil, onde se localiza o pantanal. Estes animais vivem em rios, lagos e represas.","textSound": "/files/sounds/text_song/habitat_jacare.mp3"},
+      {"menu":"Reprodução", "text":"São animais ovíparos, as fêmeas botam os ovos em ninho, entre 20 a 30 ovos em média e a fêmea cuida dos ovos. A época de reprodução é no verão, quente e chuvoso.","textSound": "/files/sounds/text_song/reproducao_jacare.mp3"},
+      {"menu": "Características", "text":"Nome científico:Caiman yacare;<br>Estes animais são répteis e podem chegar a 3 metros de comprimento, mas a média fica entre 2 e 2,5 metros. São animais chamados heterotérmicos, com temperatura do corpo variável. Vivem em bandos que pode conter centenas de animais.","textSound": "/files/sounds/text_song/caracteristicas_jacare.mp3"},
+      {"menu": "Curiosidades", "text": "Se alimentam principalmente de peixes, mas podendo alimentar-se de aves, mamíferos e até invertebrados.  Tem como predadores a onça e a jiboia. <br>Sua carne é apreciada na culinária pantaneira, e atualmente existem criadores destes animais que vendem sua carne e pele.","textSound": "/files/sounds/text_song/curiosidades_jacare.mp3"}
     ],
     "3dModel":""
   },
   {
+    "idtemplate":"obj",
     "key":"escorpiao",
     "name":"Escorpião",
     "animalSound":"",
     "midia":{
       "imgs":[
-          { "img":"../files/img/escorpiao_1.JPG"}
+          { "img":"/files/img/escorpiao_1.JPG"}
       ],
       "videos":[
         {
@@ -38,44 +41,46 @@
       ]
     },
     "menus":[
-      {"menu": "Habitat",  "text":"O escorpião encontra-se no Pantanal (Brasil, Bolívia, Paraguai) e Argentina.","textSound": "../files/sounds/text_song/habitat_escorpiao.mp3"},
-      {"menu":"Reprodução", "text":"Sua reprodução ocorre durante todo ano, a fecundação da fêmea é feita a partir de espermatóforo (estrutura que contém os espermatozoides depositados pelo macho).","textSound": "../files/sounds/text_song/reproducao_escorpiao.mp3"},
-      {"menu": "Características", "text":"Nome científico: Tityus trivittatus;<br>Esta espécie se caracteriza por ter duas faixais mais claras no dorso, tem coloração marrom com partes amarelas. São animais predadores  noturnos e vivem tanto em ambientes rurais como urbanos. Alimentam-se de insetos tais como baratas e grilos e são predados por aves e alguns mamíferos. Em ambiente urbanos se escondem em frestas,  buracos, debaixo de objetos tanto na área externa como interna das casas.","textSound": "../files/sounds/text_song/caracteristicas_escorpiao.mp3"},
-      {"menu": "Curiosidades", "text": "Na região do Pantanal, principalmente na cidade de Corumbá é o animal que mais tem registros de acidentes. Seu veneno não causa morte nos seres humanos, apenas uma dor intensa no local da picada.","textSound": "../files/sounds/text_song/curiosidades_escorpiao.mp3"}
+      {"menu": "Habitat",  "text":"O escorpião encontra-se no Pantanal (Brasil, Bolívia, Paraguai) e Argentina.","textSound": "/files/sounds/text_song/habitat_escorpiao.mp3"},
+      {"menu":"Reprodução", "text":"Sua reprodução ocorre durante todo ano, a fecundação da fêmea é feita a partir de espermatóforo (estrutura que contém os espermatozoides depositados pelo macho).","textSound": "/files/sounds/text_song/reproducao_escorpiao.mp3"},
+      {"menu": "Características", "text":"Nome científico: Tityus trivittatus;<br>Esta espécie se caracteriza por ter duas faixais mais claras no dorso, tem coloração marrom com partes amarelas. São animais predadores  noturnos e vivem tanto em ambientes rurais como urbanos. Alimentam-se de insetos tais como baratas e grilos e são predados por aves e alguns mamíferos. Em ambiente urbanos se escondem em frestas,  buracos, debaixo de objetos tanto na área externa como interna das casas.","textSound": "/files/sounds/text_song/caracteristicas_escorpiao.mp3"},
+      {"menu": "Curiosidades", "text": "Na região do Pantanal, principalmente na cidade de Corumbá é o animal que mais tem registros de acidentes. Seu veneno não causa morte nos seres humanos, apenas uma dor intensa no local da picada.","textSound": "/files/sounds/text_song/curiosidades_escorpiao.mp3"}
     ],
     "3dModel":""
   },
   {
+    "idtemplate":"obj",
     "key" : "cascavel",
     "name" : "Cascavel",
-    "animalSound" : "../files/sounds/animals/cascavel.wav",
+    "animalSound" : "/files/sounds/animals/cascavel.wav",
     "midia" : {
       "imgs" : [
-          { "img" : "../files/img/cascavel_1.jpg" },
-          { "img" : "../files/img/cascavel_2.jpg" },
-          { "img" : "../files/img/cascavel_3.jpg" }
+          { "img" : "/files/img/cascavel_1.jpg" },
+          { "img" : "/files/img/cascavel_2.jpg" },
+          { "img" : "/files/img/cascavel_3.jpg" }
       ],
       "videos" : [
         {
-          "video" : "../files/videos/cascavel_1.mp4" , "type" : "video/mp4"
+          "video" : "/files/videos/cascavel_1.mp4" , "type" : "video/mp4"
         }
       ]
     },
     "menus":[
-      {"menu": "Habitat",  "text":"A cascavel é uma serpente que apresenta uma distribuição geográfica que está restrita a América do Sul (da Colômbia até uma região da Argentina). A maioria das cascavéis é típica de regiões secas, vivendo em campos abertos e regiões pedregosas.","textSound": "../files/sounds/text_song/habitat_cascavel.mp3"},
-      {"menu":"Reprodução", "text":"Sua reprodução é vivípara, ou seja, são animais cujo embrião se desenvolve dentro do útero materno. A nutrição do embrião (e depois do feto) é realizada na placenta materna. O período de reprodução da cascavel ocorre de novembro à fevereiro, podendo nascer de 16 a 24 filhotes.","textSound": "../files/sounds/text_song/reproducao_cascavel.mp3"},
-      {"menu": "Características", "text":"Reino: Animalia; Filo: Chordados; Classe: Reptilia; Ordem: Squamata; Família:  Viperidae; Subfamília: Crotalinae; Gênero: Crotalus; Espécies: Crotalus durissus;\nA média de vida de uma cascavel oscila entre 10 a 12 anos e pode atingir aproximadamente 1,80 metros de comprimento. Possui uma coloração pardo-escura, com manchas em forma de losango no dorso, alternadas com outras laterais e o ventre apresenta uma cor mais clara. A pele da cascavel ajuda em sua camuflagem, com os tons terrosos que apresentam, são capazes de se assemelhar ao local que habitam, assim confundindo suas presas e predadores. Sua alimentação geralmente envolve pequenos roedores e lagartos.","textSound": "../files/sounds/text_song/caracteristicas_cascavel.mp3"},
-      {"menu": "Curiosidades", "text": "A cascavel apresenta um chocalho no final de sua cauda onde muitas pessoas acham que cada anel apresenta um ano de sua vida. Na verdade esses anéis não representam sua idade e sim o número de vezes que esta serpente troca de pele. Em média ela muda de pele 2 a 4 vezes ao ano, a cada troca é acrescentado um novo anel ao chocalho. Quando a cobra fica irritada, os faz vibrar fazendo um som de chocalho.","textSound": "../files/sounds/text_song/curiosidades_cascavel.mp3"}
+      {"menu": "Habitat",  "text":"A cascavel é uma serpente que apresenta uma distribuição geográfica que está restrita a América do Sul (da Colômbia até uma região da Argentina). A maioria das cascavéis é típica de regiões secas, vivendo em campos abertos e regiões pedregosas.","textSound": "/files/sounds/text_song/habitat_cascavel.mp3"},
+      {"menu":"Reprodução", "text":"Sua reprodução é vivípara, ou seja, são animais cujo embrião se desenvolve dentro do útero materno. A nutrição do embrião (e depois do feto) é realizada na placenta materna. O período de reprodução da cascavel ocorre de novembro à fevereiro, podendo nascer de 16 a 24 filhotes.","textSound": "/files/sounds/text_song/reproducao_cascavel.mp3"},
+      {"menu": "Características", "text":"Reino: Animalia; Filo: Chordados; Classe: Reptilia; Ordem: Squamata; Família:  Viperidae; Subfamília: Crotalinae; Gênero: Crotalus; Espécies: Crotalus durissus;\nA média de vida de uma cascavel oscila entre 10 a 12 anos e pode atingir aproximadamente 1,80 metros de comprimento. Possui uma coloração pardo-escura, com manchas em forma de losango no dorso, alternadas com outras laterais e o ventre apresenta uma cor mais clara. A pele da cascavel ajuda em sua camuflagem, com os tons terrosos que apresentam, são capazes de se assemelhar ao local que habitam, assim confundindo suas presas e predadores. Sua alimentação geralmente envolve pequenos roedores e lagartos.","textSound": "/files/sounds/text_song/caracteristicas_cascavel.mp3"},
+      {"menu": "Curiosidades", "text": "A cascavel apresenta um chocalho no final de sua cauda onde muitas pessoas acham que cada anel apresenta um ano de sua vida. Na verdade esses anéis não representam sua idade e sim o número de vezes que esta serpente troca de pele. Em média ela muda de pele 2 a 4 vezes ao ano, a cada troca é acrescentado um novo anel ao chocalho. Quando a cobra fica irritada, os faz vibrar fazendo um som de chocalho.","textSound": "/files/sounds/text_song/curiosidades_cascavel.mp3"}
     ],
     "3dModel" : ""
   },
   {
+    "idtemplate":"obj",
     "key":"piranha",
     "name":"Piranha; Piranha vermelha",
     "animalSound":"",
     "midia":{
       "imgs":[
-          { "img":"../files/img/piranha_1.jpg"}
+          { "img":"/files/img/piranha_1.jpg"}
       ],
       "videos":[
         {
@@ -85,10 +90,10 @@
       ]
     },
     "menus":[
-      {"menu": "Habitat",  "text":"A piranha vive em ambientes de água doce, rios, lagos, represas da América do Sul.","textSound": "../files/sounds/text_song/habitat_piranha.mp3"},
-      {"menu":"Reprodução", "text":"A reprodução ocorre no início do período de chuvas. A reprodução é externa.","textSound": "../files/sounds/text_song/reproducao_piranha.mp3"},
-      {"menu": "Características", "text":"Nome científico: Pygocentrus nattererio;<br>São peixes com tamanho variando entre 18 a 45 cm, de coloração amarelo-avermelhada e corpo achatado lateralmente e ovalado recoberto por escamas. Tem mandíbulas fortes e dentes pequenos, são predadores, alimentando-se de peixes perincipalmente, entretanto pode se alimentar de outros animais como pequenos pássaros e mamíferos.","textSound": "../files/sounds/text_song/caracteristicas_piranha.mp3"},
-      {"menu": "Curiosidades", "text": "Por ser um peixe muito comum nas águas do Pantanal acaba provocando muitos acidentes com pescadores, que ao manusear o animal acabam sendo mordidos. São animais que vivem em cardumes, que podem conter de dezenas a centenas de peixes. São animais apreciados na culinária pantaneira.","textSound": "../files/sounds/text_song/curiosidades_piranha.mp3"}
+      {"menu": "Habitat",  "text":"A piranha vive em ambientes de água doce, rios, lagos, represas da América do Sul.","textSound": "/files/sounds/text_song/habitat_piranha.mp3"},
+      {"menu":"Reprodução", "text":"A reprodução ocorre no início do período de chuvas. A reprodução é externa.","textSound": "/files/sounds/text_song/reproducao_piranha.mp3"},
+      {"menu": "Características", "text":"Nome científico: Pygocentrus nattererio;<br>São peixes com tamanho variando entre 18 a 45 cm, de coloração amarelo-avermelhada e corpo achatado lateralmente e ovalado recoberto por escamas. Tem mandíbulas fortes e dentes pequenos, são predadores, alimentando-se de peixes perincipalmente, entretanto pode se alimentar de outros animais como pequenos pássaros e mamíferos.","textSound": "/files/sounds/text_song/caracteristicas_piranha.mp3"},
+      {"menu": "Curiosidades", "text": "Por ser um peixe muito comum nas águas do Pantanal acaba provocando muitos acidentes com pescadores, que ao manusear o animal acabam sendo mordidos. São animais que vivem em cardumes, que podem conter de dezenas a centenas de peixes. São animais apreciados na culinária pantaneira.","textSound": "/files/sounds/text_song/curiosidades_piranha.mp3"}
     ],
     "3dModel":""
   }

@@ -1,11 +1,32 @@
 class TelaInicial{
+	/*
+		static instancia = null
+	
+		getInstance(){
+			
+		}
+
+		onDeviceReady(){
+
+		}
+		
+		changeElementInTela(){
+			
+		}
+		OBRIGATORIO IMPLEMENTAR EM TODAS AS CLASSES TELA => DEVEM EXTENDER A CLASSE TELA
+	*/
 	static instancia = null
+	static camera = null
+	constructor(){
+		TelaInicial.camera = true
+	}
+	
 	getInstance(){
-		if (!this.instancia) {
-			this.instancia =  new TelaInicial()
-			return this.instancia
+		if (!TelaInicial.instancia) {
+			TelaInicial.instancia =  new TelaInicial()
+			return TelaInicial.instancia
 		}else{
-			return this.instancia
+			return TelaInicial.instancia
 		}
 	}
 	
@@ -15,22 +36,21 @@ class TelaInicial{
 	}
 
 	changePrepare(text, isApp){
-		console.log(  text);
-		console.log(isApp);
-    	(function factory(text) {
+    	(async function factory(text) {
         	console.log(text);
         	let path= window.location.href
         	if (text) {
 	            window.localStorage.setItem("qrcodeInput", text);
 	            if (isApp){
 	                window.localStorage.setItem("config", "app");
-	                app.gerente(text);
+	                app.gerente();
 	            }else if(text=="quiz"){
-	                window.localStorage.setItem("config", "quiz");
-	                app.gerente(text);
+	            	window.localStorage.setItem("config", "quiz");
+	            	await TelaQuiz.prototype.confirmaQuiz()
+	                app.gerente();
 	            }else{
 	                window.localStorage.setItem("config", "obj");
-	                app.gerente(window.localStorage.getItem("config"));
+	                app.gerente();
 	            }
 	        }
 	    }) (text);
@@ -42,10 +62,10 @@ class TelaInicial{
 	         function (result) {
 	             console.log("cancelado "+result.cancelled);
 	             if (!result.cancelled) {
-	                 app.camera = true;
+	                 TelaInicial.camera = true;
 	                 TelaInicial.prototype.changePrepare(result.text);
 	             }else{
-	                 app.camera=false;
+	                 TelaInicial.camera=false;
 	             }
 	         },
 	         function (error) {
@@ -64,6 +84,6 @@ class TelaInicial{
 	             disableSuccessBeep: false // iOS and Android
 	       }
 	    );
-	     app.camera=false;
+	     TelaInicial.camera=false;
 	}
 }

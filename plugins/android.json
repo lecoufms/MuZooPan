@@ -10,6 +10,9 @@
     "cordova-plugin-android-volume": {
       "PACKAGE_NAME": "com.ufms.leco"
     },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.ufms.leco"
+    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.ufms.leco"
     },

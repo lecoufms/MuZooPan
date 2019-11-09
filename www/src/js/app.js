@@ -1,21 +1,9 @@
 var app = {
-    infoApp: {},
     historico_sessao:[],
+    context: {},
     initialize: function() {
-        app.setInfoApp()
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-    setInfoApp(){
-        if (window.localStorage.getItem("app")) {
-            let app = localStorage.getItem('app');
-            if(app){
-                app.infoApp = JSON.parse(app);
-            }
-        }
-    },
-    setAppLocalStorage(){
-        window.localStorage.set("app", JSON.stringify(app.infoApp))
-    }
     startInit(){
         return $("#invisible").load("views/templates.html", app.gerente)
     },
@@ -25,46 +13,55 @@ var app = {
         $('#mensagem').modal('show')
     },
     gerente(){
-        var context
+        let context
         if (window.localStorage.getItem("config") && window.localStorage.getItem("config") != "inicial") {
-            context = File.readFile("files/config/"+window.localStorage.getItem("config")+".json")
-            console.log(window.localStorage.getItem("config")); 
+            context = File.readFile("files/config/"+window.localStorage.getItem("config")+".json") 
         }else{
             window.localStorage.setItem("config", "inicial")
-            context = {"key": "inicial"};
+            context = {"idtemplate": "inicial"};
         }
         app.changePage(context)
+        app.defineTelaAtual()
+        console.log(app.telaAppAtual)
+        app.callOnDeviceReadyTela()
         app.onMenu()
         app.getEstilo()
-        app.ready()
         app.historico_sessao.push({
             "config": window.localStorage.getItem("config"),
-            "qrcodeInput": window.localStorage.getItem("qrcodeInput"),
-            "app": app.infoApp
+            "qrcodeInput": window.localStorage.getItem("qrcodeInput")
         })
     },
     changePage(ctxt){
-        var template = $("#"+(window.localStorage.getItem("config")=="obj"? "obj":ctxt.key)).html();
-        var compiledTemplate = Template7.compile(template);
+        console.log(ctxt)  
+        let template = $("#"+ctxt.idtemplate).html();
+        let compiledTemplate = Template7.compile(template);
         // ctxt= alterar(ctxt);
         let html = compiledTemplate(ctxt);
         document.getElementById("visible").innerHTML=html;
     },
-    ready(){
-        console.log("ready")
-        
+    callOnDeviceReadyTela(){
+        if (app.telaAppAtual.onDeviceReady) {
+            app.telaAppAtual.onDeviceReady();
+        }
+    },
+    defineTelaAtual(){
         if (window.localStorage.getItem("config") == 'app'){
-                ;
+            // app.telaAppAtual = TelaSobre.prototype.getInstance()    
+            app.telaAppAtual={};
         }else if(window.localStorage.getItem("config") == "quiz"){
-            app.telaAppAtual = TelaInicial.prototype.getInstance()
+            app.telaAppAtual = TelaQuiz.prototype.getInstance()
         }else if (window.localStorage.getItem("config") == "obj"){
             app.telaAppAtual = TelaAnimal.prototype.getInstance() //procurar como encontrar um objeto dentro de um array 
-            app.telaAppAtual.setKeysVisitaGuiada(window.localStorage.getItem("qrcodeInput"))
-            console.log(app.telaAppAtual.getKeysVisitaGuiada())
+        }else if(window.localStorage.getItem("config") == 'error'){
+            app.telaAppAtual={};
         }else{
             app.telaAppAtual = TelaInicial.prototype.getInstance()
         }
-        app.telaAppAtual.onDeviceReady();
+    },
+    callUpdateElementInTela(){
+        if(app.telaAppAtual.updateElementInTela){
+            app.telaAppAtual.updateElementInTela()
+        }
     },
     async onDeviceReady() {
         await this.verificaDadosServidor()
@@ -73,36 +70,25 @@ var app = {
         document.addEventListener("backbutton", this.anterior,false);
     },
     async verificaDadosServidor(){
-        let nativePath
-        let file = 'https://datamuzoopan.herokuapp.com/controller/controller.php?key='+app.infoApp.key
+        let file = 'https://datamuzoopan.herokuapp.com/controller/controller.php?key='+window.localStorage.getItem("key")
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-
-            console.log('file system open: ' + JSON.stringify(fs.root));
-
-            fs.root.getDirectory("file", { create: true,exclusive: true}, function (dirEntry) {
-
-                dirEntry.getDirectory("config", { create: true, exclusive: true}, function (dirEntry) {
+            console.log('file system open: ' + JSON.stringify(fs));
+            // fs.root.getDirectory("file/config", { create: true}, function (dirEntry) {
+                // dirEntry.getFile(name, {create: true, exclusive: true}, function(fileEntry){
+                //     fileEntry.createWriter(async function(escrever){
+                //         escrever.onwrite = function(evt) {
+                //             console.log("write success");
+                //         };
+                //         let text = await app.getDadosServidor(file)
                 
-                    dirEntry.getFile(name, {create: true, exclusive: true}, function(fileEntry){
+                //         escrever.write(JSON.stringify(app.fileAtualizacao));
                 
-                        fileEntry.createWriter(async function(escrever){
+                //     },File.prototype.fail)
                 
-                            escrever.onwrite = function(evt) {
-                                console.log("write success");
-                            };
+                // }, File.prototype.fail);
                 
-                            let text = await app.getDadosServidor(file)
-                
-                            escrever.write(JSON.stringify(app.fileAtualizacao));
-                
-                        },File.prototype.fail)
-                
-                    }, File.prototype.fail);
-                
-                }, File.prototype.fail)
+            // }, File.prototype.fail)
             
-            }, File.prototype.fail)
-
         }, File.prototype.fail);
     },
     async setDadosInFile(){
@@ -197,15 +183,15 @@ var app = {
         if (tamanho >= minimo && tamanho <= maximo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
             document.getElementById('fonte').value= tamanho;
-            app.ready()
+            app.callUpdateElementInTela()
         }else if (tamanho < minimo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', minimo);
             document.getElementById('fonte').value= minimo;
-            app.ready()
+            app.callUpdateElementInTela()
         }else if (tamanho > maximo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', maximo);  
             document.getElementById('fonte').value= maximo; 
-            app.ready()
+            app.callUpdateElementInTela()
         }
         window.localStorage.setItem("fonte", document.getElementById('fonte').value);
     },
@@ -262,11 +248,13 @@ var app = {
     },
     getEstilo(){
         if (window.localStorage.getItem("contraste") == null) {
+            console.log("foi")
             window.localStorage.setItem("contraste", "off");
         }
         if (window.localStorage.getItem("fonte") == null) {
-            var tamanho = document.styleSheets[0]["cssRules"][0]["style"].getPropertyValue('--tamanhoFonte');
+            var tamanho = document.styleSheets[2]["cssRules"][0]["style"].getPropertyValue('--tamanhoFonte');
             window.localStorage.setItem("fonte", tamanho);
+            console.log("foi")
         }
         if (window.localStorage.getItem("contraste") == "on") {
             document.getElementById('estilo').checked=true;
@@ -279,6 +267,7 @@ var app = {
             document.getElementById('estilo').checked=false;
         }
         if (window.localStorage.getItem("fonte")) {
+            console.log("foi2")   
             app.setTamanhoFonte();
         }
         try{
@@ -297,7 +286,6 @@ var app = {
         
     },
     estadoAtual(){
-        app.setAppLocalStorage()
         window.localStorage.removeItem("qrcodeInput");
         window.localStorage.removeItem("volume");
         window.localStorage.removeItem("config");
@@ -314,8 +302,36 @@ var app = {
 
     },
     anterior(e) {
-        e.preventDefault();
         //DO
+        if (cordova.platformId != "browser") {
+            e.preventDefault();
+        }
+        
+        TelaQuiz.prototype.getLocalStorageQuiz()
+
+        if (window.localStorage.getItem("config") == "quiz") {
+            console.log("não pode jovem");
+        }else if (window.localStorage.getItem("config") == "obj" && window.localStorage.getItem("anterior") && TelaQuiz.jdata.vou == "revisao"){
+            console.log('vamos voltar da revisao, prob');
+            var onde = JSON.parse(window.localStorage.getItem('anterior'));
+            window.localStorage.setItem("qrcodeInput", onde.nome);
+            window.localStorage.setItem("config", onde.nome);
+            app.gerente();
+        }else if (window.localStorage.getItem("config") != "inicial") {
+            window.localStorage.removeItem("qrcodeInput");
+            window.localStorage.removeItem("volume");
+            window.localStorage.removeItem("config");
+            console.log('vou ao index, bele');
+            app.gerente();
+            // window.location.href="../index.html";
+        }else if (window.location.href.indexOf("index") != -1 && TelaInicial.camera){
+            app.exit();
+            // window.history.go(-1);
+        }else if ( window.localStorage.getItem("config") == "app" && window.localStorage.getItem("qrcodeInput") == "premio"){
+            app.exit();
+        }
+        TelaInicial.camera=true;
+
     },
     receivedEvent(id) {
         
