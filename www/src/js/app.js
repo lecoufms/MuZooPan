@@ -233,6 +233,9 @@ function exit(){
 
 }
 
+
+
+
 function buttonMenuClose() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("mySidebar").style.display = "none";

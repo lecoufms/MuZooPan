@@ -10,6 +10,9 @@
         <p>{{quiz}}</p>
         <p>{{quem}}</p>
     </div>
+    <div class="offset-5 buttomSair font-maior styleFont2">
+        <span onclick="inicio()"> Voltar </span>
+    </div>
 </script>
 
 
@@ -90,20 +93,11 @@
             <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
             <p id="nomeTitulo" class="nomeTit styleFont2 font-maior col-9">{{name}}</p>
-            {{#if animalSound}}
-                <div class="icon">
-
-                    <audio id="playIcon" src={{animalSound}}>
-                    </audio>
-                        <span id= "" class="iconsom offset-10 ml-4 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
-                        </span>
-                </div>
-            {{/if}}
         </div>
         
         <div id="myContainerAnimal" class="container-fluid pr-0 pl-0">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner mb-3 col-12">
+                <div class="carousel-inner mb-1 col-12">
                     {{#each midia.imgs}}
                         {{#js_if "@index"}} 
                             <div class="carousel-item text-center"> 
@@ -139,6 +133,26 @@
                 </div>
             </div>
 
+
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-1 p-0 ml-4">
+              {{#if animalSound}}
+                    <div class="icon">
+                     <audio id="playIcon" src={{animalSound}}>
+                        </audio>
+                         <span id= "" class="iconsom offset-10 ml-0 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
+                        </span>
+                    </div>
+                {{/if}}
+            </div>
+            <div class="col-5 p-0 pt-1 ml-1">
+                {{#if animalSound}}
+                <p class="m-0 styleFont1 styleFont2 ouvirSom">Ouvir o animal</p>
+                {{/if}}
+            </div>
+          </div>
+
             <div id="myContainerFluidAnimal" class="container-fluid">
                 <ul id ="NavMenu"class="nav nav-pills nav-justified m-1">
                     {{#each menus}}
@@ -165,9 +179,15 @@
                                                     <span id={{js "'pause_menu'+@index"}} class="icon player-pause glyphicon glyphicon-pause m-0 p-0"></span>
                                                     <audio class="player m-0 p-0"  src={{textSound}} type="audio/mpeg"></audio>
                                                 </div>
+
                                                 <div class="col-12 progressAu p-2">
+
                                                     <div id={{js "'player-timeline_menu'+@index"}} class="mx-auto player-timeline">
-                                                        <div id={{js "'player-timeline-control_menu'+@index"}} class="player-timeline-control"></div>
+                                                        <div id={{js "'player-timeline-control_menu'+@index"}}
+                                                        class="player-timeline-control">
+
+
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -178,6 +198,9 @@
                             </div>
                     {{/each}}
                 </div>
+            </div>
+            <div class="offset-5 buttomSair font-maior styleFont2">
+                <span onclick="voltar()"> Voltar </span>
             </div>
         </div>
 </script>

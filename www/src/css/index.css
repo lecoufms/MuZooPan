@@ -154,8 +154,8 @@ p{
     color: var(--corFonteQuizR); 
 }
 
-.nomeTit{
-    /*font-size: 2em;*/
+.ouvirSom{
+    color: var(--corFonteTitulo);
 }
 
 .texto{
@@ -575,10 +575,13 @@ span.player-pause{
     top: 50%;
     bottom: 50%;
     opacity: 1;
+    -webkit-text-stroke-width: 0.5px; /* largura da borda */
+    -webkit-text-stroke-color: #000;
 }
 .carousel-ite.video.active ~ .carousel-control-next, .carousel-ite.video.active ~ .carousel-control-prev{
     opacity: 0;
 }
 .carousel-control-prev-icon, .carousel-control-next-icon{
     background-image: none !important;
+    color: #fff;
 }
