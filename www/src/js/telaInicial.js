@@ -36,7 +36,7 @@ class TelaInicial{
 	}
 
 	changePrepare(text, isApp){
-    	(async function factory(text) {
+    	(function factory(text) {
         	console.log(text);
         	let path= window.location.href
         	if (text) {
@@ -46,8 +46,7 @@ class TelaInicial{
 	                app.gerente();
 	            }else if(text=="quiz"){
 	            	window.localStorage.setItem("config", "quiz");
-	            	await TelaQuiz.prototype.confirmaQuiz()
-	                app.gerente();
+	            	app.gerente();
 	            }else{
 	                window.localStorage.setItem("config", "obj");
 	                app.gerente();

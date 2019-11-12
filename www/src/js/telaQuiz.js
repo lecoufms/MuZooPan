@@ -34,9 +34,7 @@ class TelaQuiz{
 		}
 	}
 	
-	updateElementInTela(){
-		console.log("UpdateElementInTela")
-    }
+	
 	async confirmaQuiz(){
 		this.getLocalStorageQuiz()
 		if (this.jdata) {
@@ -81,7 +79,7 @@ class TelaQuiz{
 	}
 
 	vaiRetornar() {
-	    if(this.preparaRetorno()){
+	    if(this.preparaRetorno(TelaQuiz.instancia)){
 	        this.setVariaveis();
 	        if (app.context[0].data == this.jdata.data && this.jdata.vou =="revisao") {
 	            this.vamosPreparaPPasseio("quiz","quiz", this.currentQuestion);
@@ -96,7 +94,8 @@ class TelaQuiz{
 	    }
 	}
 
-	preparaRetorno() {
+	preparaRetorno(instancia) {
+		console.log(instancia)
 		this.getLocalStorageQuiz()
 	    if(this.jdata){
 	        if (app.context[0].data === jdata.data) {
