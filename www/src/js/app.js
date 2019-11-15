@@ -1,3 +1,5 @@
+
+
 var app = {
     historico_sessao:[],
     context: {},
@@ -22,7 +24,6 @@ var app = {
         }
         app.changePage(context)
         app.defineTelaAtual()
-        console.log(app.telaAppAtual)
         app.callOnDeviceReadyTela()
         app.onMenu()
         app.getEstilo()

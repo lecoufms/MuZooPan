@@ -193,9 +193,9 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
+  "cordova-plugin-whitelist": "1.3.4",
   "cordova-plugin-android-volume": "0.0.12",
   "cordova-plugin-file": "6.0.2",
-  "cordova-plugin-whitelist": "1.3.4",
   "phonegap-plugin-barcodescanner": "8.1.0"
 };
 // BOTTOM OF METADATA
