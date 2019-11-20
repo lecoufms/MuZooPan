@@ -88,10 +88,10 @@ function ButtonPlayer(pause, play){
 
 function progressAnimal(audio, play, control){
 	valor = (audio.currentTime*100)/audio.duration;
-	valor2=100-valor;
+	valor2=valor;
 	if ($(play).css("display") == "none" && audio.currentTime >= 0) {
 		audio.play();
-		$(control).css("height", valor2+"%");
+		$(control).css("width", valor2+"%");
 	}else{
 		audio.pause();
 	}   
@@ -99,11 +99,12 @@ function progressAnimal(audio, play, control){
 
 function myEnd(play,pause, control){
 	ButtonPlayer(pause,play);
-	$(control).css("height", 100+"%");
+	$(control).css("width", 0+"px");
 }
 function seek(audio,e){
+	console.log(e)
 	valor = e.offsetY+1;
-	valor2 = (valor*100)/parseInt($(e.target).css('height'));
+	valor2 = (valor*100)/parseInt($(e.target).css('width'));
 	valor3=100-valor2;
 	valor4=(valor3*audio.duration)/100;
 	audio.currentTime=valor4;
@@ -112,7 +113,7 @@ function todos(e){
 	$( "span.player-play" ).each(function( index ) {
 	  $(this).css("display","inline-block");
 	  control=$(this).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
-	  $(control).css("height", 100+"%");
+	  $(control).css("width", 100+"%");
 	});
 	$( "audio.player" ).each(function( index ) {
 		a=$(this)[0];
