@@ -114,6 +114,29 @@
       {"menu": "Curiosidades", "text": "Estes animais são predadores topo de cadeia e se alimentam basicamente de peixes, mas podendo alimentar-se também de crustáceos, moluscos e aves. As lontras muitas vezes são confundidas com ariranhas, entretanto as lontras diferem por serem menores, não ficarem em bandos e com mancha uniforme na região ventral do pescoço.","textSound": "../files/sounds/text_song/curiosidades_lontra.mp3"}
     ],
     "3dModel":""
+  },
+  {
+    "key":"jaguatirica",
+    "name":"Jaguatirica",
+    "animalSound":"../files/sounds/animals/jaguatirica.wav",
+    "midia":{
+      "imgs":[
+          { "img":"../files/img/jaguatirica_1.jpg"}
+      ],
+      "videos":[
+        {
+          "video": "", "type": "video/mp4"
+        }
+
+      ]
+    },
+    "menus":[
+      {"menu": "Habitat",  "text":"Vivem grande parte do tempo na água, mas  respiram fora da água. São animais que vivem em casais ou sozinhos.","textSound": "../files/sounds/text_song/habitat_lontra.mp3"},
+      {"menu":"Reprodução", "text":"São animais que se reproduzem principalmente na época de seca, nascem até 5 filhotes por ninhada. Os filhotes nascem cegos e tem cuidados maternos por até três meses.","textSound": "../files/sounds/text_song/reproducao_lontra.mp3"},
+      {"menu": "Características", "text":"Nome científico:<em> Lontra longicaudis</em> ;<br>São mamíferos que podem atingir até 1,40m. Tem sua distribuição na América Central e região central da América do Sul, no Brasil tem ampla distribuição, mas sem registros na região de caatinga.","textSound": "../files/sounds/text_song/caracteristicas_lontra.mp3"},
+      {"menu": "Curiosidades", "text": "Estes animais são predadores topo de cadeia e se alimentam basicamente de peixes, mas podendo alimentar-se também de crustáceos, moluscos e aves. As lontras muitas vezes são confundidas com ariranhas, entretanto as lontras diferem por serem menores, não ficarem em bandos e com mancha uniforme na região ventral do pescoço.","textSound": "../files/sounds/text_song/curiosidades_lontra.mp3"}
+    ],
+    "3dModel":""
   }
 
 

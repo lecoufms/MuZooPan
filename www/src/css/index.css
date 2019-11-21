@@ -549,13 +549,13 @@ ex menu n
     }
     .player-timeline {
         max-height: 2vh;
-        height: 2vh;
+        height: 1vh;
         width: 100%;
         background: #999;
     }
     .player-timeline-control {
         width: 0px;
-        height: 2vh;
+        height: 1vh;
         background: #555;
     }
 span.player-pause{
