@@ -2,46 +2,11 @@
   "key":"quiz",
   "name":"quiz",
   "questions":[
-    {
-      "keyAnimal":"jaguatirica",
-      "nomeAnimal": "Jaguatirica",
-      "texto": "Sobre a jaguatirica podemos dizer que:",
-      "alternativas": [{"a": "São os maiores felinos das Américas."},{"b": "As fêmeas dão a luz geralmente a um único filhote."},{"c": "São animais que atacam o gado."},{"d": "São animais que vivem em grandes bandos."}],
-      "resposta": "b"
-    },
-    {
-      "keyAnimal":"jacareDoPantanal",
-      "nomeAnimal":"Jacaré do pantanal",
-      "texto": "O jacaré do pantanal tem seu tamanho médio entre:",
-      "alternativas": [{"a":"3 e 4 metros"},{"b":"2 a 2,5 metros"},{"c":"1 a 1,5 metros"},{"d":"5 a 6 metros"}],
-      "resposta":"b"
-    },
-    {
+     {
       "keyAnimal":"escorpiao",
       "nomeAnimal":"Escorpião",
       "texto": "O escorpião se alimenta de?",
       "alternativas": [{"a":"Insetos"},{"b":"Sangue humano"},{"c":"De aves e mamíferos"},{"d":"De vegetais"}],
-      "resposta":"a"
-    },
-    {
-      "keyAnimal":"piranha",
-      "nomeAnimal":"Piranha",
-      "texto": "Qual o principal alimento da Piranha?",
-      "alternativas": [{"a":"O boi"},{"b":"Pescadores"},{"c":"Peixes"},{"d":"Aves"}],
-      "resposta":"c"
-    },
-    {
-      "keyAnimal":"cascavel",
-      "nomeAnimal": "Cascavel",
-      "texto": "Em relação a sua reprodução, a cascavel (Crotalus durissus) é:",
-      "alternativas": [{"a": "Ovípara"},{"b": "Ovovípara"},{"c": "Vivípara"},{"d": "Ovulípara"}],
-      "resposta": "c"
-    }, 
-    {
-      "keyAnimal":"jacareDoPantanal",
-      "nomeAnimal":"Jacaré do pantanal",
-      "texto": "Qual destes animais tem a sua carne apreciada na culinária pantaneira?",
-      "alternativas": [{"a":"Jacaré do pantanal"},{"b":"Pescadores"},{"c":"Escorpião"},{"d":"Cascavel"}],
       "resposta":"a"
     },
     {
@@ -52,26 +17,48 @@
       "resposta":"c"
     },
     {
-      "keyAnimal":"piranha",
-      "nomeAnimal":"Piranha",
-      "texto": "A distribuição geográfica da piranha ocorre em qual America?",
-      "alternativas": [{"a":"América Central"},{"b":"América do Norte"},{"c":"América Continental"},{"d":"América do Sul"}],
-      "resposta":"d"
-    },
-    {
-      "keyAnimal":"cascavel",
-      "nomeAnimal": "Cascavel",
-      "texto": "A média de vida de uma cascavel oscila entre:",
-      "alternativas": [{"a": "5 a 7 anos"},{"b": "11 a 14 anos"},{"c": "9 a 11 anos"},{"d": "10 a 12 anos"}],
-      "resposta": "d"
-    },
-    {
       "keyAnimal":"lontra",
       "nomeAnimal": "Lontra",
       "texto": "Sobre a Lontra podemos dizer que:",
-      "alternativas": [{"a": "São animais aquáticos que respiram debaixo da água."},{"b": "São mamíferos que se alimentam principalmente de peixes."},{"c": "São mamíferos que se alimentam de vegetais aquáticos."},{"d": "São animais que se reproduzem por ovos."}],
+      "alternativas": [{"a": "São animais aquáticos que respiram debaixo da água"},{"b": "São mamíferos que se alimentam principalmente de peixes"},{"c": "São mamíferos que se alimentam de vegetais aquáticos"},{"d": "São animais que se reproduzem por ovos."}],
+      "resposta": "b"
+    },
+    {
+      "keyAnimal":"raia",
+      "nomeAnimal": "Raias",
+      "texto": "Sobre as raias podemos dizer que:",
+      "alternativas": [{"a": "São peixes com esqueleto ósseo"},{"b": "São animais que se reproduzem por ovos"},{"c": "São animais que  vivem em fundos de rios, represas e lagoas marginais"},{"d": "A raias usam seu ferrão para caçar outros animais"}],
+      "resposta": "c"
+    },
+    {
+      "keyAnimal":"barataDagua",
+      "nomeAnimal": "Barata-d'água ou baratão de Corumbá",
+      "texto": "Sobre a Barata-d'agua  podemos dizer:",
+      "alternativas": [{"a": "São percevejos e não baratas"},{"b": "Invadem as casas a procura de alimento"},{"c": "São animais que se alimentam de vegetais aquáticos"},{"d": "Injetam a peçonha pelas pernas dianteiras"}],
+      "resposta": "a"
+    },
+      {
+      "keyAnimal":"carao",
+      "nomeAnimal": "Carão",
+      "texto": "Sobre o carão podemos dizer que:",
+      "alternativas": [{"a": "São aves de pequeno porte, chegando a 7cm"},{"b": "São aves que vivem em campos secos"},{"c": "Nidificam em árvores"},{"d": "Se alimentam de caramujos e pequenos répteis."}],
       "resposta": "d"
-    }    
+    },
+    {
+      "keyAnimal":"jaguatirica",
+      "nomeAnimal": "Jaguatirica",
+      "texto": "Sobre a jaguatirica podemos dizer que:",
+      "alternativas": [{"a": "São os maiores felinos das Américas"},{"b": "As fêmeas dão a luz geralmente a um único filhote."},{"c": "São animais que atacam o gado."},{"d": "São animais que vivem em grandes bandos."}],
+      "resposta": "b"
+    },
+  
+    {
+      "keyAnimal":"tamandua",
+      "nomeAnimal": "Tamanduá-mirim ou Tamanduá de colete",
+      "texto": "Sobre o tamanduá podemos diquer que:",
+      "alternativas": [{"a": "Alimentam-se de folhas de árvores"},{"b": "São animais que vivem em bandos"},{"c": "São animais arborícolas"},{"d": "Possuem dentes para abrir os ninhos de cupins"}],
+      "resposta": "c"
+    }
   ],
   "data":"27-08-2019 08:37:48"
 }]
