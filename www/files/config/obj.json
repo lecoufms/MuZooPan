@@ -86,7 +86,7 @@
     "menus":[
       {"menu": "Habitat",  "text":"Vivem nas margens de rios, represas e lagoas próximos à plantas aquáticas. São insetos aquáticos mas que respiram ar atmosférico.","textSound": "../files/sounds/text_song/habitat_barataDaAgua.mp3"},
       {"menu":"Reprodução", "text":"São ovíparos. Os ovos são depositados na vegetação localizada na beira dos corpos de água e podem ser protegidos por um adulto. As ninfas jovens eclodem cerca de duas semanas depois de postos os ovos.","textSound": "../files/sounds/text_song/reproducao_barataDaAgua.mp3"},
-      {"menu": "Características", "text":"Nome científico:<em>Lethocerus americanus;</em>São insetos Hemípteros (percevejos e não baratas) que podem ter até 10 cm de comprimento. Possuem pernas traseiras especializadas em nado e as dianteiras modificadas para capturar presas. São vorazes predadores e se alimentam de outros insetos, de pequenos peixes, girinos, pequenas tartarugas, etc. Possuem peçonha que injetam na presa com seu aparelho bucal. Mas geralmente são inofensivos aos seres humanos.","textSound": "../files/sounds/text_song/caracteristicas_barataDaAgua.mp3"},
+      {"menu": "Características", "text":"*Nome científico:<em>Lethocerus americanus;</em>São insetos Hemípteros (percevejos e não baratas) que podem ter até 10 cm de comprimento. Possuem pernas traseiras especializadas em nado e as dianteiras modificadas para capturar presas. São vorazes predadores e se alimentam de outros insetos, de pequenos peixes, girinos, pequenas tartarugas, etc. Possuem peçonha que injetam na presa com seu aparelho bucal. Mas geralmente são inofensivos aos seres humanos.","textSound": "../files/sounds/text_song/caracteristicas_barataDaAgua.mp3"},
       {"menu": "Curiosidades", "text": "Em épocas muito quentes estes animais podem migrar de um ambiente para outro, sempre a noite. Nestes voos noturnos são atraídos pela luz elétrica, onde acabam invadindo casas próximos aos rios e lagos.","textSound": "../files/sounds/text_song/curiosidades_barataDaAgua.mp3"}
     ],
     "3dModel":""
@@ -134,15 +134,6 @@
       {"menu":"Reprodução", "text":"Dão a luz geralmente a um único filhote por gestação que dura cerca de 140 dias em média.","textSound": "../files/sounds/text_song/reproducao_tamandua.mp3"},
       {"menu": "Características", "text":"Nome científico:<em>Tamandua tetradactyla;</em>São mamíferos que se alimentam de formigas e cupins. Tem em média 50 a 80 cm onde o macho é um pouco maior que a fêmea. São animais solitários e arborícolas (vivem preferencialmente nas árvores) e sua atividade é geralmente durante o dia.","textSound": "../files/sounds/text_song/caracteristicas_tamandua.mp3"},
       {"menu": "Curiosidades", "text": "Os tamanduás são animais que não possuem dentes e tem uma grande língua que pode chegar a 40 cm. Possuem garras especializadas para abrir buracos em ninhos de formigas e cupins. Podem se alimentar de milhares de formigas ou cupins por dia. Estes animais são predados pela onça-pintada, onça-parda e jaguatirica.","textSound": "../files/sounds/text_song/curiosidades_tamandua.mp3"}
-    ],
-    "3dModel":""
-  },
-  {
-    "menus":[
-      {"menu": "Habitat",  "text":" ","textSound": "../files/sounds/text_song/habitat_.mp3"},
-      {"menu":"Reprodução", "text":" ","textSound": "../files/sounds/text_song/reproducao_.mp3"},
-      {"menu": "Características", "text":"Nome científico:<em> ;</em> ","textSound": "../files/sounds/text_song/caracteristicas_.mp3"},
-      {"menu": "Curiosidades", "text": " ","textSound": "../files/sounds/text_song/curiosidades_.mp3"}
     ],
     "3dModel":""
   },

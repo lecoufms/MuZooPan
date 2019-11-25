@@ -10,13 +10,6 @@
       "resposta":"a"
     },
     {
-      "keyAnimal":"escorpiao",
-      "nomeAnimal":"Escorpião",
-      "texto": "Qual é a época de reprodução do escorpião?",
-      "alternativas": [{"a":"Janeiro a março"},{"b":"Setembro a fevereiro"},{"c":"Durante todo o ano"},{"d":"Abril a agosto"}],
-      "resposta":"c"
-    },
-    {
       "keyAnimal":"lontra",
       "nomeAnimal": "Lontra",
       "texto": "Sobre a Lontra podemos dizer que:",
