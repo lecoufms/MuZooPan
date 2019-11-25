@@ -20,7 +20,7 @@ var app = {
 
         $('#mensagem').modal('show')
     },
-    gerente(){
+    async gerente(){
         let context
         if (window.localStorage.getItem("config") && window.localStorage.getItem("config") != "inicial") {
             // context =  app.getFileRead(app.dirEntry, window.localStorage.getItem("config")+".json", app.readFile)
@@ -31,7 +31,7 @@ var app = {
         }
         console.log(app.telaAppAtual.info)
         app.changePage(app.telaAppAtual.info)
-        app.defineTelaAtual()
+        await app.defineTelaAtual()
         app.callOnDeviceReadyTela()
         app.onMenu()
         app.getEstilo()
@@ -67,8 +67,8 @@ var app = {
         }
     },
     callUpdateElementInTela(){
-        if(app.telaAppAtual.tela.updateElementInTela){
-            app.telaAppAtual.tela.updateElementInTela()
+        if (app.telaAppAtual.tela.updateElementInTela) {
+            app.telaAppAtual.tela.updateElementInTela();
         }
     },
     async onDeviceReady() {
@@ -84,7 +84,7 @@ var app = {
         if (app.fileAtualizacao.status == "desatualizado") {
             app.setDados()
         }else{
-            File.prototype.getDir("fill/config", true, function(dirEntry){}, File.prototype.fail)
+            File.prototype.getDir("fill/config", true, function(dirEntry){return app.closeModalAtualizacao()}, File.prototype.fail)
         }
     },
     setDirEntry(dirEntry){
@@ -217,23 +217,17 @@ var app = {
         minimo=10;
         maximo=app.setMaximo();
         tamanho=window.localStorage.getItem("fonte");
-        console.log("tamanho")
         if (tamanho >= minimo && tamanho <= maximo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
             document.getElementById('fonte').value= tamanho;
-            // app.callUpdateElementInTela()
         }else if (tamanho < minimo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', minimo);
             document.getElementById('fonte').value= minimo;
-            // app.callUpdateElementInTela()
         }else if (tamanho > maximo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', maximo);  
             document.getElementById('fonte').value= maximo; 
-            // app.callUpdateElementInTela()
         }
-        if (app.telaAppAtual.tela.onDeviceReady) {
-            app.telaAppAtual.tela.onDeviceReady();
-        }
+        app.callUpdateElementInTela()
         window.localStorage.setItem("fonte", document.getElementById('fonte').value);
     },
     setMaximo(){
@@ -373,6 +367,7 @@ var app = {
             app.exit();
         }
         TelaInicial.camera=true;
+        app.telaAppAtual={}
 
     },
     receivedEvent(id) {

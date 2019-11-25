@@ -28,8 +28,8 @@ class TelaAnimal{
 		return (this.keysVisitaGuiada.indexOf(window.localStorage.getItem("qrcodeInput")) == -1)
 	}
 
-	async updateElementInTela(){
-		await TelaAnimal.prototype.gerenciaNavMenu();
+	updateElementInTela(){
+		TelaAnimal.prototype.gerenciaNavMenu();
 		console.log("gerenciaNavMenu")
     }
     
@@ -44,6 +44,7 @@ class TelaAnimal{
 	gerenciaNavMenu(){
 	   	var widthFilhos=0;
 	   	$("#NavMenu").children().each(function(){
+	   		console.log("entrei widthFilhos")
 	   		$(this).children().removeClass("col");
 	   		$(this).children().addClass("p-0");
 	   		widthFilhos=widthFilhos+parseInt($(this).children().css("width"));
@@ -52,26 +53,31 @@ class TelaAnimal{
 	   	});
 
 	   	var n = parseInt($("#NavMenu").css("height"))/ (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top")));
+	   	console.log("fiz n")
 	   	console.log(widthFilhos)
 	   	console.log(n)
 	   	// parseInt(n) != $("#NavMenu").children().length ||
-	   	if (n != 1) {
+	   	if (parseInt(n) != $("#NavMenu").children().length || n != 1) {
+	   		console.log("entrei n ~1")
 	   		console.log(n)
 	   		console.log(n != 0)
-	   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
+	   		if (parseInt($("#NavMenu").css("height")) >= (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
+	   	   		console.log("entrei if 1")
 	   	   		$("#NavMenu").attr("class", "nav flex-column nav-justified m-2");
 	   	   		console.log("nav flex-column nav-justified m-2")
 		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified m-2"){
+		   		console.log("entrei else if ")
 		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified m-1");	
 		   		console.log("nav nav-pills nav-justified m-1")
 		   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
+			   		console.log("entrei if 2")
 			   		$("#NavMenu").attr("class", "nav flex-column nav-justified m-2");
 			   		console.log("nav flex-column nav-justified m-2")
 			   	}
 		   	}
 	   	}
 	   	console.log(parseInt($("#NavMenu").css("height")))
-	    console.log((parseInt($("#NavMenu").children().css("height"))))
+	    console.log((parseInt($("#NavMenu").children().css("height")))+(parseInt($("#NavMenu").children().css("margin-top"))))
 	   	console.log(parseInt($("#NavMenu").children().css("margin-top")))
 	}
 
