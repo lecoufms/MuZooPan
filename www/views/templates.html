@@ -134,26 +134,25 @@
             </div>
 
 
-        <div class="container">
-          <div class="row justify-content-start">
-            <div class="col-1 p-0 ml-4">
-              {{#if animalSound}}
+        <div class="container p-0">
+          <div class="row justify-content-start pl-1">
+            {{#if animalSound}}
+                <div class="col-1 p-0 ml-4">
                     <div class="icon">
                      <audio id="playIcon" src={{animalSound}}>
                         </audio>
                          <span id= "" class="iconsom offset-10 ml-0 glyphicon glyphicon-volume-up" aria-hidden="true" onclick="document.getElementById('playIcon').play()">
                         </span>
                     </div>
-                {{/if}}
-            </div>
-            <div class="col-5 p-0 pt-1 ml-1">
-                {{#if animalSound}}
-                <p class="m-0 styleFont1 styleFont2 ouvirSom">Ouvir o animal</p>
-                {{/if}}
-            </div>
+                </div>
+                <div class="col-5 p-0 pt-1 ml-1">
+                    <span class="m-0 styleFont1 ouvirSom" onclick="document.getElementById('playIcon').play()">Ouvir o animal</span>
+                </div>
+            {{/if}}
           </div>
 
-            <div id="myContainerFluidAnimal" class="container-fluid">
+    
+        <div id="myContainerFluidAnimal" class="container-fluid">
                 <ul id ="NavMenu"class="nav nav-pills nav-justified m-1">
                     {{#each menus}}
                         <li class="styleFont1 nav-item mt-1 ml-1 mr-1">
@@ -162,45 +161,39 @@
                         </li>
                     {{/each}}
                 </ul>
-                <div id="NavCorpo" class="tab-content">
+               <div id="NavCorpo" class="tab-content pl-1 pr-1">
                     {{#each menus}}
                         {{#js_if "@index"}} 
                             <div id={{js "'menu'+@index"}} class="tab-pane fade">
                         {{else}}
                             <div id={{js "'menu'+@index"}} class="tab-pane fade in active">
                         {{/js_if}}
-                                <div class="row p-0 m-0 p-1">
-                                    <p id="textEs" class="col ml-2 p-0">{{text}}</p>
+                                <div class="col p-0">
                                     {{#if textSound}}
-                                        <div class="col-1 m-0 p-0">
-                                            <div class="row m-0 p-0"> 
-                                                <div class="player-controls col-8 mx-auto  p-0 m-0">
+                                            <div id="fundoPlayer" class="row ml-2 mr-2 mb-2"> 
+                                                <div class="player-controls col-0 mb-1 ml-1">
                                                     <span id={{js "'play_menu'+@index"}} class="icon player-play glyphicon glyphicon-play m-0 p-0"></span>
                                                     <span id={{js "'pause_menu'+@index"}} class="icon player-pause glyphicon glyphicon-pause m-0 p-0"></span>
                                                     <audio class="player m-0 p-0"  src={{textSound}} type="audio/mpeg"></audio>
                                                 </div>
-
-                                                <div class="col-12 progressAu p-2">
-
-                                                    <div id={{js "'player-timeline_menu'+@index"}} class="mx-auto player-timeline">
+                                                <div class="col-11 progressAu p-2">
+                                                    <div id={{js "'player-timeline_menu'+@index"}} class="player-timeline">
                                                         <div id={{js "'player-timeline-control_menu'+@index"}}
-                                                        class="player-timeline-control">
-
-
-                                                    </div>
+                                                        class="player-timeline-control"></div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                     {{/if}}
+                                    <p id="textEs" class="row p-0 ml-2 mr-2">{{text}}</p>
                                 </div>
                           
                             </div>
                     {{/each}}
                 </div>
             </div>
+
             <div class="offset-5 buttomSair font-maior styleFont2">
-                <span onclick="voltar()"> Voltar </span>
+                <span onclick="anterior()"> Voltar </span>
             </div>
         </div>
 </script>

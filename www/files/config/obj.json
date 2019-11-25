@@ -1,27 +1,4 @@
 [
-    {
-    "key":"jacareDoPantanal",
-    "name":"Jacaré do pantanal",
-    "animalSound":"",
-    "midia":{
-      "imgs":[
-          { "img":"../files/img/jacareDoPantanal_1.jpg"}
-      ],
-      "videos":[
-        {
-          "video": "../files/videos/jacareDoPantanal_1.mp4", "type": "video/mp4"
-        }
-
-      ]
-    },
-    "menus":[
-      {"menu": "Habitat",  "text":"O chamado jacaré do Pantanal tem sua distribuição abrangendo a região centro oeste do Brasil, onde se localiza o pantanal. Estes animais vivem em rios, lagos e represas.","textSound": "../files/sounds/text_song/habitat_jacare.mp3"},
-      {"menu":"Reprodução", "text":"São animais ovíparos, as fêmeas botam os ovos em ninho, entre 20 a 30 ovos em média e a fêmea cuida dos ovos. A época de reprodução é no verão, quente e chuvoso.","textSound": "../files/sounds/text_song/reproducao_jacare.mp3"},
-      {"menu": "Características", "text":"Nome científico:Caiman yacare;<br>Estes animais são répteis e podem chegar a 3 metros de comprimento, mas a média fica entre 2 e 2,5 metros. São animais chamados heterotérmicos, com temperatura do corpo variável. Vivem em bandos que pode conter centenas de animais.","textSound": "../files/sounds/text_song/caracteristicas_jacare.mp3"},
-      {"menu": "Curiosidades", "text": "Se alimentam principalmente de peixes, mas podendo alimentar-se de aves, mamíferos e até invertebrados.  Tem como predadores a onça e a jiboia. <br>Sua carne é apreciada na culinária pantaneira, e atualmente existem criadores destes animais que vendem sua carne e pele.","textSound": "../files/sounds/text_song/curiosidades_jacare.mp3"}
-    ],
-    "3dModel":""
-  },
   {
     "key":"escorpiao",
     "name":"Escorpião",
@@ -46,36 +23,12 @@
     "3dModel":""
   },
   {
-    "key" : "cascavel",
-    "name" : "Cascavel",
-    "animalSound" : "../files/sounds/animals/cascavel.wav",
-    "midia" : {
-      "imgs" : [
-          { "img" : "../files/img/cascavel_1.jpg" },
-          { "img" : "../files/img/cascavel_2.jpg" },
-          { "img" : "../files/img/cascavel_3.jpg" }
-      ],
-      "videos" : [
-        {
-          "video" : "../files/videos/cascavel_1.mp4" , "type" : "video/mp4"
-        }
-      ]
-    },
-    "menus":[
-      {"menu": "Habitat",  "text":"A cascavel é uma serpente que apresenta uma distribuição geográfica que está restrita a América do Sul (da Colômbia até uma região da Argentina). A maioria das cascavéis é típica de regiões secas, vivendo em campos abertos e regiões pedregosas.","textSound": "../files/sounds/text_song/habitat_cascavel.mp3"},
-      {"menu":"Reprodução", "text":"Sua reprodução é vivípara, ou seja, são animais cujo embrião se desenvolve dentro do útero materno. A nutrição do embrião (e depois do feto) é realizada na placenta materna. O período de reprodução da cascavel ocorre de novembro à fevereiro, podendo nascer de 16 a 24 filhotes.","textSound": "../files/sounds/text_song/reproducao_cascavel.mp3"},
-      {"menu": "Características", "text":"Reino: Animalia; Filo: Chordados; Classe: Reptilia; Ordem: Squamata; Família:  Viperidae; Subfamília: Crotalinae; Gênero: Crotalus; Espécies: Crotalus durissus;\nA média de vida de uma cascavel oscila entre 10 a 12 anos e pode atingir aproximadamente 1,80 metros de comprimento. Possui uma coloração pardo-escura, com manchas em forma de losango no dorso, alternadas com outras laterais e o ventre apresenta uma cor mais clara. A pele da cascavel ajuda em sua camuflagem, com os tons terrosos que apresentam, são capazes de se assemelhar ao local que habitam, assim confundindo suas presas e predadores. Sua alimentação geralmente envolve pequenos roedores e lagartos.","textSound": "../files/sounds/text_song/caracteristicas_cascavel.mp3"},
-      {"menu": "Curiosidades", "text": "A cascavel apresenta um chocalho no final de sua cauda onde muitas pessoas acham que cada anel apresenta um ano de sua vida. Na verdade esses anéis não representam sua idade e sim o número de vezes que esta serpente troca de pele. Em média ela muda de pele 2 a 4 vezes ao ano, a cada troca é acrescentado um novo anel ao chocalho. Quando a cobra fica irritada, os faz vibrar fazendo um som de chocalho.","textSound": "../files/sounds/text_song/curiosidades_cascavel.mp3"}
-    ],
-    "3dModel" : ""
-  },
-  {
-    "key":"piranha",
-    "name":"Piranha; Piranha vermelha",
+    "key":"lontra",
+    "name":"Lontra",
     "animalSound":"",
     "midia":{
       "imgs":[
-          { "img":"../files/img/piranha_1.jpg"}
+          { "img":"../files/img/lontra_1.jpg"}
       ],
       "videos":[
         {
@@ -85,11 +38,136 @@
       ]
     },
     "menus":[
-      {"menu": "Habitat",  "text":"A piranha vive em ambientes de água doce, rios, lagos, represas da América do Sul.","textSound": "../files/sounds/text_song/habitat_piranha.mp3"},
-      {"menu":"Reprodução", "text":"A reprodução ocorre no início do período de chuvas. A reprodução é externa.","textSound": "../files/sounds/text_song/reproducao_piranha.mp3"},
-      {"menu": "Características", "text":"Nome científico: Pygocentrus nattererio;<br>São peixes com tamanho variando entre 18 a 45 cm, de coloração amarelo-avermelhada e corpo achatado lateralmente e ovalado recoberto por escamas. Tem mandíbulas fortes e dentes pequenos, são predadores, alimentando-se de peixes perincipalmente, entretanto pode se alimentar de outros animais como pequenos pássaros e mamíferos.","textSound": "../files/sounds/text_song/caracteristicas_piranha.mp3"},
-      {"menu": "Curiosidades", "text": "Por ser um peixe muito comum nas águas do Pantanal acaba provocando muitos acidentes com pescadores, que ao manusear o animal acabam sendo mordidos. São animais que vivem em cardumes, que podem conter de dezenas a centenas de peixes. São animais apreciados na culinária pantaneira.","textSound": "../files/sounds/text_song/curiosidades_piranha.mp3"}
+      {"menu": "Habitat",  "text":"Vivem grande parte do tempo na água, mas respiram fora da água. São animais que vivem em casais ou sozinhos.","textSound": "../files/sounds/text_song/habitat_lontra.mp3"},
+      {"menu":"Reprodução", "text":"São animais que se reproduzem principalmente na época de seca, nascem até 5 filhotes por ninhada. Os filhotes nascem cegos e tem cuidados maternos por até três meses.","textSound": "../files/sounds/text_song/reproducao_lontra.mp3"},
+      {"menu": "Características", "text":"Nome científico:<em> Lontra longicaudis;</em>São mamíferos que podem atingir até 1,40m. Tem sua distribuição na América Central e região central da América do Sul, no Brasil tem ampla distribuição, mas sem registros na região de caatinga.","textSound": "../files/sounds/text_song/caracteristicas_lontra.mp3"},
+      {"menu": "Curiosidades", "text": "Estes animais são predadores topo de cadeia e se alimentam basicamente de peixes, mas podendo alimentar-se também de crustáceos, moluscos e aves. As lontras muitas vezes são confundidas com ariranhas, entretanto as lontras diferem por serem menores, não ficarem em bandos e com mancha uniforme na região ventral do pescoço.","textSound": "../files/sounds/text_song/curiosidades_lontra.mp3"}
+    ],
+    "3dModel":""
+  },
+    {
+    "key":"raia",
+    "name":"Raia de água doce",
+    "animalSound":"",
+    "midia":{
+      "imgs":[
+          { "img":"../files/img/raia_1.jpg"}
+      ],
+      "videos":[
+        {
+          "video": "", "type": "video/mp4"
+        }
+
+      ]
+    },
+    "menus":[
+      {"menu": "Habitat",  "text":"São animais que vivem no fundo das margens de rios, represas e lagoas marginais. Sua distribuição geográfica atinge todas as grandes bacias hidrográficas do Brasil.","textSound": "../files/sounds/text_song/habitat_raia.mp3"},
+      {"menu":"Reprodução", "text":"Se reproduzem o ano todo e são vivíparos, as fêmeas parem entre um a três filhotes por gestação.","textSound": "../files/sounds/text_song/reproducao_raia.mp3"},
+      {"menu": "Características", "text":"Nome científico:<em>Potamotrygon sp;</em>São peixes cartilaginosos, como o tubarão. Tem corpo discoide e região caudal afilada. Possuem boca ventral e podem chegar até 90 cm de comprimento.","textSound": "../files/sounds/text_song/caracteristicas_raia.mp3"},
+      {"menu": "Curiosidades", "text": "São animais carnívoros, alimentam-se de peixes, crustáceos, insetos e moluscos.   Estes possuem um ferrão venenoso na sua cauda que funciona como proteção contra predadores, e causa acidentes em banhista e pescadores.","textSound": "../files/sounds/text_song/curiosidades_raia.mp3"}
+    ],
+    "3dModel":""
+  },
+    {
+    "key":"barataDagua",
+    "name":"Barata-d'água ou baratão de Corumbá",
+    "animalSound":"",
+    "midia":{
+      "imgs":[
+          { "img":"../files/img/barataDaAgua_1.jpg"}
+      ],
+      "videos":[
+        {
+          "video": "", "type": "video/mp4"
+        }
+
+      ]
+    },
+    "menus":[
+      {"menu": "Habitat",  "text":"Vivem nas margens de rios, represas e lagoas próximos à plantas aquáticas. São insetos aquáticos mas que respiram ar atmosférico.","textSound": "../files/sounds/text_song/habitat_barataDaAgua.mp3"},
+      {"menu":"Reprodução", "text":"São ovíparos. Os ovos são depositados na vegetação localizada na beira dos corpos de água e podem ser protegidos por um adulto. As ninfas jovens eclodem cerca de duas semanas depois de postos os ovos.","textSound": "../files/sounds/text_song/reproducao_barataDaAgua.mp3"},
+      {"menu": "Características", "text":"Nome científico:<em>Lethocerus americanus;</em>São insetos Hemípteros (percevejos e não baratas) que podem ter até 10 cm de comprimento. Possuem pernas traseiras especializadas em nado e as dianteiras modificadas para capturar presas. São vorazes predadores e se alimentam de outros insetos, de pequenos peixes, girinos, pequenas tartarugas, etc. Possuem peçonha que injetam na presa com seu aparelho bucal. Mas geralmente são inofensivos aos seres humanos.","textSound": "../files/sounds/text_song/caracteristicas_barataDaAgua.mp3"},
+      {"menu": "Curiosidades", "text": "Em épocas muito quentes estes animais podem migrar de um ambiente para outro, sempre a noite. Nestes voos noturnos são atraídos pela luz elétrica, onde acabam invadindo casas próximos aos rios e lagos.","textSound": "../files/sounds/text_song/curiosidades_barataDaAgua.mp3"}
+    ],
+    "3dModel":""
+  },
+  {
+    "key":"carao",
+    "name":"Carão",
+    "animalSound":"",
+    "midia":{
+      "imgs":[
+          { "img":"../files/img/carao_1.jpg"}
+      ],
+      "videos":[
+        {
+          "video": "", "type": "video/mp4"
+        }
+
+      ]
+    },
+    "menus":[
+      {"menu": "Habitat",  "text":"São aves que vivem próximos a rios, lagoas, represas na região marginal e campos inundados.","textSound": "../files/sounds/text_song/habitat_carao.mp3"},
+      {"menu":"Reprodução", "text":"São aves que fazem seus ninhos no chão entre a vegetação inundada, e e colocam de 3 a seis ovos. Não há diferença externa entre machos e fêmeas.","textSound": "../files/sounds/text_song/reproducao_carao.mp3"},
+      {"menu": "Características", "text":"Nome científico:<em>Aramus guarauna;</em>São aves com coloração pardo escuro e com tamanho de até 70 cm. Possuem pernas longas adaptadas para ambientes inundados.","textSound": "../files/sounds/text_song/caracteristicas_carao.mp3"},
+      {"menu": "Curiosidades", "text": "O carão se alimenta de caramujos aquáticos e pequenos répteis.","textSound": "../files/sounds/text_song/curiosidades_carao.mp3"}
+    ],
+    "3dModel":""
+  },
+  {
+    "key":"tamandua",
+    "name":"Tamanduá-mirim ou Tamanduá de colete",
+    "animalSound":"",
+    "midia":{
+      "imgs":[
+          { "img":"../files/img/tamandua_1.jpg"}
+      ],
+      "videos":[
+        {
+          "video": "", "type": "video/mp4"
+        }
+
+      ]
+    },
+    "menus":[
+      {"menu": "Habitat",  "text":"São animais que vivem em matas fechadas e também em matas abertas como o cerrado. Sua distribuição geográfica esta restrita a América do Sul, estando presente em todo território brasileiro.","textSound": "../files/sounds/text_song/habitat_tamandua.mp3"},
+      {"menu":"Reprodução", "text":"Dão a luz geralmente a um único filhote por gestação que dura cerca de 140 dias em média.","textSound": "../files/sounds/text_song/reproducao_tamandua.mp3"},
+      {"menu": "Características", "text":"Nome científico:<em>Tamandua tetradactyla;</em>São mamíferos que se alimentam de formigas e cupins. Tem em média 50 a 80 cm onde o macho é um pouco maior que a fêmea. São animais solitários e arborícolas (vivem preferencialmente nas árvores) e sua atividade é geralmente durante o dia.","textSound": "../files/sounds/text_song/caracteristicas_tamandua.mp3"},
+      {"menu": "Curiosidades", "text": "Os tamanduás são animais que não possuem dentes e tem uma grande língua que pode chegar a 40 cm. Possuem garras especializadas para abrir buracos em ninhos de formigas e cupins. Podem se alimentar de milhares de formigas ou cupins por dia. Estes animais são predados pela onça-pintada, onça-parda e jaguatirica.","textSound": "../files/sounds/text_song/curiosidades_tamandua.mp3"}
+    ],
+    "3dModel":""
+  },
+  {
+    "menus":[
+      {"menu": "Habitat",  "text":" ","textSound": "../files/sounds/text_song/habitat_.mp3"},
+      {"menu":"Reprodução", "text":" ","textSound": "../files/sounds/text_song/reproducao_.mp3"},
+      {"menu": "Características", "text":"Nome científico:<em> ;</em> ","textSound": "../files/sounds/text_song/caracteristicas_.mp3"},
+      {"menu": "Curiosidades", "text": " ","textSound": "../files/sounds/text_song/curiosidades_.mp3"}
+    ],
+    "3dModel":""
+  },
+  {
+    "key":"jaguatirica",
+    "name":"Jaguatirica",
+    "animalSound":"../files/sounds/animals/jaguatirica.wav",
+    "midia":{
+      "imgs":[
+          { "img":"../files/img/jaguatirica_1.jpg"}
+      ],
+      "videos":[
+        {
+          "video": "", "type": "video/mp4"
+        }
+
+      ]
+    },
+    "menus":[
+      {"menu": "Habitat",  "text":"Ocorre em toda a América, principalmente nas Américas central e do sul. E habita florestas tropicais e subtropicais e matas periodicamente alagadas do Pantanal.","textSound": "../files/sounds/text_song/habitat_jaguatirica.mp3"},
+      {"menu":"Reprodução", "text":"São mamíferos que podem se reproduzir ao longo de todo ano em regiões tropicais. A fêmea da a luz geralmente a um único filhote (raramente 2, 3 ou quatro), a gestação é em torno de 80 dias. O filhote é amamentado de 3 a 9 meses e fica sob os cuidados da mãe por até dois anos e meio.","textSound": "../files/sounds/text_song/reproducao_jaguatirica.mp3"},
+      {"menu": "Características", "text":"Nome científico:<em>Leopardus pardalis;</em>É um felídeo que mede entre 72 e 100 cm de comprimento, com a cauda tendo cerca de 25 a 41 cm de comprimento . Os machos pesam entre 7 e 15 kg, sendo pouco maiores que as fêmeas, que pesam entre 6,5 e 11 kg. É o terceiro maior felídeo neotropical, sendo menor apenas que a onça-pintada e a onça-parda.","textSound": "../files/sounds/text_song/caracteristicas_jaguatirica.mp3"},
+      {"menu": "Curiosidades", "text": "São animais solitários, que podem viver até 20 anos. São predadores e se alimentam principalmente de mamíferos como a paca e a cutia. Não oferece perigo ao ser humano por ser um animal de porte relativamente pequeno, algumas vezes estes animais causam prejuízos a fazendeiros quando atacam galinheiros abertos.","textSound": "../files/sounds/text_song/curiosidades_jaguatirica.mp3"}
     ],
     "3dModel":""
   }
+
 ]
