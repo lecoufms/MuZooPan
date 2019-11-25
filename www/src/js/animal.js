@@ -112,7 +112,7 @@ function todos(e){
 	$( "span.player-play" ).each(function( index ) {
 	  $(this).css("display","inline-block");
 	  control=$(this).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
-	  $(control).css("width", 0+" px");
+	  $(control).css("width", 0+"px");
 	});
 	$( "audio.player" ).each(function( index ) {
 		a=$(this)[0];
