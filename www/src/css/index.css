@@ -550,7 +550,7 @@ ex menu n
     .player-timeline {
         max-height: 2vh;
         height: 1vh;
-        width: 100%;
+        width: 83vw;
         background: #999;
     }
     .player-timeline-control {
