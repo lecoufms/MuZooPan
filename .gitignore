@@ -2,5 +2,6 @@
 /.idea/
 platforms/
 platforms/*
+./platforms/*
 node_modules
 node_modules/*
