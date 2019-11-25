@@ -3,16 +3,21 @@ module.exports = {
  	le_experiment :function() {
 	    var resposta;
 
-	    var fs = require('fs'),
-	    path = require('path'),
-	    dir = '../files/config',
+	    const path = require('path'),
+	    dir = path.join( __dirname, '../../files/config' ),
 	    dirFilePath = path.join( dir, 'obj.json' );
 	    // filePath = path.join(__dirname+'/json', 'experiment.json' );
-	    console.log(__dirname);
+
+	    const fs = require('fs');
+	    
+	    console.log(fs);
 	    try {
-	    	if (!fs.existsSync(dir)){
-			    fs.mkdirSync(dir);
-			}
+		    fs.access(dirFilePath, error => {
+			    if (error) {
+			        fs.mkdirSync(dirFilePath);
+			    }
+			});
+	    	
 	      	var fsResposta = fs.readFileSync(dirFilePath)
 	     	var resposta = JSON.parse(fsResposta);
 	    } catch (error) {

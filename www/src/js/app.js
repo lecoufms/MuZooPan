@@ -3,6 +3,12 @@
 var app = {
     historico_sessao:[],
     context: {},
+    error:false,
+    fileAtualizacao:{},
+    fileatualizado:[],
+    dirEntry:{},
+    dirRoot:{},
+    telaAppAtual:{},
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
@@ -17,12 +23,14 @@ var app = {
     gerente(){
         let context
         if (window.localStorage.getItem("config") && window.localStorage.getItem("config") != "inicial") {
-            context = File.readFile("files/config/"+window.localStorage.getItem("config")+".json") 
+            // context =  app.getFileRead(app.dirEntry, window.localStorage.getItem("config")+".json", app.readFile)
+             app.telaAppAtual.info =  File.readFile(app.dirEntry.toURL()+window.localStorage.getItem("config")+".json", File.prototype.selectContext)
         }else{
             window.localStorage.setItem("config", "inicial")
-            context = {"idtemplate": "inicial"};
+            app.telaAppAtual.info = {"idtemplate": "inicial"};
         }
-        app.changePage(context)
+        console.log(app.telaAppAtual.info)
+        app.changePage(app.telaAppAtual.info)
         app.defineTelaAtual()
         app.callOnDeviceReadyTela()
         app.onMenu()
@@ -33,7 +41,6 @@ var app = {
         })
     },
     changePage(ctxt){
-        console.log(ctxt)  
         let template = $("#"+ctxt.idtemplate).html();
         let compiledTemplate = Template7.compile(template);
         // ctxt= alterar(ctxt);
@@ -41,27 +48,27 @@ var app = {
         document.getElementById("visible").innerHTML=html;
     },
     callOnDeviceReadyTela(){
-        if (app.telaAppAtual.onDeviceReady) {
-            app.telaAppAtual.onDeviceReady();
+        if (app.telaAppAtual.tela.onDeviceReady) {
+            app.telaAppAtual.tela.onDeviceReady();
         }
     },
     defineTelaAtual(){
         if (window.localStorage.getItem("config") == 'app'){
-            // app.telaAppAtual = TelaSobre.prototype.getInstance()    
-            app.telaAppAtual={};
+            // app.telaAppAtual.tela = TelaSobre.prototype.getInstance()    
+            app.telaAppAtual.tela={};
         }else if(window.localStorage.getItem("config") == "quiz"){
-            app.telaAppAtual = TelaQuiz.prototype.getInstance()
+            app.telaAppAtual.tela = TelaQuiz.prototype.getInstance()
         }else if (window.localStorage.getItem("config") == "obj"){
-            app.telaAppAtual = TelaAnimal.prototype.getInstance() //procurar como encontrar um objeto dentro de um array 
+            app.telaAppAtual.tela = TelaAnimal.prototype.getInstance() //procurar como encontrar um objeto dentro de um array 
         }else if(window.localStorage.getItem("config") == 'error'){
-            app.telaAppAtual={};
+            app.telaAppAtual.tela={};
         }else{
-            app.telaAppAtual = TelaInicial.prototype.getInstance()
+            app.telaAppAtual.tela = TelaInicial.prototype.getInstance()
         }
     },
     callUpdateElementInTela(){
-        if(app.telaAppAtual.updateElementInTela){
-            app.telaAppAtual.updateElementInTela()
+        if(app.telaAppAtual.tela.updateElementInTela){
+            app.telaAppAtual.tela.updateElementInTela()
         }
     },
     async onDeviceReady() {
@@ -72,28 +79,51 @@ var app = {
     },
     async verificaDadosServidor(){
         let file = 'https://datamuzoopan.herokuapp.com/controller/controller.php?key='+window.localStorage.getItem("key")
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-            console.log('file system open: ' + JSON.stringify(fs));
-            // fs.root.getDirectory("file/config", { create: true}, function (dirEntry) {
-                // dirEntry.getFile(name, {create: true, exclusive: true}, function(fileEntry){
-                //     fileEntry.createWriter(async function(escrever){
-                //         escrever.onwrite = function(evt) {
-                //             console.log("write success");
-                //         };
-                //         let text = await app.getDadosServidor(file)
-                
-                //         escrever.write(JSON.stringify(app.fileAtualizacao));
-                
-                //     },File.prototype.fail)
-                
-                // }, File.prototype.fail);
-                
-            // }, File.prototype.fail)
-            
-        }, File.prototype.fail);
+        let t = await app.getDadosServidor(file)
+        console.log(t)
+        if (app.fileAtualizacao.status == "desatualizado") {
+            app.setDados()
+        }else{
+            File.prototype.getDir("fill/config", true, function(dirEntry){}, File.prototype.fail)
+        }
     },
-    async setDadosInFile(){
-
+    setDirEntry(dirEntry){
+        app.dirEntry=dirEntry
+        console.log(app.dirEntry)
+    },
+    setDados(event){
+        File.prototype.getDir("fill/config", true, app.getFileWrite, File.prototype.fail)
+    },
+    getDadosArq(){
+        File.prototype.getDir("fill/config", true, app.getFileRead, File.prototype.fail)
+    },
+    getFileWrite(dirEntry){
+        name = app.fileatualizado.shift()
+        File.prototype.getFile(dirEntry, name, true, app.writeFile, File.prototype.fail)
+    },
+    getFileRead(dirEntry, name = 'obj.json',sucessFunction = app.readFile){
+        File.prototype.getFile(dirEntry, name, true, sucessFunction, File.prototype.fail)
+    },
+    async writeFile(fileEntry, name){
+        name = name.split(".json")[0]
+        return File.prototype.writeFile(fileEntry, app.fileAtualizacao[name], app.gerenteWrite)
+    },
+    readFile(fileEntry){
+        File.prototype.readFile(fileEntry, app.setFileInVar)
+    },
+    setFileInVar(result){
+        console.log(result)
+    },
+    gerenteWrite(){
+        if (app.fileatualizado.length > 0) {
+            app.setDados()
+        }else{
+            app.closeModalAtualizacao()
+            app.setStorageKey()
+        }
+    },
+    closeModalAtualizacao(){
+        $('#mensagem').modal('hide')
     },
     async getDadosServidor(file){
         let dados
@@ -101,7 +131,13 @@ var app = {
             dados=data
         })
         app.fileAtualizacao=JSON.parse(dados)
+        app.fileatualizado = app.fileAtualizacao.listUpdate
         return JSON.parse(dados)
+    },
+    setStorageKey(){
+        if (app.fileAtualizacao.status == 'desatualizado') {
+           window.localStorage.setItem("key", app.fileAtualizacao.key) 
+        }
     },
     onMenu() {
         document.getElementById("myCanvasNav").addEventListener("click", app.buttonMenuClose);
@@ -181,18 +217,22 @@ var app = {
         minimo=10;
         maximo=app.setMaximo();
         tamanho=window.localStorage.getItem("fonte");
+        console.log("tamanho")
         if (tamanho >= minimo && tamanho <= maximo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', tamanho);  
             document.getElementById('fonte').value= tamanho;
-            app.callUpdateElementInTela()
+            // app.callUpdateElementInTela()
         }else if (tamanho < minimo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', minimo);
             document.getElementById('fonte').value= minimo;
-            app.callUpdateElementInTela()
+            // app.callUpdateElementInTela()
         }else if (tamanho > maximo) {
             document.styleSheets[2]["cssRules"][0]["style"].setProperty('--tamanhoFonte', maximo);  
             document.getElementById('fonte').value= maximo; 
-            app.callUpdateElementInTela()
+            // app.callUpdateElementInTela()
+        }
+        if (app.telaAppAtual.tela.onDeviceReady) {
+            app.telaAppAtual.tela.onDeviceReady();
         }
         window.localStorage.setItem("fonte", document.getElementById('fonte').value);
     },
@@ -290,6 +330,7 @@ var app = {
         window.localStorage.removeItem("qrcodeInput");
         window.localStorage.removeItem("volume");
         window.localStorage.removeItem("config");
+        window.localStorage.removeItem("dirEntry");
     },
     exit(){
         console.log("exit");

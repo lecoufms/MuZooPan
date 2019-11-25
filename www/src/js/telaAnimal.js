@@ -28,8 +28,9 @@ class TelaAnimal{
 		return (this.keysVisitaGuiada.indexOf(window.localStorage.getItem("qrcodeInput")) == -1)
 	}
 
-	updateElementInTela(){
-		this.gerenciaNavMenu();
+	async updateElementInTela(){
+		await TelaAnimal.prototype.gerenciaNavMenu();
+		console.log("gerenciaNavMenu")
     }
     
 	onDeviceReady(){
@@ -51,16 +52,27 @@ class TelaAnimal{
 	   	});
 
 	   	var n = parseInt($("#NavMenu").css("height"))/ (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top")));
-	   	if (parseInt(n) != $("#NavMenu").children().length || n != 1) {
+	   	console.log(widthFilhos)
+	   	console.log(n)
+	   	// parseInt(n) != $("#NavMenu").children().length ||
+	   	if (n != 1) {
+	   		console.log(n)
+	   		console.log(n != 0)
 	   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
 	   	   		$("#NavMenu").attr("class", "nav flex-column nav-justified m-2");
+	   	   		console.log("nav flex-column nav-justified m-2")
 		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified m-2"){
 		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified m-1");	
+		   		console.log("nav nav-pills nav-justified m-1")
 		   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
 			   		$("#NavMenu").attr("class", "nav flex-column nav-justified m-2");
+			   		console.log("nav flex-column nav-justified m-2")
 			   	}
 		   	}
 	   	}
+	   	console.log(parseInt($("#NavMenu").css("height")))
+	    console.log((parseInt($("#NavMenu").children().css("height"))))
+	   	console.log(parseInt($("#NavMenu").children().css("margin-top")))
 	}
 
 	todos(e){

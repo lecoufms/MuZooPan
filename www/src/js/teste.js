@@ -1,5 +1,6 @@
 /*
-	browserify teste.js > re.js
+	cd .\www\src\js
+	browserify  .\www\src\js\arquivo.js .\www\src\js\teste.js -o  .\www\src\js\re.js
 
 
 */

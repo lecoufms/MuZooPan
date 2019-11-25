@@ -38,9 +38,9 @@ class TelaInicial{
 	changePrepare(text, isApp){
     	(function factory(text) {
         	console.log(text);
-        	let path= window.location.href
         	if (text) {
 	            window.localStorage.setItem("qrcodeInput", text);
+	            console.log(window.localStorage.getItem("qrcodeInput"));
 	            if (isApp){
 	                window.localStorage.setItem("config", "app");
 	                app.gerente();
@@ -51,6 +51,7 @@ class TelaInicial{
 	                window.localStorage.setItem("config", "obj");
 	                app.gerente();
 	            }
+	            return;
 	        }
 	    }) (text);
 	}
@@ -62,9 +63,10 @@ class TelaInicial{
 	             console.log("cancelado "+result.cancelled);
 	             if (!result.cancelled) {
 	                 TelaInicial.camera = true;
-	                 TelaInicial.prototype.changePrepare(result.text);
+	                 console.log(result.text);
+	                 return TelaInicial.prototype.changePrepare(result.text);
 	             }else{
-	                 TelaInicial.camera=false;
+	                 return TelaInicial.camera=false;
 	             }
 	         },
 	         function (error) {

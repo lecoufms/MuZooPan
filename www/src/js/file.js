@@ -1,5 +1,5 @@
 class File{
-	static readFile(file){
+	static readFile(file, successFunction){
         var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file, false);
         var context
@@ -9,7 +9,7 @@ class File{
                 if(rawFile.status === 200 || rawFile.status == 0)
                 {
                     try{
-                    	app.context = JSON.parse(rawFile.responseText)
+                    	context = rawFile.responseText
                     }catch (e)  {
                         console.log(e);
                     }
@@ -17,77 +17,79 @@ class File{
             }
         }
         rawFile.send(null);
-        return File.prototype.selectContext(app.context)
+        return successFunction(context)
     }
 
     selectContext(c) {
-
-	    for(let i=0; i<c.length; i++){
-	        if(c[i].key == window.localStorage.getItem("qrcodeInput")){
-	            return c[i]
+        app.context=JSON.parse(c)
+	    for(let i=0; i<app.context.length; i++){
+	        if(app.context[i].key == window.localStorage.getItem("qrcodeInput")){
+	            return app.context[i]
 	        }
 	    }
 	    window.localStorage.setItem("config", "Error");
 	    return {"idtemplate":"error","key":"error","mensagem":"Ocorreu um erro inesperado.<br> Retorne e tente novamente.", "anterior" : JSON.parse(window.localStorage.getItem('anterior'))};
 	}
 
-	// async getDir(filesystem, name, crear){
- //       var dir 
- //       console.log(name)
- //       console.log(crear)
- //        await filesystem.getDirectory(name, { create: crear}, function (dirEntry) {
- //            dir = dirEntry;
- //        }, File.prototype.fail)
+    async getDir(name, crear, successFunction, errorFunction){
+        var dir
+        var dir = name.split("/")
+        await window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+            let i = 0
+            let dirSubdir=''
+            while(i+1 < dir.length){
+                dirSubdir = dirSubdir+dir[i]+"/"
+                fs.root.getDirectory(dirSubdir, { create: crear}, function (dirEntry) {
+                    if (i == 0) {
+                        app.dirRoot=dirEntry
+                    }
+                }, errorFunction)
+                i++    
+            }
+            fs.root.getDirectory(name, { create: crear}, function (dirEntry) {
+                app.setDirEntry(dirEntry)
+                successFunction(dirEntry)
+            }, errorFunction)
+        }, errorFunction)     
+    }
 
- //        console.log(dir)
- //        return dir
- //    }
-    
+    fail(evt) {
+        console.log("fail "+evt);
+    }
 
- //    fail(evt) {
- //        console.log("fail "+evt);
- //    }
+    getFile(fileSystemDir, name, crear, successFunction, errorFunction){
+    	var file
+    	fileSystemDir.getFile(name, { create: crear}, function(fileEntry){
+            successFunction(fileEntry,name)
+    	}, errorFunction)
+    }
 
- //    getFile(fileSystemDir, name, crear){
- //    	var file
- //    	console.log(name)
- //    	entry.getFile(name, {create: crear, exclusive: true}, function(fileEntry){
- //    		file = fileEntry
- //    	}, File.prototype.fail);
- //    	return file
- //    }
- //    writeFile(criarWriter, dados){
- //    	var dd = dados
- //    	console.log(dados)
- //    	criarWhiter.createWriter(function(escrever){
- //    		escrever.onwrite = function(evt) {
-	// 	        console.log("write success");
-	// 	    };
-	// 	    escrever.write(JSON.stringify(dd));
- //    	},File.prototype.fail)
+    writeFile(criarWriter, dados, successFunction){
+    	criarWriter.createWriter(function(escrever){
+            escrever.onwriteend= function(evt) {
+                escrever.seek(0);
+                escrever.onwriteend = successFunction;
+                let guarda = JSON.stringify(dados)
+                escrever.write(new Blob([guarda]));
+            }
+            escrever.truncate(0);
+    	},File.prototype.fail)
+    }
 
- //    }
-
- //    readFile(fileEntry){
- //        var resultado
- //        fileEntry.file(async function(file){
- //            var text
- //            var reader = new FileReader();
- //            reader.onloadend = function() {
- //                console.log("Successful file read: " + this.result);
- //                resultado = this.result
- //                text = this.result
- //                    // if (this.result) {
- //                        // window.localStorage.setItem('anterior', this.result);
- //                        console.log(this.result);
-                               
- //                    // }
-            
- //            };
- //            reader.readAsText(file);
- //            console.log(text)
- //            console.log(resultado)
- //        },File.prototype.fail);
- //        return resultado
- //    }
+    // readFile(fileEntry, successFunction){
+    //     var resultado
+    //     fileEntry.file(function(file){
+    //         var text
+    //         var reader = new FileReader();
+    //         reader.onloadend = function() {
+    //             console.log(this.result);
+    //             console.log(JSON.parse(this.result));
+    //             successFunction(this.result)
+    //         };
+    //         reader.readAsText(file);
+    //         console.log(text)
+    //         console.log(resultado)
+    //     },File.prototype.fail);
+    //     return resultado
+    // }
 }
