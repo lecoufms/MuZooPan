@@ -99,21 +99,18 @@ function progressAnimal(audio, play, control){
 
 function myEnd(play,pause, control){
 	ButtonPlayer(pause,play);
-	$(control).css("width", 0+"px");
-}
+	$(control).css("height", 0+" px");
 function seek(audio,e){
-	console.log(e)
 	valor = e.offsetY+1;
-	valor2 = (valor*100)/parseInt($(e.target).css('width'));
-	valor3=100-valor2;
-	valor4=(valor3*audio.duration)/100;
+	valor2 = (valor*100)/parseInt($(".player-timeline").css('height'));
+	valor3=(valor2*audio.duration)/100;
 	audio.currentTime=valor4;
 }
 function todos(e){
 	$( "span.player-play" ).each(function( index ) {
 	  $(this).css("display","inline-block");
 	  control=$(this).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
-	  $(control).css("width", 100+"%");
+	  $(control).css("height", 0+" px");
 	});
 	$( "audio.player" ).each(function( index ) {
 		a=$(this)[0];
