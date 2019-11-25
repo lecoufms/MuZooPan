@@ -44,40 +44,30 @@
                         </div>
                         <div class="col-6">
                             <p id="textoMot" style={{estilo}}>
-                            {{textos.texto0}} {{@root.premiacao.acertos}} {{textos.texto1}} {{@root.premiacao.pontos}} {{textos.texto2}}
+                            {{textos.texto0}}
+                            <p id="textoPonto" style={{estilo}}>
+                              Pontos: {{@root.premiacao.pontos}}
+                           </p>
+                            <p id="textoAcertos" style={{estilo}}>
+                                Acertos: {{@root.premiacao.acertos}}
+                            </p>
+                            <p id="textoBonus" style={{estilo}}>
+                            Bônus: {{@root.premiacao.bonus}}
+                            </p>
+                            <p id="textoRevisao" style={{estilo}}>
+                             Revisões: {{@root.premiacao.revisao}}
+                            </p>   
                             </p>
                         </div>
                     </div>
                 </div>
                 <audio id="premioAudio" autoplay src="{{@root.conteudo.premioSound}}">
                 </audio>
-
-
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-4">
-                            <p id="textoPonto">
-                              Pontos: {{@root.premiacao.pontos}}
-                           </p>
-                        <p id="textoAcertos">
-                            Acertos: {{@root.premiacao.acertos}}
-                        </p>
-                        <p id="textoBonus">
-                         Bônus: {{@root.premiacao.bonus}}
-                        </p>
-                        <p id="textoRevisao">
-                            Revisões: {{@root.premiacao.revisao}}
-                        </p>    
-      
-                        </div>
                         <div class="col-6">
-                            <img id="fogos0" src="../files/img/firework.gif" class="offset-4" style="width:35vw" alt="animated">
+                            <img id="fogos0" src="../files/img/firework.gif" class="offset-8" style="width:35vw" alt="animated">
                         </div>
                     </div>
-                </div>
-
-
-
+                
                 </div>
             {{/js_if}}
         {{/each}}

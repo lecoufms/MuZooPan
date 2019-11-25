@@ -18,9 +18,7 @@
   		"largura":"10%",
   		"estilos":"position:absolute;left:5px;",
   		"textos": {
-  			"texto0": "\"Que legal! <br>Você ganhou medalha de bronze! <br>Você acertou ",
-  			"texto1" : "\nperguntas e fez ",
-  			"texto2" :"pontos\""
+  			"texto0": "Você precisa estudar mais sobre os animais. Venha nos visitar novamente"
   			},
   		"estilo":"text-align:center;"
   	},
@@ -31,9 +29,7 @@
   		"largura":"10%",
   		"estilos":"position:absolute;left:5px;",
   		"textos": {
-  			"texto0": "\"Muito bom! \nVocê ganhou \nmedalha de prata! \nVocê acertou \"",
-  			"texto1" : "\nperguntas e fez \"",
-  			"texto2" :"pontos\""
+  			"texto0": "Você sabe muito sobre os animais!"
   		},
   		"estilo":"text-align:center;"
   	},
@@ -44,9 +40,7 @@
   		"largura":"10%",
   		"estilos":"position:absolute;left:5px;",
   		"textos": {
-  			"texto0": "\"Ótimo! \nVocê foi incrivel.  \nVocê acertou  \"",
-  			"texto1" : "\nperguntas e fez \n",
-  			"texto2" :"pontos\""
+  			"texto0": "Ótimo! Você foi incrivel."
   		},
   		"estilo":"text-align:center;"
   	},
@@ -57,9 +51,7 @@
   		"largura":"10%",
   		"estilos":"position:absolute;left:5px;",
   		"textos": {
-  			"texto0": "\"Excelente! \nSua pontuação foi \nperfeita! \nVocê acertou ",
-  			"texto1" : "\nperguntas e fez \n ",
-  			"texto2" :"pontos\""
+  			"texto0": "Excelente! Você é expert em animais."
   		},
   		"estilo":"text-align:center;"
   	}
@@ -86,3 +78,4 @@
 },{
 
 }]
+
