@@ -103,9 +103,15 @@ function myEnd(play,pause, control){
 	$(control).css("width", 0+"px");
 }
 function seek(audio,e){
-	valor = e.offsetX+1;
+	console.log(e.offsetX)
+	valor = e.offsetX;
+	console.log(valor)
+	console.log(parseInt($(".player-timeline").css('width')))
 	valor2 = (valor*100)/parseInt($(".player-timeline").css('width'));
+	console.log(valor2)
+	console.log(audio.duration)
 	valor3=(valor2*audio.duration)/100;
+	console.log(valor3)
 	audio.currentTime=valor3;
 }
 function todos(e){
