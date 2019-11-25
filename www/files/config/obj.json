@@ -1,5 +1,51 @@
 [
   {
+    "key":"jacareDoPantanal",
+    "name":"Jacaré do pantanal",
+    "animalSound":"",
+    "midia":{
+      "imgs":[
+          { "img":"../files/img/jacareDoPantanal_1.jpg"}
+      ],
+      "videos":[
+        {
+          "video": "", "type": "video/mp4"
+        }
+
+      ]
+    },
+    "menus":[
+      {"menu": "habitat",  "text":"O chamado jacaré do Pantanal tem sua distribuição abrangendo a região centro oeste do Brasil, onde se localiza o pantanal. Estes animais vivem em rios, lagos e represas.","textSound": "../files/sounds/text_song/habitat_jacare.mp3"},
+      {"menu":"reprodução", "text":"São animais ovíparos, as fêmeas botam os ovos em ninho, entre 20 a 30 ovos em média e a fêmea cuida dos ovos. A época de reprodução é no verão, quente e chuvoso.","textSound": "../files/sounds/text_song/reproducao_jacare.mp3"},
+      {"menu": "características", "text":"Nome científico:Caiman yacare;<br>Estes animais são répteis e podem chegar a 3 metros de comprimento, mas a média fica entre 2 e 2,5 metros. São animais chamados heterotérmicos, com temperatura do corpo variável. Vivem em bandos que pode conter centenas de animais.","textSound": "../files/sounds/text_song/caracteristicas_jacare.mp3"},
+      {"menu": "curiosidades", "text": "Se alimentam principalmente de peixes, mas podendo alimentar-se de aves, mamíferos e até invertebrados.  Tem como predadores a onça e a jiboia. <br>Sua carne é apreciada na culinária pantaneira, e atualmente existem criadores destes animais que vendem sua carne e pele.","textSound": "../files/sounds/text_song/curiosidades_jacare.mp3"}
+    ],
+    "3dModel":""
+  },
+  {
+    "key":"piranha",
+    "name":"Piranha; Piranha vermelha",
+    "animalSound":"",
+    "midia":{
+      "imgs":[
+          { "img":"../files/img/piranha_1.jpg"}
+      ],
+      "videos":[
+        {
+          "video": "", "type": "video/mp4"
+        }
+
+      ]
+    },
+    "menus":[
+      {"menu": "habitat",  "text":"Vive em ambientes de água doce, rios, lagos, represas da América do Sul.","textSound": "../files/sounds/text_song/habitat_piranha.mp3"},
+      {"menu":"reprodução", "text":"A reprodução ocorre no início do período de chuvas. A reprodução é externa.","textSound": "../files/sounds/text_song/reproducao_piranha.mp3"},
+      {"menu": "características", "text":"Nome científico: Pygocentrus nattererio;<br>São peixes com tamanho variando entre 18 a 45 cm, de coloração amarelo-avermelhada e corpo achatado lateralmente e ovalado recoberto por escamas. Tem mandíbulas fortes e dentes pequenos, são predadores, alimentando-se de peixes perincipalmente, entretanto pode se alimentar de outros animais como pequenos pássaros e mamíferos.","textSound": "../files/sounds/text_song/caracteristicas_piranha.mp3"},
+      {"menu": "curiosidades", "text": "Por ser um peixe muito comum nas águas do Pantanal acaba provocando muitos acidentes com pescadores, que ao manusear o animal acabam sendo mordidos. São animais que vivem em cardumes, que podem conter de dezenas a centenas de peixes. São animais apreciados na culinária pantaneira.","textSound": "../files/sounds/text_song/curiosidades_piranha.mp3"}
+    ],
+    "3dModel":""
+  },
+  {
     "key":"escorpiao",
     "name":"Escorpião",
     "animalSound":"",
