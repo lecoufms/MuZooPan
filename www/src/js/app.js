@@ -5,6 +5,8 @@ $(document).ready(function(){
 
 var camera= true; 
 function anterior(e) {
+    // alert(window.localStorage.getItem("config") == "obj");
+    // alert(window.location.href.indexOf("index") == -1);
     if (cordova.platformId != "browser") {
         e.preventDefault();
     }
@@ -25,12 +27,13 @@ function anterior(e) {
         window.localStorage.setItem("config", onde.nome);
         changePage("view.html");
     }else if (window.location.href.indexOf("index") == -1) {
+        // alert(window.localStorage.getItem("config") == "obj");
+        // alert(window.location.href.indexOf("index") == -1);
         window.localStorage.removeItem("qrcodeInput");
         window.localStorage.removeItem("volume");
         window.localStorage.removeItem("config");
         console.log('vou ao index, bele');
-        window.history.go(-1);
-        // window.location.href="../index.html";
+        inicio()
     }else if (window.location.href.indexOf("index") != -1 && camera){
         exit();
         // window.history.go(-1);
@@ -121,9 +124,6 @@ function removeContrasteNomeApp(){
 }
 function estadoAtual(){
     if (cordova.platformId != "browser") {
-        if (window.localStorage.getItem("qrcodeInput") ==  "premio") {
-            window.localStorage.removeItem("anterior");
-        }
         window.localStorage.removeItem("qrcodeInput");
         window.localStorage.removeItem("volume");
         window.localStorage.removeItem("config");
@@ -131,7 +131,7 @@ function estadoAtual(){
 }
 
 function onDeviceReady() {
-    document.addEventListener("pause", estadoAtual,false);
+    // document.addEventListener("pause", estadoAtual,false);
     document.addEventListener("backbutton", anterior,false);
     try{
         setVolumeHtml();

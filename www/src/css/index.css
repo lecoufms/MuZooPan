@@ -548,9 +548,8 @@ ex menu n
         float: left;
     }
     .player-timeline {
-        max-height: 2vh;
         height: 1vh;
-        width: 83vw;
+        width: 80vw;
         background: #999;
     }
     .player-timeline-control {
@@ -560,8 +559,13 @@ ex menu n
     }
 span.player-pause{
     display: none;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: #000;
 }
-
+span.player-play{
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: #000;
+}
 .font-maior{
     font-size: calc(var(--tamanhoFonte) * 1.5px) !important;
 }

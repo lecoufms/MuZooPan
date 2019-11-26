@@ -10,9 +10,9 @@
         <p>{{quiz}}</p>
         <p>{{quem}}</p>
     </div>
-    <div class="offset-5 buttomSair font-maior styleFont2">
+    <!-- <div class="offset-5 buttomSair font-maior styleFont2">
         <span onclick="inicio()"> Voltar </span>
-    </div>
+    </div> -->
 </script>
 
 
@@ -44,30 +44,31 @@
                         </div>
                         <div class="col-6">
                             <p id="textoMot" style={{estilo}}>
-                            {{textos.texto0}}
+                                {{textos.texto0}}
+                            </p>
                             <p id="textoPonto" style={{estilo}}>
                               Pontos: {{@root.premiacao.pontos}}
                            </p>
                             <p id="textoAcertos" style={{estilo}}>
                                 Acertos: {{@root.premiacao.acertos}}
                             </p>
-                            <p id="textoBonus" style={{estilo}}>
-                            Bônus: {{@root.premiacao.bonus}}
+                            <p id="textoBonus"style={{estilo}}>
+                                Bônus: {{@root.premiacao.bonus}}
                             </p>
                             <p id="textoRevisao" style={{estilo}}>
-                             Revisões: {{@root.premiacao.revisao}}
-                            </p>   
-                            </p>
+                                Revisões: {{@root.premiacao.revisao}}
+                            </p>    
                         </div>
                     </div>
                 </div>
                 <audio id="premioAudio" autoplay src="{{@root.conteudo.premioSound}}">
                 </audio>
+                <div class="container">
+                    <div class="row justify-content-start">
                         <div class="col-6">
                             <img id="fogos0" src="../files/img/firework.gif" class="offset-8" style="width:35vw" alt="animated">
                         </div>
-                    </div>
-                
+                </div>
                 </div>
             {{/js_if}}
         {{/each}}
@@ -160,7 +161,7 @@
                         {{/js_if}}
                                 <div class="col p-0">
                                     {{#if textSound}}
-                                            <div id="fundoPlayer" class="row ml-2 mr-2 mb-2"> 
+                                            <div id="fundoPlayer" class="row mt-3 m-2"> 
                                                 <div class="player-controls col-0 mb-1 ml-1">
                                                     <span id={{js "'play_menu'+@index"}} class="icon player-play glyphicon glyphicon-play m-0 p-0"></span>
                                                     <span id={{js "'pause_menu'+@index"}} class="icon player-pause glyphicon glyphicon-pause m-0 p-0"></span>
@@ -182,9 +183,9 @@
                 </div>
             </div>
 
-            <div class="offset-5 buttomSair font-maior styleFont2">
+           <!--  <div class="offset-5 buttomSair font-maior styleFont2">
                 <span onclick="anterior()"> Voltar </span>
-            </div>
+            </div> -->
         </div>
 </script>
 
