@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-android-volume": {
       "PACKAGE_NAME": "com.ufms.leco"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.ufms.leco"
     }
   },
   "dependent_plugins": {}

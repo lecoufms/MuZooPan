@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ufms.leco" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://leco.ufms.br/">
+<widget id="com.ufms.leco" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://leco.ufms.br/">
     <name>MuZooPan</name>
     <description>
         MuZooPan é um jogo educacional para auxiliar alunos durante o passeio no laboratório de zoologia do Campus do Pantanal (UFMS).
     </description>
-    <author email="leco.ufms@gmail.com" href="http://leco.ufms.br/">
+    <author email="fabrica.software.cpan@gmail.com" href="http://leco.ufms.br/">
         LECO Team
     </author>
     <content src="index.html" />
