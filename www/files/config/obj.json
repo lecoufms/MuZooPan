@@ -140,7 +140,7 @@
   {
     "key":"carao",
     "name":"Carão",
-    "animalSound":"",
+    "animalSound":"../files/sounds/animals/carao.wav",
     "midia":{
       "imgs":[
           { "img":"../files/img/carao_1.jpg"}
