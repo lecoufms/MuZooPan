@@ -1,4 +1,5 @@
 function gerenciaNavMenu(){
+		var last = $("#NavMenu").children().last()
 	   	var widthFilhos=0;
 	   	$("#NavMenu").children().each(function(){
 	   		$(this).children().removeClass("col");
@@ -14,16 +15,27 @@ function gerenciaNavMenu(){
 	   	console.log(window.screen.availWidth);
 	   	if (parseInt(n) != $("#NavMenu").children().length || n != 1) {
 	   		console.log(n);
-	   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
+	   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
 	   			console.log(n);
-		   		$("#NavMenu").attr("class", "nav flex-column nav-justified m-2");
-		   		console.log("nav flex-column nav-justified m-2");
-		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified m-2"){
-		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified m-1");	
-		   		console.log("nav nav-pills nav-justified m-1");
-		   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
-		   			console.log("nav flex-column nav-justified m-2");
-			   		$("#NavMenu").attr("class", "nav flex-column nav-justified m-2");
+	   			$("#NavMenu").children().each(function(){
+			   		$(this).removeClass("mr-1");
+			   	});
+		   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
+		   		console.log("nav flex-column nav-justified");
+		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified"){
+		   		$("#NavMenu").children().each(function(){
+			   			$(this).addClass("mr-1");
+			   	});
+		   		$("#NavMenu").children().last().removeClass( "mr-1" );
+		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified");	
+		   		console.log("nav nav-pills nav-justified");
+		   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
+		   			console.log("nav flex-column nav-justified");
+		   			$("#NavMenu").children().each(function(){
+				   		$(this).removeClass("mr-1");
+				   	});
+		   			// $("#NavMenu").children().last().addClass( "mr-1" );
+			   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
 			   	}
 		   	}
 	   	}
@@ -39,6 +51,7 @@ function continuaTudo(my){
 	console.log($(my).parent().parent());	
 }
 readyAnimal = function() {
+	// document.getElementById("NavMenu").addEventListener("load", gerenciaNavMenu, false);
 	$( "span.player-play" ).each(function( index ) {
 	  pause=$(this).parent().children(".player-pause");
 	  play=$(this);
