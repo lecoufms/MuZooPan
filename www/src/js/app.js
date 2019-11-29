@@ -23,8 +23,9 @@ var app = {
     async gerente(){
         let context
         if (window.localStorage.getItem("config") && window.localStorage.getItem("config") != "inicial") {
+            let path = window.localStorage.getItem("config") == 'app' || !app.dirEntry ? '/files/config/' : app.dirEntry.toURL()
             // context =  app.getFileRead(app.dirEntry, window.localStorage.getItem("config")+".json", app.readFile)
-             app.telaAppAtual.info =  File.readFile(app.dirEntry.toURL()+window.localStorage.getItem("config")+".json", File.prototype.selectContext)
+             app.telaAppAtual.info =  File.readFile(path+window.localStorage.getItem("config")+".json", File.prototype.selectContext)
         }else{
             window.localStorage.setItem("config", "inicial")
             app.telaAppAtual.info = {"idtemplate": "inicial"};
@@ -53,17 +54,17 @@ var app = {
         }
     },
     defineTelaAtual(){
-        if (window.localStorage.getItem("config") == 'app'){
+        if (window.localStorage.getItem("config") == 'inicial'){
+            app.telaAppAtual.tela= TelaInicial.prototype.getInstance();
+        }else if (window.localStorage.getItem("config") == 'app'){
             // app.telaAppAtual.tela = TelaSobre.prototype.getInstance()    
-            app.telaAppAtual.tela={};
+            app.telaAppAtual.tela= Tela.prototype.getInstance();
         }else if(window.localStorage.getItem("config") == "quiz"){
             app.telaAppAtual.tela = TelaQuiz.prototype.getInstance()
         }else if (window.localStorage.getItem("config") == "obj"){
             app.telaAppAtual.tela = TelaAnimal.prototype.getInstance() //procurar como encontrar um objeto dentro de um array 
         }else if(window.localStorage.getItem("config") == 'error'){
-            app.telaAppAtual.tela={};
-        }else{
-            app.telaAppAtual.tela = TelaInicial.prototype.getInstance()
+            app.telaAppAtual.tela= Tela.prototype.getInstance();
         }
     },
     callUpdateElementInTela(){

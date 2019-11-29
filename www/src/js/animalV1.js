@@ -1,4 +1,5 @@
 function gerenciaNavMenu(){
+		var last = $("#NavMenu").children().last()
 	   	var widthFilhos=0;
 	   	$("#NavMenu").children().each(function(){
 	   		$(this).children().removeClass("col");
@@ -14,16 +15,27 @@ function gerenciaNavMenu(){
 	   	console.log(window.screen.availWidth);
 	   	if (parseInt(n) != $("#NavMenu").children().length || n != 1) {
 	   		console.log(n);
-	   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
+	   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
 	   			console.log(n);
-		   		$("#NavMenu").attr("class", "nav flex-column nav-justified m-2");
-		   		console.log("nav flex-column nav-justified m-2");
-		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified m-2"){
-		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified m-1");	
-		   		console.log("nav nav-pills nav-justified m-1");
-		   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified m-1") {
-		   			console.log("nav flex-column nav-justified m-2");
-			   		$("#NavMenu").attr("class", "nav flex-column nav-justified m-2");
+	   			$("#NavMenu").children().each(function(){
+			   		$(this).removeClass("mr-1");
+			   	});
+		   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
+		   		console.log("nav flex-column nav-justified");
+		   	}else if(widthFilhos < window.screen.availWidth && $("#NavMenu").attr("class") == "nav flex-column nav-justified"){
+		   		$("#NavMenu").children().each(function(){
+			   			$(this).addClass("mr-1");
+			   	});
+		   		$("#NavMenu").children().last().removeClass( "mr-1" );
+		   		$("#NavMenu").attr("class", "nav nav-pills nav-justified");	
+		   		console.log("nav nav-pills nav-justified");
+		   		if (parseInt($("#NavMenu").css("height")) > (parseInt($("#NavMenu").children().css("height"))+ parseInt($("#NavMenu").children().css("margin-top"))) && $("#NavMenu").attr("class") == "nav nav-pills nav-justified") {
+		   			console.log("nav flex-column nav-justified");
+		   			$("#NavMenu").children().each(function(){
+				   		$(this).removeClass("mr-1");
+				   	});
+		   			// $("#NavMenu").children().last().addClass( "mr-1" );
+			   		$("#NavMenu").attr("class", "nav flex-column nav-justified");
 			   	}
 		   	}
 	   	}
@@ -39,6 +51,7 @@ function continuaTudo(my){
 	console.log($(my).parent().parent());	
 }
 readyAnimal = function() {
+	// document.getElementById("NavMenu").addEventListener("load", gerenciaNavMenu, false);
 	$( "span.player-play" ).each(function( index ) {
 	  pause=$(this).parent().children(".player-pause");
 	  play=$(this);
@@ -58,7 +71,7 @@ readyAnimal = function() {
 	$("audio.player").each(function(){
 		play=$(this).parent().children(".player-play");
 		pause=$(this).parent().children(".player-pause");
-	  audio=$(play).parent().children(".player")[0];
+	    audio=$(play).parent().children(".player")[0];
 		control=$(this).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
 		$(this).on("ended",myEnd.bind(null,play,pause,control));
 		$(this).on("timeupdate",progressAnimal.bind(null,audio,play,control));
@@ -88,10 +101,10 @@ function ButtonPlayer(pause, play){
 
 function progressAnimal(audio, play, control){
 	valor = (audio.currentTime*100)/audio.duration;
-	valor2=100-valor;
+	valor2=valor;
 	if ($(play).css("display") == "none" && audio.currentTime >= 0) {
 		audio.play();
-		$(control).css("height", valor2+"%");
+		$(control).css("width", valor2+"%");
 	}else{
 		audio.pause();
 	}   
@@ -99,20 +112,26 @@ function progressAnimal(audio, play, control){
 
 function myEnd(play,pause, control){
 	ButtonPlayer(pause,play);
-	$(control).css("height", 100+"%");
+	console.log($(control).css("width"))
+	$(control).css("width", 0+"px");
 }
 function seek(audio,e){
-	valor = e.offsetY+1;
-	valor2 = (valor*100)/parseInt($(e.target).css('height'));
-	valor3=100-valor2;
-	valor4=(valor3*audio.duration)/100;
-	audio.currentTime=valor4;
+	console.log(e.offsetX)
+	valor = e.offsetX;
+	console.log(valor)
+	console.log(parseInt($(".player-timeline").css('width')))
+	valor2 = (valor*100)/parseInt($(".player-timeline").css('width'));
+	console.log(valor2)
+	console.log(audio.duration)
+	valor3=(valor2*audio.duration)/100;
+	console.log(valor3)
+	audio.currentTime=valor3;
 }
 function todos(e){
 	$( "span.player-play" ).each(function( index ) {
 	  $(this).css("display","inline-block");
 	  control=$(this).parent().parent().children(".progressAu").children(".player-timeline").children(".player-timeline-control");
-	  $(control).css("height", 100+"%");
+	  $(control).css("width", 0+"px");
 	});
 	$( "audio.player" ).each(function( index ) {
 		a=$(this)[0];

@@ -1,6 +1,5 @@
 
 /.idea/
-platforms/
-platforms/*
-node_modules
-node_modules/*
+/platforms/*
+/node_modules/
+/MuZooPanServico.apk
